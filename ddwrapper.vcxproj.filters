@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{1056b8fd-8c90-4ebc-953b-43c8fcd363d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{664bc40d-6709-440f-b1da-708e2157e8b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Includes\ddwrapper.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\gamearrays.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\gameenums.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\myIDDraw7.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\myIDDrawPalette.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptarray.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptbuilder.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptmath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptmath3d.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptmathcomplex.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptstdstring.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\scriptstdstring_utils.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Includes\ddraw.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\ddwrapper.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\detours.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\gamearrays.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\gameenums.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\myIDDraw.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptarray.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptbuilder.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptmath.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptmath3d.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptmathcomplex.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\scriptstdstring.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\sgame.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\stdafx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\angelscript.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\bmp.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
