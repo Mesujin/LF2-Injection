@@ -939,9 +939,8 @@
  //Variables
   const uint32 MaximumObject = 400;
   const uint32 MaximumFrames = 400;
-  const uint32 MaximumHP = 500;
   const uint32 MaximumMP = 500;
-  struct CONFIG {int1 Full_Injection = false; uint32 Not_Post; int1 Model = false; uint32 Max_ID = 999; uint32 LandingFrame = 219; string Input; string Output; string Insight; string Outsight; int1 Permanentness = false; int8 Key[94]; int8 TD_Mode = false; int32 TD_Post; int1 Hold_Def = false; int32 Hold_Def_TU; int32 Min_Bdef; xint64 Bdef_E; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount; int32 M_Speed; int32 T_Amount; int32 T_Speed; int32 B_Reserve; int32 S_Reserve; int1 MP_Rest = false; int32 Imm_Time; int32 DTDHP_Conv; int32 DTHP_Conv; int32 DTMP_Conv; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed; int32 C_Sensitivity; int32 Damage_Limiter;};
+  struct CONFIG {int1 Full_Injection = false; uint32 Not_Post; int1 Model = false; uint32 Max_ID = 999; uint32 LandingFrame = 219; string Input; string Output; string Insight; string Outsight; int1 Permanentness = false; int8 Key[94]; int8 TD_Mode = false; int32 TD_Post; int1 Hold_Def = false; int32 Hold_Def_TU; int32 Min_Bdef; xint64 Bdef_E; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount; int32 M_Speed; int32 T_Amount; int32 T_Speed; int32 B_Reserve; int32 S_Reserve; int1 MP_Rest = false; int32 Imm_Time; int1 HP_Regen = false; int1 MP_Regen = false; xint64 DTDHP_Conv; xint64 DTHP_Conv; xint64 DTMP_Conv; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed; int32 C_Sensitivity; int32 Damage_Limiter;};
 
   std::ifstream File0001;
   std::ofstream File0002;
@@ -957,22 +956,77 @@
   uint32 NumberOfExistT0;
   uint32 NumberOfExistT0COM;
   
-  int32 FirstTU = -1;
+  int32 LastTU = 2147483647;
   int1 InjectionDone = false;
   int32 InjectorNUM = -1;
   int32 Full_Injection_ID = -1;
   int32 Full_Injection_ID2 = -1;
   int32 Hold_Def_TU_Count[MaximumObject];
   int32 ReserveCount[MaximumObject];
+  int32 Dis_DHP_HP_R[MaximumObject];
+  int32 Convertion[MaximumObject];
+  int8 LastInput[7][MaximumObject];
+  int1 Overlay[100];
 
   //Temporals
    int32 Vrab0001;
    uint32 Vrab0002;
    uint32 Vrab0003;
+   xint64 Vrab0004;
    string Temp0001;
  //-//
  //Useful Functions
   int1 Exist(const string &Vrab01){struct stat Vrab02; return (stat(Vrab01.c_str(), &Vrab02) == 0);}
+  int32 Frame(int32 Vrab01){if(Vrab01 < 0) Vrab01 = -Vrab01; if(Vrab01 >= MaximumFrames) return 0; return Vrab01;}
+  int32 Rounding(xint64 Varb01){if(Varb01 > (double)(int)Varb01 + 0.5){return (int)Varb01 + 1;} else {return (int)Varb01;}}
+  int32 PredictedFrame(int32 Vrab01, int32 Vrab02)
+  {
+   return 0;/*
+      if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5)
+      {
+       if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].mp < 0)
+       if((game->objects[Database_Exist[Vrab0002]]->facing && (game->objects[Database_Exist[Vrab0002]]->right || game->objects[Database_Exist[Vrab0002]]->holding_right)) || (!game->objects[Database_Exist[Vrab0002]]->facing && (game->objects[Database_Exist[Vrab0002]]->left || game->objects[Database_Exist[Vrab0002]]->holding_left)))
+       {if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_d >= MaximumFrames){Vrab0003 = 0;} else {Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_d;}}
+       if((int32)Vrab0003 < 0) Vrab0003 = -(int32)Vrab0003;
+       switch(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].state)
+       {
+        case 0:
+        case 1:
+         if(((game->objects[Database_Exist[Vrab0002]]->up != 0 || game->objects[Database_Exist[Vrab0002]]->holding_up != 0) && (game->objects[Database_Exist[Vrab0002]]->down == 0 || game->objects[Database_Exist[Vrab0002]]->holding_down == 0)) || ((game->objects[Database_Exist[Vrab0002]]->up == 0 || game->objects[Database_Exist[Vrab0002]]->holding_up == 0) && (game->objects[Database_Exist[Vrab0002]]->down != 0 || game->objects[Database_Exist[Vrab0002]]->holding_down != 0)))
+         if(game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
+         {Vrab0003 = 12;} else {Vrab0003 = 5;}
+        break;
+        default: break;
+       }
+       Vrab0001 = (int32)Vrab0003;
+       switch(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].state)
+       {
+        case 0:
+         if(game->objects[Database_Exist[Vrab0002]]->D != 0) Vrab0003 = 110;
+        break;
+        default: break;
+       }
+       switch(Vrab0001)
+       {
+        case 9:
+         if(game->objects[Database_Exist[Vrab0002]]->D != 0) Vrab0003 = 102;
+        break;
+        default: break;
+       }
+       if(game->objects[Database_Exist[Vrab0002]]->A != 0) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_a)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_a;
+       if(game->objects[Database_Exist[Vrab0002]]->D != 0) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d;
+       if(game->objects[Database_Exist[Vrab0002]]->J != 0) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j;
+       if(game->objects[Database_Exist[Vrab0002]]->DrA == 3 || game->objects[Database_ExistT0[Vrab0002]]->DlA == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Fa)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Fa;
+       if(game->objects[Database_Exist[Vrab0002]]->DrJ == 3 || game->objects[Database_ExistT0[Vrab0002]]->DlJ == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Fj)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Fj;
+       if(game->objects[Database_Exist[Vrab0002]]->DdA == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Da)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Da;
+       if(game->objects[Database_Exist[Vrab0002]]->DdJ == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Dj)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Dj;
+       if(game->objects[Database_Exist[Vrab0002]]->DuA == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Ua)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Ua;
+       if(game->objects[Database_Exist[Vrab0002]]->DuJ == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Uj)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_Uj;
+       if(game->objects[Database_Exist[Vrab0002]]->DJA == 3) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_ja)].mp <= game->objects[Database_Exist[Vrab0002]]->mp) Vrab0003 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_ja;
+       if((int32)Vrab0003 < 0) Vrab0003 = -(int32)Vrab0003;
+       if(Vrab0003 > MaximumFrames) Vrab0003 = 0;
+      }*/
+  }
  //-//
  //Base Functions
   int0 InGameProcess()
@@ -981,7 +1035,6 @@
    if(Database_FirstInGame)
    {
 	Database_FirstInGame = false;
-	FirstTU = *(int*)0x450b8c;
     //Full_Injection
 	 if(DATA.Full_Injection)
 	 {
@@ -1176,6 +1229,9 @@
       }
      //-//
     //-//
+    //Et Cetera
+     
+    //-//
    }
    //Full_Injection
     if(DATA.Full_Injection)
@@ -1240,16 +1296,57 @@
    //Characters' Hardcoded Speciality
     
    //-//
+   //Et Cetera
+    //Input Fix
+     if(DATA.Dis_Il_Input) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0COM; ++Vrab0002)
+     {
+      if(LastInput[0][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->A == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_a == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_a = 0; game->objects[Database_ExistT0COM[Vrab0002]]->A = 0;}
+      if(LastInput[1][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->D == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_d == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_d = 0; game->objects[Database_ExistT0COM[Vrab0002]]->D = 0;}
+      if(LastInput[2][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->J == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_j == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_j = 0; game->objects[Database_ExistT0COM[Vrab0002]]->J = 0;}
+      if(LastInput[3][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->up == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_up == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_up = 0; game->objects[Database_ExistT0COM[Vrab0002]]->up = 0;}
+      if(LastInput[4][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->left == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_left == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_left = 0; game->objects[Database_ExistT0COM[Vrab0002]]->left = 0;}
+      if(LastInput[5][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->down == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_down == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_down = 0; game->objects[Database_ExistT0COM[Vrab0002]]->down = 0;}
+      if(LastInput[6][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->right == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_right == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_right = 0; game->objects[Database_ExistT0COM[Vrab0002]]->right = 0;}
+      LastInput[0][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->A;
+      LastInput[1][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->D;
+      LastInput[2][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->J;
+      LastInput[3][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->up;
+      LastInput[4][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->left;
+      LastInput[5][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->down;
+      LastInput[6][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->right;
+     }
+    //-//
+   //-//
+   //LF2: Vampirism
+    if(DATA.HP_Regen) if((*(int*)0x450b8c + 1) % 12 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->hp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->hp < game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp -= 1;
+    if(DATA.MP_Regen) if((*(int*)0x450b8c + 1) % 3 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->mp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->mp < MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp -= 5 - ((game->objects[Database_ExistT0[Vrab0002]]->hp - 1) / 100);
+    for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+    {
+     if(Convertion[Database_ExistT0[Vrab0002]] < game->objects[Database_ExistT0[Vrab0002]]->total_attack)
+     {
+      Vrab0001 = game->objects[Database_ExistT0[Vrab0002]]->total_attack - Convertion[Database_ExistT0[Vrab0002]];
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp += Rounding((xint64)Vrab0001 * DATA.DTDHP_Conv);
+      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+      game->objects[Database_ExistT0[Vrab0002]]->hp += Rounding((xint64)Vrab0001 * DATA.DTHP_Conv);
+      if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
+      game->objects[Database_ExistT0[Vrab0002]]->mp += Rounding((xint64)Vrab0001 * DATA.DTMP_Conv);
+      if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+     }
+     Convertion[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->total_attack;
+    }
+   //-//
    //LF2: Skill-Out
     if(DATA.B_Reserve > 1 || (DATA.S_Reserve > 1 && *(int*)0x451160 == 1)) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
     if(Database_ExistT0[Vrab0002] >= 20){break;} else
     {
-     if(*(int*)0x450b8c > FirstTU) game->objects[Database_ExistT0[Vrab0002]]->reserve = ReserveCount[Database_ExistT0[Vrab0002]];
+     if(*(int*)0x450b8c > 1) if(ReserveCount[Database_ExistT0[Vrab0002]] > 99){game->objects[Database_ExistT0[Vrab0002]]->reserve = 99;} else {game->objects[Database_ExistT0[Vrab0002]]->reserve = ReserveCount[Database_ExistT0[Vrab0002]];}
      if(ReserveCount[Database_ExistT0[Vrab0002]] > 1)
      if(game->objects[Database_ExistT0[Vrab0002]]->hp <= 0 || game->objects[Database_ExistT0[Vrab0002]]->hp >= 50000000)
      {
       if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 14 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 12 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 10)
       {game->objects[Database_ExistT0[Vrab0002]]->hp = 0;} else {game->objects[Database_ExistT0[Vrab0002]]->hp = 100000000;}
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->mp <= MaximumMP * 2) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp * MaximumMP * 2;
       game->objects[Database_ExistT0[Vrab0002]]->A = 0;
       game->objects[Database_ExistT0[Vrab0002]]->D = 0;
       game->objects[Database_ExistT0[Vrab0002]]->J = 0;
@@ -1284,8 +1381,10 @@
 	   game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 2;
        if(game->objects[Database_ExistT0[Vrab0002]]->blink == 0)
 	   {
-	    game->objects[Database_ExistT0[Vrab0002]]->hp = MaximumHP;
-	    game->objects[Database_ExistT0[Vrab0002]]->dark_hp = MaximumHP;
+	    game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+	    game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp / (MaximumMP * 2);
+        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
 	    if(DATA.MP_Rest) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
 	    game->objects[Database_ExistT0[Vrab0002]]->blink = DATA.Imm_Time;
 	    game->objects[Database_ExistT0[Vrab0002]]->y_real = -400;
@@ -1295,43 +1394,56 @@
       }
      }
     }
-    if(DATA.Dis_DHP) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+    if(DATA.Dis_DHP) 
     {
-     game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
-     if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 69696969)
+     for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) if(!game->exists[Vrab0002]) Dis_DHP_HP_R[Vrab0002] = 0;
+     for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
      {
-      if(!game->exists[game->objects[Database_ExistT0[Vrab0002]]->weapon_held])
+      if(Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] < 0) Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > 0 && Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] > 0)
       {
-       if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d >= MaximumFrames)
-       {game->objects[Database_ExistT0[Vrab0002]]->frame1 = 0;} else
-       {game->objects[Database_ExistT0[Vrab0002]]->frame1 = game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d;}
-       continue;
+       game->objects[Database_ExistT0[Vrab0002]]->hp = Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] + game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
+       if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
       }
-      if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->type == 6) switch(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->id)
+      Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->hp;
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 69696969)
       {
-       case 122:
-        if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
-        {
-         game->objects[Database_ExistT0[Vrab0002]]->hp += DATA.M_Amount;
-         if(game->objects[Database_ExistT0[Vrab0002]]->hp > MaximumHP) game->objects[Database_ExistT0[Vrab0002]]->hp = MaximumHP;
-         game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.M_Speed;
-        } else
-        {
-         game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = 0;
-        }
-       break;
-       case 123:
-        if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
-        {
-         game->objects[Database_ExistT0[Vrab0002]]->mp += DATA.T_Amount;
-         if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
-         game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.T_Speed;
-        } else
-        {
-         game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = 0;
-        }
-       break;
-       default: break;
+       if(!game->exists[game->objects[Database_ExistT0[Vrab0002]]->weapon_held])
+       {
+        if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d >= MaximumFrames)
+        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = 0;} else
+        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d;}
+        continue;
+       }
+       if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->type == 6) switch(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->id)
+       {
+        case 122:
+         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
+         {
+          game->objects[Database_ExistT0[Vrab0002]]->hp += DATA.M_Amount;
+          if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.M_Speed;
+         } else
+         {
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
+         }
+        break;
+        case 123:
+         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
+         {
+          game->objects[Database_ExistT0[Vrab0002]]->mp += DATA.T_Amount;
+          if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.T_Speed;
+         } else
+         {
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
+         }
+        break;
+        default: break;
+       }
       }
      }
     }
@@ -1368,6 +1480,124 @@
      }
     }
    //-//
+   //Et Cetera
+    //Clean Value
+     if(DATA.Clean_Val) for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+     {
+      if(game->objects[Database_Exist[Vrab0002]]->hp < 0) game->objects[Database_Exist[Vrab0002]]->hp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->dark_hp < 0) game->objects[Database_Exist[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->mp < 0) game->objects[Database_Exist[Vrab0002]]->mp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->kills < 0) game->objects[Database_Exist[Vrab0002]]->kills = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->hp_lost < 0) game->objects[Database_Exist[Vrab0002]]->hp_lost = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->mp_usage < 0) game->objects[Database_Exist[Vrab0002]]->mp_usage = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->weapon_picks < 0) game->objects[Database_Exist[Vrab0002]]->weapon_picks = 0;
+     }
+    //-//
+    //Overlaying
+     if(DATA.Overlaying) for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+     {
+      Vrab0001 = game->objects[Database_Exist[Vrab0002]]->frame1;
+      if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5){Vrab0001 = PredictedFrame(Database_Exist[Vrab0002], Vrab0001);} else
+      {
+       if(game->objects[Database_Exist[Vrab0002]]->hp <= 0) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d != 0) Vrab0001 = Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d);
+      }
+
+      Vrab0004 = game->objects[Database_Exist[Vrab0002]]->z_real;
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz <= 500)
+      {
+       Vrab0004 += game->objects[Database_Exist[Vrab0002]]->z_velocity;
+       if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5)
+       {
+        if((game->objects[Database_Exist[Vrab0002]]->up != 0 || game->objects[Database_Exist[Vrab0002]]->holding_up != 0) && (game->objects[Database_Exist[Vrab0002]]->down == 0 || game->objects[Database_Exist[Vrab0002]]->holding_down == 0))
+        {
+         Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz;
+         switch(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].state)
+         {
+          case 0: case 1:
+           if(game->exists[game->objects[Database_Exist[Vrab0002]]->weapon_held] && game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
+           {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
+          break;
+          case 2:
+           if(game->exists[game->objects[Database_Exist[Vrab0002]]->weapon_held] && game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
+           {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_running_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->running_speedz;}
+          break;
+          default: break;
+         }
+        }
+       } else
+       {
+        if(Vrab0004 += -550 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j != 0) Vrab0004 += -50 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j;
+       }
+      } else
+      {
+       Vrab0004 += -550 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ///////
+      Vrab0003 = game->objects[Database_Exist[Vrab0002]]->frame1;
+      ///////
+      Vrab0004 = game->objects[Database_Exist[Vrab0002]]->z_real;
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz <= 500)
+      {
+       Vrab0004 += game->objects[Database_Exist[Vrab0002]]->z_velocity + game->objects[Database_Exist[Vrab0002]]->z_acceleration;
+       if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5)
+       {
+        if((game->objects[Database_Exist[Vrab0002]]->up != 0 || game->objects[Database_Exist[Vrab0002]]->holding_up != 0) && (game->objects[Database_Exist[Vrab0002]]->down == 0 || game->objects[Database_Exist[Vrab0002]]->holding_down == 0))
+        {
+         Vrab0001 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].state;
+         if(Vrab0001 == 0 || Vrab0001 == 1)
+         if(game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
+         {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
+          Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;
+        } else
+        {
+         if((game->objects[Database_Exist[Vrab0002]]->up == 0 || game->objects[Database_Exist[Vrab0002]]->holding_up == 0) && (game->objects[Database_Exist[Vrab0002]]->down != 0 || game->objects[Database_Exist[Vrab0002]]->holding_down != 0))
+         {
+          Vrab0001 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].state;
+          if(Vrab0001 == 0 || Vrab0001 == 1)
+          if(game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
+          {Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
+          Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;
+         }
+        }
+       } else
+       {
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j != 0 && game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j < 100) Vrab0004 -= 50 - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j;
+       }
+      } else
+      {Vrab0004 -= 550 - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;}
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz != 501)
+      if(Vrab0004 < (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 + 50)
+      {game->objects[Database_Exist[Vrab0002]]->z_real = (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 + 50 + -(Vrab0004 - game->objects[Database_Exist[Vrab0002]]->z_real);}
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz < 599)
+      if(Vrab0004 > (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - 50)
+      {game->objects[Database_Exist[Vrab0002]]->z_real = (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - 50 + -(Vrab0004 - game->objects[Database_Exist[Vrab0002]]->z_real);}
+     }
+    //-//
+   //-//
   }
  //-//
  //Main Functions
@@ -1376,20 +1606,46 @@
    if(Database_First){if(Vrab01 == Database_ExistT0COM[NumberOfExistT0COM - 1]){InGameProcess(); Database_First = false;} return;}
 
    //Data Reset
-    if(FirstTU == *(int*)0x450b8c || Database_FirstInGame)
+    int1 Vrab03 = false; if(*(int*)0x450b8c < LastTU) Vrab03 = true;
+    LastTU = *(int*)0x450b8c - 1;
+    if(Vrab03)
     {
      //Full_Injection
-      if(DATA.Full_Injection) while(game->files->datas[Vrab0002] != 0){if(game->files->datas[Vrab0002]->id == Full_Injection_ID2){game->files->datas[Vrab0002]->frames[0].centerx = 1000; game->files->datas[Vrab0002]->frames[1].centerx = 1000; game->files->datas[Vrab0002]->frames[0].centery = -1000; game->files->datas[Vrab0002]->frames[1].centery = -1000; break;} Vrab0002 += 1;}
+      if(DATA.Full_Injection)
+      {
+       InjectorNUM = -1;
+       while(game->files->datas[Vrab0002] != 0){if(game->files->datas[Vrab0002]->id == Full_Injection_ID2){game->files->datas[Vrab0002]->frames[0].centerx = 1000; game->files->datas[Vrab0002]->frames[1].centerx = 1000; game->files->datas[Vrab0002]->frames[0].centery = -1000; game->files->datas[Vrab0002]->frames[1].centery = -1000; break;} Vrab0002 += 1;}
+      }
      //-//
      //Characters' Hardcoded Speciality
     
      //-//
+     //LF2: Vampirism
+      for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Convertion[Vrab0002] = 0;
+     //-//
      //LF2: Skill-Out
       for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) ReserveCount[Vrab0002] = 0;
       if(DATA.B_Reserve > 1) for(Vrab0002 = 0; Vrab0002 < 20; ++Vrab0002)
-      {if(game->exists[Vrab0002]) ReserveCount[Vrab0002] = DATA.B_Reserve;}
+      {if(game->exists[Vrab0002]){ReserveCount[Vrab0002] = DATA.B_Reserve;} else {ReserveCount[Vrab0002] = 0;}}
       if(DATA.S_Reserve > 1 && *(int*)0x451160 == 1) for(Vrab0002 = 0; Vrab0002 < 20; ++Vrab0002)
-      {if(game->exists[Vrab0002]) ReserveCount[Vrab0002] += DATA.S_Reserve;}
+      {if(game->exists[Vrab0002]){ReserveCount[Vrab0002] += DATA.S_Reserve;} else {ReserveCount[Vrab0002] = 0;}}
+      if(DATA.Dis_DHP) for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Dis_DHP_HP_R[Vrab0002] = 0;
+     //-//
+     //Et Cetera
+      //Input Fix
+       if(DATA.Dis_Il_Input) for(Vrab0002 = 0; Vrab0002 < 7; ++Vrab0002) for(Vrab0003 = 0; Vrab0003 < MaximumObject; ++Vrab0003) LastInput[Vrab0002][Vrab0003] = 0;
+      //-//
+      //Overlaying
+       if(DATA.Overlaying)
+       {
+        if(!Overlay[*(int*)0x44d024])
+        {
+         Overlay[*(int*)0x44d024] = true;
+         game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 -= 50;
+         game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 += 50;
+        }
+       }
+      //-//
      //-//
     }
    //-//
@@ -1406,7 +1662,9 @@
 	 switch(Database_Exist_Type[NumberOfExist] = game->objects[Vrab0001]->data->type)
 	 {
 	  case 0:
-	   Database_ExistT0[NumberOfExistT0] = Vrab0001; NumberOfExistT0 += 1;
+       if(DATA.Full_Injection)
+       {if(game->objects[Vrab0001]->data->id != Full_Injection_ID){Database_ExistT0[NumberOfExistT0] = Vrab0001; NumberOfExistT0 += 1;}} else
+       {Database_ExistT0[NumberOfExistT0] = Vrab0001; NumberOfExistT0 += 1;}
 	   if(Vrab0001 > 9)
        {
         if(DATA.Full_Injection)
@@ -1414,7 +1672,7 @@
          if(game->objects[Vrab0001]->data->id == Full_Injection_ID)
          {
           game->objects[Vrab0001]->hp = 0; game->objects[Vrab0001]->dark_hp = 0; game->objects[Vrab0001]->blink = -199; game->objects[Vrab0001]->team = MaximumObject - 1;
-          if((FirstTU == *(int*)0x450b8c || (FirstTU + 1 == *(int*)0x450b8c && InjectorNUM == -1) || InjectorNUM == -1) && Vrab02) if(game->objects[Vrab0001]->frame1 == 1)
+          if((Vrab03 || InjectorNUM == -1) && Vrab02) if(game->objects[Vrab0001]->frame1 == 1)
           {
            Vrab02 = false;
            game->objects[Vrab0001]->frame1 = 237;
@@ -1422,7 +1680,8 @@
            InjectorNUM = Vrab0001;
            InjectionDone = true;
           }
-          if(Vrab0001 == InjectorNUM){Database_ExistT0COM[NumberOfExistT0COM] = Vrab0001; NumberOfExistT0COM += 1;}
+          if(InjectorNUM != -1) if(Vrab0001 == InjectorNUM){Database_ExistT0COM[NumberOfExistT0COM] = Vrab0001; NumberOfExistT0COM += 1;} else
+          {game->objects[Vrab0001]->frame1 = 2;}
          } else
          {
           Database_ExistT0COM[NumberOfExistT0COM] = Vrab0001; NumberOfExistT0COM += 1;
@@ -1488,7 +1747,9 @@
 	 if(Temp0001.compare("Stage_Reserve") == 0){File0001 >> Temp0001 >> DATA.S_Reserve; if(DATA.S_Reserve < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("MP_Reset") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp01) == 0){DATA.MP_Rest = true;} else {if(Temp0001.compare(Temp02) == 0){DATA.MP_Rest = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("Immune_Time") == 0){File0001 >> Temp0001 >> DATA.Imm_Time; if(DATA.Imm_Time < 0) goto Labl0003; continue;}
-	 
+     
+	 if(Temp0001.compare("Disable_HP_Regen") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp01) == 0){DATA.HP_Regen = true;} else {if(Temp0001.compare(Temp02) == 0){DATA.HP_Regen = false;} else {goto Labl0003;}} continue;}
+	 if(Temp0001.compare("Disable_MP_Regen") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp01) == 0){DATA.MP_Regen = true;} else {if(Temp0001.compare(Temp02) == 0){DATA.MP_Regen = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("DMG_To_DHP_Convertion") == 0){File0001 >> Temp0001 >> DATA.DTDHP_Conv; if(DATA.DTDHP_Conv < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("DMG_To_HP_Convertion") == 0){File0001 >> Temp0001 >> DATA.DTHP_Conv; if(DATA.DTHP_Conv < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("DMG_To_MP_Convertion") == 0){File0001 >> Temp0001 >> DATA.DTMP_Conv; if(DATA.DTMP_Conv < 0) goto Labl0003; continue;}
@@ -1505,7 +1766,8 @@
 	 if(Temp0001.compare("Beta_Damage_Limiter") == 0){File0001 >> Temp0001 >> DATA.Damage_Limiter; if(DATA.Damage_Limiter < 0) goto Labl0003; continue;}
 	}
 	File0001.close();
-   } else {Labl0002: File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VER "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Max_ID : 999                     //\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Input : R-Series\n  Output : R-Series\\Output\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Permanentness : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : 2D\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n DMG_To_DHP_Convertion : 0        //\n DMG_To_HP_Convertion : 0         //\n DMG_To_MP_Convertion : 0         //\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n  Overlaying : Inactive           // Make the \"BG Overlay\" and \"Display Overlay\" be better.\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n\n // Damage Recieved Limiter\n  Beta_Damage_Limiter : 0         //\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// You know what? 0817 is Indonesia's Independence Day."; File0002.close(); goto Labl0001;}
+   //} else {Labl0002: File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VER "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Max_ID : 999                     //\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Input : I-Series\n  Output : I-Series\\Output\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Permanentness : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : 2D\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     //\n DMG_To_HP_Convertion : 0.00      //\n DMG_To_MP_Convertion : 0.00      //\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n  Overlaying : Inactive           // Make the \"BG Overlay\" and \"Display Overlay\" be better.\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n\n // Damage Recieved Limiter\n  Beta_Damage_Limiter : 0         //\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// You know what? 0817 is Indonesia's Independence Day."; File0002.close(); goto Labl0001;}
+   } else {Labl0002: File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VER "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Max_ID : 999                     //\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Input : I-Series\n  Output : I-Series\\Output\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Permanentness : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : 2D\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     //\n DMG_To_HP_Convertion : 0.00      //\n DMG_To_MP_Convertion : 0.00      //\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n\n // Z Camera Shift\n\n // Damage Recieved Limiter\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// You know what? 0817 is Indonesia's Independence Day."; File0002.close(); goto Labl0001;}
 
    std::vector < string > Vrab05;
    std::vector < uint8 > Vrab04;
@@ -1596,11 +1858,11 @@
     File0002 << "" << (int32)Bmps03.data[Vrab0001 - 1] << "};";*/
 
     File0002.open(DATA.Output + "\\injection.txt");
-    File0002 << "<bmp_begin>\nname: Injection\nhead:" + DATA.Output + "\\none.bmp\nsmall: " + DATA.Output + "\\none.bmp\nfile(0): " + DATA.Output + "\\none.bmp w: 1 h: 1 row: 1 col: 1\n<bmp_end>\n\n<frame> 180 Injection\n pic: -1 state: 12 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 182 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 186 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 188 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 219 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 212 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 0 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 1 Injection\n pic: -1 state: 3005 next: 2 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 2 Injection\n pic: -1 state: 9998 next: 1000 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n\n<frame> 235 Injection\n pic: -1 state: 3005 next: 236 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 236 Injection\n pic: -1 state: 3005 next: 235 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 237 Injection\n pic: -1 state: 3005 wait: 2 next: 238 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 238 Injection\n pic: -1 state: 3005 next: 239 dvx: -2147483648 dvy: 550 dvz: 99999999\n opoint: kind: 1 x: 100 y: 0 action: 0 oid: " << Full_Injection_ID2 << " facing: 10 opoint_end:\n<frame_end>\n<frame> 239 Injection\n pic: -1 state: 3005 next: 235 dvx: -2147483648 dvy: 550 dvz: 99999999\n opoint: kind: 1 x: 100 y: 0 action: 1 oid: " << Full_Injection_ID2 << " facing: 10 opoint_end:\n<frame_end>";
+    File0002 << "<bmp_begin>\nname: Injection\nhead:" + DATA.Output + "\\none.bmp\nsmall: " + DATA.Output + "\\none.bmp\nfile(0): " + DATA.Output + "\\none.bmp w: 1 h: 1 row: 1 col: 1\n<bmp_end>\n\n<frame> 180 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 9999999\n<frame_end>\n<frame> 182 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 186 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 188 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 219 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 212 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 0 Injection\n pic: -1 state: 3005 next: 1 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 1 Injection\n pic: -1 wait: 1 state: 3005 next: 2 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 2 Injection\n pic: -1 state: 9998 next: 1000 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n\n<frame> 235 Injection\n pic: -1 state: 3005 next: 236 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 236 Injection\n pic: -1 state: 3005 next: 235 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 237 Injection\n pic: -1 state: 3005 wait: 2 next: 238 dvx: -2147483648 dvy: 550 dvz: 99999999\n<frame_end>\n<frame> 238 Injection\n pic: -1 state: 3005 next: 239 dvx: -2147483648 dvy: 550 dvz: 99999999\n opoint: kind: 1 x: 100 y: 0 action: 0 oid: " << Full_Injection_ID2 << " facing: 10 opoint_end:\n<frame_end>\n<frame> 239 Injection\n pic: -1 state: 3005 next: 235 dvx: -2147483648 dvy: 550 dvz: 99999999\n opoint: kind: 1 x: 100 y: 0 action: 1 oid: " << Full_Injection_ID2 << " facing: 10 opoint_end:\n<frame_end>";
     File0002.close();
     Temp01 += DATA.Output + "\\injection.txt\n";
     File0002.open(DATA.Output + "\\injection_info.txt");
-    File0002 << "<bmp_begin>\nfile(0-1): " + DATA.Output + "\\info.bmp w: 207 h: 34 row: 1 col: 2\n<bmp_end>\n\n<frame> 0 Injection\n pic: 0 state: 3005 wait: 121 next: 2 dvx: 550 dvy: 550 dvz: 9999999 centerx: 1000 centery: -1000\n<frame_end>\n<frame> 1 Injection\n pic: 1 state: 3005 wait: 140 next: 2 dvx: 550 dvy: 550 dvz: 9999999 centerx: 1000 centery: -1000\n<frame_end>\n\n<frame> 2 Injection\n pic: -1 state: 9998 next: 0 dvx: 550 dvy: 550 dvz: 9999999\n<frame_end>";
+    File0002 << "<bmp_begin>\nfile(0-1): " + DATA.Output + "\\info.bmp w: 207 h: 34 row: 1 col: 2\n<bmp_end>\n\n<frame> 0 Injection\n pic: 0 state: 3005 wait: 121 next: 2 dvx: 550 dvy: 550 dvz: 99999999 centerx: 1000 centery: -1000\n<frame_end>\n<frame> 1 Injection\n pic: 1 state: 3005 wait: 140 next: 2 dvx: 550 dvy: 550 dvz: 9999999 centerx: 1000 centery: -1000\n<frame_end>\n\n<frame> 2 Injection\n pic: -1 state: 9998 next: 0 dvx: 550 dvy: 550 dvz: 9999999\n<frame_end>";
     File0002.close();
     Temp01 += DATA.Output + "\\injection_info.txt\n";
     std::filesystem::create_directories("ai");
