@@ -19,5 +19,5 @@ My changes from the orginial `ddraw.dll` was in `//External Code`.
 
 > About Little Fighter 2 (LF2) : https://lf2.net
 <div align="center"><h1></h1>
-<a href="https://lf-empire.de/">Click here to back/go to the forum</a>.
+<a href="https://lf-empire.de/forum/showthread.php?tid=11273">Click here to back/go to the forum</a>.
 </div>
