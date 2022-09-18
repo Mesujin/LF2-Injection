@@ -831,7 +831,7 @@
   #include <filesystem>
   #include <thread>
   #include <chrono>
-  #define INJECTION_VERSION "(v1.00.220901)"
+  #define INJECTION_VERSION "(v1.27.220920)"
   #define ENCODING_KEY "SiuHungIsAGoodBearBecauseHeIsVeryGood"
   #define TEMPORAL_FILE "data\\temporary.txt"
 
@@ -850,8 +850,9 @@
   using string = std::string;
  //-//
  //Variables
-  struct CONFIG {string Storing; string AI = "ai"; int1 Full_Injection = false; int1 Sleep_Mode = false; uint32 Not_Post = 0; int1 Model = false; int32 IDs[14]; uint32 LandingFrame = 219; int1 LoadDLL = false; string DDirectory = "dlls"; int1 Debug = false; int16 Style = 0; int16 Delay = 0; string Build; string Input; string Output; string Insight; string Outsight; int1 Overwrite = false; int1 Get_Mirrors = false; int1 Permanentness = false; int1 Build_Directory = false; int8 Key[95]; int8 TD_Mode = false; int32 TD_Post = 0; int1 Hold_Def = false; int32 Hold_Def_TU = 0; int32 Min_Bdef = 0; xint64 Bdef_E = 100; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount = 0; int32 M_Speed = 0; int32 T_Amount = 0; int32 T_Speed = 0; int32 B_Reserve = 0; int32 S_Reserve = 0; int1 MP_Rest = false; int32 Imm_Time = 40; int1 HP_Regen = false; int1 MP_Regen = false; xint64 DTDHP_Conv = 0; xint64 DTHP_Conv = 0; xint64 DTMP_Conv = 0; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed = 0; int32 C_Sensitivity = 0; int32 Damage_Limiter = 0;}; CONFIG Config;
+  struct CONFIG {string Storing; string AI = "ai"; int1 Full_Injection = false; int1 Sleep_Mode = false; uint32 Not_Post = 0; int1 Model = false; int32 IDs[14]; uint32 LandingFrame = 219; int1 LoadDLL = false; string DDirectory = "dlls"; int1 Debug = false; int16 Style = 0; int16 Delay = 0; string Build; string Input; string Output; string Insight; string Outsight; int1 Overwrite = false; int1 Get_Mirrors = false; int1 Permanentness = false; int1 Build_Directory = false; int8 Key[95]; int8 TD_Mode = false; int32 TD_Post = 0; int1 Hold_Def = false; int32 Hold_Def_TU = 0; int32 Min_Bdef = 0; xint64 Bdef_E = 100; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount = 0; int32 M_Speed = 0; int32 T_Amount = 0; int32 T_Speed = 0; int32 B_Reserve = 0; int32 S_Reserve = 0; int1 MP_Rest = false; int32 Imm_Time = 40; int1 HP_Regen = false; int1 MP_Regen = false; xint64 DTDHP_Conv = 0; xint64 DTHP_Conv = 0; xint64 DTMP_Conv = 0; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed = 0; xint64 C_Effectiviness = 0; int32 C_Off = 0; int32 C_Sensitivity = 0; int32 Damage_Limiter = 0;}; CONFIG Config;
   struct CONSOLE {string Log; int0 PrintSet(){Vrab08 = true; PrintOut(); Vrab08 = false;} int0 PrintOut(){if(!Config.Debug) return; if(!Varb07) Openning(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); SetConsoleCursorPosition(Hand01, {0, 0}); Ostr01.str(""); if(Vrab08){Ostr01 << "\n==== Building Log ===============================\n\n"; if(Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Building Log ===============================\n\n"; Log.clear();} Vrab09 = false;} else {Ostr01 << "\n==== Installation Log ===========================\n\n"; if(!Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Installation Log ===========================\n\n"; Log.clear();} Vrab09 = true;} Varb01 = 0; Varb02 = 0; Varb03 = (int32)Log.size(); Varb04 = 0; while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 = 0; if(Log[Varb01] == '\n'){if(Varb04 == 1){Log[Varb01] = (int8)-125; Varb02 -= 1;} Varb04 = 0; Varb02 += 1;} if((uint32)Varb04 >= (uint32)(Varb06 - 0)){if(Log[Varb01 + 1] != '\n' && Log[Varb01 + 1] != (int8)-125){Varb04 = 0; while((Log[Varb01 + 1] != ' ' && Log[Varb01 + 1] >= 0) || Log[Varb01 + 2] != ' ' || Log[Varb01 + 3] != ' '){Log.insert(Varb01 + 1, " "); Varb04 -= 25;} if(Varb04 != 0) Log[Varb01 + 1] = (int8)Varb04;} Varb04 = 0; Varb02 += 1; Varb03 = (int32)Log.size();} Varb01 += 1;} while(Varb02 >= (uint16)((Varb06 / 2) - 4)){Varb01 = 0; Varb04 = 0; Varb03 = (int32)Log.size(); while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 -= 1; if(Log[Varb01] == '\n') break; if((uint32)Varb04 >= (uint32)(Varb06 - 0)) break; Varb01 += 1;} Vect01[0].append(Log, 0, Varb01 + 1); if(Vect01[0].size() >= 30000){Vect01.push_back(Vect01[0]); Vect01[0] = "";} Log.erase(0, Varb01 + 1); Varb02 -= 1;} Strn01 = Log; Varb03 = (int32)Strn01.size(); for(Varb01 = 0; Varb01 < (uint32)Varb03; ++Varb01){if(Strn01[Varb01] == (int8)-125){Strn01.erase(Varb01, 1); Varb03 = (int32)Strn01.size();} if(Strn01[Varb01] < 0) Strn01[Varb01] = ' ';} Ostr01 << Strn01; Varb03 = 20; while(Varb03 > Varb02){Ostr01 << "\n"; Varb03 -= 1;} Ostr01 << "\n================================================="; Strn02 = ""; Strn01 = Ostr01.str().c_str(); Ostr01.str(""); Varb01 = Strn01.length(); Varb03 = 0; Varb04 = 0; Varb02 = 0; while((uint32)Varb03 != Varb01){if(Strn01[Varb03] == '\n'){Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb02 = 65535;} else {Strn02 += Strn01[Varb03];} Varb02 += 1; if(Varb02 == Varb06){Varb02 = 0; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back(Varb06);} else {PrintSize[Varb04] = Varb06;} Varb04 += 1;} Varb03 += 1;} Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb05 = Varb04; while((uint32)Varb04 < PrintSize.size()){Varb02 = 0; while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) if((uint32)Varb04 + 1 < PrintSize.size()) Strn02 += "\n"; Varb04 += 1;} std::cout << Strn02; Strn01 = ""; Strn02 = ""; PrintSize.resize(Varb05); std::this_thread::sleep_for(std::chrono::milliseconds(Config.Delay));} int0 Ending(){if(!Config.Debug) return; if(Varb07){Vect01[0] += Log + "\n=================================================\n\n"; Log.clear(); for(Varb01 = Vect01.size() - 1; (int32)Varb01 >= 0; --Varb01) for(Varb03 = 0; (uint32)Varb03 < Vect01[Varb01].size(); ++Varb03){if(Vect01[Varb01][(uint32)Varb03] == (int8)-125) Vect01[Varb01][(uint32)Varb03] = '\n'; if(Vect01[Varb01][(uint32)Varb03] < 0) Vect01[Varb01].erase((uint32)Varb03, (uint32)-(Vect01[Varb01][(uint32)Varb03] / 25));} std::ofstream File01(Special_Execution(Config.Output + "\\log.txt")); Varb03 = 1; while(Varb03 < (int32)Vect01.size()){File01 << Vect01[(uint32)Varb03]; Vect01[(uint32)Varb03].clear(); Varb03 += 1;} File01 << Vect01[0]; Vect01[0].clear(); Vect01.clear(); File01.close(); ShowWindow(GetConsoleWindow(), 0); FreeConsole(); Varb07 = false;}} private: std::vector < string > Vect01; std::vector < uint16 > PrintSize; std::ostringstream Ostr01; string Strn01; string Strn02; uint32 Varb01; uint16 Varb02; int32 Varb03; int32 Varb04; int32 Varb05; int16 Varb06 = 50; int1 Varb07 = false; int1 Vrab08 = false; int1 Vrab09 = false; string Special_Execution(string Vrab01){string Temp01 = Vrab01; uint32 Vrab02 = Temp01.size() - 1; while(Vrab02 != 0 && Temp01[Vrab02] != '\\') Vrab02 -= 1; if(Vrab02 > 0) Temp01.erase(Vrab02, Temp01.size() - Vrab02); std::filesystem::create_directories(Temp01); return Vrab01;} int0 Openning(){Vect01.clear(); if(Vrab08){Vect01.push_back("==== Building Log ===============================\n\n");} else {Vect01.push_back("==== Installation Log ===========================\n\n");} uint8 Vrab01 = (uint8)Config.Style; uint8 Vrab02; if(Vrab01 < 128){Vrab02 = 255;} else {Vrab02 = 0;} AllocConsole(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); freopen("CONIN$", "rb", stdin); freopen("CONOUT$", "wb", stdout); freopen("CONOUT$", "wb", stderr); SMALL_RECT Rect01 = {0, 0, Varb06, 28}; CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); GetConsoleScreenBufferInfoEx(Hand01, &Info01); Info01.wAttributes = true; Info01.srWindow = Rect01; Info01.ColorTable[0] = RGB((int32)Vrab01, (int32)Vrab01, (int32)Vrab01); Info01.ColorTable[1] = RGB((int32)Vrab02, (int32)Vrab02, (int32)Vrab02); Info01.ColorTable[7] = Info01.ColorTable[1]; SetConsoleScreenBufferInfoEx(Hand01, &Info01); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); SetConsoleTitleA("Injector's Console"); Varb07 = true;}}; CONSOLE Console;
+  struct MODIFER {std::vector < int32 > BG_Cam[3]; std::vector < int32 > BG_Z1; std::vector < int32 > BG_Z2; std::vector < std::vector < int32 > > BG_Y; std::vector < std::vector < int32 > > BG_H;}; MODIFER Modifer;
 
   const uint32 MaximumObject = 400;
   const uint32 MaximumFrames = 400;
@@ -866,9 +867,8 @@
   uint32 NumberOfExist;
   uint32 NumberOfExistT0;
   uint32 NumberOfExistT0COM;
-
+  
   int32 LastTU = 2147483647;
-  int1 InjectionDone = false;
   int32 InjectorNUM = -1;
   int32 Full_Injection_ID = -1;
   int32 Full_Injection_ID2 = -1;
@@ -879,7 +879,9 @@
   int8 LastInput[7][MaximumObject];
   int1 Overlay[100];
   int1 Debugging = true;
-
+  int1 InjectionDone = false;
+  
+  std::vector < HINSTANCE > Hins0001;
   std::vector < int32 > Vect0001;
   std::vector < string > Strn0001;
   std::ifstream File0001;
@@ -982,12 +984,14 @@
   }
  //-//
  //Useful Functions
+  int32 Rounding(xint64 Varb01){if(Varb01 > (double)(int)Varb01 + 0.5){return (int)Varb01 + 1;} else {return (int)Varb01;}}
   int32 Positive(int32 Vrab01){if(Vrab01 >= 0) return Vrab01; return -Vrab01;}
   int32 ToNum(string Vrab01){uint32 Vrab02 = 0; int64 Vrab03 = (int64)(int32)Vrab01.size(); if(Vrab03 > 18) Vrab03 = 18; int64 Vrab04 = 0; if(Vrab01[0] == '-') Vrab02 += 1; while(Vrab02 < (uint32)(int32)Vrab03 && Vrab01[Vrab02] >= '0' && Vrab01[Vrab02] <= '9') Vrab02 += 1; Vrab02 -= 1;Vrab03 = 1; while(Vrab02 > 0){switch(Vrab01[Vrab02]){case '1': Vrab04 += Vrab03; break; case '2': Vrab04 += Vrab03 * 2; break; case '3': Vrab04 += Vrab03 * 3; break; case '4': Vrab04 += Vrab03 * 4; break; case '5': Vrab04 += Vrab03 * 5; break; case '6': Vrab04 += Vrab03 * 6; break; case '7': Vrab04 += Vrab03 * 7; break; case '8': Vrab04 += Vrab03 * 8; break; case '9': Vrab04 += Vrab03 * 9; break; default: break;} Vrab03 *= 10; Vrab02 -= 1;} if(Vrab01[0] == '-'){Vrab04 = -Vrab04;} else {switch(Vrab01[0]){case '1': Vrab04 += Vrab03; break; case '2': Vrab04 += Vrab03 * 2; break; case '3': Vrab04 += Vrab03 * 3; break; case '4': Vrab04 += Vrab03 * 4; break; case '5': Vrab04 += Vrab03 * 5; break; case '6': Vrab04 += Vrab03 * 6; break; case '7': Vrab04 += Vrab03 * 7; break; case '8': Vrab04 += Vrab03 * 8; break; case '9': Vrab04 += Vrab03 * 9; break; default: break;}} return (int32)Vrab04;}
   string Execute(string Vrab01){string Temp01 = Vrab01; uint32 Vrab02 = Temp01.size() - 1; while(Vrab02 != 0 && Temp01[Vrab02] != '\\') Vrab02 -= 1; if(Vrab02 > 0) Temp01.erase(Vrab02, Temp01.size() - Vrab02); std::filesystem::create_directories(Temp01); return Vrab01;}
   int0 Rename(string &Vrab01){uint32 Vrab02 = Vrab01.size() - 1; while((int32)Vrab02 >= 0 && Vrab01[Vrab02] != '-') Vrab02 -= 1; if(Vrab01[Vrab02 + 1] >= '0' && Vrab01[Vrab02 + 1] <= '9'){string Temp01 = ""; uint32 Vrab03 = Vrab02; Temp01 += Vrab01[Vrab03 + 1]; while(Vrab01[Vrab03 + 2] >= '0' && Vrab01[Vrab03 + 2] <= '9'){Temp01 += Vrab01[Vrab03 + 2]; Vrab03 += 1;} Temp01 = std::to_string((uint32)ToNum(Temp01) + 1); Vrab01.erase(Vrab02 + 1, (Vrab03 + 2) - (Vrab02 + 1)); Vrab01.insert(Vrab02 + 1, Temp01);} else {Vrab02 = Vrab01.size() - 1; while((int32)Vrab02 >= 0 && Vrab01[Vrab02] != '.') Vrab02 -= 1; if(Vrab02 > 7) if(string(Vrab01, Vrab02 - 8, 7) == "_mirror") Vrab02 -= 8; if(Vrab02 > 0){Vrab01.insert(Vrab02, "-2");} else {Vrab01.insert(Vrab01.size() - 1, "-2");}}}
   int1 Exist(const string &Vrab01){struct stat Vrab02; return (stat(Vrab01.c_str(), &Vrab02) == 0);}
-  int0 LoadOtherDll(){if(Exist(Config.DDirectory)) for(auto const &Vrab01 : std::filesystem::recursive_directory_iterator(Config.DDirectory)){Temp0001 = Vrab01.path().string(); if(string(Temp0001, Temp0001.size() - 4, 4) == ".dll") ::LoadLibrary(Vrab01.path().string().c_str());}}
+  int0 LoadOtherDll(){Hins0001.clear(); if(Exist(Config.DDirectory)) for(auto const &Vrab01 : std::filesystem::recursive_directory_iterator(Config.DDirectory)){Temp0001 = Vrab01.path().string(); if(string(Temp0001, Temp0001.size() - 4, 4) == ".dll") Hins0001.push_back(LoadLibraryA(Vrab01.path().string().c_str()));}}
+  int0 UnloadOtherDll(){Vrab0002 = Hins0001.size(); Vrab0003 = 0; while(Vrab0003 < Vrab0002){FreeLibrary(Hins0001[Vrab0003]); Vrab0003 += 1;}}
   xint64 Decryption94(int8 Vrab01){if(Vrab01 == Config.Key[0]) return 0; if(Vrab01 == Config.Key[1]) return 1; if(Vrab01 == Config.Key[2]) return 2; if(Vrab01 == Config.Key[3]) return 3; if(Vrab01 == Config.Key[4]) return 4; if(Vrab01 == Config.Key[5]) return 5; if(Vrab01 == Config.Key[6]) return 6; if(Vrab01 == Config.Key[7]) return 7; if(Vrab01 == Config.Key[8]) return 8; if(Vrab01 == Config.Key[9]) return 9; if(Vrab01 == Config.Key[10]) return 10; if(Vrab01 == Config.Key[11]) return 11; if(Vrab01 == Config.Key[12]) return 12; if(Vrab01 == Config.Key[13]) return 13; if(Vrab01 == Config.Key[14]) return 14; if(Vrab01 == Config.Key[15]) return 15; if(Vrab01 == Config.Key[16]) return 16; if(Vrab01 == Config.Key[17]) return 17; if(Vrab01 == Config.Key[18]) return 18; if(Vrab01 == Config.Key[19]) return 19; if(Vrab01 == Config.Key[20]) return 20; if(Vrab01 == Config.Key[21]) return 21; if(Vrab01 == Config.Key[22]) return 22; if(Vrab01 == Config.Key[23]) return 23; if(Vrab01 == Config.Key[24]) return 24; if(Vrab01 == Config.Key[25]) return 25; if(Vrab01 == Config.Key[26]) return 26; if(Vrab01 == Config.Key[27]) return 27; if(Vrab01 == Config.Key[28]) return 28; if(Vrab01 == Config.Key[29]) return 29; if(Vrab01 == Config.Key[30]) return 30; if(Vrab01 == Config.Key[31]) return 31; if(Vrab01 == Config.Key[32]) return 32; if(Vrab01 == Config.Key[33]) return 33; if(Vrab01 == Config.Key[34]) return 34; if(Vrab01 == Config.Key[35]) return 35; if(Vrab01 == Config.Key[36]) return 36; if(Vrab01 == Config.Key[37]) return 37; if(Vrab01 == Config.Key[38]) return 38; if(Vrab01 == Config.Key[39]) return 39; if(Vrab01 == Config.Key[40]) return 40; if(Vrab01 == Config.Key[41]) return 41; if(Vrab01 == Config.Key[42]) return 42; if(Vrab01 == Config.Key[43]) return 43; if(Vrab01 == Config.Key[44]) return 44; if(Vrab01 == Config.Key[45]) return 45; if(Vrab01 == Config.Key[46]) return 46; if(Vrab01 == Config.Key[47]) return 47; if(Vrab01 == Config.Key[48]) return 48; if(Vrab01 == Config.Key[49]) return 49; if(Vrab01 == Config.Key[50]) return 50; if(Vrab01 == Config.Key[51]) return 51; if(Vrab01 == Config.Key[52]) return 52; if(Vrab01 == Config.Key[53]) return 53; if(Vrab01 == Config.Key[54]) return 54; if(Vrab01 == Config.Key[55]) return 55; if(Vrab01 == Config.Key[56]) return 56; if(Vrab01 == Config.Key[57]) return 57; if(Vrab01 == Config.Key[58]) return 58; if(Vrab01 == Config.Key[59]) return 59; if(Vrab01 == Config.Key[60]) return 60; if(Vrab01 == Config.Key[61]) return 61; if(Vrab01 == Config.Key[62]) return 62; if(Vrab01 == Config.Key[63]) return 63; if(Vrab01 == Config.Key[64]) return 64; if(Vrab01 == Config.Key[65]) return 65; if(Vrab01 == Config.Key[66]) return 66; if(Vrab01 == Config.Key[67]) return 67; if(Vrab01 == Config.Key[68]) return 68; if(Vrab01 == Config.Key[69]) return 69; if(Vrab01 == Config.Key[70]) return 70; if(Vrab01 == Config.Key[71]) return 71; if(Vrab01 == Config.Key[72]) return 72; if(Vrab01 == Config.Key[73]) return 73; if(Vrab01 == Config.Key[74]) return 74; if(Vrab01 == Config.Key[75]) return 75; if(Vrab01 == Config.Key[76]) return 76; if(Vrab01 == Config.Key[77]) return 77; if(Vrab01 == Config.Key[78]) return 78; if(Vrab01 == Config.Key[79]) return 79; if(Vrab01 == Config.Key[80]) return 80; if(Vrab01 == Config.Key[81]) return 81; if(Vrab01 == Config.Key[82]) return 82; if(Vrab01 == Config.Key[83]) return 83; if(Vrab01 == Config.Key[84]) return 84; if(Vrab01 == Config.Key[85]) return 85; if(Vrab01 == Config.Key[86]) return 86; if(Vrab01 == Config.Key[87]) return 87; if(Vrab01 == Config.Key[88]) return 88; if(Vrab01 == Config.Key[89]) return 89; if(Vrab01 == Config.Key[90]) return 90; if(Vrab01 == Config.Key[91]) return 91; if(Vrab01 == Config.Key[92]) return 92; if(Vrab01 == Config.Key[93]) return 93; return 0;}
   string DecryptionSTRING(string Vrab01){int8 Vrab02; uint32 Vrab03 = (uint32)Vrab01.size(); uint32 Vrab04 = 0; while(Vrab04 != Vrab03){Vrab02 = Vrab01[Vrab04]; if(Vrab02 >= '!' && Vrab02 <= '~') Vrab01[Vrab04] = (((uint32)(int32)Decryption94(Vrab02) - (Vrab04 % 94) + 94) % 94) + 33; Vrab04 += 1;} return Vrab01;}
   xint64 DecryptionDOUBLE(const int8 Vrab01[11]){return Decryption94(Vrab01[0]) * 8836 + Decryption94(Vrab01[1]) * 94 + Decryption94(Vrab01[2]) - 400000 + Decryption94(Vrab01[3]) * 0.064847759419264 + Decryption94(Vrab01[4]) * 0.000689869781056 + Decryption94(Vrab01[5]) * 0.000007339040224 + Decryption94(Vrab01[6]) * 0.000000078074896 +  Decryption94(Vrab01[7]) * 0.000000000830584 + Decryption94(Vrab01[8]) * 0.000000000008836 + Decryption94(Vrab01[9]) * 0.000000000000094 + Decryption94(Vrab01[10]) * 0.000000000000001;}
@@ -1021,7 +1025,7 @@
    Labl0001: strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); if(File0001.is_open()) File0001.close(); if(Vrab0003 == 1){File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary);} else {File0001.open("configuration.txt", std::ios::in | std::ios::binary);}
    if(File0001.is_open())
    {
-    while(File0001){File0001 >> Temp0001; if(Temp0001.compare(INJECTION_VERSION) == 0) goto Labl0003;} Cleaning(); goto Labl0002; Labl0003: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Mesujin.") == 0) goto Labl0004;} goto Labl0002; Labl0004: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Doix,") == 0) goto Labl0005;} goto Labl0002; Labl0005: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Som1Lse,") == 0) goto Labl0006;} goto Labl0002; Labl0006: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("zort,") == 0) goto Labl0007;} goto Labl0002; Labl0007: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Determination,") == 0){File0001 >> Temp0002 >> Temp0001 >> Temp0003; break;}} File0001.seekg(0, File0001.beg);
+    while(File0001){File0001 >> Temp0001; if(Temp0001.compare(INJECTION_VERSION) == 0) goto Labl0003;} goto Labl0002; Labl0003: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Mesujin.") == 0) goto Labl0004;} goto Labl0002; Labl0004: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Doix,") == 0) goto Labl0005;} goto Labl0002; Labl0005: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Som1Lse,") == 0) goto Labl0006;} goto Labl0002; Labl0006: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("zort,") == 0) goto Labl0007;} goto Labl0002; Labl0007: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Determination,") == 0){File0001 >> Temp0002 >> Temp0001 >> Temp0003; break;}} File0001.seekg(0, File0001.beg);
 	while(File0001)
 	{
 	 File0001 >> Temp0001;
@@ -1072,7 +1076,7 @@
      if(Temp0001.compare("Tea_Speed") == 0){File0001 >> Temp0001 >> Config.T_Speed; if(Config.T_Speed < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("Base_Reserve") == 0){File0001 >> Temp0001 >> Config.B_Reserve; Config.B_Reserve += 1; if(Config.B_Reserve < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("Stage_Reserve") == 0){File0001 >> Temp0001 >> Config.S_Reserve; if(Config.S_Reserve < 0) goto Labl0003; continue;}
-	 if(Temp0001.compare("MP_Reset") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.MP_Rest = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.MP_Rest = false;} else {goto Labl0003;}} continue;}
+	 if(Temp0001.compare("MP_Rest") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.MP_Rest = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.MP_Rest = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("Immune_Time") == 0){File0001 >> Temp0001 >> Config.Imm_Time; if(Config.Imm_Time < 0) goto Labl0003; continue;}
 
      if(Temp0001.compare("Disable_HP_Regen") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.HP_Regen = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.HP_Regen = false;} else {goto Labl0003;}} continue;}
@@ -1087,14 +1091,16 @@
      
      if(Temp0001.compare("Camera_Shift") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.C_Shift = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.C_Shift = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("Camera_Smoothness") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.C_Smoothness = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.C_Smoothness = false;} else {goto Labl0003;}} continue;}
+	 if(Temp0001.compare("Camera_Effectiviness") == 0){File0001 >> Temp0001 >> Config.C_Effectiviness; if(Config.C_Effectiviness < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("Camera_Speed") == 0){File0001 >> Temp0001 >> Config.C_Speed; if(Config.C_Speed < 0) goto Labl0003; continue;}
+	 if(Temp0001.compare("Camera_Off") == 0){File0001 >> Temp0001 >> Config.C_Off; if(Config.C_Off < 0) goto Labl0003; continue;}
 	 if(Temp0001.compare("Camera_Sensitivity") == 0){File0001 >> Temp0001 >> Config.C_Sensitivity; if(Config.C_Sensitivity < 0) goto Labl0003; continue;}
 	 
 	 if(Temp0001.compare("Beta_Damage_Limiter") == 0){File0001 >> Temp0001 >> Config.Damage_Limiter; if(Config.Damage_Limiter < 0) goto Labl0003; continue;} 
 	}
     File0001.close();
     if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close();
-   } else {Labl0002: Vrab0003 = 0; File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VERSION "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's Data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Load_Other_DLL : Active          // Load other DLL(s)?\n DLL_Directory : add-on\\Libraries // 'Load_Other_DLL''s directory.\n AI_Directory : add-on\\AI         //\n Sleep_Mode : Active              // Disabling almost all feature of this DDraw except DLL Loader,\n                                  // 'Hidden_Mode', AI, Builder, and Installer.\n Hidden_Mode : Inactive           // IMPORTANT! Once this config active, this configuration will hide\n                                  // in \"" TEMPORAL_FILE "\". To stop the configuration from hiding,\n                                  // you'll need to delete it.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Hidden_IDs : 50 - 59\n  Weapon_IDs : 100 - 199\n  Minion_IDs : 30 - 37\n  Minion_IDs_2 : 39 - 39\n  Available_IDs : 8 - 29\n  Available_IDs_2 : 60 - 99\n  Available_IDs_3 : 230 - 998\n  Debug : Active\n  Style : 255\n  Delay : 0\n  Build : add-on\\Build\n  Input : add-on\n  Output : add-on\\Out\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Overwrite : Inactive\n  Get_Mirrors : Inactive\n  Permanentness : Inactive\n  Separated_Files : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : TD\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     // Percentage.\n DMG_To_HP_Convertion : 0.00      // Percentage.\n DMG_To_MP_Convertion : 0.00      // Percentage.\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n  Overlaying : Inactive           // Make the \"BG Overlay\" and \"Display Overlay\" be better.\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n\n // Damage Recieved Limiter\n  Beta_Damage_Limiter : 0         //\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"; File0002.close(); goto Labl0001;}
+   } else {Labl0002: Vrab0003 = 0; File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VERSION "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's Data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Load_Other_DLL : Active          // Load other DLL(s)?\n DLL_Directory : add-on\\Libraries // 'Load_Other_DLL''s directory.\n AI_Directory : add-on\\AI         //\n Sleep_Mode : Inactive            // Disabling almost all feature of this DDraw except DLL Loader,\n                                  // 'Hidden_Mode', AI, Builder, and Installer.\n Hidden_Mode : Inactive           // IMPORTANT! Once this config active, this configuration will hide\n                                  // in \"" TEMPORAL_FILE "\". To stop the configuration from hiding,\n                                  // you'll need to delete it.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Hidden_IDs : 50 - 59\n  Weapon_IDs : 100 - 199\n  Minion_IDs : 30 - 37\n  Minion_IDs_2 : 39 - 39\n  Available_IDs : 8 - 29\n  Available_IDs_2 : 60 - 99\n  Available_IDs_3 : 230 - 998\n  Debug : Active\n  Style : 255\n  Delay : 0\n  Build : add-on\\Build\n  Input : add-on\n  Output : add-on\\Out\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Overwrite : Inactive\n  Get_Mirrors : Inactive\n  Permanentness : Inactive\n  Separated_Files : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : TD\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     // Percentage.\n DMG_To_HP_Convertion : 0.00      // Percentage.\n DMG_To_MP_Convertion : 0.00      // Percentage.\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n  Overlaying : Inactive           // Make the \"BG Overlay\" and \"Display Overlay\" be better.\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Effectiviness : 80.00    // The effectiviness of Y-Axis to the camera.\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n  Camera_Off : 135                // Position's off of the camera.\n\n // Damage Recieved Limiter\n  Beta_Damage_Limiter : 0         //\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"; File0002.close(); goto Labl0001;}
    
    if(Vrab0003 != 0){if(Vrab0003 == 1){File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary);} else {File0001.open("configuration.txt", std::ios::in | std::ios::binary);} Temp01.str(""); Temp01 << File0001.rdbuf(); Temp0001 = Temp01.str(); Config.Storing = Temp0001; if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close(); std::remove(string("configuration.txt").c_str());} else {Config.Storing = "";} File0002.open(TEMPORAL_FILE, std::ios::out | std::ios::binary); File0002 << "Do not erase this file."; File0002.close();
    if(Exist(Config.Output + "\\summary.edb")){if(Config.Permanentness){Config.Permanentness = false; Cleaning(); Config.Permanentness = true;} else {Cleaning();}}
@@ -1263,10 +1269,635 @@
    Vrab0001 = 0; Vrab0002 = 0; Vrab0003 = 0; Vrab0004 = 0;
   }
  //-//
+ //Modifer Functions
+  //Pragma Once
+   int0 Once_FullInjection()
+   {
+    if(!Config.Full_Injection) return;
+	int1 Vrab01 = false; Vrab0002 = 0;
+    while(game->files->datas[Vrab0002] != 0)
+    {
+     if(game->files->datas[Vrab0002]->id == Full_Injection_ID) goto Labl0012;
+     if(game->files->datas[Vrab0002]->type == 0)
+     {
+      Vrab0003 = 0;
+      while(game->files->datas[Vrab0002]->frames[Vrab0003].exists){Vrab0003 += 1; if(Vrab0003 == MaximumFrames){Vrab01 = true; goto Labl0012;}}
+      if(game->files->datas[Vrab0002]->frames[Config.LandingFrame].exists)
+      {
+       if(game->files->datas[Vrab0002]->frames[Config.LandingFrame].wait <= 0){Vrab01 = true; goto Labl0012;}
+       game->files->datas[Vrab0002]->frames[Vrab0003].exists = true;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wait = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wait - 1;
+       game->files->datas[Vrab0002]->frames[Config.LandingFrame].wait = 0;
+       game->files->datas[Vrab0002]->frames[Vrab0003].next = game->files->datas[Vrab0002]->frames[Config.LandingFrame].next;
+       game->files->datas[Vrab0002]->frames[Config.LandingFrame].next = Vrab0003;
+       game->files->datas[Vrab0002]->frames[Vrab0003].centerx = game->files->datas[Vrab0002]->frames[Config.LandingFrame].centerx;
+       game->files->datas[Vrab0002]->frames[Vrab0003].centery = game->files->datas[Vrab0002]->frames[Config.LandingFrame].centery;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.kind = 1;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.x = game->files->datas[Vrab0002]->frames[Vrab0003].centerx;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.y = game->files->datas[Vrab0002]->frames[Vrab0003].centery;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.oid = Full_Injection_ID;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.action = 0;
+       game->files->datas[Vrab0002]->frames[Vrab0003].opoint.facing = 10;
+       game->files->datas[Vrab0002]->frames[Vrab0003].pic = game->files->datas[Vrab0002]->frames[Config.LandingFrame].pic;
+       game->files->datas[Vrab0002]->frames[Vrab0003].state = game->files->datas[Vrab0002]->frames[Config.LandingFrame].state;
+       game->files->datas[Vrab0002]->frames[Vrab0003].mp = game->files->datas[Vrab0002]->frames[Config.LandingFrame].mp;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_a = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_a;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_d = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_d;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_j = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_j;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Fa = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Fa;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Fj = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Fj;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Da = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Da;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Dj = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Dj;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Ua = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Ua;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_Uj = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_Uj;
+       game->files->datas[Vrab0002]->frames[Vrab0003].hit_ja = game->files->datas[Vrab0002]->frames[Config.LandingFrame].hit_ja;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdy_count = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdy_count;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdys = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdys;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdy_x = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdy_x;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdy_y = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdy_y;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdy_w = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdy_w;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bdy_h = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bdy_h;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itr_count = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itr_count;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itrs = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itrs;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itr_x = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itr_x;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itr_y = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itr_y;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itr_w = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itr_w;
+       game->files->datas[Vrab0002]->frames[Vrab0003].itr_h = game->files->datas[Vrab0002]->frames[Config.LandingFrame].itr_h;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.kind = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.kind;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.x = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.x;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.y = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.y;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvx = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.dvx;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvy = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.dvy;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.dvz;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.weaponact = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.weaponact;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.attacking = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.attacking;
+       game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.cover = game->files->datas[Vrab0002]->frames[Config.LandingFrame].wpoint.cover;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.kind = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.kind;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.x = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.x;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.y = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.y;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.vaction = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.vaction;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.aaction = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.aaction;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.daction;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.jaction = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.jaction;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.taction = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.taction;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.dircontrol = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.dircontrol;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.decrease = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.decrease;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvx = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.throwvx;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvy = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.throwvy;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.throwvz;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwinjury = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.throwinjury;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.cover = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.cover;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.hurtable = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.hurtable;
+       game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.injury = game->files->datas[Vrab0002]->frames[Config.LandingFrame].cpoint.injury;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bpoint.x = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bpoint.x;
+       game->files->datas[Vrab0002]->frames[Vrab0003].bpoint.y = game->files->datas[Vrab0002]->frames[Config.LandingFrame].bpoint.y;
+      } else {Vrab01 = true;}
+     }
+     Labl0012:
+	 Vrab0002 += 1;
+    }
+    if(Vrab01)
+	{
+	  
+	}
+   }
+   int0 Once_PackSkillOut()
+   {
+    if(!Config.Dis_DHP) return;
+    Vrab0002 = 0;
+	while(game->files->datas[Vrab0002] != 0)
+    {
+     if(game->files->datas[Vrab0002]->type == 0)
+     {
+      for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003) if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 17) game->files->datas[Vrab0002]->frames[Vrab0003].state = 69696969;
+     }
+     Vrab0002 += 1;
+    }
+   }
+   int0 Once_PackTDMode()
+   {
+    if(Config.TD_Mode)
+    {
+     Vrab0002 = 0;
+     while(game->files->datas[Vrab0002] != 0)
+     {
+      if(game->files->datas[Vrab0002]->id != Full_Injection_ID && game->files->datas[Vrab0002]->id != Full_Injection_ID2) switch(game->files->datas[Vrab0002]->type)
+      {
+       case 0: case 5:
+        game->files->datas[Vrab0002]->walking_speedz = 0;
+        game->files->datas[Vrab0002]->running_speedz = 0;
+        game->files->datas[Vrab0002]->heavy_walking_speedz = 0;
+        game->files->datas[Vrab0002]->heavy_running_speedz = 0;
+        game->files->datas[Vrab0002]->jump_distancez = 0;
+        game->files->datas[Vrab0002]->dash_distancez = 0;
+        Vrab0003 = 0;
+        while(Vrab0003 < MaximumFrames)
+        {
+         if(game->files->datas[Vrab0002]->frames[Vrab0003].exists)
+         {
+          game->files->datas[Vrab0002]->frames[Vrab0003].dvz = 550;
+          game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = 0;
+          game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = 0;
+         }
+         Vrab0003 += 1;
+        }
+       break;
+       default:
+        Vrab0003 = 0;
+        while(Vrab0003 < MaximumFrames)
+        {
+         if(game->files->datas[Vrab0002]->frames[Vrab0003].exists)
+         {
+          game->files->datas[Vrab0002]->frames[Vrab0003].dvz = 550;
+          game->files->datas[Vrab0002]->frames[Vrab0003].hit_j = 0;
+          game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = 0;
+          game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = 0;
+         }
+         Vrab0003 += 1;
+        }
+       break;
+      }
+      Vrab0002 += 1;
+     }
+    }
+    //Min_Bdef & Bdef_E
+     if(Config.Min_Bdef > 0 || Config.Bdef_E != 100)
+     {
+      Vrab0002 = 0;
+	  while(game->files->datas[Vrab0002] != 0)
+      {
+       for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003)
+       {
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) for(Vrab0001 = 0; Vrab0001 < game->files->datas[Vrab0002]->frames[Vrab0003].itr_count; ++Vrab0001)
+        {
+         if(game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend < Config.Min_Bdef) game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = 0;
+         game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = (int32)((xint64)game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend * Config.Bdef_E / 100);
+        }
+       }
+       Vrab0002 += 1;
+      }
+     }
+    //-//
+    //Hold_B_Def
+     if(Config.Hold_Def)
+     {
+      Vrab0002 = 0;
+	  while(game->files->datas[Vrab0002] != 0)
+      {
+       for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003)
+       {
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 0;
+       }
+       Vrab0003 = 110;
+       while(Vrab0003 != 999)
+       {
+        if(!game->files->datas[Vrab0002]->frames[Vrab0003].exists) break;
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 7){game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 1;} else {game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 2;}
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction != 0) break;
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].next == 0) break;
+        Vrab0003 = game->files->datas[Vrab0002]->frames[Vrab0003].next;
+       }
+       Vrab0002 += 1;
+      }
+     }
+    //-//
+   }
+  //-//
+  //Pragma Peat
+   int0 Peat_FullInjection()
+   {
+    if(Config.Full_Injection)
+    {
+     for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002) if(game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID2)
+     {
+      switch(game->objects[Database_Exist[Vrab0002]]->frame1)
+      {
+       case 0:
+        Vrab0001 = 20;
+        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 1)
+        if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 22)
+        {
+         Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 2);
+        } else 
+        {
+         Vrab0001 = 0;
+         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 97) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 97;
+        }
+        Vrab0003 = 20;
+        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 13) Vrab0003 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 13);
+        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 33) Vrab0003 = 0;
+        game->objects[Database_Exist[Vrab0002]]->data->frames[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+        game->objects[Database_Exist[Vrab0002]]->data->frames[0].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.Not_Post - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
+       break;
+       case 1:
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[0].pic == -1)
+        {
+         Vrab0001 = 20;
+         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 0)
+         if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 21)
+         {
+          Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 1);
+         } else 
+         {
+          Vrab0001 = 0;
+          if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 96) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 96;
+         }
+         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.Not_Post;
+        } else
+        {
+         Vrab0001 = 20;
+         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 20)
+         if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 41)
+         {
+          Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 21);
+         } else 
+         {
+          Vrab0001 = 0;
+          if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 116) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 116;
+         }
+         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.Not_Post;
+        }
+       break;
+       default: break;
+      }
+     }
+    }
+   }
+   int0 Peat_CodedSpeciality()
+   {
+   
+   }
+   int0 Peat_EtCetera()
+   {
+    if(Config.Dis_Il_Input) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0COM; ++Vrab0002)
+    {
+     if(LastInput[0][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->A == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_a == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_a = 0; game->objects[Database_ExistT0COM[Vrab0002]]->A = 0;}
+     if(LastInput[1][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->D == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_d == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_d = 0; game->objects[Database_ExistT0COM[Vrab0002]]->D = 0;}
+     if(LastInput[2][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->J == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_j == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_j = 0; game->objects[Database_ExistT0COM[Vrab0002]]->J = 0;}
+     if(LastInput[3][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->up == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_up == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_up = 0; game->objects[Database_ExistT0COM[Vrab0002]]->up = 0;}
+     if(LastInput[4][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->left == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_left == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_left = 0; game->objects[Database_ExistT0COM[Vrab0002]]->left = 0;}
+     if(LastInput[5][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->down == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_down == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_down = 0; game->objects[Database_ExistT0COM[Vrab0002]]->down = 0;}
+     if(LastInput[6][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->right == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_right == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_right = 0; game->objects[Database_ExistT0COM[Vrab0002]]->right = 0;}
+     LastInput[0][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->A;
+     LastInput[1][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->D;
+     LastInput[2][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->J;
+     LastInput[3][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->up;
+     LastInput[4][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->left;
+     LastInput[5][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->down;
+     LastInput[6][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->right;
+    }
+   }
+   int0 Peat_PackVampirism()
+   {
+    if(Config.HP_Regen) if((*(int*)0x450b8c + 1) % 12 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->hp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->hp < game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp -= 1;
+    if(Config.MP_Regen) if((*(int*)0x450b8c + 1) % 3 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->mp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->mp < MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp -= 5 - ((game->objects[Database_ExistT0[Vrab0002]]->hp - 1) / 100);
+    for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+    {
+     if(Convertion[Database_ExistT0[Vrab0002]] < game->objects[Database_ExistT0[Vrab0002]]->total_attack)
+     {
+      Vrab0001 = game->objects[Database_ExistT0[Vrab0002]]->total_attack - Convertion[Database_ExistT0[Vrab0002]];
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp += Rounding((xint64)Vrab0001 * Config.DTDHP_Conv * 0.01);
+      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+      game->objects[Database_ExistT0[Vrab0002]]->hp += Rounding((xint64)Vrab0001 * Config.DTHP_Conv * 0.01);
+      if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
+      game->objects[Database_ExistT0[Vrab0002]]->mp += Rounding((xint64)Vrab0001 * Config.DTMP_Conv * 0.01);
+      if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+     }
+     Convertion[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->total_attack;
+    }
+   }
+   int0 Peat_PackSkillOut()
+   {
+    if(Config.B_Reserve > 1 || (Config.S_Reserve > 1 && *(int*)0x451160 == 1)) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+    if(Database_ExistT0[Vrab0002] >= 20){break;} else
+    {
+     if(*(int*)0x450b8c > 1) if(ReserveCount[Database_ExistT0[Vrab0002]] > 99){game->objects[Database_ExistT0[Vrab0002]]->reserve = 99;} else {game->objects[Database_ExistT0[Vrab0002]]->reserve = ReserveCount[Database_ExistT0[Vrab0002]];}
+     if(ReserveCount[Database_ExistT0[Vrab0002]] > 1)
+     if(game->objects[Database_ExistT0[Vrab0002]]->hp <= 0 || game->objects[Database_ExistT0[Vrab0002]]->hp >= 50000000)
+     {
+      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 14 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 12 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 10)
+      {game->objects[Database_ExistT0[Vrab0002]]->hp = 0;} else {game->objects[Database_ExistT0[Vrab0002]]->hp = 100000000;}
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->mp <= MaximumMP * 2) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp * MaximumMP * 2;
+      game->objects[Database_ExistT0[Vrab0002]]->A = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->D = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->J = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->up = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->left = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->down = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->right = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_a = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_d = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_j = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_up = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_left = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_down = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->holding_right = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DrA = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DrJ = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DlA = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DlJ = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DdA = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DdJ = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DuA = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DuJ = 0;
+      game->objects[Database_ExistT0[Vrab0002]]->DJA = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 14)
+      {
+       if(game->objects[Database_ExistT0[Vrab0002]]->wait_counter <= 1)
+	   {
+	    game->objects[Database_ExistT0[Vrab0002]]->blink = 30;
+	    game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 2;
+	   }
+       if(game->objects[Database_ExistT0[Vrab0002]]->wait_counter > 2)
+	   game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 2;
+       if(game->objects[Database_ExistT0[Vrab0002]]->blink == 0)
+	   {
+	    game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+	    game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp / (MaximumMP * 2);
+        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+	    if(Config.MP_Rest) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+	    game->objects[Database_ExistT0[Vrab0002]]->blink = Config.Imm_Time;
+	    game->objects[Database_ExistT0[Vrab0002]]->y_real = -400;
+	    ReserveCount[Database_ExistT0[Vrab0002]] -= 1;
+	    game->objects[Database_ExistT0[Vrab0002]]->frame1 = 212; 
+	   }
+      }
+     }
+    }
+    if(Config.Dis_DHP) 
+    {
+     for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) if(!game->exists[Vrab0002]) Dis_DHP_HP_R[Vrab0002] = 0;
+     for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+     {
+      if(Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] < 0) Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > 0 && Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] > 0)
+      {
+       game->objects[Database_ExistT0[Vrab0002]]->hp = Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] + game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
+       if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+      }
+      Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->hp;
+      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 69696969)
+      {
+       if(!game->exists[game->objects[Database_ExistT0[Vrab0002]]->weapon_held])
+       {
+        if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d >= MaximumFrames)
+        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = 0;} else
+        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d;}
+        continue;
+       }
+       if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->type == 6) switch(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->id)
+       {
+        case 122:
+         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
+         {
+          game->objects[Database_ExistT0[Vrab0002]]->hp += Config.M_Amount;
+          if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= Config.M_Speed;
+         } else
+         {
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
+         }
+        break;
+        case 123:
+         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
+         {
+          game->objects[Database_ExistT0[Vrab0002]]->mp += Config.T_Amount;
+          if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= Config.T_Speed;
+         } else
+         {
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
+          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
+         }
+        break;
+        default: break;
+       }
+      }
+     }
+    }
+    if(Config.Dis_MP) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) game->objects[Database_ExistT0[Vrab0002]]->mp = 0;
+   }
+   int0 Peat_PackTDMode()
+   {
+    if(Config.TD_Mode)
+    {
+     switch(Config.TD_Post)
+     {
+      case 0: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2; break;
+      case 1: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth1; break;
+      case 2: Vrab0001 = (game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 + game->files->backgrounds[*(int*)0x44d024].bg_zwidth1) / 2; break;
+      default: break;
+     }
+     for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+     {
+      if(game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID || game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID2) continue;
+      game->objects[Database_Exist[Vrab0002]]->z_real = Vrab0001;
+      game->objects[Database_Exist[Vrab0002]]->z_velocity = 0;
+      game->objects[Database_Exist[Vrab0002]]->z_acceleration = 0;
+     }
+    }
+    if(Config.Hold_Def)
+    {
+     for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+     {
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].cpoint.daction == 1)
+      {
+       Hold_Def_TU_Count[Database_Exist[Vrab0002]] += 1;
+       if(game->objects[Database_Exist[Vrab0002]]->D == 0 && game->objects[Database_Exist[Vrab0002]]->holding_d == 0){if(game->objects[Database_Exist[Vrab0002]]->shake != 0) continue; if(Hold_Def_TU_Count[Database_Exist[Vrab0002]] < Config.Hold_Def_TU) continue; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0; if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next >= MaximumFrames){game->objects[Database_Exist[Vrab0002]]->frame1 = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next;}} else
+       {game->objects[Database_Exist[Vrab0002]]->wait_counter -= 1;}
+      } else {Hold_Def_TU_Count[Database_Exist[Vrab0002]] = 0;}
+     }
+    }
+   }
+   int0 Peat_EtCetera2()
+   {
+    //Clean Value
+     if(Config.Clean_Val) for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+     {
+      if(game->objects[Database_Exist[Vrab0002]]->hp < 0) game->objects[Database_Exist[Vrab0002]]->hp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->dark_hp < 0) game->objects[Database_Exist[Vrab0002]]->dark_hp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->mp < 0) game->objects[Database_Exist[Vrab0002]]->mp = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->kills < 0) game->objects[Database_Exist[Vrab0002]]->kills = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->total_attack < 0) game->objects[Database_Exist[Vrab0002]]->total_attack = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->hp_lost < 0) game->objects[Database_Exist[Vrab0002]]->hp_lost = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->mp_usage < 0) game->objects[Database_Exist[Vrab0002]]->mp_usage = 0;
+      if(game->objects[Database_Exist[Vrab0002]]->weapon_picks < 0) game->objects[Database_Exist[Vrab0002]]->weapon_picks = 0;
+     }
+    //-//
+    //Overlaying
+     
+    //-//
+    //Camera Shift
+     if(Config.C_Shift)
+     {
+      if(Modifer.BG_Cam[0].size() < (uint32)*(int*)0x44d024 + 1)
+      {
+       Vrab0001 = *(int*)0x44d024 + 1;
+       Modifer.BG_Cam[0].resize(Vrab0001);
+       Modifer.BG_Cam[1].resize(Vrab0001);
+       Modifer.BG_Cam[2].resize(Vrab0001);
+       Modifer.BG_Z1.resize(Vrab0001);
+       Modifer.BG_Z2.resize(Vrab0001);
+       Modifer.BG_Y.resize(Vrab0001);
+       Modifer.BG_H.resize(Vrab0001);
+       for(Vrab0002 = 0; Vrab0002 < (uint32)Vrab0001; ++Vrab0002) Modifer.BG_Y[Vrab0002].resize(40);
+       for(Vrab0002 = 0; Vrab0002 < (uint32)Vrab0001; ++Vrab0002) Modifer.BG_H[Vrab0002].resize(40);
+      }
+      if(Modifer.BG_Cam[0][*(int*)0x44d024] == 0)
+      {
+       Vrab0001 = *(int*)0x44d024;
+       Modifer.BG_Z1[Vrab0001] = game->files->backgrounds[Vrab0001].bg_zwidth1;
+       Modifer.BG_Z2[Vrab0001] = game->files->backgrounds[Vrab0001].bg_zwidth2;
+       for(Vrab0002 = 0; Vrab0002 < game->files->backgrounds[Vrab0001].layer_count + 5; ++Vrab0002)
+       {
+        Modifer.BG_Y[Vrab0001][Vrab0002] = game->files->backgrounds[Vrab0001].layer_y[Vrab0002];
+        Modifer.BG_H[Vrab0001][Vrab0002] = game->files->backgrounds[Vrab0001].layer_height[Vrab0002];
+       } 
+      }
+
+      Vrab0001 = 0; Vrab0003 = 0; for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
+      {
+       if(Database_ExistT0[Vrab0002] >= 10) break;
+       Vrab0001 += Rounding(((game->objects[Database_ExistT0[Vrab0002]]->y_real + game->objects[Database_ExistT0[Vrab0002]]->y_velocity) * Config.C_Effectiviness * 0.01) + game->objects[Database_ExistT0[Vrab0002]]->z_real + game->objects[Database_ExistT0[Vrab0002]]->z_velocity) + Modifer.BG_Cam[0][*(int*)0x44d024];
+       Vrab0003 += 1;
+      }
+      if(Vrab0003 != 0) Modifer.BG_Cam[2][*(int*)0x44d024] = Rounding((xint64)Vrab0001 / (xint64)(int32)Vrab0003) - Config.C_Off;
+      Vrab0001 = *(int*)0x44d024;
+
+      ///
+      Vrab0003 = (uint32)(Modifer.BG_Cam[2][Vrab0001] - Modifer.BG_Cam[0][Vrab0001]);
+      Modifer.BG_Cam[0][Vrab0001] += (int32)Vrab0003;
+      ///
+
+      game->files->backgrounds[Vrab0001].bg_zwidth1 = Modifer.BG_Z1[Vrab0001] - Modifer.BG_Cam[0][Vrab0001];
+      game->files->backgrounds[Vrab0001].bg_zwidth2 = Modifer.BG_Z2[Vrab0001] - Modifer.BG_Cam[0][Vrab0001];
+      for(Vrab0002 = 0; Vrab0002 < game->files->backgrounds[Vrab0001].layer_count + 5; ++Vrab0002)
+      {
+       game->files->backgrounds[Vrab0001].layer_y[Vrab0002] = Modifer.BG_Y[Vrab0001][Vrab0002] - Modifer.BG_Cam[0][Vrab0001];
+       //if(Modifer.BG_H[Vrab0001][Vrab0002] != 0) game->files->backgrounds[Vrab0001].layer_height[Vrab0002] = Modifer.BG_H[Vrab0001][Vrab0002] + 2 * Modifer.BG_Cam[0][Vrab0001];
+      }
+      for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+      {
+       game->objects[Database_Exist[Vrab0002]]->z_real -= (xint64)(int32)Vrab0003;
+      }
+
+      /*std::cout << "\n\n============\n[" << Vrab0001 << "] : " << Modifer.BG_Cam[0][Vrab0001] << ", " << Modifer.BG_Cam[1][Vrab0001] << ", " << Modifer.BG_Cam[2][Vrab0001] << " {" << Modifer.BG_Z1[Vrab0001] << ", " << Modifer.BG_Z2[Vrab0001] << "}\n";
+      for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
+      {
+       std::cout << "\n[" << Database_Exist[Vrab0002] << "] = " << game->objects[Database_Exist[Vrab0002]]->z_real << " : " << Rounding(((game->objects[Database_Exist[Vrab0002]]->y_real + game->objects[Database_Exist[Vrab0002]]->y_velocity) * Config.C_Effectiviness * 0.01) + game->objects[Database_Exist[Vrab0002]]->z_real + game->objects[Database_Exist[Vrab0002]]->z_velocity) - Modifer.BG_Cam[0][*(int*)0x44d024] - Config.C_Off;
+      }*/
+     }
+    //-//
+   }
+  //-//
+  int0 Base_Process()
+  {
+   if(Database_FirstInGame)
+   {
+	Database_FirstInGame = false;
+    Once_FullInjection();
+    Once_PackSkillOut();
+    Once_PackTDMode();
+   }
+
+   Peat_FullInjection();
+   Peat_CodedSpeciality();
+   Peat_EtCetera();
+   Peat_PackVampirism();
+   Peat_PackSkillOut();
+   Peat_PackTDMode();
+   Peat_EtCetera2();
+  }
+  int0 Base_Redeclaration()
+  {
+   //Data Reset
+    int1 Vrab01 = false; if(*(int*)0x450b8c < LastTU) Vrab01 = true;
+    LastTU = *(int*)0x450b8c - 1;
+    if(Vrab01)
+    {
+     //Full_Injection
+      if(Config.Full_Injection)
+      {
+       InjectorNUM = -1;
+       while(game->files->datas[Vrab0002] != 0){if(game->files->datas[Vrab0002]->id == Full_Injection_ID2){game->files->datas[Vrab0002]->frames[0].centerx = 1000; game->files->datas[Vrab0002]->frames[1].centerx = 1000; game->files->datas[Vrab0002]->frames[0].centery = -1000; game->files->datas[Vrab0002]->frames[1].centery = -1000; break;} Vrab0002 += 1;}
+      }
+     //-//
+     //Characters' Hardcoded Speciality
+    
+     //-//
+     //LF2: Vampirism
+      for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Convertion[Vrab0002] = 0;
+     //-//
+     //LF2: Skill-Out
+      for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) ReserveCount[Vrab0002] = 0;
+      if(Config.B_Reserve > 1) for(Vrab0002 = 0; Vrab0002 < 20; ++Vrab0002)
+      {if(game->exists[Vrab0002]){ReserveCount[Vrab0002] = Config.B_Reserve;} else {ReserveCount[Vrab0002] = 0;}}
+      if(Config.S_Reserve > 1 && *(int*)0x451160 == 1) for(Vrab0002 = 0; Vrab0002 < 20; ++Vrab0002)
+      {if(game->exists[Vrab0002]){ReserveCount[Vrab0002] += Config.S_Reserve;} else {ReserveCount[Vrab0002] = 0;}}
+      if(Config.Dis_DHP) for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Dis_DHP_HP_R[Vrab0002] = 0;
+     //-//
+     //Et Cetera
+      //Input Fix
+       if(Config.Dis_Il_Input) for(Vrab0002 = 0; Vrab0002 < 7; ++Vrab0002) for(Vrab0003 = 0; Vrab0003 < MaximumObject; ++Vrab0003) LastInput[Vrab0002][Vrab0003] = 0;
+      //-//
+      //Overlaying
+       if(Config.Overlaying)
+       {
+        if(!Overlay[*(int*)0x44d024])
+        {
+         Overlay[*(int*)0x44d024] = true;
+         game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 -= 50;
+         game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 += 50;
+        }
+       }
+      //-//
+      //Camera Shift
+       if(Config.C_Shift)
+       {
+        if(Modifer.BG_Cam[0].size() < (uint32)*(int*)0x44d024 + 1)
+        {
+         Vrab0001 = *(int*)0x44d024 + 1;
+         Modifer.BG_Cam[0].resize(Vrab0001);
+         Modifer.BG_Cam[1].resize(Vrab0001);
+         Modifer.BG_Cam[2].resize(Vrab0001);
+         Modifer.BG_Z1.resize(Vrab0001);
+         Modifer.BG_Z2.resize(Vrab0001);
+         Modifer.BG_Y.resize(Vrab0001);
+         Modifer.BG_H.resize(Vrab0001);
+         for(Vrab0002 = 0; Vrab0002 < (uint32)Vrab0001; ++Vrab0002) Modifer.BG_Y[Vrab0002].resize(40);
+         for(Vrab0002 = 0; Vrab0002 < (uint32)Vrab0001; ++Vrab0002) Modifer.BG_H[Vrab0002].resize(40);
+        }
+        if(Modifer.BG_Cam[0][*(int*)0x44d024] == 0)
+        {
+         Vrab0001 = *(int*)0x44d024;
+         Modifer.BG_Z1[Vrab0001] = game->files->backgrounds[Vrab0001].bg_zwidth1;
+         Modifer.BG_Z2[Vrab0001] = game->files->backgrounds[Vrab0001].bg_zwidth2;
+         for(Vrab0002 = 0; Vrab0002 < game->files->backgrounds[Vrab0001].layer_count + 5; ++Vrab0002)
+         {
+          Modifer.BG_Y[Vrab0001][Vrab0002] = game->files->backgrounds[Vrab0001].layer_y[Vrab0002];
+          Modifer.BG_H[Vrab0001][Vrab0002] = game->files->backgrounds[Vrab0001].layer_height[Vrab0002];
+         }
+        }
+       }
+      //-//
+     //-//
+    }
+   //-//
+
+   int1 Vrab02 = true; Database_First = true; NumberOfExist = 0; NumberOfExistT0 = 0; NumberOfExistT0COM = 0; for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002){if(game->exists[Vrab0002]){if(game->objects[Vrab0002]->frame1 != 9998 && game->objects[Vrab0002]->frame4 != 9998 && game->objects[Vrab0002]->data->frames[game->objects[Vrab0002]->frame1].state != 9998) switch(Database_Exist_Type[NumberOfExist] = game->objects[Vrab0002]->data->type){case 0: if(Config.Full_Injection){if(game->objects[Vrab0002]->data->id != Full_Injection_ID){Database_ExistT0[NumberOfExistT0] = Vrab0002; NumberOfExistT0 += 1;}} else {Database_ExistT0[NumberOfExistT0] = Vrab0002; NumberOfExistT0 += 1;} if(Vrab0002 > 9){if(Config.Full_Injection){if(game->objects[Vrab0002]->data->id == Full_Injection_ID){game->objects[Vrab0002]->hp = 0; game->objects[Vrab0002]->dark_hp = 0; game->objects[Vrab0002]->blink = -199; game->objects[Vrab0002]->team = MaximumObject - 1; if((Vrab01 || InjectorNUM == -1) && Vrab02) if(game->objects[Vrab0002]->frame1 == 1){Vrab02 = false; game->objects[Vrab0002]->frame1 = 237; if(InjectionDone){Vrab0003 = 0; while(game->files->datas[Vrab0003] != 0){if(game->files->datas[Vrab0003]->id == Full_Injection_ID2){game->files->datas[Vrab0003]->frames[0].pic = -1; break;} Vrab0003 += 1;}} InjectorNUM = Vrab0002; InjectionDone = true;} if(InjectorNUM != -1) if(Vrab0002 == (uint32)InjectorNUM){Database_ExistT0COM[NumberOfExistT0COM] = Vrab0002; NumberOfExistT0COM += 1;} else {game->objects[Vrab0002]->frame1 = 2;}} else {Database_ExistT0COM[NumberOfExistT0COM] = Vrab0002; NumberOfExistT0COM += 1;}} else {Database_ExistT0COM[NumberOfExistT0COM] = Vrab0002; NumberOfExistT0COM += 1;}} default: Database_Exist[NumberOfExist] = Vrab0002; NumberOfExist += 1; break;}}}
+  }
+ //-//
  //Main Functions
   int0 Process(int32 Vrab01)
   {
    if(Config.Sleep_Mode) return;
+   if(Database_First){if(Vrab01 == Database_ExistT0COM[NumberOfExistT0COM - 1]){Base_Process(); Database_First = false;} return;} else {Base_Redeclaration();}
   }
   int0 Initialization()
   {
@@ -1276,7 +1907,7 @@
    Console.Ending();
    if(Config.LoadDLL) LoadOtherDll();
   }
-  int0 Hiding(){if(Config.Storing.size() < 50) return; if(File0002.is_open()) File0002.close(); strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); File0002.open(Execute(TEMPORAL_FILE), std::ios::out | std::ios::binary); File0002 << "Do not erase this file.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + DecryptionSTRING(Config.Storing) + "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; File0002.close();}
+  int0 Hiding(){if(Config.LoadDLL) UnloadOtherDll(); if(Config.Storing.size() < 50) return; if(File0002.is_open()) File0002.close(); strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); File0002.open(Execute(TEMPORAL_FILE), std::ios::out | std::ios::binary); File0002 << "Do not erase this file.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + DecryptionSTRING(Config.Storing) + "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; File0002.close();}
   int0 Cleaning(){Console.Ending(); if(!Config.Permanentness){File0001.open(Config.Outsight); if(File0001.is_open()){File0001.close(); File0001.open(Config.Insight); if(File0001.is_open()){File0001.close(); std::remove(Config.Insight.c_str());} std::filesystem::copy_file(Config.Outsight, Config.Insight);} File0001.open(Config.Output + "\\summary.edb"); if(File0001.is_open()){while(File0001){File0001 >> Temp0001; std::remove(Temp0001.c_str()); while(Temp0001 != ""){Vrab0002 = Temp0001.size() - 1; while(Temp0001[Vrab0002] != '\\' && Temp0001 != ""){Temp0001.pop_back(); Vrab0002 -= 1;} if(Temp0001 != ""){if(Temp0001[Vrab0002] == '\\') Temp0001.pop_back();} else {break;} if(Exist(Temp0001)){if((std::size_t)std::distance(std::filesystem::directory_iterator{Temp0001}, std::filesystem::directory_iterator{}) == 0){std::filesystem::remove_all(Temp0001.c_str());} else {break;}} else {break;}}} File0001.close(); std::remove((Config.Output + "\\summary.edb").c_str());}}}
  //-//
 //-//
@@ -1490,574 +2121,7 @@
  //Base Functions
   int0 InGameProcess()
   {
-   int1 Vrab01;
-   if(Database_FirstInGame)
-   {
-	Database_FirstInGame = false;
-    //Full_Injection
-	 if(DATA.Full_Injection)
-	 {
-	  Vrab01 = false;
-	  Vrab0002 = 0;
-	  while(game->files->datas[Vrab0002] != 0)
-      {
-	   if(game->files->datas[Vrab0002]->id == Full_Injection_ID) goto Labl0012;
-	   if(game->files->datas[Vrab0002]->type == 0)
-	   {
-	    Vrab0003 = 0;
-		while(game->files->datas[Vrab0002]->frames[Vrab0003].exists){Vrab0003 += 1; if(Vrab0003 == MaximumFrames){Vrab01 = true; goto Labl0012;}}
-		if(game->files->datas[Vrab0002]->frames[DATA.LandingFrame].exists)
-		{
-		 if(game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wait <= 0){Vrab01 = true; goto Labl0012;}
-		 game->files->datas[Vrab0002]->frames[Vrab0003].exists = true;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wait = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wait - 1;
-		 game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wait = 0;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].next = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].next;
-		 game->files->datas[Vrab0002]->frames[DATA.LandingFrame].next = Vrab0003;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].centerx = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].centerx;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].centery = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].centery;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.kind = 1;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.x = game->files->datas[Vrab0002]->frames[Vrab0003].centerx;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.y = game->files->datas[Vrab0002]->frames[Vrab0003].centery;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.oid = Full_Injection_ID;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.action = 0;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].opoint.facing = 10;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].pic = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].pic;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].state = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].state;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].mp = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].mp;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_a = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_a;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_d = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_d;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_j = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_j;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Fa = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Fa;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Fj = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Fj;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Da = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Da;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Dj = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Dj;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Ua = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Ua;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_Uj = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_Uj;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].hit_ja = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].hit_ja;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdy_count = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdy_count;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdys = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdys;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdy_x = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdy_x;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdy_y = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdy_y;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdy_w = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdy_w;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bdy_h = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bdy_h;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itr_count = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itr_count;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itrs = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itrs;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itr_x = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itr_x;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itr_y = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itr_y;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itr_w = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itr_w;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].itr_h = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].itr_h;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.kind = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.kind;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.x = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.x;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.y = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.y;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvx = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.dvx;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvy = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.dvy;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.dvz;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.weaponact = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.weaponact;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.attacking = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.attacking;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.cover = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].wpoint.cover;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.kind = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.kind;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.x = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.x;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.y = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.y;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.vaction = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.vaction;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.aaction = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.aaction;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.daction;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.jaction = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.jaction;
-	     game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.taction = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.taction;
-	     game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.dircontrol = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.dircontrol;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.decrease = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.decrease;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvx = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.throwvx;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvy = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.throwvy;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.throwvz;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwinjury = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.throwinjury;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.cover = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.cover;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.hurtable = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.hurtable;
-	     game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.injury = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].cpoint.injury;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bpoint.x = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bpoint.x;
-		 game->files->datas[Vrab0002]->frames[Vrab0003].bpoint.y = game->files->datas[Vrab0002]->frames[DATA.LandingFrame].bpoint.y;
-		} else {Vrab01 = true;}
-	   }
-	   Labl0012:
-	   Vrab0002 += 1;
-	  }
-	  if(Vrab01)
-	  {
-	  
-	  }
-	 }
-	//-//
-    //LF2: Skill-Out
-     if(DATA.Dis_DHP)
-     {
-      Vrab0002 = 0;
-	  while(game->files->datas[Vrab0002] != 0)
-      {
-       if(game->files->datas[Vrab0002]->type == 0)
-       {
-        for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003) if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 17) game->files->datas[Vrab0002]->frames[Vrab0003].state = 69696969;
-       }
-       Vrab0002 += 1;
-      }
-     }
-    //-//
-    //LF2: 2D
-     if(DATA.TD_Mode)
-     {
-      Vrab0002 = 0;
-	  while(game->files->datas[Vrab0002] != 0)
-      {
-       if(game->files->datas[Vrab0002]->id != Full_Injection_ID && game->files->datas[Vrab0002]->id != Full_Injection_ID2) switch(game->files->datas[Vrab0002]->type)
-       {
-        case 0:
-        case 5:
-         game->files->datas[Vrab0002]->walking_speedz = 0;
-         game->files->datas[Vrab0002]->running_speedz = 0;
-         game->files->datas[Vrab0002]->heavy_walking_speedz = 0;
-         game->files->datas[Vrab0002]->heavy_running_speedz = 0;
-         game->files->datas[Vrab0002]->jump_distancez = 0;
-         game->files->datas[Vrab0002]->dash_distancez = 0;
-         Vrab0003 = 0;
-         while(Vrab0003 < MaximumFrames)
-         {
-          if(game->files->datas[Vrab0002]->frames[Vrab0003].exists)
-          {
-           game->files->datas[Vrab0002]->frames[Vrab0003].dvz = 550;
-           game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = 0;
-           game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = 0;
-          }
-          Vrab0003 += 1;
-         }
-        break;
-        default:
-         Vrab0003 = 0;
-         while(Vrab0003 < MaximumFrames)
-         {
-          if(game->files->datas[Vrab0002]->frames[Vrab0003].exists)
-          {
-           game->files->datas[Vrab0002]->frames[Vrab0003].dvz = 550;
-           game->files->datas[Vrab0002]->frames[Vrab0003].hit_j = 0;
-           game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.throwvz = 0;
-           game->files->datas[Vrab0002]->frames[Vrab0003].wpoint.dvz = 0;
-          }
-          Vrab0003 += 1;
-         }
-        break;
-       }
-       Vrab0002 += 1;
-      }
-     }
-     //Min_Bdef & Bdef_E
-      if(DATA.Min_Bdef > 0 || DATA.Bdef_E != 100)
-      {
-       Vrab0002 = 0;
-	   while(game->files->datas[Vrab0002] != 0)
-       {
-        for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003)
-        {
-         if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) for(Vrab0001 = 0; Vrab0001 < game->files->datas[Vrab0002]->frames[Vrab0003].itr_count; ++Vrab0001)
-         {
-          if(game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend < DATA.Min_Bdef) game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = 0;
-          game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = (int32)((xint64)game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend * DATA.Bdef_E / 100);
-         }
-        }
-        Vrab0002 += 1;
-       }
-      }
-     //-//
-     //Hold_B_Def
-      if(DATA.Hold_Def)
-      {
-       Vrab0002 = 0;
-	   while(game->files->datas[Vrab0002] != 0)
-       {
-        for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003)
-        {
-         if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 0;
-        }
-        Vrab0003 = 110;
-        while(Vrab0003 != 999)
-        {
-         if(!game->files->datas[Vrab0002]->frames[Vrab0003].exists) break;
-         if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 7){game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 1;} else {game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 2;}
-         if(game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction != 0) break;
-         if(game->files->datas[Vrab0002]->frames[Vrab0003].next == 0) break;
-         Vrab0003 = game->files->datas[Vrab0002]->frames[Vrab0003].next;
-        }
-        Vrab0002 += 1;
-       }
-      }
-     //-//
-    //-//
-    //Et Cetera
-     
-    //-//
-   }
-   //Full_Injection
-    if(DATA.Full_Injection)
-    {
-     for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002) if(game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID2)
-     {
-      switch(game->objects[Database_Exist[Vrab0002]]->frame1)
-      {
-       case 0:
-        Vrab0001 = 20;
-        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 1)
-        if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 22)
-        {
-         Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 2);
-        } else 
-        {
-         Vrab0001 = 0;
-         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 97) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 97;
-        }
-        Vrab0003 = 20;
-        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 13) Vrab0003 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 13);
-        if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 33) Vrab0003 = 0;
-        game->objects[Database_Exist[Vrab0002]]->data->frames[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-        game->objects[Database_Exist[Vrab0002]]->data->frames[0].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - DATA.Not_Post - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
-       break;
-       case 1:
-        if(game->objects[Database_Exist[Vrab0002]]->data->frames[0].pic == -1)
-        {
-         Vrab0001 = 20;
-         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 0)
-         if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 21)
-         {
-          Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 1);
-         } else 
-         {
-          Vrab0001 = 0;
-          if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 96) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 96;
-         }
-         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - DATA.Not_Post;
-        } else
-        {
-         Vrab0001 = 20;
-         if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 20)
-         if(game->objects[Database_Exist[Vrab0002]]->wait_counter < 41)
-         {
-          Vrab0001 = 20 - (game->objects[Database_Exist[Vrab0002]]->wait_counter - 21);
-         } else 
-         {
-          Vrab0001 = 0;
-          if(game->objects[Database_Exist[Vrab0002]]->wait_counter > 116) Vrab0001 = game->objects[Database_Exist[Vrab0002]]->wait_counter - 116;
-         }
-         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         game->objects[Database_Exist[Vrab0002]]->data->frames[1].centery = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - DATA.Not_Post;
-        }
-       break;
-       default: break;
-      }
-     }
-    }
-   //-//
-   //Characters' Hardcoded Speciality
-    
-   //-//
-   //Et Cetera
-    //Input Fix
-     if(DATA.Dis_Il_Input) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0COM; ++Vrab0002)
-     {
-      if(LastInput[0][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->A == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_a == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_a = 0; game->objects[Database_ExistT0COM[Vrab0002]]->A = 0;}
-      if(LastInput[1][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->D == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_d == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_d = 0; game->objects[Database_ExistT0COM[Vrab0002]]->D = 0;}
-      if(LastInput[2][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->J == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_j == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_j = 0; game->objects[Database_ExistT0COM[Vrab0002]]->J = 0;}
-      if(LastInput[3][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->up == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_up == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_up = 0; game->objects[Database_ExistT0COM[Vrab0002]]->up = 0;}
-      if(LastInput[4][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->left == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_left == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_left = 0; game->objects[Database_ExistT0COM[Vrab0002]]->left = 0;}
-      if(LastInput[5][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->down == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_down == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_down = 0; game->objects[Database_ExistT0COM[Vrab0002]]->down = 0;}
-      if(LastInput[6][Database_ExistT0COM[Vrab0002]] == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->right == 1 && game->objects[Database_ExistT0COM[Vrab0002]]->holding_right == 0){game->objects[Database_ExistT0COM[Vrab0002]]->holding_right = 0; game->objects[Database_ExistT0COM[Vrab0002]]->right = 0;}
-      LastInput[0][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->A;
-      LastInput[1][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->D;
-      LastInput[2][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->J;
-      LastInput[3][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->up;
-      LastInput[4][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->left;
-      LastInput[5][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->down;
-      LastInput[6][Database_ExistT0COM[Vrab0002]] = game->objects[Database_ExistT0COM[Vrab0002]]->right;
-     }
-    //-//
-   //-//
-   //LF2: Vampirism
-    if(DATA.HP_Regen) if((*(int*)0x450b8c + 1) % 12 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->hp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->hp < game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp -= 1;
-    if(DATA.MP_Regen) if((*(int*)0x450b8c + 1) % 3 == 0) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) if(game->objects[Database_ExistT0[Vrab0002]]->mp > 1) if(game->objects[Database_ExistT0[Vrab0002]]->mp < MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp -= 5 - ((game->objects[Database_ExistT0[Vrab0002]]->hp - 1) / 100);
-    for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
-    {
-     if(Convertion[Database_ExistT0[Vrab0002]] < game->objects[Database_ExistT0[Vrab0002]]->total_attack)
-     {
-      Vrab0001 = game->objects[Database_ExistT0[Vrab0002]]->total_attack - Convertion[Database_ExistT0[Vrab0002]];
-      game->objects[Database_ExistT0[Vrab0002]]->dark_hp += Rounding((xint64)Vrab0001 * DATA.DTDHP_Conv);
-      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
-      game->objects[Database_ExistT0[Vrab0002]]->hp += Rounding((xint64)Vrab0001 * DATA.DTHP_Conv);
-      if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->dark_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
-      game->objects[Database_ExistT0[Vrab0002]]->mp += Rounding((xint64)Vrab0001 * DATA.DTMP_Conv);
-      if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
-     }
-     Convertion[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->total_attack;
-    }
-   //-//
-   //LF2: Skill-Out
-    if(DATA.B_Reserve > 1 || (DATA.S_Reserve > 1 && *(int*)0x451160 == 1)) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
-    if(Database_ExistT0[Vrab0002] >= 20){break;} else
-    {
-     if(*(int*)0x450b8c > 1) if(ReserveCount[Database_ExistT0[Vrab0002]] > 99){game->objects[Database_ExistT0[Vrab0002]]->reserve = 99;} else {game->objects[Database_ExistT0[Vrab0002]]->reserve = ReserveCount[Database_ExistT0[Vrab0002]];}
-     if(ReserveCount[Database_ExistT0[Vrab0002]] > 1)
-     if(game->objects[Database_ExistT0[Vrab0002]]->hp <= 0 || game->objects[Database_ExistT0[Vrab0002]]->hp >= 50000000)
-     {
-      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 14 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 12 && game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state != 10)
-      {game->objects[Database_ExistT0[Vrab0002]]->hp = 0;} else {game->objects[Database_ExistT0[Vrab0002]]->hp = 100000000;}
-      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
-      if(game->objects[Database_ExistT0[Vrab0002]]->mp <= MaximumMP * 2) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp * MaximumMP * 2;
-      game->objects[Database_ExistT0[Vrab0002]]->A = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->D = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->J = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->up = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->left = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->down = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->right = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_a = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_d = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_j = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_up = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_left = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_down = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->holding_right = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DrA = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DrJ = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DlA = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DlJ = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DdA = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DdJ = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DuA = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DuJ = 0;
-      game->objects[Database_ExistT0[Vrab0002]]->DJA = 0;
-      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 14)
-      {
-       if(game->objects[Database_ExistT0[Vrab0002]]->wait_counter <= 1)
-	   {
-	    game->objects[Database_ExistT0[Vrab0002]]->blink = 30;
-	    game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 2;
-	   }
-       if(game->objects[Database_ExistT0[Vrab0002]]->wait_counter > 2)
-	   game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 2;
-       if(game->objects[Database_ExistT0[Vrab0002]]->blink == 0)
-	   {
-	    game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
-	    game->objects[Database_ExistT0[Vrab0002]]->dark_hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
-        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = game->objects[Database_ExistT0[Vrab0002]]->mp / (MaximumMP * 2);
-        if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
-	    if(DATA.MP_Rest) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
-	    game->objects[Database_ExistT0[Vrab0002]]->blink = DATA.Imm_Time;
-	    game->objects[Database_ExistT0[Vrab0002]]->y_real = -400;
-	    ReserveCount[Database_ExistT0[Vrab0002]] -= 1;
-	    game->objects[Database_ExistT0[Vrab0002]]->frame1 = 212; 
-	   }
-      }
-     }
-    }
-    if(DATA.Dis_DHP) 
-    {
-     for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) if(!game->exists[Vrab0002]) Dis_DHP_HP_R[Vrab0002] = 0;
-     for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
-     {
-      if(Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] < 0) Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = 0;
-      if(game->objects[Database_ExistT0[Vrab0002]]->dark_hp > 0 && Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] > 0)
-      {
-       game->objects[Database_ExistT0[Vrab0002]]->hp = Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] + game->objects[Database_ExistT0[Vrab0002]]->dark_hp;
-       if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
-      }
-      Dis_DHP_HP_R[Database_ExistT0[Vrab0002]] = game->objects[Database_ExistT0[Vrab0002]]->hp;
-      game->objects[Database_ExistT0[Vrab0002]]->dark_hp = 0;
-      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].state == 69696969)
-      {
-       if(!game->exists[game->objects[Database_ExistT0[Vrab0002]]->weapon_held])
-       {
-        if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d >= MaximumFrames)
-        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = 0;} else
-        {game->objects[Database_ExistT0[Vrab0002]]->frame1 = game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].hit_d;}
-        continue;
-       }
-       if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->type == 6) switch(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->data->id)
-       {
-        case 122:
-         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
-         {
-          game->objects[Database_ExistT0[Vrab0002]]->hp += DATA.M_Amount;
-          if(game->objects[Database_ExistT0[Vrab0002]]->hp > game->objects[Database_ExistT0[Vrab0002]]->max_hp) game->objects[Database_ExistT0[Vrab0002]]->hp = game->objects[Database_ExistT0[Vrab0002]]->max_hp;
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.M_Speed;
-         } else
-         {
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
-         }
-        break;
-        case 123:
-         if(game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp > 0)
-         {
-          game->objects[Database_ExistT0[Vrab0002]]->mp += DATA.T_Amount;
-          if(game->objects[Database_ExistT0[Vrab0002]]->mp > MaximumMP) game->objects[Database_ExistT0[Vrab0002]]->mp = MaximumMP;
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp -= DATA.T_Speed;
-         } else
-         {
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->bottle_hp = -1;
-          game->objects[game->objects[Database_ExistT0[Vrab0002]]->weapon_held]->hp = 0;
-         }
-        break;
-        default: break;
-       }
-      }
-     }
-    }
-    if(DATA.Dis_MP) for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002) game->objects[Database_ExistT0[Vrab0002]]->mp = 0;
-   //-//
-   //LF2: 2D
-    if(DATA.TD_Mode)
-    {
-     switch(DATA.TD_Post)
-     {
-      case 0: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2; break;
-      case 1: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth1; break;
-      case 2: Vrab0001 = (game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 + game->files->backgrounds[*(int*)0x44d024].bg_zwidth1) / 2; break;
-      default: break;
-     }
-     for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
-     {
-      if(game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID || game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID2) continue;
-      game->objects[Database_Exist[Vrab0002]]->z_real = Vrab0001;
-      game->objects[Database_Exist[Vrab0002]]->z_velocity = 0;
-      game->objects[Database_Exist[Vrab0002]]->z_acceleration = 0;
-     }
-    }
-    if(DATA.Hold_Def)
-    {
-     for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
-     {
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].cpoint.daction == 1)
-      {
-       Hold_Def_TU_Count[Database_Exist[Vrab0002]] += 1;
-       if(game->objects[Database_Exist[Vrab0002]]->D == 0 && game->objects[Database_Exist[Vrab0002]]->holding_d == 0){if(game->objects[Database_Exist[Vrab0002]]->shake != 0) continue; if(Hold_Def_TU_Count[Database_Exist[Vrab0002]] < DATA.Hold_Def_TU) continue; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0; if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next >= MaximumFrames){game->objects[Database_Exist[Vrab0002]]->frame1 = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next;}} else
-       {game->objects[Database_Exist[Vrab0002]]->wait_counter -= 1;}
-      } else {Hold_Def_TU_Count[Database_Exist[Vrab0002]] = 0;}
-     }
-    }
-   //-//
-   //Et Cetera
-    //Clean Value
-     if(DATA.Clean_Val) for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
-     {
-      if(game->objects[Database_Exist[Vrab0002]]->hp < 0) game->objects[Database_Exist[Vrab0002]]->hp = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->dark_hp < 0) game->objects[Database_Exist[Vrab0002]]->dark_hp = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->mp < 0) game->objects[Database_Exist[Vrab0002]]->mp = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->kills < 0) game->objects[Database_Exist[Vrab0002]]->kills = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->total_attack < 0) game->objects[Database_Exist[Vrab0002]]->total_attack = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->hp_lost < 0) game->objects[Database_Exist[Vrab0002]]->hp_lost = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->mp_usage < 0) game->objects[Database_Exist[Vrab0002]]->mp_usage = 0;
-      if(game->objects[Database_Exist[Vrab0002]]->weapon_picks < 0) game->objects[Database_Exist[Vrab0002]]->weapon_picks = 0;
-     }
-    //-//
-    //Overlaying
-     if(DATA.Overlaying) for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
-     {
-      Vrab0001 = game->objects[Database_Exist[Vrab0002]]->frame1;
-      if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5){Vrab0001 = PredictedFrame(Database_Exist[Vrab0002], Vrab0001);} else
-      {
-       if(game->objects[Database_Exist[Vrab0002]]->hp <= 0) if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d != 0) Vrab0001 = Frame(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_d);
-      }
-
-      Vrab0004 = game->objects[Database_Exist[Vrab0002]]->z_real;
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz <= 500)
-      {
-       Vrab0004 += game->objects[Database_Exist[Vrab0002]]->z_velocity;
-       if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5)
-       {
-        if((game->objects[Database_Exist[Vrab0002]]->up != 0 || game->objects[Database_Exist[Vrab0002]]->holding_up != 0) && (game->objects[Database_Exist[Vrab0002]]->down == 0 || game->objects[Database_Exist[Vrab0002]]->holding_down == 0))
-        {
-         Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz;
-         switch(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].state)
-         {
-          case 0: case 1:
-           if(game->exists[game->objects[Database_Exist[Vrab0002]]->weapon_held] && game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
-           {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
-          break;
-          case 2:
-           if(game->exists[game->objects[Database_Exist[Vrab0002]]->weapon_held] && game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
-           {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_running_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->running_speedz;}
-          break;
-          default: break;
-         }
-        }
-       } else
-       {
-        if(Vrab0004 += -550 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j != 0) Vrab0004 += -50 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].hit_j;
-       }
-      } else
-      {
-       Vrab0004 += -550 + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0001].dvz;
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ///////
-      Vrab0003 = game->objects[Database_Exist[Vrab0002]]->frame1;
-      ///////
-      Vrab0004 = game->objects[Database_Exist[Vrab0002]]->z_real;
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz <= 500)
-      {
-       Vrab0004 += game->objects[Database_Exist[Vrab0002]]->z_velocity + game->objects[Database_Exist[Vrab0002]]->z_acceleration;
-       if(game->objects[Database_Exist[Vrab0002]]->data->type == 0 || game->objects[Database_Exist[Vrab0002]]->data->type == 5)
-       {
-        if((game->objects[Database_Exist[Vrab0002]]->up != 0 || game->objects[Database_Exist[Vrab0002]]->holding_up != 0) && (game->objects[Database_Exist[Vrab0002]]->down == 0 || game->objects[Database_Exist[Vrab0002]]->holding_down == 0))
-        {
-         Vrab0001 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].state;
-         if(Vrab0001 == 0 || Vrab0001 == 1)
-         if(game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
-         {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
-          Vrab0004 -= game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;
-        } else
-        {
-         if((game->objects[Database_Exist[Vrab0002]]->up == 0 || game->objects[Database_Exist[Vrab0002]]->holding_up == 0) && (game->objects[Database_Exist[Vrab0002]]->down != 0 || game->objects[Database_Exist[Vrab0002]]->holding_down != 0))
-         {
-          Vrab0001 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].state;
-          if(Vrab0001 == 0 || Vrab0001 == 1)
-          if(game->objects[game->objects[Database_Exist[Vrab0002]]->weapon_held]->data->type == 1)
-          {Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->heavy_walking_speedz;} else {Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->walking_speedz;}
-          Vrab0004 += game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;
-         }
-        }
-       } else
-       {
-        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j != 0 && game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j < 100) Vrab0004 -= 50 - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].hit_j;
-       }
-      } else
-      {Vrab0004 -= 550 - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz;}
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz != 501)
-      if(Vrab0004 < (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 + 50)
-      {game->objects[Database_Exist[Vrab0002]]->z_real = (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 + 50 + -(Vrab0004 - game->objects[Database_Exist[Vrab0002]]->z_real);}
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab0003].dvz < 599)
-      if(Vrab0004 > (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - 50)
-      {game->objects[Database_Exist[Vrab0002]]->z_real = (xint64)game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - 50 + -(Vrab0004 - game->objects[Database_Exist[Vrab0002]]->z_real);}
-     }
-    //-//
-   //-//
+   
   }
  //-//
  //Main Functions
