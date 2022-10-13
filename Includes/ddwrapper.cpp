@@ -71,6 +71,9 @@
   #pragma data_seg ()
  //-//
  //Variables
+  bool Multi_Stating;
+  int Console_Style;
+  int Console_Size;
   int mode;
   int difficulty;
   int elapsed_time;
@@ -426,27 +429,55 @@
 	if((self = object_num) == -1)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare self.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	}
 	if((target = target_num) == -1)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare target.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	}
 	if(ScriptContext->Prepare(Function) < 0)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	 return 0;
 	}
 	if(ScriptContext->Execute() < 0)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	 return 0;
 	}
 	Process(object_num);
@@ -477,21 +508,42 @@
 	if((self = object_num) == -1)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare self.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	}
     if(ScriptContext->Prepare(Function) < 0)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	 return;
 	}
 	if(ScriptContext->Execute() < 0)
 	{
 	 #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Multi_Stating)
+      {
+     #endif
 	  ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
 	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
 	}
 	Process(object_num);
    }
@@ -543,8 +595,15 @@
 	int id_int = game->objects[object_num]->data->id;
 	std::string fileName = getFileName(id_int);
 	#ifdef DEBUG_VERSION
+	#ifdef MULTI_STATE
+     if(Multi_Stating)
+     {
+    #endif
 	 rebuildIfUpdated(id_int,fileName);
 	#endif
+	#ifdef MULTI_STATE
+     }
+    #endif
 	ScriptModule = ScriptEngine->GetModule(getModuleName(fileName).c_str());
 	if(ScriptModule)
 	{
@@ -553,6 +612,9 @@
 	 #ifdef DEBUG_VERSION
 	  else
 	  {
+	   #ifdef MULTI_STATE
+        if(Multi_Stating)
+       #endif
 	   if(!ScriptModule->GetFunctionByDecl("int ego()"))
 	   {
 		ScriptEngine->WriteMessage(getFileName(game->objects[object_num]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Neither 'void id()' nor 'int ego()' are defined.");
@@ -830,7 +892,7 @@
   #include <filesystem>
   #include <thread>
   #include <chrono>
-  #define INJECTION_VERSION "(v1.31.221001)"
+  #define INJECTION_VERSION "(v1.31.221010)"
   #define ENCODING_KEY "SiuHungIsAGoodBearBecauseHeIsVeryGood"
   #define TEMPORAL_FILE "data\\temporary.txt"
 
@@ -849,8 +911,8 @@
   using string = std::string;
  //-//
  //Variables
-  struct CONFIG {string Storing; string AI = "ai"; int1 Full_Injection = false; int1 Sleep_Mode = false; uint32 Not_Post = 0; int1 Model = false; int32 IDs[14]; uint32 LandingFrame = 219; int1 LoadDLL = false; string DDirectory = "dlls"; int1 Debug = false; int16 Style = 0; int16 Delay = 0; string Build; string Input; string Output; string Insight; string Outsight; int1 Overwrite = false; int1 Get_Mirrors = false; int1 Permanentness = false; int1 Build_Directory = false; int8 Key[95]; int8 TD_Mode = false; int32 TD_Post = 0; int1 Hold_Def = false; int32 Hold_Def_TU = 0; int32 Min_Bdef = 0; xint64 Bdef_E = 100; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount = 0; int32 M_Speed = 0; int32 T_Amount = 0; int32 T_Speed = 0; int32 B_Reserve = 0; int32 S_Reserve = 0; int1 MP_Rest = false; int32 Imm_Time = 40; int1 HP_Regen = false; int1 MP_Regen = false; xint64 DTDHP_Conv = 0; xint64 DTHP_Conv = 0; xint64 DTMP_Conv = 0; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed = 0; xint64 C_Effectiviness = 0; int32 C_Off = 0; int32 C_Sensitivity = 0; int32 C_Size = 0; int32 Damage_Limiter = 0;}; CONFIG Config;
-  struct CONSOLE {string Log; int0 PrintSet(){Vrab08 = true; PrintOut(); Vrab08 = false;} int0 PrintOut(){if(!Config.Debug) return; if(!Varb07) Openning(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); SetConsoleCursorPosition(Hand01, {0, 0}); Ostr01.str(""); if(Vrab08){Ostr01 << "\n==== Building Log ===============================\n\n"; if(Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Building Log ===============================\n\n"; Log.clear();} Vrab09 = false;} else {Ostr01 << "\n==== Installation Log ===========================\n\n"; if(!Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Installation Log ===========================\n\n"; Log.clear();} Vrab09 = true;} Varb01 = 0; Varb02 = 0; Varb03 = (int32)Log.size(); Varb04 = 0; while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 = 0; if(Log[Varb01] == '\n'){if(Varb04 == 1){Log[Varb01] = (int8)-125; Varb02 -= 1;} Varb04 = 0; Varb02 += 1;} if((uint32)Varb04 >= (uint32)(Varb06 - 0)){if(Log[Varb01 + 1] != '\n' && Log[Varb01 + 1] != (int8)-125){Varb04 = 0; while((Log[Varb01 + 1] != ' ' && Log[Varb01 + 1] >= 0) || Log[Varb01 + 2] != ' ' || Log[Varb01 + 3] != ' '){Log.insert(Varb01 + 1, " "); Varb04 -= 25;} if(Varb04 != 0) Log[Varb01 + 1] = (int8)Varb04;} Varb04 = 0; Varb02 += 1; Varb03 = (int32)Log.size();} Varb01 += 1;} while(Varb02 >= (uint16)((Varb06 / 2) - 4)){Varb01 = 0; Varb04 = 0; Varb03 = (int32)Log.size(); while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 -= 1; if(Log[Varb01] == '\n') break; if((uint32)Varb04 >= (uint32)(Varb06 - 0)) break; Varb01 += 1;} Vect01[0].append(Log, 0, Varb01 + 1); if(Vect01[0].size() >= 30000){Vect01.push_back(Vect01[0]); Vect01[0] = "";} Log.erase(0, Varb01 + 1); Varb02 -= 1;} Strn01 = Log; Varb03 = (int32)Strn01.size(); for(Varb01 = 0; Varb01 < (uint32)Varb03; ++Varb01){if(Strn01[Varb01] == (int8)-125){Strn01.erase(Varb01, 1); Varb03 = (int32)Strn01.size();} if(Strn01[Varb01] < 0) Strn01[Varb01] = ' ';} Ostr01 << Strn01; Varb03 = 20; while(Varb03 > Varb02){Ostr01 << "\n"; Varb03 -= 1;} Ostr01 << "\n================================================="; Strn02 = ""; Strn01 = Ostr01.str().c_str(); Ostr01.str(""); Varb01 = Strn01.length(); Varb03 = 0; Varb04 = 0; Varb02 = 0; while((uint32)Varb03 != Varb01){if(Strn01[Varb03] == '\n'){Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb02 = 65535;} else {Strn02 += Strn01[Varb03];} Varb02 += 1; if(Varb02 == Varb06){Varb02 = 0; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back(Varb06);} else {PrintSize[Varb04] = Varb06;} Varb04 += 1;} Varb03 += 1;} Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb05 = Varb04; while((uint32)Varb04 < PrintSize.size()){Varb02 = 0; while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) if((uint32)Varb04 + 1 < PrintSize.size()) Strn02 += "\n"; Varb04 += 1;} std::cout << Strn02; Strn01 = ""; Strn02 = ""; PrintSize.resize(Varb05); std::this_thread::sleep_for(std::chrono::milliseconds(Config.Delay));} int0 Ending(){if(!Config.Debug) return; if(Varb07){Vect01[0] += Log + "\n=================================================\n\n"; Log.clear(); for(Varb01 = Vect01.size() - 1; (int32)Varb01 >= 0; --Varb01) for(Varb03 = 0; (uint32)Varb03 < Vect01[Varb01].size(); ++Varb03){if(Vect01[Varb01][(uint32)Varb03] == (int8)-125) Vect01[Varb01][(uint32)Varb03] = '\n'; if(Vect01[Varb01][(uint32)Varb03] < 0) Vect01[Varb01].erase((uint32)Varb03, (uint32)-(Vect01[Varb01][(uint32)Varb03] / 25));} std::ofstream File01(Special_Execution(Config.Output + "\\log.txt")); Varb03 = 1; while(Varb03 < (int32)Vect01.size()){File01 << Vect01[(uint32)Varb03]; Vect01[(uint32)Varb03].clear(); Varb03 += 1;} File01 << Vect01[0]; Vect01[0].clear(); Vect01.clear(); File01.close(); ShowWindow(GetConsoleWindow(), 0); FreeConsole(); Varb07 = false;}} private: std::vector < string > Vect01; std::vector < uint16 > PrintSize; std::ostringstream Ostr01; string Strn01; string Strn02; uint32 Varb01; uint16 Varb02; int32 Varb03; int32 Varb04; int32 Varb05; int16 Varb06 = 50; int1 Varb07 = false; int1 Vrab08 = false; int1 Vrab09 = false; string Special_Execution(string Vrab01){string Temp01 = Vrab01; uint32 Vrab02 = Temp01.size() - 1; while(Vrab02 != 0 && Temp01[Vrab02] != '\\') Vrab02 -= 1; if(Vrab02 > 0) Temp01.erase(Vrab02, Temp01.size() - Vrab02); std::filesystem::create_directories(Temp01); return Vrab01;} int0 Openning(){Vect01.clear(); if(Vrab08){Vect01.push_back("==== Building Log ===============================\n\n");} else {Vect01.push_back("==== Installation Log ===========================\n\n");} uint8 Vrab01 = (uint8)Config.Style; uint8 Vrab02; if(Vrab01 < 128){Vrab02 = 255;} else {Vrab02 = 0;} AllocConsole(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); freopen("CONIN$", "rb", stdin); freopen("CONOUT$", "wb", stdout); freopen("CONOUT$", "wb", stderr); SMALL_RECT Rect01 = {0, 0, Varb06, 28}; CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); GetConsoleScreenBufferInfoEx(Hand01, &Info01); Info01.wAttributes = true; Info01.srWindow = Rect01; Info01.ColorTable[0] = RGB((int32)Vrab01, (int32)Vrab01, (int32)Vrab01); Info01.ColorTable[1] = RGB((int32)Vrab02, (int32)Vrab02, (int32)Vrab02); Info01.ColorTable[7] = Info01.ColorTable[1]; SetConsoleScreenBufferInfoEx(Hand01, &Info01); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); SetConsoleTitleA("Injector's Console"); Varb07 = true;}}; CONSOLE Console;
+  struct CONFIG {string Storing; string AI = "ai"; int1 Full_Injection = false; int1 Sleep_Mode = false; uint32 Not_Post = 0; int1 Model = false; int32 IDs[14]; uint32 LandingFrame = 219; int1 LoadDLL = false; string DDirectory = "dlls"; int1 Debug = false; int16 Style = 0; int16 Delay = 0; string Build; string Input; string Output; string Insight; string Outsight; int1 Overwrite = false; int1 Get_Mirrors = false; int1 Permanentness = false; int1 Build_Directory = false; int8 Key[95]; int8 TD_Mode = false; int32 TD_Post = 0; int1 Hold_Def = false; int32 Hold_Def_TU = 0; int32 Min_Bdef = 0; xint64 Bdef_E = 100; int1 Dis_DHP = false; int1 Dis_MP = false; int32 M_Amount = 0; int32 M_Speed = 0; int32 T_Amount = 0; int32 T_Speed = 0; int32 B_Reserve = 0; int32 S_Reserve = 0; int1 MP_Rest = false; int32 Imm_Time = 40; int1 HP_Regen = false; int1 MP_Regen = false; xint64 DTDHP_Conv = 0; xint64 DTHP_Conv = 0; xint64 DTMP_Conv = 0; int1 Dis_Il_Input = true; int1 Clean_Val = false; int1 Overlaying = false; int1 Neg_Fall = false; int1 C_Shift = false; int1 C_Smoothness = true; xint64 C_Speed = 0; xint64 C_Effectiviness = 0; int32 C_Off = 0; int32 C_Sensitivity = 0; int32 C_Size = 0; int32 Damage_Limiter = 0;}; CONFIG Config;
+  struct CONSOLE {string Log; int0 PrintSet(){Vrab08 = true; PrintOut(); Vrab08 = false;} int0 PrintOut(){if(!Config.Debug) return; if(!Varb07) Openning(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); SetConsoleCursorPosition(Hand01, {0, 0}); Ostr01.str(""); if(Vrab08){Ostr01 << "\n==== Building Log ===============================\n\n"; if(Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Building Log ===============================\n\n"; Log.clear();} Vrab09 = false;} else {Ostr01 << "\n==== Installation Log ===========================\n\n"; if(!Vrab09){if(Log != "") Vect01[0] += Log + "\n=================================================\n\n==== Installation Log ===========================\n\n"; Log.clear();} Vrab09 = true;} Varb01 = 0; Varb02 = 0; Varb03 = (int32)Log.size(); Varb04 = 0; while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 = 0; if(Log[Varb01] == '\n'){if(Varb04 == 1){Log[Varb01] = (int8)-125; Varb02 -= 1;} Varb04 = 0; Varb02 += 1;} if((uint32)Varb04 >= (uint32)(Varb06 - 0)){if(Log[Varb01 + 1] != '\n' && Log[Varb01 + 1] != (int8)-125){Varb04 = 0; while((Log[Varb01 + 1] != ' ' && Log[Varb01 + 1] >= 0) || Log[Varb01 + 2] != ' ' || Log[Varb01 + 3] != ' '){Log.insert(Varb01 + 1, " "); Varb04 -= 25;} if(Varb04 != 0) Log[Varb01 + 1] = (int8)Varb04;} Varb04 = 0; Varb02 += 1; Varb03 = (int32)Log.size();} Varb01 += 1;} while(Varb02 >= (uint16)((Varb06 / 2) - 4)){Varb01 = 0; Varb04 = 0; Varb03 = (int32)Log.size(); while(Varb01 < (uint32)Varb03){Varb04 += 1; if(Log[Varb01] == (int8)-125) Varb04 -= 1; if(Log[Varb01] == '\n') break; if((uint32)Varb04 >= (uint32)(Varb06 - 0)) break; Varb01 += 1;} Vect01[0].append(Log, 0, Varb01 + 1); if(Vect01[0].size() >= 30000){Vect01.push_back(Vect01[0]); Vect01[0] = "";} Log.erase(0, Varb01 + 1); Varb02 -= 1;} Strn01 = Log; Varb03 = (int32)Strn01.size(); for(Varb01 = 0; Varb01 < (uint32)Varb03; ++Varb01){if(Strn01[Varb01] == (int8)-125){Strn01.erase(Varb01, 1); Varb03 = (int32)Strn01.size();} if(Strn01[Varb01] < 0) Strn01[Varb01] = ' ';} Ostr01 << Strn01; Varb03 = 20; while(Varb03 > Varb02){Ostr01 << "\n"; Varb03 -= 1;} Ostr01 << "\n================================================="; Strn02 = ""; Strn01 = Ostr01.str().c_str(); Ostr01.str(""); Varb01 = Strn01.length(); Varb03 = 0; Varb04 = 0; Varb02 = 0; while((uint32)Varb03 != Varb01){if(Strn01[Varb03] == '\n'){Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb02 = 65535;} else {Strn02 += Strn01[Varb03];} Varb02 += 1; if(Varb02 == Varb06){Varb02 = 0; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back(Varb06);} else {PrintSize[Varb04] = Varb06;} Varb04 += 1;} Varb03 += 1;} Varb05 = (int32)Varb02; if(PrintSize.size() > (uint32)Varb04) while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) Strn02 += "\n"; if(PrintSize.size() <= (uint32)Varb04){PrintSize.push_back((uint16)Varb05);} else {PrintSize[Varb04] = (uint16)Varb05;} Varb04 += 1; Varb05 = Varb04; while((uint32)Varb04 < PrintSize.size()){Varb02 = 0; while(Varb02 < PrintSize[Varb04]){Strn02 += " "; Varb02 += 1;} if(Varb02 < Varb06) if((uint32)Varb04 + 1 < PrintSize.size()) Strn02 += "\n"; Varb04 += 1;} std::cout << Strn02; Strn01 = ""; Strn02 = ""; PrintSize.resize(Varb05); std::this_thread::sleep_for(std::chrono::milliseconds(Config.Delay));} int0 Opening(){std::ifstream File01; File01.open(Config.Output + "\\status.edb"); if(File01.is_open()){File01.close(); std::terminate();} std::ofstream File02; File02.open(Config.Output + "\\status.edb"); File02 << "Do not erase this file!"; File02.close();} int0 Ending(){std::ifstream File02; File02.open(Config.Output + "\\status.edb"); if(File02.is_open()){File02.close(); std::remove((Config.Output + "\\status.edb").c_str());} if(!Config.Debug) return; if(Varb07){Vect01[0] += Log + "\n=================================================\n\n"; Log.clear(); for(Varb01 = Vect01.size() - 1; (int32)Varb01 >= 0; --Varb01) for(Varb03 = 0; (uint32)Varb03 < Vect01[Varb01].size(); ++Varb03){if(Vect01[Varb01][(uint32)Varb03] == (int8)-125) Vect01[Varb01][(uint32)Varb03] = '\n'; if(Vect01[Varb01][(uint32)Varb03] < 0) Vect01[Varb01].erase((uint32)Varb03, (uint32)-(Vect01[Varb01][(uint32)Varb03] / 25));} std::ofstream File01(Special_Execution(Config.Output + "\\log.txt")); Varb03 = 1; while(Varb03 < (int32)Vect01.size()){File01 << Vect01[(uint32)Varb03]; Vect01[(uint32)Varb03].clear(); Varb03 += 1;} File01 << Vect01[0]; Vect01[0].clear(); Vect01.clear(); File01.close(); ShowWindow(GetConsoleWindow(), 0); FreeConsole(); Varb07 = false;}} private: std::vector < string > Vect01; std::vector < uint16 > PrintSize; std::ostringstream Ostr01; string Strn01; string Strn02; uint32 Varb01; uint16 Varb02; int32 Varb03; int32 Varb04; int32 Varb05; int16 Varb06 = 50; int1 Varb07 = false; int1 Vrab08 = false; int1 Vrab09 = false; string Special_Execution(string Vrab01){string Temp01 = Vrab01; uint32 Vrab02 = Temp01.size() - 1; while(Vrab02 != 0 && Temp01[Vrab02] != '\\') Vrab02 -= 1; if(Vrab02 > 0) Temp01.erase(Vrab02, Temp01.size() - Vrab02); std::filesystem::create_directories(Temp01); return Vrab01;} int0 Openning(){Vect01.clear(); if(Vrab08){Vect01.push_back("==== Building Log ===============================\n\n");} else {Vect01.push_back("==== Installation Log ===========================\n\n");} uint8 Vrab01 = (uint8)Config.Style; uint8 Vrab02; if(Vrab01 < 128){Vrab02 = 255;} else {Vrab02 = 0;} AllocConsole(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); freopen("CONIN$", "rb", stdin); freopen("CONOUT$", "wb", stdout); freopen("CONOUT$", "wb", stderr); SMALL_RECT Rect01 = {0, 0, Varb06, 28}; CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); GetConsoleScreenBufferInfoEx(Hand01, &Info01); Info01.wAttributes = true; Info01.srWindow = Rect01; Info01.ColorTable[0] = RGB((int32)Vrab01, (int32)Vrab01, (int32)Vrab01); Info01.ColorTable[1] = RGB((int32)Vrab02, (int32)Vrab02, (int32)Vrab02); Info01.ColorTable[7] = Info01.ColorTable[1]; SetConsoleScreenBufferInfoEx(Hand01, &Info01); SetConsoleScreenBufferSize(Hand01, {Varb06, 26}); SetConsoleTitleA("Injector's Console"); Varb07 = true;}}; CONSOLE Console;
   struct MODIFER {std::vector < int32 > BG_Cam[3]; std::vector < int32 > BG_Z1; std::vector < int32 > BG_Z2; std::vector < std::vector < int32 > > BG_Y; std::vector < std::vector < int32 > > BG_H;}; MODIFER Modifer;
 
   const uint32 MaximumObject = 400;
@@ -917,15 +979,43 @@
   int0 startup()
   {
    #ifdef DEBUG_VERSION
+   #ifdef MULTI_STATE
+    if(Multi_Stating)
+    {
+   #endif
+    int32 Vrab01;
+    if(Console_Style <= 127){Vrab01 = 255;} else {Vrab01 = 0;}
 	AllocConsole();
+    HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE);
 	freopen("CONIN$","rb",stdin);   // reopen stdin handle as console window input
 	freopen("CONOUT$","wb",stdout); // reopen stout handle as console window output
 	freopen("CONOUT$","wb",stderr); // reopen stderr handle as console window output
+    SMALL_RECT Rect01 = {0, 0, (int16)Console_Size, (int16)(Console_Size / 2)};
+    CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX);
+    SetConsoleScreenBufferSize(Hand01, {(int16)Console_Size, (int16)((Console_Size / 2) - 2)});
+    GetConsoleScreenBufferInfoEx(Hand01, &Info01);
+    Info01.wAttributes = true; Info01.srWindow = Rect01;
+    Info01.ColorTable[0] = RGB(Console_Style, Console_Style, Console_Style); 
+    Info01.ColorTable[1] = RGB((int32)Vrab01, (int32)Vrab01, (int32)Vrab01); 
+    Info01.ColorTable[7] = Info01.ColorTable[1]; 
+    SetConsoleScreenBufferInfoEx(Hand01, &Info01); 
+    SetConsoleScreenBufferSize(Hand01, {(int16)Console_Size, (int16)((Console_Size / 2) - 2)}); 
+    SetConsoleTitleA("Injector's Console");
+   #endif
+   #ifdef MULTI_STATE
+    }
    #endif
    ScriptModule = NULL;
    ScriptEngine = asCreateScriptEngine(ANGELSCRIPT_VERSION); if(!ScriptEngine){::ExitProcess(0);}
    #ifdef DEBUG_VERSION
+   #ifdef MULTI_STATE
+    if(Multi_Stating)
+    {
+   #endif
 	ScriptEngine->SetMessageCallback(asFUNCTION(MessageCallback), NULL, asCALL_CDECL);
+   #endif
+   #ifdef MULTI_STATE
+    }
    #endif
    ScriptContext = ScriptEngine->CreateContext();
    RegisterScriptFunctions();
@@ -947,14 +1037,28 @@
      if(Validity)
      {
       #ifdef DEBUG_VERSION
+	  #ifdef MULTI_STATE
+       if(Multi_Stating)
+       {
+      #endif
 	   FILETIME Time;
 	   hasFileTimeChanged(FileName, &Time);
 	   ModuleTimes.insert(std::pair < int, FILETIME > (getIdFromFileName(FileName), Time));
 	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
 	  CScriptBuilder Builder;
 	  #ifdef DEBUG_VERSION
+	  #ifdef MULTI_STATE
+       if(Multi_Stating)
+       {
+      #endif
 	   Builder.DefineWord("debug");
 	   ScriptEngine->WriteMessage(FileName, 0, 0, asMSGTYPE_INFORMATION, "Building.");
+	  #ifdef MULTI_STATE
+       }
+      #endif
 	  #else
 	   Builder.DefineWord("release");
 	  #endif
@@ -963,7 +1067,14 @@
 	  if(Builder.AddSectionFromFile(FileName) < 0)
 	  {
        #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+       if(Multi_Stating)
+       {
+       #endif
         ScriptEngine->WriteMessage(FileName, 0, 0, asMSGTYPE_ERROR, "Unable to load file.");
+       #endif
+	   #ifdef MULTI_STATE
+        }
        #endif
        ScriptEngine->DiscardModule(getModuleName(FileName).c_str());
        continue;
@@ -971,7 +1082,14 @@
 	  if(Builder.BuildModule() < 0)
 	  {
        #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Multi_Stating)
+        {
+       #endif
         ScriptEngine->WriteMessage(FileName, 0, 0, asMSGTYPE_ERROR, "Unable to build module.");
+       #endif
+	   #ifdef MULTI_STATE
+        }
        #endif
        ScriptEngine->DiscardModule(getModuleName(FileName).c_str());
        continue;
@@ -987,6 +1105,7 @@
   int32 Positive(int32 Vrab01){if(Vrab01 >= 0) return Vrab01; return -Vrab01;}
   int32 ToNum(string Vrab01){if(Vrab01[0] != '-' && (Vrab01[0] < '0' || Vrab01[0] > '9')) return 0; uint32 Vrab02 = 0; int64 Vrab03 = (int64)(int32)Vrab01.size(); if(Vrab03 > 18) Vrab03 = 18; int64 Vrab04 = 0; if(Vrab01[0] == '-') Vrab02 += 1; while(Vrab02 < (uint32)(int32)Vrab03 && Vrab01[Vrab02] >= '0' && Vrab01[Vrab02] <= '9') Vrab02 += 1; Vrab02 -= 1;Vrab03 = 1; while(Vrab02 > 0){switch(Vrab01[Vrab02]){case '1': Vrab04 += Vrab03; break; case '2': Vrab04 += Vrab03 * 2; break; case '3': Vrab04 += Vrab03 * 3; break; case '4': Vrab04 += Vrab03 * 4; break; case '5': Vrab04 += Vrab03 * 5; break; case '6': Vrab04 += Vrab03 * 6; break; case '7': Vrab04 += Vrab03 * 7; break; case '8': Vrab04 += Vrab03 * 8; break; case '9': Vrab04 += Vrab03 * 9; break; default: break;} Vrab03 *= 10; Vrab02 -= 1;} if(Vrab01[0] == '-'){Vrab04 = -Vrab04;} else {switch(Vrab01[0]){case '1': Vrab04 += Vrab03; break; case '2': Vrab04 += Vrab03 * 2; break; case '3': Vrab04 += Vrab03 * 3; break; case '4': Vrab04 += Vrab03 * 4; break; case '5': Vrab04 += Vrab03 * 5; break; case '6': Vrab04 += Vrab03 * 6; break; case '7': Vrab04 += Vrab03 * 7; break; case '8': Vrab04 += Vrab03 * 8; break; case '9': Vrab04 += Vrab03 * 9; break; default: break;}} return (int32)Vrab04;}
   string Execute(string Vrab01){string Temp01 = Vrab01; uint32 Vrab02 = Temp01.size() - 1; while(Vrab02 != 0 && Temp01[Vrab02] != '\\') Vrab02 -= 1; if(Vrab02 > 0) Temp01.erase(Vrab02, Temp01.size() - Vrab02); std::filesystem::create_directories(Temp01); return Vrab01;}
+  int0 FrameCopy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03){game->files->datas[Vrab01]->frames[Vrab03].exists = true; game->files->datas[Vrab01]->frames[Vrab03].pic = game->files->datas[Vrab01]->frames[Vrab02].pic; game->files->datas[Vrab01]->frames[Vrab03].state = game->files->datas[Vrab01]->frames[Vrab02].state; game->files->datas[Vrab01]->frames[Vrab03].wait = game->files->datas[Vrab01]->frames[Vrab02].wait; game->files->datas[Vrab01]->frames[Vrab03].next = game->files->datas[Vrab01]->frames[Vrab02].next; game->files->datas[Vrab01]->frames[Vrab03].dvx = game->files->datas[Vrab01]->frames[Vrab02].dvx; game->files->datas[Vrab01]->frames[Vrab03].dvy = game->files->datas[Vrab01]->frames[Vrab02].dvy; game->files->datas[Vrab01]->frames[Vrab03].dvz = game->files->datas[Vrab01]->frames[Vrab02].dvz; game->files->datas[Vrab01]->frames[Vrab03].centerx = game->files->datas[Vrab01]->frames[Vrab02].centerx; game->files->datas[Vrab01]->frames[Vrab03].centery = game->files->datas[Vrab01]->frames[Vrab02].centery; game->files->datas[Vrab01]->frames[Vrab03].hit_a = game->files->datas[Vrab01]->frames[Vrab02].hit_a; game->files->datas[Vrab01]->frames[Vrab03].hit_d = game->files->datas[Vrab01]->frames[Vrab02].hit_d; game->files->datas[Vrab01]->frames[Vrab03].hit_j = game->files->datas[Vrab01]->frames[Vrab02].hit_j; game->files->datas[Vrab01]->frames[Vrab03].hit_Fa = game->files->datas[Vrab01]->frames[Vrab02].hit_Fa; game->files->datas[Vrab01]->frames[Vrab03].hit_Fj = game->files->datas[Vrab01]->frames[Vrab02].hit_Fj; game->files->datas[Vrab01]->frames[Vrab03].hit_Da = game->files->datas[Vrab01]->frames[Vrab02].hit_Da; game->files->datas[Vrab01]->frames[Vrab03].hit_Dj = game->files->datas[Vrab01]->frames[Vrab02].hit_Dj; game->files->datas[Vrab01]->frames[Vrab03].hit_Ua = game->files->datas[Vrab01]->frames[Vrab02].hit_Ua; game->files->datas[Vrab01]->frames[Vrab03].hit_Uj = game->files->datas[Vrab01]->frames[Vrab02].hit_Uj; game->files->datas[Vrab01]->frames[Vrab03].hit_ja = game->files->datas[Vrab01]->frames[Vrab02].hit_ja; game->files->datas[Vrab01]->frames[Vrab03].mp = game->files->datas[Vrab01]->frames[Vrab02].mp; game->files->datas[Vrab01]->frames[Vrab03].sound = game->files->datas[Vrab01]->frames[Vrab02].sound; game->files->datas[Vrab01]->frames[Vrab03].bpoint.x = game->files->datas[Vrab01]->frames[Vrab02].bpoint.x; game->files->datas[Vrab01]->frames[Vrab03].bpoint.y = game->files->datas[Vrab01]->frames[Vrab02].bpoint.y; game->files->datas[Vrab01]->frames[Vrab03].cpoint.kind = game->files->datas[Vrab01]->frames[Vrab02].cpoint.kind; game->files->datas[Vrab01]->frames[Vrab03].cpoint.x = game->files->datas[Vrab01]->frames[Vrab02].cpoint.x; game->files->datas[Vrab01]->frames[Vrab03].cpoint.y = game->files->datas[Vrab01]->frames[Vrab02].cpoint.y; game->files->datas[Vrab01]->frames[Vrab03].cpoint.vaction = game->files->datas[Vrab01]->frames[Vrab02].cpoint.vaction; game->files->datas[Vrab01]->frames[Vrab03].cpoint.aaction = game->files->datas[Vrab01]->frames[Vrab02].cpoint.aaction; game->files->datas[Vrab01]->frames[Vrab03].cpoint.daction = game->files->datas[Vrab01]->frames[Vrab02].cpoint.daction; game->files->datas[Vrab01]->frames[Vrab03].cpoint.jaction = game->files->datas[Vrab01]->frames[Vrab02].cpoint.jaction; game->files->datas[Vrab01]->frames[Vrab03].cpoint.taction = game->files->datas[Vrab01]->frames[Vrab02].cpoint.taction; game->files->datas[Vrab01]->frames[Vrab03].cpoint.dircontrol = game->files->datas[Vrab01]->frames[Vrab02].cpoint.dircontrol; game->files->datas[Vrab01]->frames[Vrab03].cpoint.decrease = game->files->datas[Vrab01]->frames[Vrab02].cpoint.decrease; game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvx = game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvx; game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvy = game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvy; game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvz = game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvz; game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwinjury = game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwinjury; game->files->datas[Vrab01]->frames[Vrab03].cpoint.cover = game->files->datas[Vrab01]->frames[Vrab02].cpoint.cover; game->files->datas[Vrab01]->frames[Vrab03].cpoint.hurtable = game->files->datas[Vrab01]->frames[Vrab02].cpoint.hurtable; game->files->datas[Vrab01]->frames[Vrab03].cpoint.injury = game->files->datas[Vrab01]->frames[Vrab02].cpoint.injury; game->files->datas[Vrab01]->frames[Vrab03].wpoint.kind = game->files->datas[Vrab01]->frames[Vrab02].wpoint.kind; game->files->datas[Vrab01]->frames[Vrab03].wpoint.x = game->files->datas[Vrab01]->frames[Vrab02].wpoint.x; game->files->datas[Vrab01]->frames[Vrab03].wpoint.y = game->files->datas[Vrab01]->frames[Vrab02].wpoint.y; game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvx = game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvx; game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvy = game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvy; game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvz = game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvz; game->files->datas[Vrab01]->frames[Vrab03].wpoint.weaponact = game->files->datas[Vrab01]->frames[Vrab02].wpoint.weaponact; game->files->datas[Vrab01]->frames[Vrab03].wpoint.attacking = game->files->datas[Vrab01]->frames[Vrab02].wpoint.attacking; game->files->datas[Vrab01]->frames[Vrab03].wpoint.cover = game->files->datas[Vrab01]->frames[Vrab02].wpoint.cover; game->files->datas[Vrab01]->frames[Vrab03].opoint.kind = game->files->datas[Vrab01]->frames[Vrab02].opoint.kind; game->files->datas[Vrab01]->frames[Vrab03].opoint.x = game->files->datas[Vrab01]->frames[Vrab02].opoint.x; game->files->datas[Vrab01]->frames[Vrab03].opoint.y = game->files->datas[Vrab01]->frames[Vrab02].opoint.y; game->files->datas[Vrab01]->frames[Vrab03].opoint.dvx = game->files->datas[Vrab01]->frames[Vrab02].opoint.dvx; game->files->datas[Vrab01]->frames[Vrab03].opoint.dvy = game->files->datas[Vrab01]->frames[Vrab02].opoint.dvy; game->files->datas[Vrab01]->frames[Vrab03].opoint.oid = game->files->datas[Vrab01]->frames[Vrab02].opoint.oid; game->files->datas[Vrab01]->frames[Vrab03].opoint.action = game->files->datas[Vrab01]->frames[Vrab02].opoint.action; game->files->datas[Vrab01]->frames[Vrab03].opoint.facing = game->files->datas[Vrab01]->frames[Vrab02].opoint.facing; game->files->datas[Vrab01]->frames[Vrab03].itr_count = game->files->datas[Vrab01]->frames[Vrab02].itr_count; game->files->datas[Vrab01]->frames[Vrab03].itrs = game->files->datas[Vrab01]->frames[Vrab02].itrs; game->files->datas[Vrab01]->frames[Vrab03].itr_x = game->files->datas[Vrab01]->frames[Vrab02].itr_x; game->files->datas[Vrab01]->frames[Vrab03].itr_y = game->files->datas[Vrab01]->frames[Vrab02].itr_y; game->files->datas[Vrab01]->frames[Vrab03].itr_w = game->files->datas[Vrab01]->frames[Vrab02].itr_w; game->files->datas[Vrab01]->frames[Vrab03].itr_h = game->files->datas[Vrab01]->frames[Vrab02].itr_h; game->files->datas[Vrab01]->frames[Vrab03].bdy_count = game->files->datas[Vrab01]->frames[Vrab02].bdy_count; game->files->datas[Vrab01]->frames[Vrab03].bdys = game->files->datas[Vrab01]->frames[Vrab02].bdys; game->files->datas[Vrab01]->frames[Vrab03].bdy_x = game->files->datas[Vrab01]->frames[Vrab02].bdy_x; game->files->datas[Vrab01]->frames[Vrab03].bdy_y = game->files->datas[Vrab01]->frames[Vrab02].bdy_y; game->files->datas[Vrab01]->frames[Vrab03].bdy_w = game->files->datas[Vrab01]->frames[Vrab02].bdy_w; game->files->datas[Vrab01]->frames[Vrab03].bdy_h = game->files->datas[Vrab01]->frames[Vrab02].bdy_h;}
   int0 Rename(string &Vrab01){uint32 Vrab02 = Vrab01.size() - 1; while((int32)Vrab02 >= 0 && Vrab01[Vrab02] != '-') Vrab02 -= 1; if(Vrab01[Vrab02 + 1] >= '0' && Vrab01[Vrab02 + 1] <= '9'){string Temp01 = ""; uint32 Vrab03 = Vrab02; Temp01 += Vrab01[Vrab03 + 1]; while(Vrab01[Vrab03 + 2] >= '0' && Vrab01[Vrab03 + 2] <= '9'){Temp01 += Vrab01[Vrab03 + 2]; Vrab03 += 1;} Temp01 = std::to_string((uint32)ToNum(Temp01) + 1); Vrab01.erase(Vrab02 + 1, (Vrab03 + 2) - (Vrab02 + 1)); Vrab01.insert(Vrab02 + 1, Temp01);} else {Vrab02 = Vrab01.size() - 1; while((int32)Vrab02 >= 0 && Vrab01[Vrab02] != '.') Vrab02 -= 1; if(Vrab02 > 7) if(string(Vrab01, Vrab02 - 8, 7) == "_mirror") Vrab02 -= 8; if(Vrab02 > 0){Vrab01.insert(Vrab02, "-2");} else {Vrab01.insert(Vrab01.size() - 1, "-2");}}}
   int1 Exist(const string &Vrab01){struct stat Vrab02; return (stat(Vrab01.c_str(), &Vrab02) == 0);}
   int0 LoadOtherDll(){Hins0001.clear(); if(Exist(Config.DDirectory)) for(auto const &Vrab01 : std::filesystem::recursive_directory_iterator(Config.DDirectory)){Temp0001 = Vrab01.path().string(); if(string(Temp0001, Temp0001.size() - 4, 4) == ".dll") Hins0001.push_back(LoadLibraryA(Vrab01.path().string().c_str()));}}
@@ -1021,7 +1140,7 @@
   int0 I_Configuring()
   {
    Temp0002 = "true"; Temp0003 = "false"; Vrab0003 = 0; std::stringstream Temp01; if(File0001.is_open()) File0001.close(); File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary); File0001.seekg(0, File0001.end); if((uint32)File0001.tellg() > (uint32)295){File0001.seekg(File0001.tellg() - (std::streampos)94); Temp0001.resize(94); File0001.read(&Temp0001[0], 94); if(Temp0001 == "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"){Vrab0003 = 1; File0001.seekg(0, File0001.beg); Temp01; Temp01.str(""); Temp01 << File0001.rdbuf(); Temp0001 = Temp01.str(); Temp0001.erase(0, 200); Temp0001.erase(Temp0001.size() - 94, 94); strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); if(File0002.is_open()) File0002.close(); File0002.open(TEMPORAL_FILE, std::ios::out | std::ios::binary); File0002 << EncryptionSTRING(Temp0001); File0001.close(); File0002.close();}}
-   Labl0001: strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); if(File0001.is_open()) File0001.close(); if(Vrab0003 == 1){File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary);} else {File0001.open("configuration.txt", std::ios::in | std::ios::binary);}
+   Labl0001: Multi_Stating = false; strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); if(File0001.is_open()) File0001.close(); if(Vrab0003 == 1){File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary);} else {File0001.open("configuration.txt", std::ios::in | std::ios::binary);}
    if(File0001.is_open())
    {
     while(File0001){File0001 >> Temp0001; if(Temp0001.compare(INJECTION_VERSION) == 0) goto Labl0003;} goto Labl0002; Labl0003: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Mesujin.") == 0) goto Labl0004;} goto Labl0002; Labl0004: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Doix,") == 0) goto Labl0005;} goto Labl0002; Labl0005: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Som1Lse,") == 0) goto Labl0006;} goto Labl0002; Labl0006: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("zort,") == 0) goto Labl0007;} goto Labl0002; Labl0007: File0001.seekg(0, File0001.beg); while(File0001){File0001 >> Temp0001; if(Temp0001.compare("Determination,") == 0){File0001 >> Temp0002 >> Temp0001 >> Temp0003; break;}} File0001.seekg(0, File0001.beg);
@@ -1032,6 +1151,9 @@
 	 if(Temp0001.compare("Load_Other_DLL") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.LoadDLL = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.LoadDLL = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("DLL_Directory") == 0){File0001 >> Temp0001 >> Config.DDirectory; continue;}
      if(Temp0001.compare("AI_Directory") == 0){File0001 >> Temp0001 >> Config.AI; continue;}
+     if(Temp0001.compare("AI_Debug_Console") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Multi_Stating = true;} else {if(Temp0001.compare(Temp0003) == 0){Multi_Stating = false;} else {goto Labl0003;}} continue;}
+     if(Temp0001.compare("AI_Debug_Console_Size") == 0){File0001 >> Temp0001 >> Console_Size; if(Console_Size < 0) goto Labl0003; continue;}
+     if(Temp0001.compare("AI_Debug_Console_Style") == 0){File0001 >> Temp0001 >> Console_Style; if(Console_Style < 0 || Console_Style > 255) goto Labl0003; continue;}
      if(Temp0001.compare("Sleep_Mode") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Sleep_Mode = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Sleep_Mode = false;} else {goto Labl0003;}} continue;}
      if(Temp0001.compare("Hidden_Mode") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){if(Vrab0003 == 1){Vrab0003 = 1;} else {Vrab0003 = 2;}} else {if(Temp0001.compare(Temp0003) == 0){Vrab0003 = 0;} else {goto Labl0003;}} continue;}
      if(Temp0001.compare("Full_Injection") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Full_Injection = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Full_Injection = false;} else {goto Labl0003;}} continue;}
@@ -1087,7 +1209,8 @@
      if(Temp0001.compare("Disable_Illegal_Input") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Dis_Il_Input = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Dis_Il_Input = false;} else {goto Labl0003;}} continue;}
      if(Temp0001.compare("Clean_Values") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Clean_Val = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Clean_Val = false;} else {goto Labl0003;}} continue;} 
      if(Temp0001.compare("Overlaying") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Overlaying = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Overlaying = false;} else {goto Labl0003;}} continue;}
-     
+     if(Temp0001.compare("Fix_Negative_Fall") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.Neg_Fall = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.Neg_Fall = false;} else {goto Labl0003;}} continue;}
+
      if(Temp0001.compare("Camera_Shift") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.C_Shift = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.C_Shift = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("Camera_Smoothness") == 0){File0001 >> Temp0001 >> Temp0001; if(Temp0001.compare(Temp0002) == 0){Config.C_Smoothness = true;} else {if(Temp0001.compare(Temp0003) == 0){Config.C_Smoothness = false;} else {goto Labl0003;}} continue;}
 	 if(Temp0001.compare("Camera_Effectiviness") == 0){File0001 >> Temp0001 >> Config.C_Effectiviness; if(Config.C_Effectiviness < 0) goto Labl0003; continue;}
@@ -1100,10 +1223,10 @@
 	}
     File0001.close();
     if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close();
-   } else {Labl0002: Vrab0003 = 0; File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VERSION "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's Data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Load_Other_DLL : Active          // Load other DLL(s)?\n DLL_Directory : add-on\\Libraries // 'Load_Other_DLL''s directory.\n AI_Directory : add-on\\AI         //\n Sleep_Mode : Inactive            // Disabling almost all feature of this DDraw except DLL Loader,\n                                  // 'Hidden_Mode', AI, Builder, and Installer.\n Hidden_Mode : Inactive           // IMPORTANT! Once this config active, this configuration will hide\n                                  // in \"" TEMPORAL_FILE "\". To stop the configuration from hiding,\n                                  // you'll need to delete it.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Hidden_IDs : 50 - 59\n  Weapon_IDs : 100 - 199\n  Minion_IDs : 30 - 37\n  Minion_IDs_2 : 39 - 39\n  Available_IDs : 8 - 29\n  Available_IDs_2 : 60 - 99\n  Available_IDs_3 : 230 - 998\n  Debug : Active\n  Style : 255\n  Delay : 0\n  Build : add-on\\Build\n  Input : add-on\n  Output : add-on\\Out\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Overwrite : Inactive\n  Get_Mirrors : Inactive\n  Permanentness : Inactive\n  Separated_Files : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : TD\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     // Percentage.\n DMG_To_HP_Convertion : 0.00      // Percentage.\n DMG_To_MP_Convertion : 0.00      // Percentage.\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Effectiviness : 80.00    // The effectiviness of Y-Axis to the camera.\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n  Camera_Off : 385                // Position's off of the camera.\n  Camera_Size : 550               // The Y-Axis size of the camera.\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"; File0002.close(); goto Labl0001;}
+   } else {Labl0002: Vrab0003 = 0; File0002.open("configuration.txt"); File0002 << "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                    Configuration of ddraw.dll                                    //\n//                                          " INJECTION_VERSION "                                          //\n//                                                                                                  //\n//                                       Modified by Mesujin.                                       //\n//                                  \"I may to modify this, right?\"                                  //\n//                                                                                                  //\n// Credits : Doix, Som1Lse, zort, and everyone else who have an effort in it.                       //\n// *If you modify the credit, the file will be overwritten :P.                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - if the ddraw.dll fail to read the Value, this file will be overwritten without any warning.\n// - For the integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment, basically the same as \"#\" in LF2's Data.\n////\n\n// Main\n Determination, Active | Inactive // Determining the 'true' and 'false' in this file.\n Load_Other_DLL : Active          // Load other DLL(s)?\n DLL_Directory : add-on\\Libraries // 'Load_Other_DLL''s directory.\n AI_Directory : add-on\\AI         //\n AI_Debug_Console : Inactive      // A.k.a. Debug Version.\n AI_Debug_Console_Size : 80       //\n AI_Debug_Console_Style : 0       //\n Sleep_Mode : Inactive            // Disabling almost all feature of this DDraw except DLL Loader,\n                                  // 'Hidden_Mode', AI, Builder, and Installer.\n Hidden_Mode : Inactive           // IMPORTANT! Once this config active, this configuration will hide\n                                  // in \"" TEMPORAL_FILE "\". To stop the configuration from hiding,\n                                  // you'll need to delete it.\n Full_Injection : Active          // Modify all characters' in-game data to make the injection works\n                                  // finely. One empty frame is required in all type0 character.\n Notification_Post : 130          //\n Notification_Model : Inactive    // Dunno why i made this...\n Landing_Frame : 219              // Landing frame for 'Full_Injection'. In rare cases, you might need\n                                  // to change this into 0 (or starting frame) instead. (For example,\n                                  // Armored Julio, who won't goto frame219 at the beginning of game.)\n\n // Installation\n  Hidden_IDs : 50 - 59\n  Weapon_IDs : 100 - 199\n  Minion_IDs : 30 - 37\n  Minion_IDs_2 : 39 - 39\n  Available_IDs : 8 - 29\n  Available_IDs_2 : 60 - 99\n  Available_IDs_3 : 230 - 998\n  Debug : Active\n  Style : 255\n  Delay : 0\n  Build : add-on\\Build\n  Input : add-on\n  Output : add-on\\Out\n  Insight : data\\data.txt\n  Outsight : data\\data.temp\n  Overwrite : Inactive\n  Get_Mirrors : Inactive\n  Permanentness : Inactive\n  Separated_Files : Inactive\n  Key : !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\n\n  // Please do not questioning about these things, find what are these things used for, by yourself,\n  // if you wish to know.\n  // As for 'Permanentness', you might want change it into 'Active', bcs it'll make the ddraw.dll to\n  // not clean the installation once you close LF2.\n\n//-//\n\n// \"LF2 : TD\"\n 2D_Mode : Inactive               //\n Position : 0                     // 0 = Bottom; 1 = Top; 2 = Middle;\n Holdable_Defend : Inactive       //\n Holdable_Defend_TU : 4           // Base TU of 'Holdable_Defend', normally, it's 12.\n Minimum_'bdefend:' : 0           //\n 'bdefend:'_Effectivity : 100.00  // Calculated after 'Minimum_'bdefend:''.\n\n// \"LF2 : Skill-Out\"\n Disable_DHP : Inactive           // Enchanted \"drink\" included.\n Disable_MP : Inactive            //\n Milk_Amount : 3                  // Only effective when 'Disable_DHP' is 'Active'.\n Milk_Speed : 6                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Amount : 3                   // Only effective when 'Disable_DHP' is 'Active'.\n Tea_Speed : 3                    // Only effective when 'Disable_DHP' is 'Active'.\n Base_Reserve : 0                 //\n Stage_Reserve : 0                // Additional reserve for Stage Mode.\n MP_Rest : Inactive               // Reset MP on resurrect?\n Immune_Time : 40                 // Immune time after resurrect.\n\n// \"LF2 : Vampirism\"\n Disable_HP_Regen : Inactive      //\n Disable_MP_Regen : Inactive      //\n DMG_To_DHP_Convertion : 0.00     // Percentage.\n DMG_To_HP_Convertion : 0.00      // Percentage.\n DMG_To_MP_Convertion : 0.00      // Percentage.\n\n// Etc\n // Et Cetera\n  Disable_Illegal_Input : Active  // Prevent COM from casting illegal input. KEEP THIS ONE 'Active'! :<\n  Clean_Values : Inactive         // Prevent HP, DHP, MP, etc in becoming negative.\n  Fix_Negative_Fall : Active      //\n\n // Z Camera Shift\n  Camera_Shift : Inactive         //\n  Camera_Smoothness : Active      // 'Active' = 'double'; 'Inactive' = 'int';\n  Camera_Effectiviness : 80.00    // The effectiviness of Y-Axis to the camera.\n  Camera_Speed : 100.00           // Percentage of the speed.\n  Camera_Sensitivity : 0          // Reaction time. I don't think this is useful at all.\n  Camera_Off : 385                // Position's off of the camera.\n  Camera_Size : 550               // The Y-Axis size of the camera.\n\n//-//\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"; File0002.close(); goto Labl0001;}
    
    if(Vrab0003 != 0){if(Vrab0003 == 1){File0001.open(TEMPORAL_FILE, std::ios::in | std::ios::binary);} else {File0001.open("configuration.txt", std::ios::in | std::ios::binary);} Temp01.str(""); Temp01 << File0001.rdbuf(); Temp0001 = Temp01.str(); Config.Storing = Temp0001; if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close(); std::remove(string("configuration.txt").c_str());} else {Config.Storing = "";} File0002.open(TEMPORAL_FILE, std::ios::out | std::ios::binary); File0002 << "Do not erase this file."; File0002.close();
-   if(Exist(Config.Output + "\\summary.edb")){if(Config.Permanentness){Config.Permanentness = false; Cleaning(); Config.Permanentness = true;} else {Cleaning();}}
+   if(Exist(Config.Output + "\\summary.edb") || Exist(Config.Outsight)){if(Config.Permanentness){Config.Permanentness = false; Cleaning(); Config.Permanentness = true;} else {Cleaning();}}
   }
   int0 I_Building()
   {
@@ -1144,6 +1267,37 @@
     File0001.close();
    } else {Labl0009: if(File0002.is_open()) File0002.close(); File0002.open(Execute(Config.Insight)); File0002 << "<object>\nid:  0  type: 0  file: data\\template.dat\nid:  52  type: 0  file: data\\julian.dat\nid:  51  type: 0  file: data\\firzen.dat\nid:  50  type: 0  file: data\\louisEX.dat\nid:  38  type: 0  file: data\\bat.dat\nid:  39  type: 0  file: data\\justin.dat\nid:  37  type: 0  file: data\\knight.dat\nid:  36  type: 0  file: data\\jan.dat\nid:  35  type: 0  file: data\\monk.dat\nid:  34  type: 0  file: data\\sorcerer.dat\nid:  33  type: 0  file: data\\jack.dat\nid:  32  type: 0  file: data\\mark.dat\nid:  31  type: 0  file: data\\hunter.dat\nid:  30  type: 0  file: data\\bandit.dat\nid:  1  type: 0  file: data\\deep.dat\nid:  2  type: 0  file: data\\john.dat\nid:  4  type: 0  file: data\\henry.dat\nid:  5  type: 0  file: data\\rudolf.dat\nid:  6  type: 0  file: data\\louis.dat\nid:  7  type: 0  file: data\\firen.dat\nid:  8  type: 0  file: data\\freeze.dat\nid:  9  type: 0  file: data\\dennis.dat\nid: 10  type: 0  file: data\\woody.dat\nid: 11  type: 0  file: data\\davis.dat\n\nid: 100  type: 1  file: data\\weapon0.dat   #stick\nid: 101  type: 1  file: data\\weapon2.dat   #hoe\nid: 120  type: 1  file: data\\weapon4.dat   #knife\nid: 121  type: 4  file: data\\weapon5.dat   #baseball\nid: 122  type: 6  file: data\\weapon6.dat   #milk\nid: 150  type: 2  file: data\\weapon1.dat   #stone\nid: 151  type: 2  file: data\\weapon3.dat   #wooden_box\nid: 123  type: 6  file: data\\weapon8.dat   #beer\nid: 124  type: 1  file: data\\weapon9.dat   #<\nid: 217  type: 2  file: data\\weapon10.dat  #louis_armour\nid: 218  type: 2  file: data\\weapon11.dat  #louis_armour\nid: 300  type: 5  file: data\\criminal.dat  #criminal\n\nid: 200  type: 3  file: data\\john_ball.dat\nid: 201  type: 1  file: data\\henry_arrow1.dat\nid: 202  type: 1  file: data\\rudolf_weapon.dat\nid: 203  type: 3  file: data\\deep_ball.dat\nid: 204  type: 3  file: data\\henry_wind.dat\nid: 205  type: 3  file: data\\dennis_ball.dat\nid: 206  type: 3  file: data\\woody_ball.dat\nid: 207  type: 3  file: data\\davis_ball.dat\nid: 208  type: 3  file: data\\henry_arrow2.dat\nid: 209  type: 3  file: data\\freeze_ball.dat\nid: 210  type: 3  file: data\\firen_ball.dat\nid: 211  type: 3  file: data\\firen_flame.dat\nid: 212  type: 3  file: data\\freeze_column.dat\nid: 213  type: 1  file: data\\weapon7.dat   #ice_sword\nid: 214  type: 3  file: data\\john_biscuit.dat\nid: 215  type: 3  file: data\\dennis_chase.dat\nid: 216  type: 3  file: data\\jack_ball.dat\nid: 219  type: 3  file: data\\jan_chaseh.dat\nid: 220  type: 3  file: data\\jan_chase.dat\nid: 221  type: 3  file: data\\firzen_chasef.dat\nid: 222  type: 3  file: data\\firzen_chasei.dat\nid: 223  type: 3  file: data\\firzen_ball.dat\nid: 224  type: 3  file: data\\bat_ball.dat\nid: 225  type: 3  file: data\\bat_chase.dat\nid: 226  type: 3  file: data\\justin_ball.dat\nid: 228  type: 3  file: data\\julian_ball.dat\nid: 229  type: 3  file: data\\julian_ball2.dat\n\nid: 998  type: 5  file: data\\etc.dat\nid: 999  type: 5  file: data\\broken_weapon.dat\n<object_end>\n\n<file_editing>\ndata\\nothing.txt\n<file_editing_end>\n\n<background>\nid: 4    file: bg\\sys\\hkc\\bg.dat\nid: 2    file: bg\\sys\\lf\\bg.dat\nid: 3    file: bg\\sys\\sp\\bg.dat\nid: 5    file: bg\\sys\\gw\\bg.dat\nid: 6    file: bg\\sys\\qi\\bg.dat\nid: 7    file: bg\\sys\\ft\\bg.dat\nid: 8    file: bg\\sys\\bc\\bg.dat\nid: 1    file: bg\\sys\\cuhk\\bg.dat\nid: 0    file: bg\\sys\\thv\\bg.dat\nid: 10    file: bg\\template\\1\\bg.dat\nid: 11    file: bg\\template\\2\\bg.dat\nid: 12    file: bg\\template\\3\\bg.dat\n<background_end>"; File0002.close(); goto Labl0008;}
   
+   if(!Config.Sleep_Mode && Config.Full_Injection)
+   {
+    Vrab0001 = 0;
+    Labl0028: if(Vrab0001 >= 2) goto Labl0029;
+    for(Vrab0002 = (uint32)Config.IDs[0]; Vrab0002 <= (uint32)Config.IDs[1]; ++Vrab0002)
+    {
+     if(Vrab01.size() < Vrab0002 + 1) Vrab01.resize(Vrab0002 + 1);
+     if(!Vrab01[Vrab0002]){Vrab01[Vrab0002] = true; Vrab0001 += 1; goto Labl0028;}
+    }
+    for(Vrab0002 = (uint32)Config.IDs[6]; Vrab0002 <= (uint32)Config.IDs[7]; ++Vrab0002)
+    {
+     if(Vrab01.size() < Vrab0002 + 1) Vrab01.resize(Vrab0002 + 1);
+     if(!Vrab01[Vrab0002]){Vrab01[Vrab0002] = true; Vrab0001 += 1; goto Labl0028;}
+    }
+    for(Vrab0002 = (uint32)Config.IDs[8]; Vrab0002 <= (uint32)Config.IDs[9]; ++Vrab0002)
+    {
+     if(Vrab01.size() < Vrab0002 + 1) Vrab01.resize(Vrab0002 + 1);
+     if(!Vrab01[Vrab0002]){Vrab01[Vrab0002] = true; Vrab0001 += 1; goto Labl0028;}
+    }
+    for(Vrab0002 = (uint32)Config.IDs[10]; Vrab0002 <= (uint32)Config.IDs[11]; ++Vrab0002)
+    {
+     if(Vrab01.size() < Vrab0002 + 1) Vrab01.resize(Vrab0002 + 1);
+     if(!Vrab01[Vrab0002]){Vrab01[Vrab0002] = true; Vrab0001 += 1; goto Labl0028;}
+    }
+    for(Vrab0002 = 0; Vrab0002 <= 4294967295; ++Vrab0002)
+    {
+     if(Vrab01.size() < Vrab0002 + 1) Vrab01.resize(Vrab0002 + 1);
+     if(!Vrab01[Vrab0002]){Vrab01[Vrab0002] = true; Vrab0001 += 1; goto Labl0028;}
+    }
+   }
+   Labl0029:
    Temp0003 = ""; std::vector < uint32 > Vrab11;
 
    //////////////////////////
@@ -1182,12 +1336,6 @@
    } goto Labl0022;
    Labl0023:
 
-   Vrab0003 = Vrab04.size();
-   for(Vrab0002 = 0; Vrab0002 < Vrab0003; ++Vrab0002)
-   {
-    if(Vrab11[Vrab02[Vrab0002]] > 0){Vrab11[Vrab02[Vrab0002]] -= 1; continue;}
-    if(!Vrab01[Vrab02[Vrab0002]]) File0002 << "id: " << Vrab02[Vrab0002] << " type: " << Vrab03[Vrab0002] << " file: " << Vrab04[Vrab0002] << " ";
-   }
    Vect0001.clear(); Strn0001.clear(); if(!Config.Sleep_Mode && Config.Full_Injection)
    {
     Vect0001.resize(2); Vrab0001 = 0;
@@ -1221,6 +1369,12 @@
     Strn0001.push_back(Config.Output + "\\" + "injector.txt"); Strn0001.push_back(Config.Output + "\\" + "injector_disp.txt");
     while(Exist(Strn0001[0])) Rename(Strn0001[0]); while(Exist(Strn0001[1])) Rename(Strn0001[1]);
     File0002 << "id: " << Vect0001[0] << " type: 0 file: " + Strn0001[0] + " id: " << Vect0001[1] << " type: 3 file: " + Strn0001[1] + " ";
+   }
+   Vrab0003 = Vrab04.size();
+   for(Vrab0002 = 0; Vrab0002 < Vrab0003; ++Vrab0002)
+   {
+    if(Vrab11[Vrab02[Vrab0002]] > 0){Vrab11[Vrab02[Vrab0002]] -= 1; continue;}
+    if(!Vrab01[Vrab02[Vrab0002]]){File0002 << "id: " << Vrab02[Vrab0002] << " type: " << Vrab03[Vrab0002] << " file: " << Vrab04[Vrab0002] << " "; Vrab01[Vrab02[Vrab0002]] = true;}
    }
    File0002 << "<object_end> ";
 
@@ -1361,6 +1515,68 @@
 	{
 	  
 	}
+   }
+   int0 Once_EtCetera()
+   {
+    if(Config.Neg_Fall)
+    {
+     Vrab0002 = 0; while(game->files->datas[Vrab0002] != 0)
+     {
+      Vrab0003 = 0; while(Vrab0003 < MaximumFrames)
+      {Vrab0001 = game->files->datas[Vrab0002]->frames[Vrab0003].itr_count - 1; while(Vrab0001 >= 0){switch(game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].effect){case 2: case 20: case 21: case 22: game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].fall = 999999999; break; default: break;} Vrab0001 -= 1;} Vrab0003 += 1;}
+      Vrab0002 += 1;
+     }
+    }
+   }
+   int0 Once_CodedSpeciality()
+   {
+    std::vector < int1 > Vrab01; Vrab01.resize(1); Vrab0002 = 0; while(game->files->datas[Vrab0002] != 0)
+    {
+     switch((int32)(uint8)game->files->datas[Vrab0002]->unkwn2[144] + (int32)(uint8)game->files->datas[Vrab0002]->unkwn2[145] * 256 + (int32)(uint8)game->files->datas[Vrab0002]->unkwn2[146] * 65536  + (int32)(uint8)game->files->datas[Vrab0002]->unkwn2[147] * 16777216)
+     {
+      case -3: /*/ 2022 - Grandmaster v1.17.221004 /*/ if(Vrab01[0]) break; Vrab01[0] = true;
+       Vrab0003 = 0; while(game->files->datas[Vrab0003] != 0)
+       {
+        switch(game->files->datas[Vrab0003]->id)
+        {
+         case 209:
+          Vrab0001 = 0; while(game->files->datas[Vrab0003]->frames[Vrab0001].exists || Vrab0001 % 10 == 0 || Vrab0001 == 202 || Vrab0001 == 212) Vrab0001 += 1;
+          Vrab0004 = 0; while((uint32)(int32)Vrab0004 < MaximumFrames)
+          {
+           if(game->files->datas[Vrab0003]->frames[(int32)Vrab0004].exists)
+           if(Positive(game->files->datas[Vrab0003]->frames[(int32)Vrab0004].next) == 31)
+           if(game->files->datas[Vrab0003]->frames[(int32)Vrab0004].next > 0){game->files->datas[Vrab0003]->frames[(int32)Vrab0004].next = Vrab0001;} else {game->files->datas[Vrab0003]->frames[(int32)Vrab0004].next = -Vrab0001;}
+           Vrab0004 += 1;
+          }
+          FrameCopy(Vrab0003, 31, (uint32)Vrab0001);
+          FrameCopy(Vrab0003, 30, 31);
+         break; default: break;
+        }
+        Vrab0003 += 1;
+       }
+       Vrab0003 = 0; while(game->files->datas[Vrab0003] != 0)
+       {
+        switch(game->files->datas[Vrab0003]->id)
+        {
+         case 200: case 203: case 205: case 206: case 207: case 215: case 216:
+          Vrab0001 = 0; while(game->files->datas[Vrab0003]->frames[Vrab0001].exists || Vrab0001 % 10 == 0 || Vrab0001 == 202 || Vrab0001 == 212) Vrab0001 += 1;
+          if(Vrab0001 >= MaximumFrames){ break;}
+          FrameCopy(Vrab0003, 30, (uint32)Vrab0001);
+          game->files->datas[Vrab0003]->frames[(uint32)Vrab0001].dvx = 550;
+          game->files->datas[Vrab0003]->frames[(uint32)Vrab0001].dvy = 550;
+          game->files->datas[Vrab0003]->frames[(uint32)Vrab0001].dvz = 550;
+          game->files->datas[Vrab0003]->frames[(uint32)Vrab0001].state = 8209;
+          game->files->datas[Vrab0003]->unkwn2[224] = (int8)(Vrab0001 % 256);
+          game->files->datas[Vrab0003]->unkwn2[225] = (int8)((Vrab0001 / 256) % 256);
+         break; default: break;
+        }
+        Vrab0003 += 1;
+       }
+      break;
+      default: break;
+     }
+     Vrab0002 += 1;
+    }
    }
    int0 Once_PackSkillOut()
    {
@@ -1528,7 +1744,139 @@
    }
    int0 Peat_CodedSpeciality()
    {
-   
+    for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002) switch((int32)(uint8)game->objects[Database_Exist[Vrab0002]]->data->unkwn2[144] + (int32)(uint8)game->objects[Database_Exist[Vrab0002]]->data->unkwn2[145] * 256 + (int32)(uint8)game->objects[Database_Exist[Vrab0002]]->data->unkwn2[146] * 65536 + (int32)(uint8)game->objects[Database_Exist[Vrab0002]]->data->unkwn2[147] * 16777216)
+    {
+     case -1: /*/ 2022 - Grandmaster v1.00.220930 /*/ if(game->objects[Database_Exist[Vrab0002]]->frame1 == 255 || game->objects[Database_Exist[Vrab0002]]->frame1 == 256) if(game->objects[Database_Exist[Vrab0002]]->mp > 5){game->objects[Database_Exist[Vrab0002]]->mp -= 5;} else {game->objects[Database_Exist[Vrab0002]]->frame1 += 2;} if((game->objects[Database_Exist[Vrab0002]]->frame1 >= 252 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 258) || (game->objects[Database_Exist[Vrab0002]]->frame1 >= 269 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 278)){game->objects[Database_Exist[Vrab0002]]->fall = -99999999; game->objects[Database_Exist[Vrab0002]]->shake = 0; if(game->objects[Database_Exist[Vrab0002]]->x_velocity != 0) game->objects[Database_Exist[Vrab0002]]->x_velocity /= 2; if(game->objects[Database_Exist[Vrab0002]]->z_velocity != 0) game->objects[Database_Exist[Vrab0002]]->z_velocity /= 2;} else {if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 288 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 301){game->objects[Database_Exist[Vrab0002]]->fall = -99999999; game->objects[Database_Exist[Vrab0002]]->shake = 0; if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 290 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 292) if(game->objects[Database_Exist[Vrab0002]]->mp <= 5){game->objects[Database_Exist[Vrab0002]]->frame1 = 300; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0; game->objects[Database_Exist[Vrab0002]]->mp = 1;}} else {if(game->objects[Database_Exist[Vrab0002]]->fall <= -9999999) game->objects[Database_Exist[Vrab0002]]->fall = 0;}} if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 290 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 292){if((game->objects[Database_Exist[Vrab0002]]->right != 0 || game->objects[Database_Exist[Vrab0002]]->holding_right != 0) && game->objects[Database_Exist[Vrab0002]]->left == 0 && game->objects[Database_Exist[Vrab0002]]->holding_left == 0){if(game->objects[Database_Exist[Vrab0002]]->facing == 1){game->objects[Database_Exist[Vrab0002]]->facing = 0; game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = 293; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}} if((game->objects[Database_Exist[Vrab0002]]->left != 0 || game->objects[Database_Exist[Vrab0002]]->holding_left != 0) && game->objects[Database_Exist[Vrab0002]]->right == 0 && game->objects[Database_Exist[Vrab0002]]->holding_right == 0){if(game->objects[Database_Exist[Vrab0002]]->facing == 0){game->objects[Database_Exist[Vrab0002]]->facing = 1; game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = 293; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}}} if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 293 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 298){if((game->objects[Database_Exist[Vrab0002]]->right != 0 || game->objects[Database_Exist[Vrab0002]]->holding_right != 0) && game->objects[Database_Exist[Vrab0002]]->left == 0 && game->objects[Database_Exist[Vrab0002]]->holding_left == 0) if(game->objects[Database_Exist[Vrab0002]]->facing == 1){game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;} if((game->objects[Database_Exist[Vrab0002]]->left != 0 || game->objects[Database_Exist[Vrab0002]]->holding_left != 0) && game->objects[Database_Exist[Vrab0002]]->right == 0 && game->objects[Database_Exist[Vrab0002]]->holding_right == 0) if(game->objects[Database_Exist[Vrab0002]]->facing == 0){game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}} break;
+     case -2: /*/ 2022 - Grandmaster v1.00.220930 /*/ if(game->objects[Database_Exist[Vrab0002]]->max_hp > 10) game->objects[Database_Exist[Vrab0002]]->max_hp = 10; if(game->objects[Database_Exist[Vrab0002]]->dark_hp > 10) game->objects[Database_Exist[Vrab0002]]->dark_hp = 10; if(game->objects[Database_Exist[Vrab0002]]->hp > 10) game->objects[Database_Exist[Vrab0002]]->hp = 10; break;
+     case -3: /*/ 2022 - Grandmaster v1.17.221004 /*/
+      if(game->objects[Database_Exist[Vrab0002]]->bdefend == 0) game->objects[Database_Exist[Vrab0002]]->fall = -99999999;
+      if(game->objects[Database_Exist[Vrab0002]]->bdefend > 0 && game->objects[Database_Exist[Vrab0002]]->fall <= -9999999) game->objects[Database_Exist[Vrab0002]]->fall = 0;
+
+      if(game->objects[Database_Exist[Vrab0002]]->frame1 == 255 || game->objects[Database_Exist[Vrab0002]]->frame1 == 256) if(game->objects[Database_Exist[Vrab0002]]->mp > 5)
+      {game->objects[Database_Exist[Vrab0002]]->mp -= 5;} else {game->objects[Database_Exist[Vrab0002]]->frame1 += 2;}
+      if((game->objects[Database_Exist[Vrab0002]]->frame1 >= 252 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 258) || (game->objects[Database_Exist[Vrab0002]]->frame1 >= 269 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 278))
+      {game->objects[Database_Exist[Vrab0002]]->fall = -99999999; game->objects[Database_Exist[Vrab0002]]->shake = 0; if(game->objects[Database_Exist[Vrab0002]]->x_velocity != 0) game->objects[Database_Exist[Vrab0002]]->x_velocity /= 2; if(game->objects[Database_Exist[Vrab0002]]->z_velocity != 0) game->objects[Database_Exist[Vrab0002]]->z_velocity /= 2;} else
+      {
+       if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 288 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 301)
+       {game->objects[Database_Exist[Vrab0002]]->fall = -99999999; game->objects[Database_Exist[Vrab0002]]->shake = 0; if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 290 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 292) if(game->objects[Database_Exist[Vrab0002]]->mp <= 5){game->objects[Database_Exist[Vrab0002]]->frame1 = 300; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0; game->objects[Database_Exist[Vrab0002]]->mp = 1;}} else
+       {if(game->objects[Database_Exist[Vrab0002]]->fall <= -9999999 && game->objects[Database_Exist[Vrab0002]]->bdefend > 0) game->objects[Database_Exist[Vrab0002]]->fall = 0;}
+      }
+      if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 290 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 292)
+      {
+       if((game->objects[Database_Exist[Vrab0002]]->right != 0 || game->objects[Database_Exist[Vrab0002]]->holding_right != 0) && game->objects[Database_Exist[Vrab0002]]->left == 0 && game->objects[Database_Exist[Vrab0002]]->holding_left == 0)
+       {
+        if(game->objects[Database_Exist[Vrab0002]]->facing == 1){game->objects[Database_Exist[Vrab0002]]->facing = 0; game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = 293; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}
+       }
+       if((game->objects[Database_Exist[Vrab0002]]->left != 0 || game->objects[Database_Exist[Vrab0002]]->holding_left != 0) && game->objects[Database_Exist[Vrab0002]]->right == 0 && game->objects[Database_Exist[Vrab0002]]->holding_right == 0)
+       {
+        if(game->objects[Database_Exist[Vrab0002]]->facing == 0){game->objects[Database_Exist[Vrab0002]]->facing = 1; game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = 293; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}
+       }
+      }
+      if(game->objects[Database_Exist[Vrab0002]]->frame1 >= 293 && game->objects[Database_Exist[Vrab0002]]->frame1 <= 298)
+      {
+       if((game->objects[Database_Exist[Vrab0002]]->right != 0 || game->objects[Database_Exist[Vrab0002]]->holding_right != 0) && game->objects[Database_Exist[Vrab0002]]->left == 0 && game->objects[Database_Exist[Vrab0002]]->holding_left == 0) if(game->objects[Database_Exist[Vrab0002]]->facing == 1){game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}
+       if((game->objects[Database_Exist[Vrab0002]]->left != 0 || game->objects[Database_Exist[Vrab0002]]->holding_left != 0) && game->objects[Database_Exist[Vrab0002]]->right == 0 && game->objects[Database_Exist[Vrab0002]]->holding_right == 0) if(game->objects[Database_Exist[Vrab0002]]->facing == 0){game->objects[Database_Exist[Vrab0002]]->frame1 = 299; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0;}
+      }
+
+      if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].itr_count != 0)
+      {
+       int32 Vrab06[2] = {game->objects[Database_Exist[Vrab0002]]->frame1, 0};
+       int32 Vrab01 = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itr_count; int32 Vrab02; int32 Vrab03; int32 Vrab04[6]; int32 Vrab05[5]; int32 Vrab07[4];
+       Vrab0001 = 0; while(Vrab0001 < Vrab01)
+       {
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].kind != 0){Vrab0001 += 1; continue;}
+        Vrab04[0] = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].x - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].centerx;
+        Vrab04[1] = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].y - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].centery;
+        Vrab04[2] = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].w;
+        Vrab04[3] = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].h;
+        Vrab04[4] = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].zwidth;
+        if(game->objects[Database_Exist[Vrab0002]]->facing)
+        {Vrab04[0] = -Vrab04[0]; Vrab04[2] = -Vrab04[2];}
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvz >= 501)
+        {Vrab04[5] = Rounding(game->objects[Database_Exist[Vrab0002]]->z_real) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvz - 550;} else
+        {Vrab04[5] = Rounding(game->objects[Database_Exist[Vrab0002]]->z_real + game->objects[Database_Exist[Vrab0002]]->z_velocity) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvz;}
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvx >= 501)
+        {Vrab04[0] += Rounding(game->objects[Database_Exist[Vrab0002]]->x_real) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvx - 550;} else
+        {
+         if(game->objects[Database_Exist[Vrab0002]]->facing)
+         {Vrab04[0] += Rounding(game->objects[Database_Exist[Vrab0002]]->x_real + game->objects[Database_Exist[Vrab0002]]->x_velocity) - game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvx;} else
+         {Vrab04[0] += Rounding(game->objects[Database_Exist[Vrab0002]]->x_real + game->objects[Database_Exist[Vrab0002]]->x_velocity) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvx;}
+        }
+        if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvy >= 501)
+        {Vrab04[1] += Rounding(game->objects[Database_Exist[Vrab0002]]->y_real) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvy - 550;} else
+        {Vrab04[1] += Rounding(game->objects[Database_Exist[Vrab0002]]->y_real + game->objects[Database_Exist[Vrab0002]]->y_velocity) + game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].dvy;}
+        if(Vrab04[4] == 0) Vrab04[4] = 15;
+        if(game->objects[Database_Exist[Vrab0002]]->facing)
+        {Vrab07[1] = Vrab04[0]; Vrab07[0] = Vrab04[0] + Vrab04[2];} else
+        {Vrab07[0] = Vrab04[0]; Vrab07[1] = Vrab04[0] + Vrab04[2];}
+        
+          //std::cout << "\n============\n: " << Database_Exist[Vrab0002] << " : " << Vrab04[0] << ", " << Vrab04[1] << ", " << Vrab04[2] << ", " << Vrab04[3] << ", " << Vrab04[4] << "\n";
+
+        for(Vrab0003 = 0; Vrab0003 < NumberOfExist; ++Vrab0003) if(game->objects[Database_Exist[Vrab0003]]->data->frames[game->objects[Database_Exist[Vrab0003]]->frame1].state == 3000) if(game->objects[Database_Exist[Vrab0003]]->data->frames[game->objects[Database_Exist[Vrab0003]]->frame1].bdy_count != 0) switch(game->objects[Database_Exist[Vrab0003]]->data->id)
+        {
+         case 200: case 203: case 205: case 206: case 207: case 215: case 216:
+          if(game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].effect != 23 && game->objects[Database_Exist[Vrab0002]]->facing == game->objects[Database_Exist[Vrab0003]]->facing) continue;
+          Vrab06[1] = game->objects[Database_Exist[Vrab0003]]->frame1;
+          Vrab02 = game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].bdy_count;
+          Vrab03 = 0; if(Vrab04[2] != 0 && Vrab04[3] != 0) while(Vrab03 < Vrab02)
+          {
+           Vrab05[0] = game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].bdys[Vrab03].x - game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].centerx;
+           Vrab05[1] = game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].bdys[Vrab03].y - game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].centery;
+           Vrab05[2] = game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].bdys[Vrab03].w;
+           Vrab05[3] = game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].bdys[Vrab03].h;
+           Vrab05[4] = 0;
+           if(game->objects[Database_Exist[Vrab0003]]->facing)
+           {Vrab05[0] = -Vrab05[0]; Vrab05[2] = -Vrab05[2];}
+           if(game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvz >= 501)
+           {Vrab05[4] = Rounding(game->objects[Database_Exist[Vrab0003]]->z_real) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvz - 550;} else
+           {Vrab05[4] = Rounding(game->objects[Database_Exist[Vrab0003]]->z_real + game->objects[Database_Exist[Vrab0003]]->z_velocity) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvz;}
+           if(game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvx >= 501)
+           {Vrab05[0] += Rounding(game->objects[Database_Exist[Vrab0003]]->x_real) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvx - 550;} else
+           {
+            if(game->objects[Database_Exist[Vrab0003]]->facing)
+            {Vrab05[0] += Rounding(game->objects[Database_Exist[Vrab0003]]->x_real + game->objects[Database_Exist[Vrab0003]]->x_velocity) - game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvx;} else
+            {Vrab05[0] += Rounding(game->objects[Database_Exist[Vrab0003]]->x_real + game->objects[Database_Exist[Vrab0003]]->x_velocity) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvx;}
+           }
+           if(game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvy >= 501)
+           {Vrab05[1] += Rounding(game->objects[Database_Exist[Vrab0003]]->y_real) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvy - 550;} else
+           {Vrab05[1] += Rounding(game->objects[Database_Exist[Vrab0003]]->y_real + game->objects[Database_Exist[Vrab0003]]->y_velocity) + game->objects[Database_Exist[Vrab0003]]->data->frames[Vrab06[1]].dvy;}
+           if(game->objects[Database_Exist[Vrab0003]]->facing)
+           {Vrab07[3] = Vrab05[0]; Vrab07[2] = Vrab05[0] + Vrab05[2];} else
+           {Vrab07[2] = Vrab05[0]; Vrab07[3] = Vrab05[0] + Vrab05[2];}
+
+           // std::cout << "| " << Database_Exist[Vrab0003] << " : " << Vrab05[0] << ", " << Vrab05[1] << ", " << Vrab05[2] << ", " << Vrab05[3] << "\n";
+
+           if(Vrab05[2] != 0 && Vrab05[3] != 0)
+           if((Vrab07[0] >= Vrab07[2] && Vrab07[0] <= Vrab07[3]) || (Vrab07[1] >= Vrab07[2] && Vrab07[1] <= Vrab07[3]) || (Vrab07[2] >= Vrab07[0] && Vrab07[3] <= Vrab07[1]))
+           if((Vrab04[1] >= Vrab05[1] && Vrab04[1] <= Vrab05[1] + Vrab05[3]) || (Vrab04[1] + Vrab04[3] >= Vrab05[1] && Vrab04[1] + Vrab04[3] <= Vrab05[1] + Vrab05[3]) || (Vrab05[1] >= Vrab04[1] && Vrab05[1] + Vrab05[3] <= Vrab04[1] + Vrab04[3]))
+           if(Vrab04[5] - Vrab04[4] <= Vrab05[4] && Vrab04[5] + Vrab04[4] >= Vrab05[4])
+           if((game->objects[Database_Exist[Vrab0003]]->vrests[Database_Exist[Vrab0002]] == 0 && game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].vrest != 0) || game->objects[Database_Exist[Vrab0002]]->arest == 0)
+           {
+            game->objects[Database_Exist[Vrab0003]]->frame1 = (int32)(uint8)game->objects[Database_Exist[Vrab0003]]->data->unkwn2[224] + (int32)(uint8)game->objects[Database_Exist[Vrab0003]]->data->unkwn2[225] * 256;
+            game->objects[Database_Exist[Vrab0003]]->team = game->objects[Database_Exist[Vrab0002]]->team;
+            game->objects[Database_Exist[Vrab0003]]->shake = -3;
+            game->objects[Database_Exist[Vrab0003]]->x_velocity = 0;
+            game->objects[Database_Exist[Vrab0003]]->y_velocity = 0;
+            game->objects[Database_Exist[Vrab0003]]->z_velocity = 0;
+            game->objects[Database_Exist[Vrab0003]]->x_acceleration = 0;
+            game->objects[Database_Exist[Vrab0003]]->y_acceleration = 0;
+            game->objects[Database_Exist[Vrab0003]]->z_acceleration = 0;
+            game->objects[Database_Exist[Vrab0003]]->wait_counter = 0;
+            game->objects[Database_Exist[Vrab0003]]->vrests[Database_Exist[Vrab0002]] = (int8)game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].vrest;
+            game->objects[Database_Exist[Vrab0002]]->arest = game->objects[Database_Exist[Vrab0002]]->data->frames[Vrab06[0]].itrs[Vrab0001].arest;
+            game->objects[Database_Exist[Vrab0002]]->shake = -3;
+           }
+           Vrab03 += 1;
+          }
+         break; default: break;
+        }
+        Vrab0001 += 1;
+       }
+      }
+      for(Vrab0003 = 0; Vrab0003 < NumberOfExist; ++Vrab0003) if(game->objects[Database_Exist[Vrab0003]]->data->id == 209) if(game->objects[Database_Exist[Vrab0003]]->frame1 == 31) game->objects[Database_Exist[Vrab0003]]->pic_gain = 0;
+     break;
+     default: break;
+    }
    }
    int0 Peat_EtCetera()
    {
@@ -1855,9 +2203,19 @@
    {
 	Database_FirstInGame = false;
     Once_FullInjection();
+    Once_EtCetera();
+    Once_CodedSpeciality();
     Once_PackSkillOut();
     Once_PackTDMode();
    }
+
+   /*clr();
+   for(uint32 A = 0; A <= NumberOfExist; ++A)
+   {
+    std::cout << Database_Exist[A] << " [" << game->objects[Database_Exist[A]]->data->id << "] |" << game->objects[Database_Exist[A]]->frame1 << "| : " << ((int)(unsigned char)game->objects[Database_Exist[A]]->data->unkwn2[224] + (int)(unsigned char)game->objects[Database_Exist[A]]->data->unkwn2[225] * 256) << " (" << ((int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[144] + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[145] * 256 + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[146] * 65536 + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[147] * 16777216) << ")";
+    std::cout << " {" << (int32)game->objects[Database_Exist[A]]->data->unkwn2[144] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[145] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[146] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[147] << "}\n";
+   }
+   std::cout << "\n";*/
 
    Peat_CodedSpeciality();
    Peat_EtCetera();
@@ -1927,12 +2285,13 @@
   int0 Initialization()
   {
    I_Configuring();
+   Console.Opening();
    I_Building();
    I_Installation();
    Console.Ending();
    if(Config.LoadDLL) LoadOtherDll();
   }
   int0 Hiding(){if(Config.LoadDLL) UnloadOtherDll(); if(Config.Storing.size() < 50) return; if(File0002.is_open()) File0002.close(); strcpy(Config.Key, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"); File0002.open(Execute(TEMPORAL_FILE), std::ios::out | std::ios::binary); File0002 << "Do not erase this file.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + DecryptionSTRING(Config.Storing) + "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; File0002.close();}
-  int0 Cleaning(){Console.Ending(); if(!Config.Permanentness){File0001.open(Config.Outsight); if(File0001.is_open()){File0001.close(); File0001.open(Config.Insight); if(File0001.is_open()){File0001.close(); std::remove(Config.Insight.c_str());} std::filesystem::copy_file(Config.Outsight, Config.Insight);} File0001.open(Config.Output + "\\summary.edb"); if(File0001.is_open()){while(File0001){File0001 >> Temp0001; std::remove(Temp0001.c_str()); while(Temp0001 != ""){Vrab0002 = Temp0001.size() - 1; while(Temp0001[Vrab0002] != '\\' && Temp0001 != ""){Temp0001.pop_back(); Vrab0002 -= 1;} if(Temp0001 != ""){if(Temp0001[Vrab0002] == '\\') Temp0001.pop_back();} else {break;} if(Exist(Temp0001)){if((std::size_t)std::distance(std::filesystem::directory_iterator{Temp0001}, std::filesystem::directory_iterator{}) == 0){std::filesystem::remove_all(Temp0001.c_str());} else {break;}} else {break;}}} File0001.close(); std::remove((Config.Output + "\\summary.edb").c_str());}}}
+  int0 Cleaning(){Console.Ending(); if(!Config.Permanentness){File0001.open(Config.Outsight); if(File0001.is_open()){File0001.close(); File0001.open(Config.Insight); if(File0001.is_open()){File0001.close(); std::remove(Config.Insight.c_str());} std::filesystem::copy_file(Config.Outsight, Config.Insight); std::remove(Config.Outsight.c_str());} File0001.open(Config.Output + "\\summary.edb"); if(File0001.is_open()){while(File0001){File0001 >> Temp0001; std::remove(Temp0001.c_str()); while(Temp0001 != ""){Vrab0002 = Temp0001.size() - 1; while(Temp0001[Vrab0002] != '\\' && Temp0001 != ""){Temp0001.pop_back(); Vrab0002 -= 1;} if(Temp0001 != ""){if(Temp0001[Vrab0002] == '\\') Temp0001.pop_back();} else {break;} if(Exist(Temp0001)){if((std::size_t)std::distance(std::filesystem::directory_iterator{Temp0001}, std::filesystem::directory_iterator{}) == 0){std::filesystem::remove_all(Temp0001.c_str());} else {break;}} else {break;}}} File0001.close(); std::remove((Config.Output + "\\summary.edb").c_str());}}}
  //-//
 //-//

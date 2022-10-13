@@ -1,19 +1,27 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C++ Express 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ddwrapper", "ddwrapper.vcxproj", "{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
+		Multi|Win32 = Multi|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Debug|Win32.ActiveCfg = Debug|Win32
 		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Debug|Win32.Build.0 = Debug|Win32
+		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Multi|Win32.ActiveCfg = Multi|Win32
+		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Multi|Win32.Build.0 = Multi|Win32
 		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Release|Win32.ActiveCfg = Release|Win32
 		{62CCD15B-C8B5-43BC-94A2-553B9CBF1D66}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E85B72B-91CB-4B9C-8F30-FFC914A6FA97}
 	EndGlobalSection
 EndGlobal
