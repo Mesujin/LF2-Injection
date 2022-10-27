@@ -953,6 +953,7 @@
   uint32 NumberOfExistT0;
   uint32 NumberOfExistT0COM;
   
+  int1 InGame = false;
   int32 TU = -1;
   int32 LastTU = 2147483647;
   int32 InjectorNUM = -1;
@@ -1705,7 +1706,7 @@
         if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) for(Vrab0001 = 0; Vrab0001 < game->files->datas[Vrab0002]->frames[Vrab0003].itr_count; ++Vrab0001)
         {
          if(game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend < Config.Min_Bdef) game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = 0;
-         game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = (int32)((xint64)game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend * Config.Bdef_E / 100);
+         game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend = Rounding((xint64)game->files->datas[Vrab0002]->frames[Vrab0003].itrs[Vrab0001].bdefend * Config.Bdef_E * 0.01);
         }
        }
        Vrab0002 += 1;
@@ -1718,13 +1719,11 @@
       Vrab0002 = 0;
 	  while(game->files->datas[Vrab0002] != 0)
       {
-       for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003)
-       {
-        if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 0;
-       }
+       for(Vrab0003 = 0; Vrab0003 < MaximumFrames; ++Vrab0003) if(game->files->datas[Vrab0002]->frames[Vrab0003].exists) game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 0;
        Vrab0003 = 110;
        while(Vrab0003 != 999)
        {
+        if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 0 || game->files->datas[Vrab0002]->frames[Vrab0003].state == 1) break;
         if(!game->files->datas[Vrab0002]->frames[Vrab0003].exists) break;
         if(game->files->datas[Vrab0002]->frames[Vrab0003].state == 7){game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 1;} else {game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction = 2;}
         if(game->files->datas[Vrab0002]->frames[Vrab0003].cpoint.daction != 0) break;
@@ -2109,33 +2108,16 @@
    }
    int0 Peat_PackTDMode()
    {
-    if(Config.TD_Mode)
-    {
-     switch(Config.TD_Post)
-     {
-      case 0: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2; break;
-      case 1: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth1; break;
-      case 2: Vrab0001 = (game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 + game->files->backgrounds[*(int*)0x44d024].bg_zwidth1) / 2; break;
-      default: break;
-     }
-     for(Vrab0002 = 0; Vrab0002 < NumberOfExist; ++Vrab0002)
-     {
-      if(game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID || game->objects[Database_Exist[Vrab0002]]->data->id == Full_Injection_ID2) continue;
-      game->objects[Database_Exist[Vrab0002]]->z_real = Vrab0001;
-      game->objects[Database_Exist[Vrab0002]]->z_velocity = 0;
-      game->objects[Database_Exist[Vrab0002]]->z_acceleration = 0;
-     }
-    }
     if(Config.Hold_Def)
     {
      for(Vrab0002 = 0; Vrab0002 < NumberOfExistT0; ++Vrab0002)
      {
-      if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].cpoint.daction == 1)
+      if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].cpoint.daction == 1)
       {
-       Hold_Def_TU_Count[Database_Exist[Vrab0002]] += 1;
-       if(game->objects[Database_Exist[Vrab0002]]->D == 0 && game->objects[Database_Exist[Vrab0002]]->holding_d == 0){if(game->objects[Database_Exist[Vrab0002]]->shake != 0) continue; if(Hold_Def_TU_Count[Database_Exist[Vrab0002]] < Config.Hold_Def_TU) continue; game->objects[Database_Exist[Vrab0002]]->wait_counter = 0; if(game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next >= MaximumFrames){game->objects[Database_Exist[Vrab0002]]->frame1 = 0;} else {game->objects[Database_Exist[Vrab0002]]->frame1 = game->objects[Database_Exist[Vrab0002]]->data->frames[game->objects[Database_Exist[Vrab0002]]->frame1].next;}} else
-       {game->objects[Database_Exist[Vrab0002]]->wait_counter -= 1;}
-      } else {Hold_Def_TU_Count[Database_Exist[Vrab0002]] = 0;}
+       Hold_Def_TU_Count[Database_ExistT0[Vrab0002]] += 1; if(Hold_Def_TU_Count[Database_ExistT0[Vrab0002]] > 999999999) Hold_Def_TU_Count[Database_ExistT0[Vrab0002]] = 999999999;
+       if(game->objects[Database_ExistT0[Vrab0002]]->D == 0 && game->objects[Database_ExistT0[Vrab0002]]->holding_d == 0){if(game->objects[Database_ExistT0[Vrab0002]]->shake != 0) continue; if(Hold_Def_TU_Count[Database_ExistT0[Vrab0002]] < Config.Hold_Def_TU) continue; game->objects[Database_ExistT0[Vrab0002]]->wait_counter = 0; if(game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].next >= MaximumFrames){game->objects[Database_ExistT0[Vrab0002]]->frame1 = 0;} else {game->objects[Database_ExistT0[Vrab0002]]->frame1 = game->objects[Database_ExistT0[Vrab0002]]->data->frames[game->objects[Database_ExistT0[Vrab0002]]->frame1].next;}} else
+       {game->objects[Database_ExistT0[Vrab0002]]->wait_counter -= 1;}
+      } else {Hold_Def_TU_Count[Database_ExistT0[Vrab0002]] = 0;}
      }
     }
    }
@@ -2274,14 +2256,6 @@
     Once_PackTDMode();
    }
 
-   /*clr();
-   for(uint32 A = 0; A <= NumberOfExist; ++A)
-   {
-    std::cout << Database_Exist[A] << " [" << game->objects[Database_Exist[A]]->data->id << "] |" << game->objects[Database_Exist[A]]->frame1 << "| : " << ((int)(unsigned char)game->objects[Database_Exist[A]]->data->unkwn2[224] + (int)(unsigned char)game->objects[Database_Exist[A]]->data->unkwn2[225] * 256) << " (" << ((int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[144] + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[145] * 256 + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[146] * 65536 + (int32)(uint8)game->objects[Database_Exist[A]]->data->unkwn2[147] * 16777216) << ")";
-    std::cout << " {" << (int32)game->objects[Database_Exist[A]]->data->unkwn2[144] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[145] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[146] << ", " << (int32)game->objects[Database_Exist[A]]->data->unkwn2[147] << "}\n";
-   }
-   std::cout << "\n";*/
-
    Peat_CodedSpeciality();
    Peat_EtCetera();
    Peat_PackVampirism();
@@ -2290,17 +2264,21 @@
    Peat_EtCetera2();
    Peat_FullInjection();
   }
-  int0 Base_Redeclaration()
+  int0 Base_Reset()
   {
    //Data Reset
-    int1 Vrab01 = false; if(*(int*)0x450b8c < LastTU) Vrab01 = true; LastTU = *(int*)0x450b8c - 1;
-    if(Vrab01)
-    {
+   // int1 Vrab01 = false; if(*(int*)0x450b8c < LastTU) Vrab01 = true; LastTU = *(int*)0x450b8c - 1;
+   // if(Vrab01)
+   // {
      //Full_Injection
-      if(Config.Full_Injection){InjectorNUM = -1; while(game->files->datas[Vrab0002] != 0){if(game->files->datas[Vrab0002]->id == Full_Injection_ID2){game->files->datas[Vrab0002]->frames[0].centerx = 1000; game->files->datas[Vrab0002]->frames[1].centerx = 1000; game->files->datas[Vrab0002]->frames[0].centery = -1000; game->files->datas[Vrab0002]->frames[1].centery = -1000; break;} Vrab0002 += 1;}}
+      if(Config.Full_Injection){while(game->files->datas[Vrab0002] != 0){if(game->files->datas[Vrab0002]->id == Full_Injection_ID2){game->files->datas[Vrab0002]->frames[0].centerx = 1000; game->files->datas[Vrab0002]->frames[1].centerx = 1000; game->files->datas[Vrab0002]->frames[0].centery = -1000; game->files->datas[Vrab0002]->frames[1].centery = -1000; break;} Vrab0002 += 1;}}
      //-//
      //Characters' Hardcoded Speciality
     
+     //-//
+     //LF2: TD Mode
+      if(Config.TD_Mode){Vrab0001 = 0; if(game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 != game->files->backgrounds[*(int*)0x44d024].bg_zwidth1){switch(Config.TD_Post){case 0: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth2; break; case 1: Vrab0001 = game->files->backgrounds[*(int*)0x44d024].bg_zwidth1; break; case 2: Vrab0001 = (game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 + game->files->backgrounds[*(int*)0x44d024].bg_zwidth1) / 2; break; default: break;} game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 = Vrab0001; game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 = Vrab0001;}}
+      if(Config.Hold_Def) for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Hold_Def_TU_Count[Vrab0002] = 0;
      //-//
      //LF2: Vampirism
       for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) Convertion[Vrab0002] = 0;
@@ -2316,9 +2294,11 @@
        if(Config.Overlaying) if(!Overlay[*(int*)0x44d024]){Overlay[*(int*)0x44d024] = true; game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 -= 50; game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 += 50;}
       //-//
      //-//
-    }
+   // }
    //-//
-
+  }
+  int0 Base_Redeclaration()
+  {
    NumberOfExist = 0; NumberOfExistT0 = 0; NumberOfExistT0COM = 0;
    for(Vrab0002 = 0; Vrab0002 < MaximumObject; ++Vrab0002) if(game->exists[Vrab0002]) if(game->objects[Vrab0002]->frame1 != 9998 && game->objects[Vrab0002]->data->frames[game->objects[Vrab0002]->frame1].state != 9998)
    switch(game->objects[Vrab0002]->data->type)
@@ -2335,12 +2315,12 @@
       {
        game->objects[Vrab0002]->hp = 0; game->objects[Vrab0002]->mp = 0; game->objects[Vrab0002]->max_hp = 0; game->objects[Vrab0002]->team = (int32)MaximumObject - 1; game->objects[Vrab0002]->blink = -199;
        if(Vrab0002 >= 10)
-       if(InjectorNUM == -1 && game->objects[Vrab0002]->frame1 == 1)
+       if(!InGame && game->objects[Vrab0002]->frame1 == 1)
        {
-        InjectorNUM = Vrab0002; game->objects[Vrab0002]->frame1 = 237; InjectorFRAME = 237; if(InjectionDone){Vrab0003 = 0; while(game->files->datas[Vrab0003] != 0){if(game->files->datas[Vrab0003]->id == Full_Injection_ID2){game->files->datas[Vrab0003]->frames[0].pic = -1; break;} Vrab0003 += 1;}} else {InjectionDone = true;}
+        InjectorNUM = Vrab0002; game->objects[Vrab0002]->frame1 = 237; InjectorFRAME = 237; InGame = true; Base_Reset(); if(InjectionDone){Vrab0003 = 0; while(game->files->datas[Vrab0003] != 0){if(game->files->datas[Vrab0003]->id == Full_Injection_ID2){game->files->datas[Vrab0003]->frames[0].pic = -1; break;} Vrab0003 += 1;}} else {InjectionDone = true;}
        } else
        {
-        if((int32)Vrab0002 == InjectorNUM){InjectorFRAME = game->objects[Vrab0002]->frame1;}
+        if((int32)Vrab0002 == InjectorNUM){if(InjectorFRAME == game->objects[Vrab0002]->frame1){InGame = false;} else {InGame = true;} if(InjectorFRAME == 237) InGame = true; InjectorFRAME = game->objects[Vrab0002]->frame1;}
        }
        Database_ExistT0COM[NumberOfExistT0COM] = Vrab0002; NumberOfExistT0COM += 1;
       }
@@ -2362,8 +2342,8 @@
   int0 Process(int32 Vrab01)
   {
    if(Config.Sleep_Mode) return;
-   if(Database_First){Base_Redeclaration(); Database_First = false;}
-   if(Vrab01 == Database_ExistT0COM[NumberOfExistT0COM - 1]){Base_Process(); Database_First = true;}
+   if(Database_First){Base_Redeclaration(); if(!Config.Full_Injection) Base_Reset(); Database_First = false;}
+   if(Vrab01 == Database_ExistT0COM[NumberOfExistT0COM - 1]){if(InGame || (!InjectionDone && !InGame)) Base_Process(); Database_First = true;}
   }
   int0 Initialization()
   {
