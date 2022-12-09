@@ -26,21 +26,29 @@ The how to use the `.as` as a Module instead of an AI-Script is simply by provid
 
 In AI-Script, the main function to be used is known as `void id()` and `int ego()`, but in Module, the main function is different, which is ; <br/>
 
+- `void game()` <br/>
+  will be called for once, when you run LF2. <br/> Note that you may not call anything from `game` class in this function.
 - `void init()` / `void once()` <br/>
-  will be called for once, when initialization time is come. Both `init` and `once` are mainly the same, but unlike `init`, `once` won't be called again if the Module is being rebuilded on runtime.
+  will be called for once, when initialization time is come. Both `init()` and `once()` are mainly the same, but unlike `init()`, `once()` won't be called again if the Module is being rebuilded on runtime.
 - `void play()` <br/>
   will be called when entering a new battle.
 - `void main()` <br/>
   will be called for every time unit ( TU ).
+- `void mids()` <br/>
+  will be called for every TU but in the middle of TU. <br/>
 - `void last()` <br/>
   will be called for every TU but at the end of TU. <br/>
-  ( For now, this function still be called before the end of TU, but though still worthy for last priority usage )
+- `void fins()` <br/>
+  will be called when exiting a battle. <br/>
+
+
+( In the current version, `mids()` and `last()` are still be called just after the `main()` is called, but it's still worthy for last priority usage )
 
 The other aspect is remain the same except `self` class and `target` class isn't exist and most of the value in `game` class is modifable, for example : `game.objects[0].hp = 0;` is allowed in Module. <br/>
 
 There's also some new things comes within it, which ; <br/>
 
-- `int32 moduleID` <br/>
+- `uint32 moduleID` <br/>
   which is the number in the Module's filename. ( `0` if the filename is non-numeric )
 - `uint32 getobjectData(int32 Object_ID)` <br/>
   which will return the in-game Data address of an object. ( return `4294967295` on fail )
@@ -59,9 +67,6 @@ And some basic stuff ;
   return the maximum number of Object, normally it's `400`, ...
 - `int32 maximumManaPoint` <br/>
   return the maximum Mana Point ( MP ), normally it's `500`, ...
-- `&&& convert&&&(### Value)` <br/>
-  ( ex; `uint32 convertUINT32(double Value)`, `double convertDOUBLE(bool Value)` ) <br/>
-  return the converted Value. This function allowing you to convert any Value into `&&&` type Value without any warning from the Console. Both `&&&` and `###` can be any primitive type.
 
 Do note that Moduling has a priority in which supposed to be called first ...
 
