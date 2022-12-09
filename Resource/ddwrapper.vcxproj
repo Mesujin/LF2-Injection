@@ -85,12 +85,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Output\Release\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Output\Debug\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">Output\Multi\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Output\Release\Intermediate\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Output\Debug\Intermediate\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">Output\Multi\Intermediate\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Output\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Output\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">$(SolutionDir)Output\Multi\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Output\Release\Intermediate\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Output\Debug\Intermediate\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">$(SolutionDir)Output\Multi\Intermediate\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">false</LinkIncremental>
