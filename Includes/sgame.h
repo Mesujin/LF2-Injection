@@ -1,5 +1,10 @@
 #ifndef _SGAME_H_
  #define _SGAME_H_
+ 
+ constexpr int MaximumObject = 400;
+ constexpr int MaximumFrames = 400;
+ constexpr int MaximumManaPoint = 500;
+ 
  typedef struct 
  {
   int kind;
@@ -186,7 +191,7 @@
   int unkwn4;
   char face_bmp[40];  // I believe at least some of this has to do with small image.
   int unkwn5[20];
-  sFrame frames[400];
+  sFrame frames[MaximumFrames];
   char name[12];      // Not actually certain that the length is 12, seems like voodoo magic.
  } sDataFile;
  typedef struct 
@@ -252,7 +257,7 @@
   char DJA;
   char unkwn7[15];
   int arest;
-  char vrests[400];
+  char vrests[MaximumObject];
   int attacked_object_num;
   // Skip unkwn8 for backwards compatibility reasons.
   char unkwn9[112];
@@ -333,15 +338,15 @@
  } sBackground;
  typedef struct 
  {
-  sDataFile *datas[500];
+  sDataFile *datas[MaximumObject + 100];
   sStage stages[60];
   sBackground backgrounds[50];
  } sFileManager;
  typedef struct
  {
   int state;             // 0x4
-  char exists[400];      // 0x194
-  sObject *objects[400]; // 0x7d4
+  char exists[MaximumObject];      // 0x194
+  sObject *objects[MaximumObject]; // 0x7d4
   sFileManager *files;   //FA4
  } sGame;
 #endif
