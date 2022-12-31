@@ -26,12 +26,12 @@ The how to use the `.as` as a Module instead of an AI-Script is simply by provid
 
 In AI-Script, the main function to be used is known as `void id()` and `int ego()`, but in Module, the main function is different, which is ; <br/>
 
-- `void game()` <br/>
+- `void core()` <br/>
   will be called for once, when you run LF2. <br/> Note that you may not call anything from `game` class in this function.
+- `void play()` <br/>
+  will be called when entering a new battle. Note that `play()` is called before `init()` or `once()` is called.
 - `void init()` / `void once()` <br/>
   will be called for once, when initialization time is come. Both `init()` and `once()` are mainly the same, but unlike `init()`, `once()` won't be called again if the Module is being rebuilded on runtime.
-- `void play()` <br/>
-  will be called when entering a new battle.
 - `void main()` <br/>
   will be called for every time unit ( TU ).
 - `void mids()` <br/>
@@ -48,25 +48,25 @@ The other aspect is remain the same except `self` class and `target` class isn't
 
 There's also some new things comes within it, which ; <br/>
 
-- `uint32 moduleID` <br/>
+- `int32 Module_ID` <br/>
   which is the number in the Module's filename. ( `0` if the filename is non-numeric )
-- `uint32 getobjectData(int32 Object_ID)` <br/>
+- `uint32 Get_ID_Data(int32 Object_ID)` <br/>
   which will return the in-game Data address of an object. ( return `4294967295` on fail )
-- `int32 getobjectSet(int32 Object_Num)` | `int32 getdataSet(int32 Object_Data)` <br/>
-  which will return the `set:` of an Object.
-- `void frameCopy(uint32 Object_Data, uint32 Frame1, uint32 Frame2)` <br/>
+- `void Copy_Frame(uint32 Object_Data, uint32 Frame1, uint32 Frame2)` <br/>
   which are used to copy datas in `Frame1` to `Frame2`.
-- `void frameCopying(uint32 Object_Data1, uint32 Object_Data2, uint32 Frame1, uint32 Frame2)` <br/>
-  which are used to copy datas in `Frame1` to `Frame2` from different Object.
+- `void Copy_Data_Frame(uint32 Object_Data1, uint32 Object_Data2, uint32 Frame1, uint32 Frame2)` <br/>
+  which are used to copy datas in `Frame1` to `Frame2` from different Data.
 
 And some basic stuff ;
 
-- `int32 maximumFrame` <br/>
+- `uint32 Maximum_Frame` <br/>
   return the maximum Frame, normally it's `400`, but you might want to use this for the compatibility of your script.
-- `int32 maximumObject` <br/>
+- `uint32 Maximum_Object` <br/>
   return the maximum number of Object, normally it's `400`, ...
-- `int32 maximumManaPoint` <br/>
+- `int32 Maximum_MP` <br/>
   return the maximum Mana Point ( MP ), normally it's `500`, ...
+
+Note that these things is a member of `ENGINE`, so it'll look like this `Engine.Module_ID`. ( Afterall, if you feels these names is way to long, you can use a pointer to short it down. )<br/>
 
 Do note that Moduling has a priority in which supposed to be called first ...
 

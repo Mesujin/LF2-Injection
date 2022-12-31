@@ -72,7 +72,7 @@
   #include <thread>
   #include <chrono>
 
-  #define INJECTOR_VERSION "(A2.00.230101)"
+  #define INJECTOR_VERSION "(v2.00.230101)"
   #define ENCODING_KEY "SiuHungIsAGoodBearBecauseHeIsVeryGood"
   #define TEMPORAL_FILE "data\\temporary.txt"
   #define CONFIGURATION "configuration.ini"
@@ -121,12 +121,12 @@
    std::map < int32, FILETIME > Moti0002;
   #endif
   #ifdef MULTI_STATE
-   #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Console      : Inactive          //\n AI_ConsoleSize  : 60                //\n AI_ConsoleStyle : 0                 //\n AI_Directory    : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 = Single lined; 1 = Casual; 2 = Mesujin's style; 3 = STM93's style;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Injection\n MOD_InjectionLevel         : 1      // 0 ~ 2; \n MOD_InjectionInfoTrans     : Active //\n MOD_InjectionInfoPosition  : 130    //\n MOD_InjectionStartingFrame : 219    // In rare cases, you might need to change this into \"0\" instead.\n\n MOD_Moduling               : Active //\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+   #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Console       : Inactive         //\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   #else
    #ifdef DEBUG_VERSION
-    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_ConsoleSize  : 60                //\n AI_ConsoleStyle : 0                 //\n AI_Directory    : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 = Single lined; 1 = Casual; 2 = Mesujin's style; 3 = STM93's style;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Injection\n MOD_InjectionLevel         : 1      // 0 ~ 2; \n MOD_InjectionInfoTrans     : Active //\n MOD_InjectionInfoPosition  : 130    //\n MOD_InjectionStartingFrame : 219    // In rare cases, you might need to change this into \"0\" instead.\n\n MOD_Moduling               : Active //\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
    #else
-    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Directory    : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 = Single lined; 1 = Casual; 2 = Mesujin's style; 3 = STM93's style;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Injection\n MOD_InjectionLevel         : 1      // 0 ~ 2; \n MOD_InjectionInfoTrans     : Active //\n MOD_InjectionInfoPosition  : 130    //\n MOD_InjectionStartingFrame : 219    // In rare cases, you might need to change this into \"0\" instead.\n\n MOD_Moduling               : Active //\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Directory    : add-on\\Script     //\n AI_OldDirectory : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
    #endif
   #endif
  //-//
@@ -140,6 +140,27 @@
   std::vector < string > Strn0001;
   std::vector < HINSTANCE > Hins0001;
  //-//
+ // Declaration
+  int1   M_EncryptionFile(const uint8, string);
+
+  int1   L_Rebuilding(int32, const string&);
+  int32  L_Numbering(string) fastened;
+  int32  L_Rounding(xint64) fastened;
+  uint32 L_Address(int32) fastened;
+  string L_Lowercase(string) fastened;
+  string L_Execute(const string);
+  string L_Moduling(const string&);
+
+  int0   G_Starting();
+  int0   G_Cleaning();
+  int0   G_Process(int32) fastened;
+  int0   G_Initialization();
+  int0   G_Hiding();
+  int0   G_Cleaning();
+  int0   G_Encryption(uint8, std::string);
+  int32  (__stdcall *AI_o)(int32, int32, int32, int32, int32, int32, int32);
+  int32  (__stdcall *AIa_o)(int32, int32);
+ //-//
  // Structures
   struct MD_CONFIG 
   {
@@ -150,9 +171,11 @@
    int1   MAIN_HiddenMode = false;
 
    int1   AI_Console = true;
+   int1   AI_ConsoleScroll = true;
    int8   AI_ConsoleStyle = 0;
    int16  AI_ConsoleSize = 80;
-   string AI_Directory = "ai";
+   string AI_Directory;
+   string AI_OldDirectory = "ai";
 
    int1   DLL_Progressive = true;
    string DLL_Directory;
@@ -176,12 +199,17 @@
    string ECD_InstallDataDirectory;
    string ECD_InstallODataDirectory;
 
-   int8   MOD_InjectionLevel = 2;
-   int1   MOD_InjectionLevelInfoTrans = true;
-   int32  MOD_InjectionLevelInfoPostition = 130;
-   int32  MOD_InjectionLevelStartingFrame = 219;
+   int8   MOD_ModulingLevel = 2;
+   int32  MOD_ModulingLevelStartingFrame = 219;
    
-   int1   MOD_Moduling = true;
+   int1   MOD_ModulingInfo = true;
+   int1   MOD_ModulingInfoTrans = true;
+   int32  MOD_ModulingInfoPostition = 130;
+
+   int1   MOD_ResultFraming = false;
+   int32  MOD_ResultFormat = 0;
+   string MOD_ResultExtension = ".db";
+   string MOD_ResultDirectory = "object";
   }; MD_CONFIG Config;
   struct MD_CONSOLE
   {
@@ -242,63 +270,196 @@
     int0 Opening(){Strn001.clear(); if(Vrab002){Strn001.push_back("==== Building Log ===============================\n\n");} else {Strn001.push_back("==== Installation Log ===========================\n\n");} const uint8 Vrab01 = Config.ECD_ConsoleStyle & 0xFF; uint8 Vrab02 = 0; if(Vrab01 < 128){Vrab02 = 255;} else {Vrab02 = 0;} AllocConsole(); HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE); freopen("CONIN$", "rb", stdin); freopen("CONOUT$", "wb", stdout); freopen("CONOUT$", "wb", stderr); SMALL_RECT Rect01 = {0, 0, Vrab004, 28}; CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX); SetConsoleScreenBufferSize(Hand01, {Vrab004, 26}); GetConsoleScreenBufferInfoEx(Hand01, &Info01); Info01.wAttributes = true; Info01.srWindow = Rect01; Info01.ColorTable[0] = RGB((int32)Vrab01, (int32)Vrab01, (int32)Vrab01); Info01.ColorTable[1] = RGB((int32)Vrab02, (int32)Vrab02, (int32)Vrab02); Info01.ColorTable[7] = Info01.ColorTable[1]; SetConsoleScreenBufferInfoEx(Hand01, &Info01); SetConsoleScreenBufferSize(Hand01, {Vrab004, 26}); SetConsoleTitleA("ECD's Console"); Vrab001 = true;}
     string Execute(string Temp01){string Temp02 = Temp01; uint32 Vrab01 = Temp02.size() - 1; while(Vrab01 != 0 && Temp02.at(Vrab01) != '\\') Vrab01 -= 1; if(Vrab01 > 0) Temp02.erase(Vrab01, Temp02.size() - Vrab01); std::filesystem::create_directories(Temp02); return Temp01; }
   }; MD_CONSOLE Console;
-  struct MD_CONTROLS {}; MD_CONTROLS Control;
-  struct MD_DATABASES {string Config; int1 InGame = false; int1 OutGame = true; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
-  struct MD_AIDATABASES {
-  
-  int32 Mode = 0;
-  int32 Difficulty = 0;
-  uint32 ElapsedTime = 0;
-  int32 BackgroundID = -1;
-  int32 Background_width = 0;
-  int32 Background_zwidth1 = 0;
-  int32 Background_zwidth2 = 0;
-  int32 Stage = 0;
-  int1 Stage_clear = 0;
-  int32 Stage_bound = 0;
-  int32 Phase = 0;
-  int32 Phase_Count = 0;
-  sGame *Game = (sGame*)0x458b00;
-  
-  uint32 MaximumFrame = MaximumFrames;
-  uint32 MaximumObj = MaximumObject;
-  int32 MaximumMP = MaximumManaPoint;
+  struct MD_CONTROLS 
+  {
 
-  int32 ModuleID;
-   asIScriptModule *Modu0001;
-   asIScriptEngine *Engi0001;
-   asIScriptEngine *Engi0002;
-   asIScriptContext *Cont0001;
-   asIScriptContext *Cont0002;
+  }; MD_CONTROLS Control;
+  struct MD_DATABASES {string Config; int1 InGame = false; int1 OutGame = true; int1 Reset = false; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
+  struct MD_AIDATABASES
+  {
+   uint32 MaximumFrame = MaximumFrames;
+   uint32 MaximumObj = MaximumObject;
+   int32  MaximumMP = MaximumManaPoint;
+
+   int32  ModuleID = 0;
+   MD_GAME *Game = (MD_GAME*)0x458b00; //0x44d024;
+
+   #ifdef _MD_OLD_SCRIPT
+    uint32 ElapsedTime = 0;
+    int32  Mode = 0;
+    int32  Difficulty = 0;
+    int32  BackgroundID = -1;
+    int32  Background_width = 0;
+    int32  Background_zwidth1 = 0;
+    int32  Background_zwidth2 = 0;
+    int32  Stage = 0;
+    int1   Stage_clear = 0;
+    int32  Stage_bound = 0;
+    int32  Phase = 0;
+    int32  Phase_Count = 0;
+    int32  User = -1;
+    sGame *game = (sGame*)0x458b00;
+   #endif
+
+   asIScriptModule  *Modu0001 = NULL;
+   asIScriptEngine  *Engi0001 = NULL;
+   asIScriptEngine  *Engi0002 = NULL;
+   asIScriptContext *Cont0001 = NULL;
+   asIScriptContext *Cont0002 = NULL;
   
+   int1   L_Copy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03) fastened {if(Game->Database->Data[Vrab01] == 0) return false; if(Vrab02 >= MaximumFrames || Vrab02 < 0 || Vrab03 >= MaximumFrames || Vrab03 < 0) return false; Game->Database->Data[Vrab01]->Frame[Vrab03] = Game->Database->Data[Vrab01]->Frame[Vrab02]; return true;}
+   int1   L_Copys(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04) fastened {if(Game->Database->Data[Vrab01] == 0 || Game->Database->Data[Vrab02] == 0) return false; if(Vrab03 >= MaximumFrames || Vrab03 < 0 || Vrab04 >= MaximumFrames || Vrab04 < 0) return false; Game->Database->Data[Vrab02]->Frame[Vrab04] = Game->Database->Data[Vrab01]->Frame[Vrab03]; return true;}
+   uint32 L_Address(int32 Vrab01) fastened {uint32 Vrab02 = 0; while(Game->Database->Data[Vrab02] != 0){if(Game->Database->Data[Vrab02]->id == Vrab01) return Vrab02; Vrab02 += 1;} return ruint32(-1);}
+   int32  L_Random(int32 Vrab01)  fastened
+   {
+    int32  Vrab02 = 0;  // eax@2
+    sint32 Vrab03 = 0; // eax@3
+    DWORD  &Dwrd01 = *((DWORD*)0x450C34);
+    DWORD  &Dwrd02 = *((DWORD*)0x450BCC);
+    if(Vrab01 > 0)
+    {
+     Dwrd01 = (Dwrd01 + 1) % 1234;
+     Vrab03 = Dwrd01 + (unsigned __int8)*(((BYTE*)0x44FF90) + (Dwrd02 + 1) % 3000);
+     Dwrd02 = (Dwrd02 + 1) % 3000;
+     Vrab02 = Vrab03 % Vrab01;
+    } else {Vrab02 = 0;}
+    return Vrab02;
+   }
+   uint32 L_Generate(int32 Vrab01, int32 Vrab02, int32 Vrab03, xint64 Vrab04, xint64 Vrab05, xint64 Vrab06, uint8 Vrab07) fastened
+   {
+    if(Vrab01 < 0 || Vrab01 >= MaximumObject) return ruint32(-1);
+    uint32 Vrab08 = MaximumObject - 1;
+    while(Vrab08 > 49)
+    {
+     if(!Game->Object_Exist[Vrab08])
+     {
+      if(Database.InjectorNUM == -1) break;
+      if(Vrab08 != ruint32(Database.InjectorNUM)) break;
+     }
+     Vrab08 -= 1;
+    }
+    if(Vrab08 == 49) return ruint32(-1);
+    //Game->Object[Vrab08] = Game->Object[ruint32(Vrab01)];
+    Game->Object_Exist[Vrab08] = Game->Object_Exist[ruint32(Vrab01)];
+    *Game->Object[Vrab08]->Data = *Game->Database->Data[ruint32(Vrab02)];
+    if(Vrab03 < 0){Game->Object[Vrab08]->Frame = -Vrab03;} else {Game->Object[Vrab08]->Frame = Vrab03;}
+    Game->Object[Vrab08]->Facing = Vrab07;
+    Game->Object[Vrab08]->X = Vrab04;
+    Game->Object[Vrab08]->Y = Vrab05;
+    Game->Object[Vrab08]->Z = Vrab06;
+    Game->Object[Vrab08]->Health = 500;
+    if(Game->Object[Vrab08]->Data->type == 0){Game->Object[Vrab08]->Potential_Health = 500;} else {Game->Object[Vrab08]->Potential_Health = 0;}
+    Game->Object[Vrab08]->Max_Health = 500;
+    Game->Object[Vrab08]->Mana = MaximumMP;
+    Game->Object[Vrab08]->X_Acceleration = 0;
+    Game->Object[Vrab08]->Y_Acceleration = 0;
+    Game->Object[Vrab08]->Z_Acceleration = 0;
+    Game->Object[Vrab08]->X_Velocity = 0;
+    Game->Object[Vrab08]->Y_Velocity = 0;
+    Game->Object[Vrab08]->Z_Velocity = 0;
+    Game->Object[Vrab08]->X_Display = L_Rounding(Vrab04);
+    Game->Object[Vrab08]->Y_Display = L_Rounding(Vrab05);
+    Game->Object[Vrab08]->Z_Display = L_Rounding(Vrab06);
+    Game->Object[Vrab08]->Summary_Host = Vrab01;
+    Game->Object[Vrab08]->Attack_Rest = 0;
+    for(uint32 Vrab09 = 0; Vrab09 < MaximumObject; ++Vrab09) Game->Object[Vrab08]->Hit_Rest[Vrab09] = 0;
+    Game->Object[Vrab08]->Caught = -1;
+    Game->Object[Vrab08]->Holder = -1;
+    Game->Object[Vrab08]->Cloner = -1;
+    Game->Object[Vrab08]->Frame_Calculation = Game->Object[Vrab08]->Frame;
+    Game->Object[Vrab08]->Frame_Hit = 0;
+    Game->Object[Vrab08]->Frame_Last = 0;
+    Game->Object[Vrab08]->Held = 0;
+    Game->Object[Vrab08]->Held_Type = -1;
+    Game->Object[Vrab08]->Hitlag = 0;
+    Game->Object[Vrab08]->Invisibility = 0;
+    Game->Object[Vrab08]->Pic_Offset = 0;
+    Game->Object[Vrab08]->Target = -1;
+    Game->Object[Vrab08]->Team = Game->Object[Vrab01]->Team;
+    Game->Object[Vrab08]->Reserve = 0;
+    Game->Object[Vrab08]->Thrower = -1;
+    Game->Object[Vrab08]->Thrown_Drop_Damage = 0;
+    Game->Object[Vrab08]->Catch = -1;
+    Game->Object[Vrab08]->Summary_Attack = 0;
+    Game->Object[Vrab08]->Summary_HP_Lost = 0;
+    Game->Object[Vrab08]->Summary_Kill = 0;
+    Game->Object[Vrab08]->Summary_MP_Usage = 0;
+    Game->Object[Vrab08]->Summary_Picking = 0;
+    for(uint32 Vrab09 = 0; Vrab09 < MaximumObject; ++Vrab09) Game->Object[Vrab09]->Hit_Rest[Vrab08] = 0;
+    for(uint32 Vrab09 = 0; Vrab09 < MaximumObject; ++Vrab09) if(Game->Object[Vrab09]->Target == rint32(Vrab08)) Game->Object[Vrab09]->Target = -1;
+    for(uint32 Vrab09 = 0; Vrab09 < MaximumObject; ++Vrab09) if(Game->Object[Vrab09]->Thrower == rint32(Vrab08)) Game->Object[Vrab09]->Thrower = -1;
+    for(uint32 Vrab09 = 0; Vrab09 < MaximumObject; ++Vrab09) if(Game->Object[Vrab09]->Held == rint32(Vrab08)){Game->Object[Vrab09]->Held = 0; Game->Object[Vrab09]->Held_Type = -1;}
+    return Vrab08;
+   }
+   int32  L_Aggring(int32 Vrab01) fastened {if(User == -1) return -1; if(Vrab01 < 0 || Vrab01 >= MaximumObject) return -1; if(!Game->Object_Exist[Vrab01]) return -1; return (Game->Object[User]->Target = Vrab01);}
+   int0   L_InputClear()          fastened {if(User == -1) return; Game->Object[User]->Up = 0; Game->Object[User]->Left = 0; Game->Object[User]->Down = 0; Game->Object[User]->Right = 0; Game->Object[User]->A = 0; Game->Object[User]->D = 0; Game->Object[User]->J = 0; Game->Object[User]->Up_Hold = 0; Game->Object[User]->Left_Hold = 0; Game->Object[User]->Down_Hold = 0; Game->Object[User]->Right_Hold = 0; Game->Object[User]->A_Hold = 0; Game->Object[User]->D_Hold = 0; Game->Object[User]->J_Hold = 0;}
+   int0   L_InputUP()             fastened {if(User == -1) return; if(Game->Object[User]->Up == 0){Game->Object[User]->Up = 1;} else {Game->Object[User]->Up = 0;}}
+   int0   L_InputLEFT()           fastened {if(User == -1) return; if(Game->Object[User]->Left == 0){Game->Object[User]->Left = 1;} else {Game->Object[User]->Left = 0;}}
+   int0   L_InputDOWN()           fastened {if(User == -1) return; if(Game->Object[User]->Down == 0){Game->Object[User]->Down = 1;} else {Game->Object[User]->Down = 0;}}
+   int0   L_InputRIGHT()          fastened {if(User == -1) return; if(Game->Object[User]->Right == 0){Game->Object[User]->Right = 1;} else {Game->Object[User]->Right = 0;}}
+   int0   L_InputATTACK()         fastened {if(User == -1) return; if(Game->Object[User]->A == 0){Game->Object[User]->A = 1;} else {Game->Object[User]->A = 0;}}
+   int0   L_InputDEFEND()         fastened {if(User == -1) return; if(Game->Object[User]->D == 0){Game->Object[User]->D = 1;} else {Game->Object[User]->D = 0;}}
+   int0   L_InputJUMP()           fastened {if(User == -1) return; if(Game->Object[User]->J == 0){Game->Object[User]->J = 1;} else {Game->Object[User]->J = 0;}}
+   int0   L_InputUPH()            fastened {if(User == -1) return; if(Game->Object[User]->Up == 0){Game->Object[User]->Up = 1;} else {Game->Object[User]->Up_Hold = 1;}}
+   int0   L_InputLEFTH()          fastened {if(User == -1) return; if(Game->Object[User]->Left == 0){Game->Object[User]->Left = 1;} else {Game->Object[User]->Left_Hold = 1;}}
+   int0   L_InputDOWNH()          fastened {if(User == -1) return; if(Game->Object[User]->Down == 0){Game->Object[User]->Down = 1;} else {Game->Object[User]->Down_Hold = 1;}}
+   int0   L_InputRIGHTH()         fastened {if(User == -1) return; if(Game->Object[User]->Right == 0){Game->Object[User]->Right = 1;} else {Game->Object[User]->Right_Hold = 1;}}
+   int0   L_InputATTACKH()        fastened {if(User == -1) return; if(Game->Object[User]->A == 0){Game->Object[User]->A = 1;} else {Game->Object[User]->A_Hold = 1;}}
+   int0   L_InputDEFENDH()        fastened {if(User == -1) return; if(Game->Object[User]->D == 0){Game->Object[User]->D = 1;} else {Game->Object[User]->D_Hold = 1;}}
+   int0   L_InputJUMPH()          fastened {if(User == -1) return; if(Game->Object[User]->J == 0){Game->Object[User]->J = 1;} else {Game->Object[User]->J_Hold = 1;}}
+   int0   L_InputDRA()            fastened {if(User == -1) return; Game->Object[User]->Cast_DRA = 3;}
+   int0   L_InputDLA()            fastened {if(User == -1) return; Game->Object[User]->Cast_DLA = 3;}
+   int0   L_InputDUA()            fastened {if(User == -1) return; Game->Object[User]->Cast_DUA = 3;}
+   int0   L_InputDDA()            fastened {if(User == -1) return; Game->Object[User]->Cast_DDA = 3;}
+   int0   L_InputDRJ()            fastened {if(User == -1) return; Game->Object[User]->Cast_DRJ = 3;}
+   int0   L_InputDLJ()            fastened {if(User == -1) return; Game->Object[User]->Cast_DLJ = 3;}
+   int0   L_InputDUJ()            fastened {if(User == -1) return; Game->Object[User]->Cast_DUJ = 3;}
+   int0   L_InputDDJ()            fastened {if(User == -1) return; Game->Object[User]->Cast_DDJ = 3;}
+   int0   L_InputDJA()            fastened {if(User == -1) return; Game->Object[User]->Cast_DJA = 3;}
+   int0   C_Clear() fastened
+   {
+    HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE);
+    if(Hand01 == INVALID_HANDLE_VALUE) return;
+    const COORD Cord01 = {0, 0};
+    DWORD Dwrd01, Dwrd02;
+    CONSOLE_SCREEN_BUFFER_INFO Csbi01;
+    if(!GetConsoleScreenBufferInfo(Hand01, &Csbi01)){return;}
+    Dwrd02 = Csbi01.dwSize.X * Csbi01.dwSize.Y;
+    if(!FillConsoleOutputCharacterA(Hand01, ' ', Dwrd02, Cord01, &Dwrd01)){return;}
+    SetConsoleCursorPosition(Hand01, Cord01);
+   }
+   int0   C_PrintAddr(const int0 *Vrab01)    fastened {printf("%p", Vrab01);}
+   int0   C_Print(const int1 Vrab01)         fastened {if(Vrab01){printf("true");} else {printf("false");}}
+   int0   C_Print(const int8 Vrab01)         fastened {printf("%i", Vrab01);}
+   int0   C_Print(const int16 Vrab01)        fastened {printf("%i", Vrab01);}
+   int0   C_Print(const int32 Vrab01)        fastened {printf("%i", Vrab01);}
+   int0   C_Print(const int64 Vrab01)        fastened {printf("%lli", Vrab01);}
+   int0   C_Print(const uint8 Vrab01)        fastened {printf("%u", Vrab01);}
+   int0   C_Print(const uint16 Vrab01)       fastened {printf("%u", Vrab01);}
+   int0   C_Print(const uint32 Vrab01)       fastened {printf("%u", Vrab01);}
+   int0   C_Print(const uint64 Vrab01)       fastened {printf("%llu", Vrab01);}
+   int0   C_Print(const xint32 Vrab01)       fastened {printf("%f", Vrab01);}
+   int0   C_Print(const xint64 Vrab01)       fastened {printf("%Lf", Vrab01);}
+   int0   C_Print(const std::string &Temp01) fastened {printf("%s", Temp01.c_str());}
   }; MD_AIDATABASES Base;
- //-//
- // Declaration
-  int1   M_EncryptionFile(const uint8, string);
-
-  int1   L_Rebuilding(int32, const string&);
-  int32  L_Numbering(string) fastened;
-  uint32 L_Address(int32) fastened;
-  string L_Lowercase(string) fastened;
-  string L_Execute(const string);
-  string L_Moduling(const string&);
-
-  int0   G_Starting();
-  int0   G_Cleaning();
-  int0   G_Process(int32) fastened;
-  int0   G_Initialization();
-  int0   G_Hiding();
-  int0   G_Cleaning();
-  int0   G_Encryption(uint8, std::string);
-  int32  (__stdcall *AI_o)(int32, int32, int32, int32, int32, int32, int32);
-  int32  (__stdcall *AIa_o)(int32, int32);
+  struct MD_GAMEDATA_MAIN_PIC {string Add_Address; uint32 Width = 0; uint32 Height = 0; uint32 Row = 0; uint32 Column = 0;};
+  struct MD_GAMEDATA_MAIN {string Name; string Add_Head; string Add_Small; std::vector < MD_GAMEDATA_MAIN_PIC > Pictures; uint32 WalkAnimation = 0; uint32 RunAnimation = 0; string Dob_WalkSpeed; string Dob_WalkSpeedZ; string Dob_RunSpeed; string Dob_RunSpeedZ; string Dob_HeavyWalkSpeed; string Dob_HeavyWalkSpeedZ; string Dob_HeavyRunSpeed; string Dob_HeavyRunSpeedZ; string Dob_JumpHeight; string Dob_JumpSpeed; string Dob_JumpSpeedZ; string Dob_DashHeight; string Dob_DashSpeed; string Dob_DashSpeedZ; string Dob_FlipHeight; string Dob_FlipSpeed; int32 StartingHealth = 0; int32 LandingHurt = 0; string Add_HitSound; string Add_BreakSound; string Add_LandingSound;};
+  struct MD_GAMEDATA_STRENGTH {string Name = "G"; int32 ZWidth = 0; int32 XVelocity = 0; int32 YVelocity = 0; int32 AttackerRefresh = 0; int32 VictimRefresh = 0; int32 Power = 0; int32 Damage = 0; int32 Effect = 0; int32 HitRespond = 0; int32 HitEffect = 0;};
+  struct MD_GAMEDATA_FRAME_BPOINT {int32 X = 0; int32 Y = 0;};
+  struct MD_GAMEDATA_FRAME_CPOINT {int32 Type = 0; int32 X = 0; int32 Y = 0; int32 Z = 0; int32 VictimFrame = 0; int32 InputA = 0; int32 InputD = 0; int32 InputJ = 0; int32 InputThrow = 0; int32 ThrowVelX = 0; int32 ThrowVelY = 0; int32 ThrowVelZ = 0; int32 ThrowDamage = 0; int32 Decrease = 0; int32 Control = 0; int32 Hurtable = 0; int32 Damage = 0; int32 BackHurtAction = 0; int32 FrontHurtAction = 0;};
+  struct MD_GAMEDATA_FRAME_WPOINT {int32 Type = 0; int32 X = 0; int32 Y = 0; int32 Z = 0; int32 WeaponFrame = 0; int32 Strength = 0; int32 XVelocityThrow = 0; int32 YVelocityThrow = 0; int32 ZVelocityThrow = 0;};
+  struct MD_GAMEDATA_FRAME_OPOINT {int32 Type = 0; int32 X = 0; int32 Y = 0; int32 Frame = 0; int32 ID = 0; int32 Condition = 0; int32 XVelocity = 0; int32 YVelocity = 0;};
+  struct MD_GAMEDATA_FRAME_IPOINT {int32 Type = 0; int32 X = 0; int32 Y = 0; uint32 Width = 0; uint32 Height = 0; uint32 ZWidth = 0; int32 XVelocity = 0; int32 YVelocity = 0; int32 AttackerRefresh = 0; int32 VictimRefresh = 0; int32 Power = 0; int32 Damage = 0; int32 Effect = 0; int32 HitRespond = 0; int32 HitEffect = 0; int32 CatchRespond[2]{}; int32 CaughtRespond[2]{};};
+  struct MD_GAMEDATA_FRAME_HPOINT {int32 Type = 0; int32 X = 0; int32 Y = 0; uint32 Width = 0; uint32 Height = 0;};
+  struct MD_GAMEDATA_FRAME {uint32 Number = 0; string Name = "G"; int32 Picture = 0; int32 State = 0; int32 Wait = 0; int32 Next = 0; int32 CenterX = 0; int32 CenterY = 0; int32 XVelocity = 0; int32 YVelocity = 0; int32 ZVelocity = 0; int32 InputA = 0; int32 InputD = 0; int32 InputJ = 0; int32 InputDFA = 0; int32 InputDFJ = 0; int32 InputDDA = 0; int32 InputDDJ = 0; int32 InputDUA = 0; int32 InputDUJ = 0; int32 InputDJA = 0; int32 MPManage = 0; string Add_SoundEffect; MD_GAMEDATA_FRAME_BPOINT Bpoint; MD_GAMEDATA_FRAME_CPOINT Cpoint; MD_GAMEDATA_FRAME_WPOINT Wpoint; std::vector < MD_GAMEDATA_FRAME_OPOINT > Opoint; std::vector < MD_GAMEDATA_FRAME_IPOINT > Ipoint; std::vector < MD_GAMEDATA_FRAME_HPOINT > Hpoint;};
+  struct MD_GAMEDATA {uint32 ID = 0; uint32 Type = 0; string Address; MD_GAMEDATA_MAIN Main; std::vector < MD_GAMEDATA_STRENGTH > Strength; std::vector < MD_GAMEDATA_FRAME > Frame;}; std::vector < MD_GAMEDATA > Data0001;
  //-//
  // Functions
   int0   L_Cleaning()                                                 {/*Vrab0001 = 0; Vrab0002 = 0; Vrab0003 = 0; Vrab0004 = 0; Vrab0005 = 0; Vrab0006 = 0; Temp0001 = ""; Temp0002 = ""; Temp0003 = "";*/ if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close(); Vect0001.clear(); Strn0001.clear();}
   int0   L_Polish()                                                   {std::ofstream File01(TEMPORAL_FILE, std::ios::binary | std::ios::out); File01 << "Do not erase this file."; File01.close();}
   int0   L_Rename(string &Temp01)                                     {uint32 Vrab01 = Temp01.size(); while(Vrab01 != 1 && Temp01.at(Vrab01 - 1) != '-') Vrab01 -= 1; Vrab01 -= 1; if(Temp01.at(Vrab01) == '-' && Temp01.at(Vrab01 + 1) >= '0' && Temp01.at(Vrab01 + 1) <= '9'){string Temp02 = ""; uint32 Vrab02 = Vrab01; Temp02 += Temp01.at(Vrab02 + 1); while(Temp01.at(Vrab02 + 2) >= '0' && Temp01.at(Vrab02 + 2) <= '9'){Temp02 += Temp01.at(Vrab02 + 2); Vrab02 += 1;} Temp02 = std::to_string(L_Numbering(Temp02) + 1); Temp01.erase(Vrab01 + 1, (Vrab02 + 2) - (Vrab01 + 1)); Temp01.insert(Vrab01 + 1, Temp02);} else {Vrab01 = Temp01.size() - 1; while(Vrab01 != -1 && Temp01.at(Vrab01) != '.') Vrab01 -= 1; if(Vrab01 > 7) if(string(Temp01, Vrab01 - 8, 7) == "_mirror") Vrab01 -= 8; if(Vrab01 > 0){Temp01.insert(Vrab01, "-2");} else {Temp01.insert(Temp01.size() - 1, "-2");}}}
   int0   L_Summary(string Temp01)                                     {std::ofstream File01(L_Execute(Config.ECD_ResultDirectory + "\\summary.edb"), std::ios::binary | std::ios::app); File01 << Temp01; File01.close();}
-  int0   L_Copy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03) fastened {Base.Game->files->datas[Vrab01]->frames[Vrab03].exists = true; Base.Game->files->datas[Vrab01]->frames[Vrab03].pic = Base.Game->files->datas[Vrab01]->frames[Vrab02].pic; Base.Game->files->datas[Vrab01]->frames[Vrab03].state = Base.Game->files->datas[Vrab01]->frames[Vrab02].state; Base.Game->files->datas[Vrab01]->frames[Vrab03].wait = Base.Game->files->datas[Vrab01]->frames[Vrab02].wait; Base.Game->files->datas[Vrab01]->frames[Vrab03].next = Base.Game->files->datas[Vrab01]->frames[Vrab02].next; Base.Game->files->datas[Vrab01]->frames[Vrab03].dvx = Base.Game->files->datas[Vrab01]->frames[Vrab02].dvx; Base.Game->files->datas[Vrab01]->frames[Vrab03].dvy = Base.Game->files->datas[Vrab01]->frames[Vrab02].dvy; Base.Game->files->datas[Vrab01]->frames[Vrab03].dvz = Base.Game->files->datas[Vrab01]->frames[Vrab02].dvz; Base.Game->files->datas[Vrab01]->frames[Vrab03].centerx = Base.Game->files->datas[Vrab01]->frames[Vrab02].centerx; Base.Game->files->datas[Vrab01]->frames[Vrab03].centery = Base.Game->files->datas[Vrab01]->frames[Vrab02].centery; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_a = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_a; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_d = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_d; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_j = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_j; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Fa = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Fa; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Fj = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Fj; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Da = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Da; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Dj = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Dj; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Ua = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Ua; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Uj = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_Uj; Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_ja = Base.Game->files->datas[Vrab01]->frames[Vrab02].hit_ja; Base.Game->files->datas[Vrab01]->frames[Vrab03].mp = Base.Game->files->datas[Vrab01]->frames[Vrab02].mp; Base.Game->files->datas[Vrab01]->frames[Vrab03].sound = Base.Game->files->datas[Vrab01]->frames[Vrab02].sound; Base.Game->files->datas[Vrab01]->frames[Vrab03].bpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab02].bpoint.x; Base.Game->files->datas[Vrab01]->frames[Vrab03].bpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab02].bpoint.y; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.kind; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.x; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.y; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.vaction = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.vaction; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.aaction = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.aaction; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.daction = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.daction; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.jaction = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.jaction; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.taction = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.taction; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.dircontrol = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.dircontrol; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.decrease = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.decrease; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvx = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvx; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvy = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvy; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvz = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwvz; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwinjury = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.throwinjury; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.cover = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.cover; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.hurtable = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.hurtable; Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.injury = Base.Game->files->datas[Vrab01]->frames[Vrab02].cpoint.injury; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.kind; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.x; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.y; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvx = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvx; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvy = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvy; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvz = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.dvz; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.weaponact = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.weaponact; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.attacking = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.attacking; Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.cover = Base.Game->files->datas[Vrab01]->frames[Vrab02].wpoint.cover; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.kind; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.x; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.y; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.dvx = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.dvx; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.dvy = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.dvy; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.oid = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.oid; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.action = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.action; Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.facing = Base.Game->files->datas[Vrab01]->frames[Vrab02].opoint.facing; Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_count = Base.Game->files->datas[Vrab01]->frames[Vrab02].itr_count; Base.Game->files->datas[Vrab01]->frames[Vrab03].itrs = Base.Game->files->datas[Vrab01]->frames[Vrab02].itrs; Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_x = Base.Game->files->datas[Vrab01]->frames[Vrab02].itr_x; Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_y = Base.Game->files->datas[Vrab01]->frames[Vrab02].itr_y; Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_w = Base.Game->files->datas[Vrab01]->frames[Vrab02].itr_w; Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_h = Base.Game->files->datas[Vrab01]->frames[Vrab02].itr_h; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_count = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdy_count; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdys = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdys; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_x = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdy_x; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_y = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdy_y; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_w = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdy_w; Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_h = Base.Game->files->datas[Vrab01]->frames[Vrab02].bdy_h;}
+  int0   L_Copy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03) fastened {Base.Game->Database->Data[Vrab01]->Frame[Vrab03] = Base.Game->Database->Data[Vrab01]->Frame[Vrab02];}// Base.Game->Database->Data[Vrab01]->Frame[Vrab03].state = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].state; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wait = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wait; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].next = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].next; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].centerx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].centerx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].centery = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].centery; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_a = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_a; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_d = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_d; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_j = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_j; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Fa = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Fa; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Fj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Fj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Da = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Da; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Dj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Dj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Ua = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Ua; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Uj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Uj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_ja = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_ja; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].mp = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].mp; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].sound = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].sound; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.vaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.vaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.aaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.aaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.daction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.daction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.jaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.jaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.taction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.taction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.dircontrol = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.dircontrol; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.decrease = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.decrease; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwinjury = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwinjury; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.cover = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.cover; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.hurtable = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.hurtable; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.injury = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.injury; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.weaponact = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.weaponact; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.attacking = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.attacking; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.cover = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.cover; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.oid = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.oid; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.action = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.action; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.facing = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.facing; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_count = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_count; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itrs = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itrs; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_w = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_w; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_h = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_h; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_count = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_count; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdys = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdys; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_w = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_w; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_h = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_h;}
   int1   L_Open(const string &Temp01)                                 {if(File0001.is_open()) File0001.close(); File0001.open(Temp01, std::ios::binary | std::ios::in); if(File0001.is_open()) return true; return false;}
   int1   L_Exist(const string &Temp01)                       fastened {struct stat Vrab01; return (stat(Temp01.c_str(), &Vrab01) == 0);}
   int1   L_Create(const string &Temp01)                               {if(File0002.is_open()) File0002.close(); File0002.open(Temp01, std::ios::binary | std::ios::out); if(File0002.is_open()) return true; return false;}
@@ -405,7 +566,7 @@
      if(Temp01 == "fall:")                     {Vrab0001 = 20; return {Config.ECD_ResultEncryption[5]};}
      if(Temp01 == "arest:")                    {Vrab0001 = 20; return {Config.ECD_ResultEncryption[6]};}
      if(Temp01 == "vrest:")                    {Vrab0001 = 20; return {Config.ECD_ResultEncryption[7]};}
-     if(Temp01 == "respond:")                  {Vrab0001 = 10; return /*{Config.ECD_ResultEncryption[8]};}*/ "";}
+     if(Temp01 == "respond:")                  {Vrab0001 = 20; return {Config.ECD_ResultEncryption[8]};}
      if(Temp01 == "effect:")                   {Vrab0001 = 20; return {Config.ECD_ResultEncryption[9]};}
      if(Temp01 == "bdefend:")                  {Vrab0001 = 20; return {Config.ECD_ResultEncryption[10]};}
      if(Temp01 == "injury:")                   {Vrab0001 = 20; return {Config.ECD_ResultEncryption[11]};}
@@ -452,7 +613,7 @@
      if(Temp01 == "y:")                        {Vrab0001 = 32; return {Config.ECD_ResultEncryption[3]};}
      if(Temp01 == "vaction:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[4]};}
      if(Temp01 == "aaction:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[5]};}
-     if(Temp01 == "daction:")                  {Vrab0001 = 11; return /*{Config.ECD_ResultEncryption[6]};} */ "";} 
+     if(Temp01 == "daction:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[6]};}
      if(Temp01 == "jaction:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[7]};}
      if(Temp01 == "taction:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[8]};}
      if(Temp01 == "throwvx:")                  {Vrab0001 = 23; return {Config.ECD_ResultEncryption[9]};}
@@ -503,7 +664,7 @@
      if(Temp01 == "fall:")                     {Vrab0001 = 26; return {Config.ECD_ResultEncryption[9]};}
      if(Temp01 == "arest:")                    {Vrab0001 = 26; return {Config.ECD_ResultEncryption[10]};}
      if(Temp01 == "vrest:")                    {Vrab0001 = 26; return {Config.ECD_ResultEncryption[11]};}
-     if(Temp01 == "respond:")                  {Vrab0001 = 12; return /*{Config.ECD_ResultEncryption[12]};}*/ "";}
+     if(Temp01 == "respond:")                  {Vrab0001 = 26; return {Config.ECD_ResultEncryption[12]};}
      if(Temp01 == "effect:")                   {Vrab0001 = 26; return {Config.ECD_ResultEncryption[13]};}
      if(Temp01 == "bdefend:")                  {Vrab0001 = 26; return {Config.ECD_ResultEncryption[14]};}
      if(Temp01 == "injury:")                   {Vrab0001 = 26; return {Config.ECD_ResultEncryption[15]};}
@@ -524,7 +685,7 @@
     case 13: case 18: case 41: case 49:
      switch(Vrab0001){case 13: Vrab0001 = 1; break; case 18: Vrab0001 = 3; break; case 41: Vrab0001 = 39; break; case 49: Vrab0001 = 2; break; default: break;} return S_EncryptionUINT32(Temp01.size()) + S_EncryptionSTRING(Temp01);
     case 14: case 15: case 45: case 46:
-     switch(Vrab0001){case 14: Vrab0001 = 1; break; case 15: Vrab0001 = 3; break; case 45: Vrab0001 = 39; break; case 46: Vrab0001 = 40; break; default: break;} return S_EncryptionUINT32(L_Addressing(Temp01));
+     switch(Vrab0001){case 14: Vrab0001 = 1; break; case 15: Vrab0001 = 3; break; case 45: Vrab0001 = 50; break; case 46: Vrab0001 = 40; break; default: break;} return S_EncryptionUINT32(L_Addressing(Temp01));
     case 16:
      Vrab0001 = 1; return S_EncryptionUINT32(L_Addressing(Temp01));
     case 32: case 33: case 34: case 35: case 36:
@@ -556,12 +717,15 @@
       if(Vrab02 != -1){switch(Vrab0001){case 37: Vrab0001 = 3; break; case 38: Vrab0001 = 7; break; default: break;} return string(1, Config.ECD_ResultEncryption[93]) + S_EncryptionUINT32(Vrab02);}
      }
      switch(Vrab0001){case 37: Vrab0001 = 3; break; case 38: Vrab0001 = 7; break; default: break;} return S_EncryptionUINT32(L_Numbering(Temp01));
+    case 50:
+     Vrab0001 = 43; return "";
+    break;
     case 39: case 44:
      if(Temp01 == "name:")                     {Vrab0001 = 41; return {Config.ECD_ResultEncryption[0]};}
      if(Temp01 == "width:")                    {Vrab0001 = 42; return {Config.ECD_ResultEncryption[1]};}
      if(Temp01 == "zboundary:")                {Vrab0001 = 43; return {Config.ECD_ResultEncryption[2]};}
-     if(Temp01 == "shadow:")                   {Vrab0001 = 45; return {Config.ECD_ResultEncryption[3]};}
-     if(Temp01 == "shadowsize:")               {Vrab0001 = 43; return {Config.ECD_ResultEncryption[4]};}
+     if(Temp01 == "perspective:")              {Vrab0001 = 43; return {Config.ECD_ResultEncryption[3]};}
+     if(Temp01 == "shadow:")                   {Vrab0001 = 45; return {Config.ECD_ResultEncryption[4]};}
      if(Temp01 == "layer:")                    {Vrab0001 = 46; return {Config.ECD_ResultEncryption[5]};}
      if(Vrab0001 == 44){Vrab0001 = 39; return string(1, Config.ECD_ResultEncryption[93]) + S_EncryptionUINT32(L_Numbering(Temp01));}
     break;
@@ -576,6 +740,7 @@
      if(Temp01 == "c1:")                       {Vrab0001 = 47; return {Config.ECD_ResultEncryption[7]};}
      if(Temp01 == "c2:")                       {Vrab0001 = 47; return {Config.ECD_ResultEncryption[8]};}
      if(Temp01 == "rect:")                     {Vrab0001 = 47; return {Config.ECD_ResultEncryption[9]};}
+     if(Temp01 == "rect32:")                   {Vrab0001 = 47; return {Config.ECD_ResultEncryption[10]};}
     break;
     default: break;
    }
@@ -620,7 +785,7 @@
          if(M_EncryptionFile(3, Temp02))
          {
           M_EncryptionFile(0, S_EncryptionUINT32(L_Addressing(Temp02)) + Temp04.str()); Temp04.str(""); File02.close();
-          File02.open(Temp02, std::ios::binary | std::ios::in); if(File02.is_open())
+          File02.open(Temp05, std::ios::binary | std::ios::in); if(File02.is_open())
           {
            Console.PrintWrite("[] >> Packing \"" + Temp05 + "\" into the package.\n"); Console.PrintSet();
            Temp04 << File02.rdbuf(); if(M_EncryptionFile(4, Temp05)) M_EncryptionFile(5, Temp04.str());
@@ -681,54 +846,64 @@
 	 if(Temp03.at(0) == '/') if(Temp03.at(1) == '/'){std::getline(File0001, Temp03); continue;}
      if(Temp03 == "Determination,"){File0001 >> Temp03 >> Temp03 >> Temp03; continue;}
 
-     if(Temp03 == "AI")                        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_AI = Temp03 == Temp01; continue;}
-     if(Temp03 == "DLL")                       {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_DLL = Temp03 == Temp01; continue;}
-     if(Temp03 == "ECD")                       {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_ECD = Temp03 == Temp01; continue;}
-     if(Temp03 == "MOD")                       {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_MOD = Temp03 == Temp01; continue;}
-     if(Temp03 == "Hidden_Mode")               {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; if(Temp03 == Temp01){Config.MAIN_HiddenMode = true; if(Vrab01 != 1) Vrab01 = 2;} else {Config.MAIN_HiddenMode = false; Vrab01 = 0;} continue;}
+     if(Temp03 == "AI")                 {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_AI = Temp03 == Temp01; continue;}
+     if(Temp03 == "DLL")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_DLL = Temp03 == Temp01; continue;}
+     if(Temp03 == "ECD")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_ECD = Temp03 == Temp01; continue;}
+     if(Temp03 == "MOD")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_MOD = Temp03 == Temp01; continue;}
+     if(Temp03 == "Hidden_Mode")        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; if(Temp03 == Temp01){Config.MAIN_HiddenMode = true; if(Vrab01 != 1) Vrab01 = 2;} else {Config.MAIN_HiddenMode = false; Vrab01 = 0;} continue;}
 
      #ifdef MULTI_STATE
-      if(Temp03 == "AI_Console")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.AI_Console = Temp03 == Temp01; continue;}
+      if(Temp03 == "AI_Console")        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.AI_Console = Temp03 == Temp01; continue;}
      #endif
      #ifdef DEBUG_VERSION
-      if(Temp03 == "AI_ConsoleSize")            {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.AI_ConsoleSize = rint16(Vrab02); continue;}
-      if(Temp03 == "AI_ConsoleStyle")           {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.AI_ConsoleStyle = rint8(Vrab02); continue;}
+      if(Temp03 == "AI_ConsoleSize")    {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.AI_ConsoleSize = rint16(Vrab02); continue;}
+      if(Temp03 == "AI_ConsoleStyle")   {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.AI_ConsoleStyle = rint8(Vrab02); continue;}
+      if(Temp03 == "AI_ConsoleScroll")  {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.AI_ConsoleScroll = Temp03 == Temp01; continue;}
      #endif
-     if(Temp03 == "AI_Directory")              {File0001 >> Temp03 >> Temp03; Config.AI_Directory = L_Manage(Temp03); continue;}
+     if(Temp03 == "AI_Directory")       {File0001 >> Temp03 >> Temp03; Config.AI_Directory = L_Manage(Temp03); continue;}
+     if(Temp03 == "AI_OldDirectory")    {File0001 >> Temp03 >> Temp03; Config.AI_OldDirectory = L_Manage(Temp03); continue;}
 
-     if(Temp03 == "DLL_Directory")             {File0001 >> Temp03 >> Temp03; Config.DLL_Directory = L_Manage(Temp03); continue;}
-     if(Temp03 == "DLL_Progressive")           {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.DLL_Progressive = Temp03 == Temp01; continue;}
+     if(Temp03 == "DLL_Directory")      {File0001 >> Temp03 >> Temp03; Config.DLL_Directory = L_Manage(Temp03); continue;}
+     if(Temp03 == "DLL_Progressive")    {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.DLL_Progressive = Temp03 == Temp01; continue;}
      
-     if(Temp03 == "ECD_Console")               {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_Console = Temp03 == Temp01; continue;}
-     if(Temp03 == "ECD_ConsoleStyle")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ConsoleStyle = rint16(Vrab02); continue;}
-     if(Temp03 == "ECD_ConsoleDelay")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ConsoleDelay = rint16(Vrab02); continue;}
-     if(Temp03 == "ECD_ResultDirectory")       {File0001 >> Temp03 >> Temp03; Config.ECD_ResultDirectory = Temp03; continue;}
+     if(Temp03 == "ECD_Console")        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_Console = Temp03 == Temp01; continue;}
+     if(Temp03 == "ECD_ConsoleStyle")   {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ConsoleStyle = rint16(Vrab02); continue;}
+     if(Temp03 == "ECD_ConsoleDelay")   {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ConsoleDelay = rint16(Vrab02); continue;}
+     if(Temp03 == "ECD_ResultDirectory"){File0001 >> Temp03 >> Temp03; Config.ECD_ResultDirectory = Temp03; continue;}
      
-     if(Temp03 == "Directory")                 {File0001 >> Temp03 >> Temp03; Config.ECD_BuildDirectory = L_Manage(Temp03); continue;}
+     if(Temp03 == "Directory")          {File0001 >> Temp03 >> Temp03; Config.ECD_BuildDirectory = L_Manage(Temp03); continue;}
 
-     if(Temp03 == "Inputs")                    {File0001 >> Temp03 >> Temp03; Config.ECD_InstallDirectory = L_Manage(Temp03); continue;}
-     if(Temp03 == "Insight")                   {File0001 >> Temp03 >> Temp03; Config.ECD_InstallDataDirectory = L_Manage(Temp03); continue;}
-     if(Temp03 == "Outsight")                  {File0001 >> Temp03 >> Temp03; Config.ECD_InstallODataDirectory = L_Manage(Temp03); continue;}
-     if(Temp03 == "Overwrite")                 {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallOverwrite = Temp03 == Temp01; continue;}
-     if(Temp03 == "NoMirroring")               {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallNoMirrors = Temp03 == Temp01; continue;}
-     if(Temp03 == "Permanentness")             {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallPermanent = Temp03 == Temp01; continue;}
-     if(Temp03 == "DefaultLocation")           {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallSeparated = Temp03 == Temp01; continue;}
-     if(Temp03 == "HiddenIDs")                 {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[0] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[1] = Vrab02; continue;}
-     if(Temp03 == "WeaponIDs")                 {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[2] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[3] = Vrab02; continue;}
-     if(Temp03 == "MinionIDs")                 {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[4] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[5] = Vrab02; continue;}
-     if(Temp03 == "MinionIDs2")                {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[6] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[7] = Vrab02; continue;}
-     if(Temp03 == "AvailableIDs")              {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[8] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[9] = Vrab02; continue;}
-     if(Temp03 == "AvailableIDs2")             {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[10] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[11] = Vrab02; continue;}
-     if(Temp03 == "AvailableIDs3")             {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[12] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[13] = Vrab02; continue;}
-     if(Temp03 == "CodeFormat")                {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ResultCodeFormat = rint8(Vrab02); continue;}
-     if(Temp03 == "Key")                       {File0001 >> Temp03 >> Temp03; if(Temp03.size() != 94) goto Labl02; strcpy(&Config.ECD_ResultEncryption[0], Temp03.c_str()); continue;}
+     if(Temp03 == "Inputs")             {File0001 >> Temp03 >> Temp03; Config.ECD_InstallDirectory = L_Manage(Temp03); continue;}
+     if(Temp03 == "Insight")            {File0001 >> Temp03 >> Temp03; Config.ECD_InstallDataDirectory = L_Manage(Temp03); continue;}
+     if(Temp03 == "Outsight")           {File0001 >> Temp03 >> Temp03; Config.ECD_InstallODataDirectory = L_Manage(Temp03); continue;}
+     if(Temp03 == "Overwrite")          {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallOverwrite = Temp03 == Temp01; continue;}
+     if(Temp03 == "NoMirroring")        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallNoMirrors = Temp03 == Temp01; continue;}
+     if(Temp03 == "Permanentness")      {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallPermanent = Temp03 == Temp01; continue;}
+     if(Temp03 == "DefaultLocation")    {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.ECD_InstallSeparated = Temp03 == Temp01; continue;}
+     if(Temp03 == "HiddenIDs")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[0] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[1] = Vrab02; continue;}
+     if(Temp03 == "WeaponIDs")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[2] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[3] = Vrab02; continue;}
+     if(Temp03 == "MinionIDs")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[4] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[5] = Vrab02; continue;}
+     if(Temp03 == "MinionIDs2")         {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[6] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[7] = Vrab02; continue;}
+     if(Temp03 == "AvailableIDs")       {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[8] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[9] = Vrab02; continue;}
+     if(Temp03 == "AvailableIDs2")      {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[10] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[11] = Vrab02; continue;}
+     if(Temp03 == "AvailableIDs3")      {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[12] = Vrab02; File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_InstallDataIDs[13] = Vrab02; continue;}
+     if(Temp03 == "CodeFormat")         {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.ECD_ResultCodeFormat = rint8(Vrab02); continue;}
+     if(Temp03 == "Key")                {File0001 >> Temp03 >> Temp03; if(Temp03.size() != 94) goto Labl02; strcpy(&Config.ECD_ResultEncryption[0], Temp03.c_str()); continue;}
      
-     if(Temp03 == "MOD_InjectionLevel")        {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_InjectionLevel = rint8(Vrab02); continue;}
-     if(Temp03 == "MOD_InjectionInfoTrans")    {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_InjectionLevelInfoTrans = Temp03 == Temp01; continue;}
-     if(Temp03 == "MOD_InjectionInfoPosition") {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_InjectionLevelInfoPostition = Vrab02; continue;}
-     if(Temp03 == "MOD_InjectionStartingFrame"){File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_InjectionLevelStartingFrame = Vrab02; continue;}
+     if(Temp03 == "MOD_Level")          {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_ModulingLevel = rint8(Vrab02); continue;}
+     if(Temp03 == "MOD_StartingFrame")  {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_ModulingLevelStartingFrame = Vrab02; continue;}
      
-     if(Temp03 == "MOD_Moduling")              {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_Moduling = Temp03 == Temp01; continue;}
+     if(Temp03 == "MOD_Info")           {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_ModulingInfo = Temp03 == Temp01; continue;}
+     if(Temp03 == "MOD_InfoTrans")      {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_ModulingInfoTrans = Temp03 == Temp01; continue;}
+     if(Temp03 == "MOD_InfoPosition")   {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_ModulingInfoPostition = Vrab02; continue;}
+     
+     if(Temp03 == "ResultFormat")       {File0001 >> Temp03 >> Temp03; Vrab02 = L_Numbering(Temp03); if(Vrab02 < 0) goto Labl02; Config.MOD_ResultFormat = Vrab02; continue;}
+     if(Temp03 == "ResultFraming")      {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_ResultFraming = Temp03 == Temp01; continue;}
+     if(Temp03 == "ResultExtension")    {File0001 >> Temp03 >> Temp03; if(Temp03 == "_"){Config.MOD_ResultExtension = "";} else {Config.MOD_ResultExtension = Temp03;} if(L_Lowercase(Config.MOD_ResultExtension) == "dat") goto Labl02; continue;}
+     if(Temp03 == "ResultDirectory")    {File0001 >> Temp03 >> Temp03; Config.MOD_ResultDirectory = Temp03; continue;}
+     
+     if(Temp03 == "sagasofkoasjgkasfjaksgraoidjaskhlasjfikshfrkentmheifjhaskfasflaksjoinufiasjfkasjfkastjgttwnaokd i just want to get a perfect size in this case ;p iajidjaiodhasoig///////////////////dagsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaijdioasjdkashfasjkdhafkhaskdjwhglnjefhsdjeighwkjajbhjds,gewjkfhfhdsjfhw,kahw,faewgdjfkjkawgopewhbkdscmsdklbndow;fjasflaskjdlsahgldjsokkdgfkhdghdsl.fjdsopbe,fnekthakmeyaiofamkdmfa oags  im surely this is stupid idea but who cares, :< aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa this string not even have asodkaoskdaoskdokosakfoakwoawjifawjkwawwfnlaskfslkfjaslkjsalkdajslkdjaskd size sdaidjsiajdasfoasdjoasdjaosdjsaodjasodasj doathisfskdajsjkdnsakgask lasjfhsakhd aks k fkasfka k afa                                                                                hlaskhasdihakgnakfnasdkasbdasjdbaifjabdasdnsaj  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa alsdaaaaaaaaaaanbkdnf;osfdskjfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdafaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfd/"){File0001 >> Temp03; continue;}
+
      goto Labl02;
     }
    } else {Labl02: Vrab01 = 0; if(!L_Create(CONFIGURATION)) return; File0002 << CONFIG_TEXT; File0002.close(); goto Labl01;}
@@ -755,7 +930,7 @@
        while(File0001){File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
        if(Temp02 == "<data>")
        {
-        while(File0001){File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        while(File0001){File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "back:"){if(Vrab02 == 0){Vrab02 = 2;} else {if(Vrab02 == 1) Vrab02 = 3;} continue;}
          if(Temp02 == "file:"){if(Vrab02 == 0){Vrab02 = 1;} else {if(Vrab02 == 2) Vrab02 = 3;} continue;}
          if(Temp02 == "data:"){if(Vrab02 == 0){Vrab02 = 1;} else {if(Vrab02 == 2) Vrab02 = 3;} continue;}
@@ -764,30 +939,30 @@
         break;
        }
        }
-       if(Vrab02 == 0){Console.PrintWrite(">< ERROR - This constructor has nothing to construct.\n"); Console.PrintSet(); continue;} File0001.seekg(0); int1 Vrab03 = false;
+       if(Vrab02 == 0){Console.PrintWrite(">< ERROR - This constructor has nothing to construct.\n"); Console.PrintSet(); continue;} if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());} int1 Vrab03 = false;
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<config>")
         {
          while(File0001)
          {
-          File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+          File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
           if(Temp02 == "module:"){if(Vrab02 == 3){Vrab02 = 5;} else {if(Vrab02 == 2){Vrab02 = 6;} else {Vrab02 = 4;}} continue;}
           if(Temp02 == "overwrite:"){File0001 >> Temp02; Vrab03 = Temp02 != "true"; continue;}
           if(Temp02 == "<config_end>") break;
          }
          break;
         }
-       } File0001.seekg(0); string Temp03;
+       } if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());} string Temp03;
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<config>")
         {
          while(File0001)
          {
-          File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+          File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
           if(Temp02 == "out:"){File0001 >> Temp03; Temp03 = L_Manage(Temp03); switch(Vrab02){case 1: Temp03 += ".ecd"; break; case 2: Temp03 += ".ebd"; break; case 3: Temp03 += ".egd"; break; case 4: Temp03 += ".pcd"; break; case 5: Temp03 += ".pgd"; break; default: Temp03 += ".pbd"; break;} if(Vrab03) while(L_Exist(Config.ECD_ResultDirectory + "\\" + Temp03)) L_Rename(Temp03); continue;}
           if(Temp03 == "key:"){File0001 >> Temp03; if(Temp03.size() != 94) goto Labl02; strcpy(&Config.ECD_ResultEncryption[0], Temp03.c_str()); continue;}
           if(Temp02 == "<config_end>"){if(Temp03 == ""){Labl02: Console.PrintWrite(")( WARNING - \"out:\" is undefined, naming the result as \""); Temp03 = "0000 - Unknown"; switch(Vrab02){case 1: Temp03 += ".ecd"; break; case 2: Temp03 += ".ebd"; break; case 3: Temp03 += ".egd"; break; case 4: Temp03 += ".pcd"; break; case 5: Temp03 += ".pgd"; break; default: Temp03 += ".pbd"; break;} if(Vrab03) while(L_Exist(Config.ECD_ResultDirectory + "\\" + Temp03)) L_Rename(Temp03); Console.PrintWrite(Temp03 + "\" instead.\n"); Console.PrintSet();} goto Labl01;}
@@ -798,17 +973,18 @@
        Console.PrintWrite(")( WARNING - \"<config>\" is undefined, forcefully resuming the process.\n"); Console.PrintSet(); goto Labl02;
        Labl01:
        if(L_Create(L_Execute(Config.ECD_ResultDirectory + "\\" + Temp03))){Console.PrintWrite("[] Constructing \"" + Config.ECD_ResultDirectory + "\\" + Temp03 + "\".\n"); Console.PrintSet();} else {Console.PrintWrite(">< ERROR - Cannot construct \"" + Config.ECD_ResultDirectory + "\\" + Temp03 + "\".\n"); Console.PrintSet(); continue;}
-       File0001.seekg(0); Vect0001.clear(); std::vector < int32 > Vect01; std::vector < int32 > Vect02; std::vector < int32 > Vect03; Vect02; std::vector < uint32 > Vect04;
+       if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());} Vect0001.clear(); std::vector < int32 > Vect01; std::vector < int32 > Vect02; std::vector < int32 > Vect03; Vect02; std::vector < uint32 > Vect04;
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<data>")
         {
          Vrab02 = 0;
          while(File0001)
          {
-          File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
-          if(Temp02 == "num:"){File0001 >> Temp02; Vect04.push_back(L_Positive(L_Numbering(Temp02))); continue;}
+          File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+          if(Temp02 == "num:"){File0001 >> Temp02; if(Vect04.size() > 0) Vect04[Vect04.size() - 1] = L_Positive(L_Numbering(Temp02));}
+          if(Temp02 == "back:"){File0001 >> Temp02; Vect04.resize(Vect04.size() + 1); continue;}
           if(Temp02 == "id:"){File0001 >> Temp02; Vect0001.push_back(L_Positive(L_Numbering(Temp02))); Vrab02 += 1; Vect01.push_back(0); Vect02.push_back(0); Vect03.push_back(0); continue;}
           if(Temp02 == "type:"){File0001 >> Temp02; if(Vrab02 != 0) Vect01[Vrab02 - 1] = L_Positive(L_Numbering(Temp02)); continue;}
           if(Temp02 == "set:"){File0001 >> Temp02; if(Vrab02 != 0) Vect02[Vrab02 - 1] = L_Positive(L_Numbering(Temp02)); continue;}
@@ -818,10 +994,10 @@
          break;
         }
        }
-       File0001.seekg(0); std::vector < string > Strn01; std::vector < string > Strn02; std::vector < std::ifstream > Init01;
+       if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());} std::vector < string > Strn01; std::vector < string > Strn02; std::vector < std::ifstream > Init01;
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<config>")
         {
          while(File0001)
@@ -839,7 +1015,7 @@
         if(Init01[Vrab07].is_open()) break;
         Vrab07 += 1;
        }
-       if(Vrab07 == Vrab06){File0002.close(); std::remove((Config.ECD_ResultDirectory + "\\" + Temp03).c_str()); Console.PrintWrite("() INFO - Reconstructing \"" + Config.ECD_ResultDirectory + "\\" + Temp03 + "\" as \""); Temp03.erase(Temp03.size() - 3, 1); Temp03.insert(Temp03.size() - 2, "e"); Console.PrintWrite(Config.ECD_ResultDirectory + "\\" + Temp03 + "\" instead.\n"); Console.PrintSet(); L_Create(L_Execute(Config.ECD_ResultDirectory + "\\" + Temp03));}
+       if(Vrab07 == Vrab06 && Vrab02 > 3){File0002.close(); std::remove((Config.ECD_ResultDirectory + "\\" + Temp03).c_str()); Console.PrintWrite("() INFO - Reconstructing \"" + Config.ECD_ResultDirectory + "\\" + Temp03 + "\" as \""); Temp03.erase(Temp03.size() - 3, 1); Temp03.insert(Temp03.size() - 2, "e"); Console.PrintWrite(Config.ECD_ResultDirectory + "\\" + Temp03 + "\" instead.\n"); Console.PrintSet(); L_Create(L_Execute(Config.ECD_ResultDirectory + "\\" + Temp03));}
        File0002 << "# ===      An encrypted file, which is especially made for LF2.      === #\n\n\n\n\n\n\n     Are you trying to read this file with a Notepad?\n\n                                           What a nice move, dude.\n\n\n\n\n\n\n# ===       Created using Modified DDraw, modified by Mesujin.       === #\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
        Vrab07 = 0;
        while(Vrab07 != Vrab06)
@@ -847,32 +1023,32 @@
         if(Init01[Vrab07].is_open()){Console.PrintWrite("[] >> Module detected, including \"" + Strn01[Vrab07] + "\" "); File0002 << Config.ECD_ResultEncryption[0]; const uint32 Vrab04 = L_Positive(L_Numbering(string(Strn02[Vrab07], 1, Strn02[Vrab07].size() - 3))); Vrab02 = 0; const uint32 Vrab05 = Vect0001.size(); while(Vrab02 != Vrab05){if(Vrab04 == ruint32(Vect0001[Vrab02])) break; Vrab02 += 1;} if(Vrab02 != Vrab05){File0002 << Config.ECD_ResultEncryption[0] << S_EncryptionUINT32(Vrab02); Console.PrintWrite("into the package.\n");} else {Temp02 = "_" + std::to_string(Vrab04) + ".as"; File0002 << Config.ECD_ResultEncryption[1] << S_EncryptionUINT32(Vrab04); if(Temp02 == Strn02[Vrab07]){Console.PrintWrite("into the package.\n");} else {Console.PrintWrite("as \"_" + std::to_string(Vrab04) + ".as\" into the package.\n");}} Console.PrintSet(); std::stringstream Temp05; Temp05 << Init01[Vrab07].rdbuf(); Temp02 = Temp05.str(); File0002 << S_EncryptionUINT32(Temp02.size()) << S_EncryptionSTRING(Temp02); Init01[Vrab07].close();}
         Vrab07 += 1;
        }
-       Strn01.clear(); Strn02.clear(); Init01.clear(); Init01.resize(1); if(Init01[0].is_open()) Init01[0].close(); File0001.seekg(0);
+       Strn01.clear(); Strn02.clear(); Init01.clear(); Init01.resize(1); if(Init01[0].is_open()) Init01[0].close(); if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());}
        
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<config>")
         {
          while(File0001)
          {
-          File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+          File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
           if(Temp02 == "ai:"){File0001 >> Temp02; string Temp04 = L_Lowercase(Temp02); Vrab02 = Temp04.size(); while(Vrab02 != 1 && Temp04.at(Vrab02 - 1) != '\\') Vrab02 -= 1; Temp04.erase(0, Vrab02); if(string(Temp04, Temp04.size() - 3, 3) != ".as"){Console.PrintWrite(">< >> ERROR - \"" + Temp04 + "\" is a wrong file for an AI-Script, it's should be an \".as\" file.\n"); Console.PrintSet(); continue;} else {const uint32 Vrab04 = L_Positive(L_Numbering(string(Temp04, 0, Temp04.size() - 3))); Vrab02 = 0; const uint32 Vrab05 = Vect0001.size(); while(Vrab02 != Vrab05){if(Vrab04 == ruint32(Vect0001[Vrab02])) break; Vrab02 += 1;} if(Vrab02 != Vrab05){Init01[0].open(Temp02, std::ios::binary | std::ios::in);} else {Console.PrintWrite(">< >> ERROR - The number of this AI-Script, \"" + Temp04 + "\", doesn't match with any of the Object's ID in this constructor.\n"); Console.PrintSet(); continue;}} if(!Init01[0].is_open()){Console.PrintWrite(">< >> ERROR - Requesting an AI-Script, but either \"" + Temp02 + "\" cannot be opened or it does not exist.\n"); Console.PrintSet(); continue;} Console.PrintWrite("[] >> AI-Script detected, including \"" + Temp02 + "\" into the package.\n"); std::stringstream Temp05; Temp05 << Init01[0].rdbuf(); Init01[0].close(); Temp02 = Temp05.str(); File0002 << Config.ECD_ResultEncryption[1] << S_EncryptionUINT32(Vrab02) << S_EncryptionUINT32(Temp02.size()) << S_EncryptionSTRING(Temp02); continue;}
           if(Temp02 == "<config_end>") goto Labl03;
          }
          Console.PrintWrite(")( WARNING - Unexpected end of \"<config>\".\n"); Console.PrintSet();
          Labl03: break;
         }
-       } File0001.seekg(0); Strn0001.clear(); uint32 Vrab47 = 0;
+       } if(File0001){File0001.seekg(0);} else {L_Open(Temp01.path().string());} Strn0001.clear(); uint32 Vrab47 = 0;
 
        while(File0001)
        {
-        File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+        File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
         if(Temp02 == "<data>")
         {
          while(File0001)
          {
-          File0001 >> Temp02; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
+          File0001 >> Temp02; if(!File0001) break; if(Temp02[0] == '#'){std::getline(File0001, Temp02); continue;}
           if(Temp02 == "back:"){File0001 >> Temp02; Init01[0].open(Temp02, std::ios::binary | std::ios::in); const string Temp04 = L_Lowercase(string(Temp02, Temp02.size() - 4, 4)); if(Init01[0].is_open()){if(Temp04 == ".dat" || Temp04 == ".txt"){Vrab02 = Strn0001.size(); L_Addressing(Temp02); if(Vrab02 == Strn0001.size()){Init01[0].close(); continue;} Console.PrintWrite("[] >> Processing \"" + Temp02 + "\" into the package.\n"); Console.PrintSet(); if(M_EncryptionFile(6, Temp02)){Console.PrintWrite(">< >> ERROR - Failed in processing \"" + Temp02 + "\" into the package.\n"); Console.PrintSet();} else {File0002 << S_EncryptionUINT32(Vect04[Vrab47]); Vrab47 += 1;}} else {Console.PrintWrite(">< >> ERROR - \"" + Temp02 + "\" is not a Background for LF2.\n"); Console.PrintSet();} Init01[0].close();} else {Console.PrintWrite(">< >> ERROR - Either \"" + Temp02 + "\" cannot be opened or it does not exist.\n"); Console.PrintSet();} continue;}
           if(Temp02 == "file:"){File0001 >> Temp02; Init01[0].open(Temp02, std::ios::binary | std::ios::in); const string Temp04 = L_Lowercase(string(Temp02, Temp02.size() - 4, 4)); if(Init01[0].is_open()){if(Temp04 == ".dat" || Temp04 == ".txt"){Vrab02 = Strn0001.size(); L_Addressing(Temp02); if(Vrab02 == Strn0001.size()){Console.PrintWrite(")( WARNING - Why would you load \"" + Temp02 + "\" more than once? Well, i'll just going to warn this and keep the file to be packed more than once.\n"); Console.PrintSet();} Console.PrintWrite("[] >> Processing \"" + Temp02 + "\" into the package.\n"); Console.PrintSet(); if(M_EncryptionFile(2, Temp02)){Console.PrintWrite(">< >> ERROR - Failed in processing \"" + Temp02 + "\" into the package.\n"); Console.PrintSet();}} else {Console.PrintWrite(">< >> ERROR - \"" + Temp02 + "\" is not an Object for LF2.\n"); Console.PrintSet();} Init01[0].close();} else {Console.PrintWrite(">< >> ERROR - Either \"" + Temp02 + "\" cannot be opened or it does not exist.\n"); Console.PrintSet();} continue;}
           if(Temp02 == "data:"){File0001 >> Temp02; Init01[0].open(Temp02, std::ios::binary | std::ios::in); if(Init01[0].is_open()){Vrab02 = Strn0001.size(); L_Addressing(Temp02); if(Vrab02 == Strn0001.size()){Init01[0].close(); continue;} std::stringstream Temp05; Temp05 << Init01[0].rdbuf(); if(L_Lowercase(string(Temp02, Temp02.size() - 4, 4)) == ".bmp"){Console.PrintWrite("[] >> Packing \"" + Temp02 + "\" into the package.\n"); Console.PrintSet(); if(M_EncryptionFile(1, Temp02)) M_EncryptionFile(0, S_EncryptionUINT32(L_Addressing(Temp02)) + Temp05.str());} else {Console.PrintWrite("[] >> Including \"" + Temp02 + "\" into the package.\n"); Console.PrintSet(); M_EncryptionFile(0, Temp05.str());} Init01[0].close();} else {Console.PrintWrite(">< >> ERROR - Either \"" + Temp02 + "\" cannot be opened or it does not exist.\n"); Console.PrintSet();} continue;}
@@ -904,7 +1080,7 @@
   }
   int0   C_ECD_Installation()                                         
   {
-   if(!Config.MAIN_ECD && (!Config.MAIN_MOD || Config.MOD_InjectionLevel == 0)) return;
+   if(!Config.MAIN_ECD && (!Config.MAIN_MOD || Config.MOD_ModulingLevel == 0)) return;
    if(Config.MAIN_ECD){Console.PrintOut(); Console.PrintWrite("[] Preparing the installation. With the encryption key : [ " + string(Config.ECD_ResultEncryption, 94) + " ].\n"); Console.PrintOut();}
    std::vector < int1 > Vect01; std::vector < uint32 > Vect69; std::vector < string > Strn01; std::vector < string > Strn02;
    {
@@ -934,7 +1110,7 @@
        if(Temp01 == "<object_end>"){Vrab03 = false; break;}
        Console.PrintWrite(")( WARNING - Unknown syntax in \"<object>\", \"" + Temp01 + "\", detected.\n"); Console.PrintOut(); 
       }
-      if(Vrab03){Console.PrintWrite(">< ERROR - Unexpected end of \"<object>\", cancel the installation.\n"); Console.PrintOut(); return;}
+      if(Vrab03){Console.PrintWrite(">< ERROR - Unexpected end of \"<object>\", cancel the installation.\n"); Console.PrintOut(); if(Config.MOD_ModulingLevel > 1) Config.MOD_ModulingLevel = 1; return;}
       continue;
      }
      if(Temp01 == "<background>")
@@ -947,19 +1123,19 @@
        if(Temp01 == "<background_end>"){Vrab04 = false; break;}
        Console.PrintWrite(")( WARNING - Unknown syntax in \"<background>\", \"" + Temp01 + "\", detected.\n"); Console.PrintOut(); 
       }
-      if(Vrab04){Console.PrintWrite(">< ERROR - Unexpected end of \"<background>\", cancel the installation.\n"); Console.PrintOut(); return;}
+      if(Vrab04){Console.PrintWrite(">< ERROR - Unexpected end of \"<background>\", cancel the installation.\n"); Console.PrintOut(); if(Config.MOD_ModulingLevel > 1) Config.MOD_ModulingLevel = 1; return;}
       continue;
      }
     }
-    if(Vrab03){Console.PrintWrite(">< ERROR - Cannot find \"<object>\" in \"" + Config.ECD_InstallDataDirectory + "\", cancel the installation.\n"); Console.PrintOut(); return;}
+    if(Vrab03){Console.PrintWrite(">< ERROR - Cannot find \"<object>\" in \"" + Config.ECD_InstallDataDirectory + "\", cancel the installation.\n"); Console.PrintOut(); if(Config.MOD_ModulingLevel > 1) Config.MOD_ModulingLevel = 1; return;}
     if(Vrab04){Console.PrintWrite(")( WARNING - Cannot find \"<background>\" in \"" + Config.ECD_InstallDataDirectory + "\".\n"); Console.PrintOut();}
     if(Strn02.size() < 12){Console.PrintWrite(")( WARNING - The default background in \"" + Config.ECD_InstallDataDirectory + "\" is less than 12 background, error may occur if you're not providing background(s).\n"); Console.PrintOut();}
     if(File0001){File0001.seekg(0);} else {L_Open(Config.ECD_InstallDataDirectory);}
     L_Create(L_Execute(Config.ECD_InstallODataDirectory)); File0002 << File0001.rdbuf(); File0002.close(); File0001.close();
-   } else {if(L_Exist(Config.ECD_InstallDataDirectory)){Console.PrintWrite(">< ERROR - \"" + Config.ECD_InstallDataDirectory + "\" inaccessible, cancel the installation.\n"); Console.PrintOut(); return;} if(L_Create(L_Execute(Config.ECD_InstallDataDirectory))){Console.PrintWrite(")( WARNING - \"" + Config.ECD_InstallDataDirectory + "\" cannot be found.\n"); Console.PrintOut(); Console.PrintWrite("() INFO - Modified DDraw will providing the original \"data.txt\" to \"" + Config.ECD_InstallDataDirectory + "\".\n"); Console.PrintOut(); File0002 << "<object>\nid:  0  type: 0  file: data\\template.dat\nid:  52  type: 0  file: data\\julian.dat\nid:  51  type: 0  file: data\\firzen.dat\nid:  50  type: 0  file: data\\louisEX.dat\nid:  38  type: 0  file: data\\bat.dat\nid:  39  type: 0  file: data\\justin.dat\nid:  37  type: 0  file: data\\knight.dat\nid:  36  type: 0  file: data\\jan.dat\nid:  35  type: 0  file: data\\monk.dat\nid:  34  type: 0  file: data\\sorcerer.dat\nid:  33  type: 0  file: data\\jack.dat\nid:  32  type: 0  file: data\\mark.dat\nid:  31  type: 0  file: data\\hunter.dat\nid:  30  type: 0  file: data\\bandit.dat\nid:  1  type: 0  file: data\\deep.dat\nid:  2  type: 0  file: data\\john.dat\nid:  4  type: 0  file: data\\henry.dat\nid:  5  type: 0  file: data\\rudolf.dat\nid:  6  type: 0  file: data\\louis.dat\nid:  7  type: 0  file: data\\firen.dat\nid:  8  type: 0  file: data\\freeze.dat\nid:  9  type: 0  file: data\\dennis.dat\nid: 10  type: 0  file: data\\woody.dat\nid: 11  type: 0  file: data\\davis.dat\n\nid: 100  type: 1  file: data\\weapon0.dat   #stick\nid: 101  type: 1  file: data\\weapon2.dat   #hoe\nid: 120  type: 1  file: data\\weapon4.dat   #knife\nid: 121  type: 4  file: data\\weapon5.dat   #baseball\nid: 122  type: 6  file: data\\weapon6.dat   #milk\nid: 150  type: 2  file: data\\weapon1.dat   #stone\nid: 151  type: 2  file: data\\weapon3.dat   #wooden_box\nid: 123  type: 6  file: data\\weapon8.dat   #beer\nid: 124  type: 1  file: data\\weapon9.dat   #<\nid: 217  type: 2  file: data\\weapon10.dat  #louis_armour\nid: 218  type: 2  file: data\\weapon11.dat  #louis_armour\nid: 300  type: 5  file: data\\criminal.dat  #criminal\n\nid: 200  type: 3  file: data\\john_ball.dat\nid: 201  type: 1  file: data\\henry_arrow1.dat\nid: 202  type: 1  file: data\\rudolf_weapon.dat\nid: 203  type: 3  file: data\\deep_ball.dat\nid: 204  type: 3  file: data\\henry_wind.dat\nid: 205  type: 3  file: data\\dennis_ball.dat\nid: 206  type: 3  file: data\\woody_ball.dat\nid: 207  type: 3  file: data\\davis_ball.dat\nid: 208  type: 3  file: data\\henry_arrow2.dat\nid: 209  type: 3  file: data\\freeze_ball.dat\nid: 210  type: 3  file: data\\firen_ball.dat\nid: 211  type: 3  file: data\\firen_flame.dat\nid: 212  type: 3  file: data\\freeze_column.dat\nid: 213  type: 1  file: data\\weapon7.dat   #ice_sword\nid: 214  type: 3  file: data\\john_biscuit.dat\nid: 215  type: 3  file: data\\dennis_chase.dat\nid: 216  type: 3  file: data\\jack_ball.dat\nid: 219  type: 3  file: data\\jan_chaseh.dat\nid: 220  type: 3  file: data\\jan_chase.dat\nid: 221  type: 3  file: data\\firzen_chasef.dat\nid: 222  type: 3  file: data\\firzen_chasei.dat\nid: 223  type: 3  file: data\\firzen_ball.dat\nid: 224  type: 3  file: data\\bat_ball.dat\nid: 225  type: 3  file: data\\bat_chase.dat\nid: 226  type: 3  file: data\\justin_ball.dat\nid: 228  type: 3  file: data\\julian_ball.dat\nid: 229  type: 3  file: data\\julian_ball2.dat\n\nid: 998  type: 5  file: data\\etc.dat\nid: 999  type: 5  file: data\\broken_weapon.dat\n<object_end>\n\n<file_editing>\ndata\\nothing.txt\n<file_editing_end>\n\n<background>\nid: 4    file: bg\\sys\\hkc\\bg.dat\nid: 2    file: bg\\sys\\lf\\bg.dat\nid: 3    file: bg\\sys\\sp\\bg.dat\nid: 5    file: bg\\sys\\gw\\bg.dat\nid: 6    file: bg\\sys\\qi\\bg.dat\nid: 7    file: bg\\sys\\ft\\bg.dat\nid: 8    file: bg\\sys\\bc\\bg.dat\nid: 1    file: bg\\sys\\cuhk\\bg.dat\nid: 0    file: bg\\sys\\thv\\bg.dat\nid: 10    file: bg\\template\\1\\bg.dat\nid: 11    file: bg\\template\\2\\bg.dat\nid: 12    file: bg\\template\\3\\bg.dat\n<background_end>"; File0002.close(); Console.PrintWrite("[] Re-accessing \"" + Config.ECD_InstallDataDirectory + "\".\n"); Console.PrintOut(); goto Labl01;} else {Console.PrintWrite(">< ERROR - Either \"" + Config.ECD_InstallDataDirectory + "\" cannot be opened or it does not exist. Also cannot reproduce it out.\n"); Console.PrintOut(); return;}}
+   } else {if(L_Exist(Config.ECD_InstallDataDirectory)){Console.PrintWrite(">< ERROR - \"" + Config.ECD_InstallDataDirectory + "\" inaccessible, cancel the installation.\n"); Console.PrintOut(); if(Config.MOD_ModulingLevel > 1) Config.MOD_ModulingLevel = 1; return;} if(L_Create(L_Execute(Config.ECD_InstallDataDirectory))){Console.PrintWrite(")( WARNING - \"" + Config.ECD_InstallDataDirectory + "\" cannot be found.\n"); Console.PrintOut(); Console.PrintWrite("() INFO - Modified DDraw will providing the original \"data.txt\" to \"" + Config.ECD_InstallDataDirectory + "\".\n"); Console.PrintOut(); File0002 << "<object>\nid:  0  type: 0  file: data\\template.dat\nid:  52  type: 0  file: data\\julian.dat\nid:  51  type: 0  file: data\\firzen.dat\nid:  50  type: 0  file: data\\louisEX.dat\nid:  38  type: 0  file: data\\bat.dat\nid:  39  type: 0  file: data\\justin.dat\nid:  37  type: 0  file: data\\knight.dat\nid:  36  type: 0  file: data\\jan.dat\nid:  35  type: 0  file: data\\monk.dat\nid:  34  type: 0  file: data\\sorcerer.dat\nid:  33  type: 0  file: data\\jack.dat\nid:  32  type: 0  file: data\\mark.dat\nid:  31  type: 0  file: data\\hunter.dat\nid:  30  type: 0  file: data\\bandit.dat\nid:  1  type: 0  file: data\\deep.dat\nid:  2  type: 0  file: data\\john.dat\nid:  4  type: 0  file: data\\henry.dat\nid:  5  type: 0  file: data\\rudolf.dat\nid:  6  type: 0  file: data\\louis.dat\nid:  7  type: 0  file: data\\firen.dat\nid:  8  type: 0  file: data\\freeze.dat\nid:  9  type: 0  file: data\\dennis.dat\nid: 10  type: 0  file: data\\woody.dat\nid: 11  type: 0  file: data\\davis.dat\n\nid: 100  type: 1  file: data\\weapon0.dat   #stick\nid: 101  type: 1  file: data\\weapon2.dat   #hoe\nid: 120  type: 1  file: data\\weapon4.dat   #knife\nid: 121  type: 4  file: data\\weapon5.dat   #baseball\nid: 122  type: 6  file: data\\weapon6.dat   #milk\nid: 150  type: 2  file: data\\weapon1.dat   #stone\nid: 151  type: 2  file: data\\weapon3.dat   #wooden_box\nid: 123  type: 6  file: data\\weapon8.dat   #beer\nid: 124  type: 1  file: data\\weapon9.dat   #<\nid: 217  type: 2  file: data\\weapon10.dat  #louis_armour\nid: 218  type: 2  file: data\\weapon11.dat  #louis_armour\nid: 300  type: 5  file: data\\criminal.dat  #criminal\n\nid: 200  type: 3  file: data\\john_ball.dat\nid: 201  type: 1  file: data\\henry_arrow1.dat\nid: 202  type: 1  file: data\\rudolf_weapon.dat\nid: 203  type: 3  file: data\\deep_ball.dat\nid: 204  type: 3  file: data\\henry_wind.dat\nid: 205  type: 3  file: data\\dennis_ball.dat\nid: 206  type: 3  file: data\\woody_ball.dat\nid: 207  type: 3  file: data\\davis_ball.dat\nid: 208  type: 3  file: data\\henry_arrow2.dat\nid: 209  type: 3  file: data\\freeze_ball.dat\nid: 210  type: 3  file: data\\firen_ball.dat\nid: 211  type: 3  file: data\\firen_flame.dat\nid: 212  type: 3  file: data\\freeze_column.dat\nid: 213  type: 1  file: data\\weapon7.dat   #ice_sword\nid: 214  type: 3  file: data\\john_biscuit.dat\nid: 215  type: 3  file: data\\dennis_chase.dat\nid: 216  type: 3  file: data\\jack_ball.dat\nid: 219  type: 3  file: data\\jan_chaseh.dat\nid: 220  type: 3  file: data\\jan_chase.dat\nid: 221  type: 3  file: data\\firzen_chasef.dat\nid: 222  type: 3  file: data\\firzen_chasei.dat\nid: 223  type: 3  file: data\\firzen_ball.dat\nid: 224  type: 3  file: data\\bat_ball.dat\nid: 225  type: 3  file: data\\bat_chase.dat\nid: 226  type: 3  file: data\\justin_ball.dat\nid: 228  type: 3  file: data\\julian_ball.dat\nid: 229  type: 3  file: data\\julian_ball2.dat\n\nid: 998  type: 5  file: data\\etc.dat\nid: 999  type: 5  file: data\\broken_weapon.dat\n<object_end>\n\n<file_editing>\ndata\\nothing.txt\n<file_editing_end>\n\n<background>\nid: 4    file: bg\\sys\\hkc\\bg.dat\nid: 2    file: bg\\sys\\lf\\bg.dat\nid: 3    file: bg\\sys\\sp\\bg.dat\nid: 5    file: bg\\sys\\gw\\bg.dat\nid: 6    file: bg\\sys\\qi\\bg.dat\nid: 7    file: bg\\sys\\ft\\bg.dat\nid: 8    file: bg\\sys\\bc\\bg.dat\nid: 1    file: bg\\sys\\cuhk\\bg.dat\nid: 0    file: bg\\sys\\thv\\bg.dat\nid: 10    file: bg\\template\\1\\bg.dat\nid: 11    file: bg\\template\\2\\bg.dat\nid: 12    file: bg\\template\\3\\bg.dat\n<background_end>"; File0002.close(); Console.PrintWrite("[] Re-accessing \"" + Config.ECD_InstallDataDirectory + "\".\n"); Console.PrintOut(); goto Labl01;} else {Console.PrintWrite(">< ERROR - Either \"" + Config.ECD_InstallDataDirectory + "\" cannot be opened or it does not exist. Also cannot reproduce it out.\n"); Console.PrintOut(); return;}}
   
    if(Config.MAIN_MOD)
-   if(Config.MOD_InjectionLevel > 0)
+   if(Config.MOD_ModulingLevel > 0)
    {
     uint32 Vrab01 = 0; std::vector < uint32 > Vect02; Vect02.resize(2); uint32 Vrab03 = Config.ECD_InstallDataIDs[1];
     for(uint32 Vrab02 = Config.ECD_InstallDataIDs[0]; Vrab02 <= Vrab03; ++Vrab02)
@@ -1003,9 +1179,12 @@
       if(Temp03 == ".ecd") goto Labl05;
       if(Temp03 == ".egd") goto Labl05;
       if(Temp03 == ".ebd") goto Labl05;
-      if(Temp03 == ".pcd") goto Labl05;
-      if(Temp03 == ".pgd") goto Labl05;
-      if(Temp03 == ".pbd") goto Labl05;
+      if(Config.MAIN_MOD)
+      {
+       if(Temp03 == ".pcd") goto Labl05;
+       if(Temp03 == ".pgd") goto Labl05;
+       if(Temp03 == ".pbd") goto Labl05;
+      }
      }
      continue;
      Labl05:
@@ -1050,6 +1229,8 @@
        if(Vect01.size() < ruint32(Vect0001[Vrab05]) + 1) Vect01.resize(Vect0001[Vrab05] + 1);
        if(Vect01[Vect0001[Vrab05]])
        {
+        if(Vect03[Vrab05] == 2){Vect69[Vect0001[Vrab05]] += 1; Post01 += 16; continue;}
+        if(Vect03[Vrab05] == 1){Vect03[Vrab05] = 3; Post01 += 16; continue;}
         uint32 Vrab06 = 7; string Temp69 = std::to_string(Vect0001[Vrab05]);
         if(Vect04[Vrab05] == 0)
         {
@@ -1130,7 +1311,7 @@
         Temp05 += std::to_string(Vect0001[S_DecryptionUINT32(Temp02.c_str())]) + ".as";
         }
         Console.PrintWrite("[] >> Parsing \"" + Temp05 + "\" from the package to \"");
-        Temp05.insert(0, Config.AI_Directory + "\\");
+        Temp05.insert(0, Config.AI_OldDirectory + "\\");
         Console.PrintWrite(Temp05 + "\".\n"); Console.PrintOut();
         File0001.read(&Temp02.at(0), 5); const uint32 Vrab05 = S_DecryptionUINT32(Temp02.c_str());
         if(Post01 > Post05 - static_cast < std::streampos > (7 + ruint64(Vrab05))) break;
@@ -1259,7 +1440,9 @@
         if(Post01 > Post05 - static_cast < std::streampos > (11 + ruint64(Vrab07))) break;
         Temp02.resize(Vrab07); File0001.read(&Temp02.at(0), Vrab07); Temp02 = S_DecryptionSTRING(Temp02);
 
-        if(!Config.ECD_InstallOverwrite && L_Exist(Strn0001[Vrab05])){Console.PrintWrite("() >> INFO - \"" + Strn0001[Vrab05] + "\" skipped due to a file with same name already exist.\n"); Console.PrintOut(); continue;}
+        if(Vect03[Vrab69] == 3){Console.PrintWrite("() >> INFO - \"" + Strn0001[Vrab05] + "\" skipped due to it's \"set:\".\n"); Console.PrintOut(); Vrab69 += 1; continue;}
+
+        if(!Config.ECD_InstallOverwrite && L_Exist(Strn0001[Vrab05])){Console.PrintWrite("() >> INFO - \"" + Strn0001[Vrab05] + "\" skipped due to a file with same name already exist.\n"); Console.PrintOut(); Strn01.push_back(std::to_string(Vect0001[Vrab69]) + " type: " + std::to_string(Vect02[Vrab69]) + " file: " + Strn0001[Vrab05]); Vrab69 += 1; continue;}
         Console.PrintWrite("[] >> Parsing \"" + Strn0001[Vrab05] + "\" from the package");
         if(!Config.ECD_InstallSeparated || string(Strn0001[Vrab05], Strn0001[Vrab05].size() - 4, 4) != ".txt")
         {
@@ -1327,7 +1510,7 @@
              if(Vrab10 == Config.ECD_ResultEncryption[5]) {Vrab09 = 13; File0002 << "fall:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[6]) {Vrab09 = 13; File0002 << "arest:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[7]) {Vrab09 = 13; File0002 << "vrest:"; continue;}
-             if(Vrab10 == Config.ECD_ResultEncryption[8]) {Vrab09 = 13; File0002 << /*"respond:";*/ ""; continue;}
+             if(Vrab10 == Config.ECD_ResultEncryption[8]) {Vrab09 = 13; File0002 << "respond:"; ""; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[9]) {Vrab09 = 13; File0002 << "effect:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[10]){Vrab09 = 13; File0002 << "bdefend:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[11]){Vrab09 = 13; File0002 << "injury:"; continue;}
@@ -1374,7 +1557,7 @@
              if(Vrab10 == Config.ECD_ResultEncryption[3]) {Vrab09 = 30; File0002 << "y:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[4]) {Vrab09 = 16; File0002 << "vaction:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[5]) {Vrab09 = 16; File0002 << "aaction:"; continue;}
-             if(Vrab10 == Config.ECD_ResultEncryption[6]) {Vrab09 = 16; File0002 << /*"daction:";*/ ""; continue;}
+             if(Vrab10 == Config.ECD_ResultEncryption[6]) {Vrab09 = 16; File0002 << "daction:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[7]) {Vrab09 = 16; File0002 << "jaction:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[8]) {Vrab09 = 16; File0002 << "taction:"; continue;}
              if(Vrab10 == Config.ECD_ResultEncryption[9]) {Vrab09 = 16; File0002 << "throwvx:"; continue;}
@@ -1508,8 +1691,7 @@
                 {
                  Vrab15 += (Vect06[(Vrab14 * 4) + 2] * Vect06[(Vrab14 * 4) + 3]);
                  if(Vrab14 + 1 != Vrab13) Strn04[Vrab14 + 1] += std::to_string(Vrab15) + "-";
-                 Vrab15 -= 1;
-                 Strn04[Vrab14] += std::to_string(Vrab15) + "): ";
+                 Vrab15 -= 1; Strn04[Vrab14] += std::to_string(Vrab15) + "): "; Vrab15 += 1;
                  Vrab14 += 1;
                 }
                 if(Vrab13 != 0)
@@ -2199,7 +2381,91 @@
        }
        if(Temp02.at(0) == Config.ECD_ResultEncryption[8])
        {
-        
+        if(Post01 > Post05 - static_cast < std::streampos > (11)) break;
+        Temp02.resize(5); File0001.read(&Temp02.at(0), 5); const uint32 Vrab05 = S_DecryptionUINT32(Temp02.c_str());
+        File0001.read(&Temp02.at(0), 5); const uint32 Vrab07 = S_DecryptionUINT32(Temp02.c_str());
+        if(Post01 > Post05 - static_cast < std::streampos > (11 + ruint64(Vrab07))) break;
+        Temp02.resize(Vrab07); File0001.read(&Temp02.at(0), Vrab07); Temp02 = S_DecryptionSTRING(Temp02);
+        string Temp04; Temp04.resize(5); File0001.read(&Temp04.at(0), 5); const uint32 Vrab08 =  S_DecryptionUINT32(Temp04.c_str());
+
+        if(!Config.ECD_InstallOverwrite && L_Exist(Strn0001[Vrab05])){Console.PrintWrite("() >> INFO - \"" + Strn0001[Vrab05] + "\" skipped due to a file with same name already exist.\n"); Console.PrintOut(); continue;}
+        Console.PrintWrite("[] >> Parsing \"" + Strn0001[Vrab05] + "\" from the package");
+        if(!Config.ECD_InstallSeparated || string(Strn0001[Vrab05], Strn0001[Vrab05].size() - 4, 4) != ".txt")
+        {
+         Strn0001[Vrab05] = string(Strn0001[Vrab05], 0, Strn0001[Vrab05].size() - 4) + ".txt";
+         if(!Config.ECD_InstallSeparated){Strn0001[Vrab05] = Config.ECD_ResultDirectory + L_Reform(Strn0001[Vrab05]); while(L_Exist(Strn0001[Vrab05])) L_Rename(Strn0001[Vrab05]);} Console.PrintWrite(" as \"" + Strn0001[Vrab05] + "\"");
+        }
+        Console.PrintWrite(".\n"); Console.PrintOut();
+
+        L_Create(L_Execute(Strn0001[Vrab05])); L_Summary(Strn0001[Vrab05] + "\n");
+        if(Vrab08 != 0)
+        {
+         if(Strn02.size() >= Vrab08)
+         {
+          Strn02[Vrab08 - 1] = Strn0001[Vrab05];
+         } else
+         {
+          string Temp05; uint32 Vrab09 = Strn02.size();
+          if(Strn02.size() > 0){Temp05 = Strn02[0];} else {Temp05 = Strn0001[Vrab05];}
+          while(Vrab09 != Vrab08){Strn02.push_back(Temp05); Vrab09 += 1;}
+          Strn02[Vrab08 - 1] = Strn0001[Vrab05];
+         }
+        } else
+        {
+         Strn02.push_back(Strn0001[Vrab05]);
+        }
+
+        uint32 Vrab09 = ruint32(-1); uint32 Vrab10 = 0;
+        switch(Config.ECD_ResultCodeFormat)
+        {
+         case 1:
+         default:
+          while((Vrab09 += 1) != Vrab07)
+          {
+           if(Vrab09 != 0) File0002 << " "; const uint8 Vrab11 = Temp02.at(Vrab09);
+           switch(Vrab10)
+           {
+            case 0: case 4:
+             if(Vrab11 == Config.ECD_ResultEncryption[0]) {Vrab10 = 5; File0002 << "name:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[1]) {Vrab10 = 2; File0002 << "width:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[2]) {Vrab10 = 3; File0002 << "zboundary:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[3]) {Vrab10 = 3; File0002 << "perspective:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[4]) {Vrab10 = 6; File0002 << "shadow:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[5]) {Vrab10 = 7; File0002 << "layer:"; continue;}
+             if(Vrab10 == 4) if(Vrab11 == Config.ECD_ResultEncryption[93]){Vrab10 = 0; File0002 << S_DecryptionINT32(string(Temp02, Vrab09 + 1, 5).c_str()); Vrab09 += 5; continue;}
+            break;
+            case 1:
+             if(Vrab11 == Config.ECD_ResultEncryption[0]) {Vrab10 = 0;  File0002 << "layer_end"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[1]) {Vrab10 = 8;  File0002 << "transparency:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[2]) {Vrab10 = 8;  File0002 << "width:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[3]) {Vrab10 = 8;  File0002 << "height:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[4]) {Vrab10 = 8;  File0002 << "x:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[5]) {Vrab10 = 8;  File0002 << "y:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[6]) {Vrab10 = 8;  File0002 << "cc:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[7]) {Vrab10 = 8;  File0002 << "c1:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[8]) {Vrab10 = 8;  File0002 << "c2:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[9]) {Vrab10 = 8;  File0002 << "rect:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[10]) {Vrab10 = 8; File0002 << "rect32:"; continue;}
+            break;
+            case 2: case 3: case 8:
+             File0002 << S_DecryptionINT32(string(Temp02, Vrab09, 5).c_str()); Vrab09 += 4;
+             switch(Vrab10){case 2: Vrab10 = 0; continue; case 3: Vrab10 = 4; continue; case 8: Vrab10 = 1; continue; default: break;}
+            break;
+            case 5:
+             {
+              const uint32 Vrab12 = S_DecryptionINT32(string(Temp02, Vrab09, 5).c_str()); Vrab09 += 5; File0002 << S_DecryptionSTRING(string(Temp02, Vrab09, Vrab12)); Vrab09 += Vrab12 - 1;
+             }
+             switch(Vrab10){case 5: Vrab10 = 0; continue; default: break;}
+            break;
+            case 6: case 7:
+             File0002 << Strn0001[S_DecryptionUINT32(string(Temp02, Vrab09, 5).c_str())]; Vrab09 += 4;
+             switch(Vrab10){case 6: Vrab10 = 3; File0002 << " :"; continue; case 7: Vrab10 = 1; continue; default: break;}
+            break;
+            default: break;
+           }
+          }
+         break;
+        }
        }
        Vrab88 = true; break;
       }
@@ -2218,7 +2484,7 @@
    string Temp03; string Temp04;
 
        if(Config.MAIN_MOD)
-       if(Config.MOD_InjectionLevel > 0)
+       if(Config.MOD_ModulingLevel > 0)
        {
         string Temp01 = Config.ECD_ResultDirectory + "\\none.bmp";
         while(L_Exist(Temp01)) L_Rename(Temp01);
@@ -2236,18 +2502,18 @@
          L_Create(L_Execute(Temp04));
          File0002 << "<bmp_begin>\nfile(0-1): " + Temp02 + " w: 207 h: 34 row: 1 col: 2\n<bmp_end>\n\n<frame> 0 Injection\n pic: 0 state: 3005 wait: 121 next: 2 dvx: 550 dvy: 550 dvz: 99999999 centerx: 1000 centery: -1000\n<frame_end>\n<frame> 1 Injection\n pic: 1 state: 3005 wait: 140 next: 2 dvx: 550 dvy: 550 dvz: 9999999 centerx: 1000 centery: -1000\n<frame_end>\n\n<frame> 2 Injection\n pic: -1 state: 9998 next: 0 dvx: 550 dvy: 550 dvz: 9999999\n<frame_end>";
          File0002.close(); L_Summary(Temp04 + "\n");
-         const string Temp05 = Config.AI_Directory + "\\" + std::to_string(Database.InjectorID) + ".as";
+         const string Temp05 = Config.AI_OldDirectory + "\\" + std::to_string(Database.InjectorID) + ".as";
          L_Create(L_Execute(Temp05));
          File0002 << "void id(){return;}";
          File0002.close(); L_Summary(Temp05 + "\n");
          BMP Bitm01(208, 70, false); constexpr uint8 Temp06[] = "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377" "\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377" "\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\377\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\154\040\020\376\377\377\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\326\163\132\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000";
          Bitm01.data.insert(Bitm01.data.begin(), &Temp06[0], &Temp06[43680]); Bitm01.data.resize(43680);
-         if(Config.MOD_InjectionLevelInfoTrans){for(int32 Vrab01 = 0; Vrab01 < 208 * 70 * 3; Vrab01 += 3) if(Bitm01.data[Vrab01] == 254) if(Bitm01.data[Vrab01 + 1] == 255) if(Bitm01.data[Vrab01 + 2] == 255){Bitm01.data[Vrab01] = 108; Bitm01.data[Vrab01 + 1] = 32; Bitm01.data[Vrab01 + 2] = 16;}} else
+         if(Config.MOD_ModulingInfoTrans){for(int32 Vrab01 = 0; Vrab01 < 208 * 70 * 3; Vrab01 += 3) if(Bitm01.data[Vrab01] == 254) if(Bitm01.data[Vrab01 + 1] == 255) if(Bitm01.data[Vrab01 + 2] == 255){Bitm01.data[Vrab01] = 108; Bitm01.data[Vrab01 + 1] = 32; Bitm01.data[Vrab01 + 2] = 16;}} else
          {for(int32 Vrab01 = 0; Vrab01 < 208 * 70 * 3; Vrab01 += 3) if(Bitm01.data[Vrab01] == 254) if(Bitm01.data[Vrab01 + 1] == 255) if(Bitm01.data[Vrab01 + 2] == 255){Bitm01.data[Vrab01] = 0; Bitm01.data[Vrab01 + 1] = 0; Bitm01.data[Vrab01 + 2] = 0;}}
          Bitm01.write(L_Execute(Temp02).c_str()); L_Summary(Temp02 + "\n");
          Bitm01.bmp_info_header.width = 1; Bitm01.bmp_info_header.height = 1; Bitm01.data = {'\000', '\000', '\000', '\000', '\000', '\000'};
          Bitm01.write(L_Execute(Temp01).c_str()); L_Summary(Temp01 + "\n");
-        } else {Config.MOD_InjectionLevel = 0;}
+        } else {Config.MOD_ModulingLevel = 0;}
        }
 
    L_Open(Config.ECD_InstallODataDirectory);
@@ -2277,7 +2543,7 @@
         if(Vect69[Vrab04] == 0){File0002 << " id: " + Strn01[Vrab02] + "\n";} else {Vect69[Vrab01] -= 1;}
        }
        if(Config.MAIN_MOD)
-       if(Config.MOD_InjectionLevel > 0)
+       if(Config.MOD_ModulingLevel > 0)
        {
         File0002 << " id: " << Database.InjectorID << " type: 0 file: " + Temp03 + "\n id: " << Database.InjectorID2 << " type: 3 file: " + Temp04 + "\n";
        }
@@ -2325,86 +2591,80 @@
   }
   int0   C_DLL_Load()                                                 {Hins0001.clear(); if(L_Exist(Config.DLL_Directory)) for(auto const &Vrab01 : std::filesystem::recursive_directory_iterator(Config.DLL_Directory)){string Temp01 = Vrab01.path().string(); if(L_Lowercase(string(Temp01, Temp01.size() - 4, 4)) == ".dll") Hins0001.push_back(LoadLibraryA(Temp01.c_str()));}}
   int0   C_DLL_Unload()                                               {const uint32 Vrab01 = Hins0001.size(); uint32 Vrab02 = 0; while(Vrab02 < Vrab01){FreeLibrary(Hins0001.at(Vrab02)); Vrab02 += 1;} Hins0001.clear();}
-  int0   C_MOD_Initialization()                              fastened {
+  /*int0   C_MOD_Initialization()                              fastened {
     if(!Config.MAIN_MOD) return;
-    if(Config.MOD_InjectionLevel == 0) return;
+    if(Config.MOD_ModulingLevel != 1) return;
 	int1 Vrab01 = false; uint32 Vrab02 = 0;
-    while(Base.Game->files->datas[Vrab02] != 0)
+    while(Base.Game->Database->Data[Vrab02] != 0)
     {
-     if(Base.Game->files->datas[Vrab02]->id == Database.InjectorID) goto Labl0012;
-     if(Base.Game->files->datas[Vrab02]->type == 0)
+     if(Base.Game->Database->Data[Vrab02]->id == Database.InjectorID) goto Labl0012;
+     if(Base.Game->Database->Data[Vrab02]->type == 0)
      {
       uint32 Vrab03 = 0;
-      while(Base.Game->files->datas[Vrab02]->frames[Vrab03].exists){Vrab03 += 1; if(Vrab03 == MaximumFrames){Vrab01 = true; goto Labl0012;}}
-      if(Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].exists)
+      while(Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist){Vrab03 += 1; if(Vrab03 == MaximumFrames){Vrab01 = true; goto Labl0012;}}
+      if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].Exist)
       {
-       if(Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wait <= 0){Vrab01 = true; goto Labl0012;}
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].exists = true;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wait = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wait - 1;
-       Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wait = 0;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].next = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].next;
-       Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].next = Vrab03;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].centerx = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].centerx;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].centery = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].centery;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.kind = 1;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.x = Base.Game->files->datas[Vrab02]->frames[Vrab03].centerx;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.y = Base.Game->files->datas[Vrab02]->frames[Vrab03].centery;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.oid = Database.InjectorID;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.action = 0;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].opoint.facing = 10;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].pic = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].pic;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].state = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].state;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].mp = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].mp;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_a = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_a;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_d = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_d;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_j = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_j;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Fa = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Fa;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Fj = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Fj;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Da = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Da;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Dj = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Dj;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Ua = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Ua;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_Uj = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_Uj;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].hit_ja = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].hit_ja;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdy_count = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdy_count;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdys = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdys;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdy_x = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdy_x;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdy_y = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdy_y;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdy_w = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdy_w;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bdy_h = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bdy_h;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itr_count = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itr_count;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itrs = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itrs;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itr_x = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itr_x;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itr_y = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itr_y;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itr_w = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itr_w;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].itr_h = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].itr_h;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.kind = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.kind;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.x = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.x;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.y = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.y;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.dvx = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.dvx;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.dvy = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.dvy;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.dvz = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.dvz;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.weaponact = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.weaponact;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.attacking = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.attacking;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].wpoint.cover = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].wpoint.cover;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.kind = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.kind;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.x = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.x;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.y = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.y;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.vaction = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.vaction;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.aaction = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.aaction;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.daction = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.daction;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.jaction = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.jaction;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.taction = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.taction;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.dircontrol = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.dircontrol;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.decrease = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.decrease;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.throwvx = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.throwvx;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.throwvy = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.throwvy;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.throwvz = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.throwvz;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.throwinjury = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.throwinjury;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.cover = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.cover;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.hurtable = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.hurtable;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].cpoint.injury = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].cpoint.injury;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bpoint.x = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bpoint.x;
-       Base.Game->files->datas[Vrab02]->frames[Vrab03].bpoint.y = Base.Game->files->datas[Vrab02]->frames[Config.MOD_InjectionLevelStartingFrame].bpoint.y;
+       if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait <= 0){Vrab01 = true; goto Labl0012;}
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist = true;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wait = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait - 1;
+       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait = 0;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].next = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next;
+       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next = Vrab03;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centerx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centery;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.kind = 1;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.x = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.y = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.oid = Database.InjectorID;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.action = 0;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.facing = 10;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].pic = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].pic;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].state = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].state;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].mp = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].mp;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_a = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_a;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_d = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_d;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_j = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_j;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fa = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fa;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Da = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Da;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Dj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Dj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Ua = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Ua;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Uj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Uj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_ja = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_ja;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Count;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Rectangle;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Count;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Rectangle;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.kind;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.y;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvz;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.weaponact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.weaponact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.attacking = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.attacking;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.cover = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.cover;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.kind;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.y;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.vaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.vaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.aaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.aaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.daction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.daction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.jaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.jaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.taction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.taction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.dircontrol = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.dircontrol;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.decrease = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.decrease;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvz;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwinjury = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwinjury;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.cover_backhurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.cover_backhurtact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.hurtable = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.hurtable;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.injury_fronthurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.injury_fronthurtact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.y;
       } else {Vrab01 = true;}
      }
      Labl0012:
@@ -2418,68 +2678,70 @@
   int0 C_MOD_Preprocessing()
    {
     if(!Config.MAIN_MOD) return;
-    if(Config.MOD_InjectionLevel == 0) return;
-     for(uint32 Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) if(Base.Game->objects[Vrab01]->data->id == Database.InjectorID2)
+    if(Config.MOD_ModulingInfo && Config.MOD_ModulingLevel == 0)
+    {
+     for(uint32 Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) if(Base.Game->Object[Vrab01]->Data->id == Database.InjectorID2)
      {
-      switch(Base.Game->objects[Vrab01]->frame1)
+      switch(Base.Game->Object[Vrab01]->Frame)
       {
        case 0:
         Vrab0001 = 20;
-        if(Base.Game->objects[Vrab01]->wait_counter > 1)
-        if(Base.Game->objects[Vrab01]->wait_counter < 22)
+        if(Base.Game->Object[Vrab01]->Wait > 1)
+        if(Base.Game->Object[Vrab01]->Wait < 22)
         {
-         Vrab0001 = 20 - (Base.Game->objects[Vrab01]->wait_counter - 2);
+         Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 2);
         } else 
         {
          Vrab0001 = 0;
-         if(Base.Game->objects[Vrab01]->wait_counter > 97) Vrab0001 = Base.Game->objects[Vrab01]->wait_counter - 97;
+         if(Base.Game->Object[Vrab01]->Wait > 97) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 97;
         }
         Vrab0003 = 20;
-        if(Base.Game->objects[Vrab01]->wait_counter > 13) Vrab0003 = 20 - (Base.Game->objects[Vrab01]->wait_counter - 13);
-        if(Base.Game->objects[Vrab01]->wait_counter > 33) Vrab0003 = 0;
-        Base.Game->objects[Vrab01]->data->frames[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-        Base.Game->objects[Vrab01]->data->frames[0].centery = Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.MOD_InjectionLevelInfoPostition - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
+        if(Base.Game->Object[Vrab01]->Wait > 13) Vrab0003 = 20 - (Base.Game->Object[Vrab01]->Wait - 13);
+        if(Base.Game->Object[Vrab01]->Wait > 33) Vrab0003 = 0;
+        Base.Game->Object[Vrab01]->Data->Frame[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+        Base.Game->Object[Vrab01]->Data->Frame[0].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
        break;
        case 1:
-        if(Base.Game->objects[Vrab01]->data->frames[0].pic == -1)
+        if(Base.Game->Object[Vrab01]->Data->Frame[0].pic == -1)
         {
          Vrab0001 = 20;
-         if(Base.Game->objects[Vrab01]->wait_counter > 0)
-         if(Base.Game->objects[Vrab01]->wait_counter < 21)
+         if(Base.Game->Object[Vrab01]->Wait > 0)
+         if(Base.Game->Object[Vrab01]->Wait < 21)
          {
-          Vrab0001 = 20 - (Base.Game->objects[Vrab01]->wait_counter - 1);
+          Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 1);
          } else 
          {
           Vrab0001 = 0;
-          if(Base.Game->objects[Vrab01]->wait_counter > 96) Vrab0001 = Base.Game->objects[Vrab01]->wait_counter - 96;
+          if(Base.Game->Object[Vrab01]->Wait > 96) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 96;
          }
-         Base.Game->objects[Vrab01]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         Base.Game->objects[Vrab01]->data->frames[1].centery = Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.MOD_InjectionLevelInfoPostition;
+         Base.Game->Object[Vrab01]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+         Base.Game->Object[Vrab01]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
         } else
         {
          Vrab0001 = 20;
-         if(Base.Game->objects[Vrab01]->wait_counter > 20)
-         if(Base.Game->objects[Vrab01]->wait_counter < 41)
+         if(Base.Game->Object[Vrab01]->Wait > 20)
+         if(Base.Game->Object[Vrab01]->Wait < 41)
          {
-          Vrab0001 = 20 - (Base.Game->objects[Vrab01]->wait_counter - 21);
+          Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 21);
          } else 
          {
           Vrab0001 = 0;
-          if(Base.Game->objects[Vrab01]->wait_counter > 116) Vrab0001 = Base.Game->objects[Vrab01]->wait_counter - 116;
+          if(Base.Game->Object[Vrab01]->Wait > 116) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 116;
          }
-         Base.Game->objects[Vrab01]->data->frames[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         Base.Game->objects[Vrab01]->data->frames[1].centery = Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 - Config.MOD_InjectionLevelInfoPostition;
+         Base.Game->Object[Vrab01]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+         Base.Game->Object[Vrab01]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
         }
        break;
        default: break;
       }
      }
+    }
    }
    int0   C_MOD_Ending()                                           {
-   if(Config.MOD_Moduling)
    {
+    if(Database.InjectorNUM == -1) return;
     const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
     {
      if(Strn0001[Vrab01] == "") continue;
@@ -2518,14 +2780,15 @@
       }
      }
     }
-    if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
+   C_MOD_Preprocessing();
   }
   int0   C_MOD_Processing()                                           {
-   if(Config.MOD_Moduling)
    {
+    if(Database.InjectorNUM == -1) return;
     const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
     {
      if(Strn0001[Vrab01] == "") continue;
@@ -2564,14 +2827,13 @@
       }
      }
     }
-    if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
   }
   int0   C_MOD_Deprocessing()                                           {
-   if(Config.MOD_Moduling)
    {
     const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
     {
      if(Strn0001[Vrab01] == "") continue;
@@ -2610,7 +2872,7 @@
       }
      }
     }
-    if(Config.MOD_InjectionLevel > 0)if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+    if(Config.MOD_ModulingLevel > 0)if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
   }
   int0   C_MOD_Process()                                              {
@@ -2620,9 +2882,8 @@
     C_MOD_Initialization();
     if(Database.InjectorNUM == -1) return;
 	Database.Init = false;
-    if(Config.MOD_Moduling)
     {
-     if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
      for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
      {
       if(Strn0001[Vrab02] == "") continue;
@@ -2664,14 +2925,12 @@
        }
       }
      }
-     if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
     }
    }
    if(Database.InjectorNUM == -1) return;
-   C_MOD_Preprocessing();
-   if(Config.MOD_Moduling)
    {
-    if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
     for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
     {
      if(Strn0001[Vrab02] == "") continue;
@@ -2754,50 +3013,48 @@
       }
      }
     }
-    if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
    C_MOD_Processing();
    C_MOD_Ending();
   }
   int0   C_MOD_Reset()                                       
   {
-   Base.ElapsedTime = *(int*)0x450b8c;
-   if(Config.MOD_InjectionLevel == 0)
+   Base.ElapsedTime = *(int32*)0x450b8c;
+   if(Config.MOD_ModulingLevel == 0)
    {
     if(ruint32(Database.InjectorFRAME) < Base.ElapsedTime){Database.InjectorFRAME = Base.ElapsedTime; return;}
     Database.InjectorFRAME = Base.ElapsedTime;
    }
-   uint32 Vrab01 = 0;
-   // Full_Injection
-    if(Config.MOD_InjectionLevel > 0){while(Base.Game->files->datas[Vrab01] != 0){if(Base.Game->files->datas[Vrab01]->id == Database.InjectorID2){Base.Game->files->datas[Vrab01]->frames[0].centerx = 1000; Base.Game->files->datas[Vrab01]->frames[1].centerx = 1000; Base.Game->files->datas[Vrab01]->frames[0].centery = -1000; Base.Game->files->datas[Vrab01]->frames[1].centery = -1000; break;} Vrab01 += 1;}}
-   //-//
-   // Module
-    if(Config.MOD_Moduling)
+   {
+    uint32 Vrab01 = 0;
+    if(Config.MOD_ModulingLevel > 0){while(Base.Game->Database->Data[Vrab01] != 0){if(Base.Game->Database->Data[Vrab01]->id == Database.InjectorID2){Base.Game->Database->Data[Vrab01]->Frame[0].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[1].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[0].centery = -1000; Base.Game->Database->Data[Vrab01]->Frame[1].centery = -1000; break;} Vrab01 += 1;}}
+   }
     {
      const uint32 Vrab02 = Strn0001.size();
      if(Vrab02 != 0)
      {
-      Base.Difficulty = *(int*)0x450c30; Base.Mode = *(int*)0x451160;
-      if(Base.BackgroundID != *(int*)0x44d024)
+      Base.Difficulty = *(int32*)0x450c30; Base.Mode = *(int32*)0x451160;
+      if(Base.BackgroundID != *(int32*)0x44d024)
       {
-       Base.BackgroundID = *(int*)0x44d024;
-       Base.Background_width = Base.Game->files->backgrounds[Base.BackgroundID].bg_width;
-       Base.Background_zwidth1 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth1;
-       Base.Background_zwidth2 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth2;
+       Base.BackgroundID = *(int32*)0x44d024;
+       Base.Background_width = Base.Game->Database->Background[Base.BackgroundID].width;
+       Base.Background_zwidth1 = Base.Game->Database->Background[Base.BackgroundID].zboundary[0];
+       Base.Background_zwidth2 = Base.Game->Database->Background[Base.BackgroundID].zboundary[1];
        Base.Stage_bound = Base.Background_width;
        Base.Stage_clear = false;
       }
       if(Base.Mode == 1)
       {
-       Base.Stage_bound = *(int*)0x450bb4;
+       Base.Stage_bound = *(int32*)0x450bb4;
        Base.Stage_clear = Base.Stage_bound == 0;
       }
-      Base.Phase = *(int*)0x44fb6c;
-      Base.Phase_Count = *(int*)0x44f880;
-      Base.Stage = *(int*)0x450b94;
+      Base.Phase = *(int32*)0x44fb6c;
+      Base.Phase_Count = *(int32*)0x44f880;
+      Base.Stage = *(int32*)0x450b94;
      }
-     if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
-     for(Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
+     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
      {
       if(Strn0001[Vrab01] == "") continue;
       Base.ModuleID = Vect0001[Vrab01];
@@ -2835,58 +3092,39 @@
        }
       }
      }
-     if(Config.MOD_InjectionLevel > 0){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
     }
-   //-//
-   /*/LF2: TD Mode
-    if(Config.TD_Mode){Vrab03 = 0; if(Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 != Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth1){switch(Config.TD_Post){case 0: Vrab03 = Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2; break; case 1: Vrab03 = Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth1; break; case 2: Vrab03 = (Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 + Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth1) / 2; break; default: break;} Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 = Vrab03; Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 = Vrab03;}}
-    if(Config.Hold_Def) for(Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) Hold_Def_TU_Count[Vrab01] = 0;
-   //-//
-   //LF2: Vampirism
-    for(Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) Convertion[Vrab01] = 0;
-   //-//
-   //LF2: Skill-Out
-    for(Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) ReserveCount[Vrab01] = 0; if(Config.B_Reserve > 1) for(Vrab01 = 0; Vrab01 < 20; ++Vrab01){if(Base.Game->exists[Vrab01]){ReserveCount[Vrab01] = Config.B_Reserve;} else {ReserveCount[Vrab01] = 0;}} if(Config.S_Reserve > 1 && *(int*)0x451160 == 1) for(Vrab01 = 0; Vrab01 < 20; ++Vrab01){if(Base.Game->exists[Vrab01]){ReserveCount[Vrab01] += Config.S_Reserve;} else {ReserveCount[Vrab01] = 0;}} if(Config.Dis_DHP) for(Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) Dis_DHP_HP_R[Vrab01] = 0;
-   //-//
-   //Et Cetera
-    //Input Fix
-     if(Config.Dis_Il_Input) for(Vrab01 = 0; Vrab01 < 7; ++Vrab01) for(Vrab02 = 0; Vrab02 < MaximumObject; ++Vrab02) LastInput[Vrab01][Vrab02] = 0;
-    //-//
-    //Overlaying
-     if(Config.Overlaying) if(!Overlay[*(int*)0x44d024]){Overlay[*(int*)0x44d024] = true; Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth1 -= 50; Base.Game->files->backgrounds[*(int*)0x44d024].bg_zwidth2 += 50;}
-    //-//
-   //-/*/
-  }
+  }*/
   int0   C_MOD_Redeclaration()                               fastened
   {
    Database.NumberOfExist = 0; Database.NumberOfExistT0 = 0; Database.NumberOfExistT0COM = 0;
-   int1 Vrab03 = false; if(Database.InjectorNUM != -1) if(Base.Game->exists[Database.InjectorNUM]){if(Base.Game->objects[Database.InjectorNUM]->data->id == Database.InjectorID){if(Base.Game->objects[Database.InjectorNUM]->frame1 < 235) Vrab03 = true;} else {Vrab03 = true;}} else {Vrab03 = true;}
-   for(uint32 Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) if(Base.Game->exists[Vrab01]) if(Base.Game->objects[Vrab01]->frame1 != 9998 && Base.Game->objects[Vrab01]->data->frames[Base.Game->objects[Vrab01]->frame1].state != 9998)
-   switch(Base.Game->objects[Vrab01]->data->type)
+   int1 Vrab03 = false; if(Database.InjectorNUM != -1) if(Base.Game->Object_Exist[Database.InjectorNUM]){if(Base.Game->Object[Database.InjectorNUM]->Data->id == Database.InjectorID){if(Base.Game->Object[Database.InjectorNUM]->Frame < 235) Vrab03 = true;} else {Vrab03 = true;}} else {Vrab03 = true;}
+   for(uint32 Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) if(Base.Game->Object_Exist[Vrab01]) if(Base.Game->Object[Vrab01]->Frame != 9998 && Base.Game->Object[Vrab01]->Data->Frame[Base.Game->Object[Vrab01]->Frame].state != 9998)
+   switch(Base.Game->Object[Vrab01]->Data->type)
    {
     case 0:
-     if(Config.MOD_InjectionLevel > 0)
+     if(Config.MOD_ModulingLevel > 0)
      {
-      if(Base.Game->objects[Vrab01]->data->id != Database.InjectorID)
+      if(Base.Game->Object[Vrab01]->Data->id != Database.InjectorID)
       {
        Database.Exist[Database.NumberOfExist] = Vrab01; Database.NumberOfExist += 1;
        Database.ExistT0[Database.NumberOfExistT0] = Vrab01; Database.NumberOfExistT0 += 1;
        if(Vrab01 >= 10){Database.ExistT0COM[Database.NumberOfExistT0COM] = Vrab01; Database.NumberOfExistT0COM += 1;}
       } else
       {
-       Base.Game->objects[Vrab01]->hp = 0; Base.Game->objects[Vrab01]->mp = 0; Base.Game->objects[Vrab01]->max_hp = 0; Base.Game->objects[Vrab01]->blink = -199;
-       if(Vrab01 < 10){Base.Game->objects[Vrab01]->frame1 = 240; continue;}
+       Base.Game->Object[Vrab01]->Health = 0; Base.Game->Object[Vrab01]->Mana = 0; Base.Game->Object[Vrab01]->Max_Health = 0; Base.Game->Object[Vrab01]->Invisibility = -199;
+       if(Vrab01 < 10){Base.Game->Object[Vrab01]->Frame = 240; continue;}
        if(!Database.InGame && (Database.InjectorNUM == -1 || Vrab03))
        {
-        Database.InjectorNUM = Vrab01; Base.Game->objects[Vrab01]->team = 2147483647; Base.Game->objects[Vrab01]->frame1 = 237; Database.InjectorFRAME = 237;
-        Database.InGame = true; Database.OutGame = true; C_MOD_Reset();
-        if(Database.Done){uint32 Vrab02 = 0; while(Base.Game->files->datas[Vrab02] != 0){if(Base.Game->files->datas[Vrab02]->id == Database.InjectorID2){Base.Game->files->datas[Vrab02]->frames[0].pic = -1; break;} Vrab02 += 1;}} else
+        Database.InjectorNUM = Vrab01; Base.Game->Object[Vrab01]->Team = 2147483647; Base.Game->Object[Vrab01]->Frame = 237; Database.InjectorFRAME = 237;
+        Database.InGame = true; Database.OutGame = true; Database.Reset = true;
+        if(Database.Done){uint32 Vrab02 = 0; while(Base.Game->Database->Data[Vrab02] != 0){if(Base.Game->Database->Data[Vrab02]->id == Database.InjectorID2){Base.Game->Database->Data[Vrab02]->Frame[0].pic = -1; break;} Vrab02 += 1;}} else
         {Database.Done = true;}
        } else
        {
         const uint32 Vrab02 = Database.InjectorNUM; 
-        if(Vrab01 == Vrab02){if(Database.InjectorFRAME == Base.Game->objects[Vrab01]->frame1){Database.InGame = false;} else {Database.InGame = true;} if(Database.InjectorFRAME == 237) Database.InGame = true; Database.InjectorFRAME = Base.Game->objects[Vrab01]->frame1;} else
-        {Base.Game->objects[Vrab01]->frame1 = 240;}
+        if(Vrab01 == Vrab02){if(Database.InjectorFRAME == Base.Game->Object[Vrab01]->Frame){Database.InGame = false;} else {Database.InGame = true;} if(Database.InjectorFRAME == 237) Database.InGame = true; Database.InjectorFRAME = Base.Game->Object[Vrab01]->Frame;} else
+        {Base.Game->Object[Vrab01]->Frame = 240;}
        }
        Database.ExistT0COM[Database.NumberOfExistT0COM] = Vrab01; Database.NumberOfExistT0COM += 1;
       }
@@ -2898,18 +3136,505 @@
      }
     break;
     default:
-     if(Config.MOD_InjectionLevel > 0){if(Base.Game->objects[Vrab01]->data->id != Database.InjectorID2){Database.Exist[Database.NumberOfExist] = Vrab01; Database.NumberOfExist += 1;}} else
+     if(Config.MOD_ModulingLevel > 0){if(Base.Game->Object[Vrab01]->Data->id != Database.InjectorID2){Database.Exist[Database.NumberOfExist] = Vrab01; Database.NumberOfExist += 1;}} else
      {Database.Exist[Database.NumberOfExist] = Vrab01; Database.NumberOfExist += 1;}
     break;
    }
+  }
+  int0 C_MOD_Reset() fastened
+  {
+   if(Config.MOD_ModulingLevel == 0)
+   {
+    if(Database.InjectorFRAME < *(int32*)0x450b8c){Database.InjectorFRAME = *(int32*)0x450b8c; return;}
+    Database.InjectorFRAME = *(int32*)0x450b8c;
+   }
+   {
+    uint32 Vrab01 = 0;
+    if(Config.MOD_ModulingLevel > 0){while(Base.Game->Database->Data[Vrab01] != 0){if(Base.Game->Database->Data[Vrab01]->id == Database.InjectorID2){Base.Game->Database->Data[Vrab01]->Frame[0].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[1].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[0].centery = -1000; Base.Game->Database->Data[Vrab01]->Frame[1].centery = -1000; break;} Vrab01 += 1;}}
+   }
+   {
+    const uint32 Vrab01 = Strn0001.size();
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+    for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+    {
+     if(Strn0001[Vrab02] == "") continue;
+     Base.ModuleID = Vect0001[Vrab02];
+     const string Temp01 = "Mod_" + std::to_string(Vrab02);
+     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void play()");
+     if(Func01)
+     {
+      if(Base.Cont0002->Prepare(Func01) < 0)
+	  {
+	   #ifdef DEBUG_VERSION
+	    #ifdef MULTI_STATE
+         if(Config.AI_Console)
+         {
+        #endif
+	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	   #endif
+	   #ifdef MULTI_STATE
+        }
+       #endif
+	   continue;
+	  }
+	  if(Base.Cont0002->Execute() < 0)
+	  {
+	   #ifdef DEBUG_VERSION
+	    #ifdef MULTI_STATE
+         if(Config.AI_Console)
+         {
+        #endif
+	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	   #endif
+	   #ifdef MULTI_STATE
+        }
+       #endif
+       continue;
+      }
+     }
+    }
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
+   }
+  }
+  int0 C_MOD_Initialization() fastened 
+  {
+   if(!Database.Init) return;
+   if(Config.MOD_ModulingLevel == 1)
+   {
+	int1 Vrab01 = false; uint32 Vrab02 = 0;
+    while(Base.Game->Database->Data[Vrab02] != 0)
+    {
+     if(Base.Game->Database->Data[Vrab02]->id == Database.InjectorID) goto Labl01;
+     if(Base.Game->Database->Data[Vrab02]->type == 0)
+     {
+      uint32 Vrab03 = 0;
+      while(Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist){Vrab03 += 1; if(Vrab03 == MaximumFrames){Vrab01 = true; goto Labl01;}}
+      if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].Exist)
+      {
+       if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait <= 0){Vrab01 = true; goto Labl01;}
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist = true;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wait = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait - 1;
+       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait = 0;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].next = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next;
+       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next = Vrab03;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centerx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centery;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.kind = 1;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.x = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.y = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.oid = Database.InjectorID;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.action = 0;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.facing = 10;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].pic = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].pic;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].state = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].state;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].mp = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].mp;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_a = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_a;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_d = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_d;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_j = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_j;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fa = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fa;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Da = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Da;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Dj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Dj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Ua = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Ua;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Uj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Uj;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_ja = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_ja;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Count;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Rectangle;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Count;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Rectangle;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.kind;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.y;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvz;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.weaponact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.weaponact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.attacking = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.attacking;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.cover = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.cover;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.kind;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.y;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.vaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.vaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.aaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.aaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.daction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.daction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.jaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.jaction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.taction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.taction;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.dircontrol = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.dircontrol;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.decrease = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.decrease;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvx;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvy;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvz;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwinjury = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwinjury;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.cover_backhurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.cover_backhurtact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.hurtable = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.hurtable;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.injury_fronthurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.injury_fronthurtact;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.x;
+       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.y;
+      } else {Vrab01 = true;}
+     }
+     Labl01:
+	 Vrab02 += 1;
+    }
+    if(Vrab01)
+	{
+	  
+	}
+   }
+   if((Config.MOD_ModulingLevel > 0 && Database.InjectorNUM != -1) || Config.MOD_ModulingLevel == 0)
+   {
+    Database.Init = false;
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+    const uint32 Vrab01 = Strn0001.size();
+    for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+    {
+     if(Strn0001[Vrab02] == "") continue;
+     Base.ModuleID = Vect0001[Vrab02];
+     const string Temp01 = "Mod_" + std::to_string(Vrab02);
+     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void once()"); int1 Vrab03 = true;
+     if(!Func01){Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void init()"); Vrab03 = false;}
+     if(Func01)
+     {
+      if(Base.Cont0002->Prepare(Func01) < 0)
+	  {
+	   #ifdef DEBUG_VERSION
+	    #ifdef MULTI_STATE
+         if(Config.AI_Console)
+         {
+        #endif
+	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	   #endif
+	   #ifdef MULTI_STATE
+        }
+       #endif
+       if(Vrab03) Strn0001[Vrab02] = "";
+	   continue;
+	  }
+	  if(Base.Cont0002->Execute() < 0)
+	  {
+	   #ifdef DEBUG_VERSION
+	    #ifdef MULTI_STATE
+         if(Config.AI_Console)
+         {
+        #endif
+	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	   #endif
+	   #ifdef MULTI_STATE
+        }
+       #endif
+       if(Vrab03) Strn0001[Vrab02] = "";
+	   continue;
+      }
+     }
+    }
+    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
+   }
+  }
+  int0 C_MOD_Processing() fastened
+  {
+   if(Database.InjectorNUM == -1) return;
+   if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+   const uint32 Vrab01 = Strn0001.size();
+   for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+   {
+    if(Strn0001[Vrab02] == "") continue;
+    Base.ModuleID = Vect0001[Vrab02];
+    const string Temp01 = "Mod_" + std::to_string(Vrab02);
+    #ifdef DEBUG_VERSION
+	 #ifdef MULTI_STATE
+      if(Config.AI_Console)
+      {
+     #endif
+     if(L_Rebuilding(Vrab02, "_" + Strn0001[Vrab02]))
+     {
+      asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void init()");
+      if(Func01)
+      {
+       if(Base.Cont0002->Prepare(Func01) < 0)
+	   {
+	    #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+	     Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	    #endif
+	    #ifdef MULTI_STATE
+         }
+        #endif
+	    continue;
+	   }
+	   if(Base.Cont0002->Execute() < 0)
+	   {
+	    #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+	     Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	    #endif
+	    #ifdef MULTI_STATE
+         }
+        #endif
+        continue;
+       }
+      }
+     }
+    #endif
+    #ifdef MULTI_STATE
+     }
+    #endif
+    asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void main()");
+    if(Func01)
+    {
+     if(Base.Cont0002->Prepare(Func01) < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+	 }
+	 if(Base.Cont0002->Execute() < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	  #endif 
+	  #ifdef MULTI_STATE
+       }
+      #endif
+ 	  continue;
+     }
+    }
+   }
+   if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
+  }
+  int0 C_MOD_Preprocessing() fastened
+  {
+   if(!Config.MAIN_MOD) return;
+   if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
+   const uint32 Vrab01 = Strn0001.size();
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+   for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+   {
+    if(Strn0001[Vrab02] == "") continue;
+    Base.ModuleID = Vect0001[Vrab02];
+    const string Temp01 = "Mod_" + std::to_string(Vrab02);
+    asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void mids()");
+    if(Func01)
+    {
+     if(Base.Cont0002->Prepare(Func01) < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+	 }
+	 if(Base.Cont0002->Execute() < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+     }
+    }
+   }
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
+  }
+  int0 C_MOD_Inprocessing() fastened
+  {
+   if(!Config.MAIN_MOD) return;
+   if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
+   const uint32 Vrab01 = Strn0001.size();
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+   for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+   {
+    if(Strn0001[Vrab02] == "") continue;
+    Base.ModuleID = Vect0001[Vrab02];
+    const string Temp01 = "Mod_" + std::to_string(Vrab02);
+    asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void last()");
+    if(Func01)
+    {
+     if(Base.Cont0002->Prepare(Func01) < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+	 }
+	 if(Base.Cont0002->Execute() < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+     }
+    }
+   }
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
+   if(Config.MOD_ModulingInfo && Config.MOD_ModulingLevel != 0)
+   {
+    for(uint32 Vrab02 = 0; Vrab02 < MaximumObject; ++Vrab02) if(Base.Game->Object[Vrab02]->Data->id == Database.InjectorID2)
+    {
+     switch(Base.Game->Object[Vrab02]->Frame)
+     {
+      case 0:
+       Vrab0001 = 20;
+       if(Base.Game->Object[Vrab02]->Wait > 1)
+       if(Base.Game->Object[Vrab02]->Wait < 22)
+       {
+        Vrab0001 = 20 - (Base.Game->Object[Vrab02]->Wait - 2);
+       } else 
+       {
+        Vrab0001 = 0;
+        if(Base.Game->Object[Vrab02]->Wait > 97) Vrab0001 = Base.Game->Object[Vrab02]->Wait - 97;
+       }
+       Vrab0003 = 20;
+       if(Base.Game->Object[Vrab02]->Wait > 13) Vrab0003 = 20 - (Base.Game->Object[Vrab02]->Wait - 13);
+       if(Base.Game->Object[Vrab02]->Wait > 33) Vrab0003 = 0;
+       Base.Game->Object[Vrab02]->Data->Frame[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+       Base.Game->Object[Vrab02]->Data->Frame[0].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
+      break;
+      case 1:
+       if(Base.Game->Object[Vrab02]->Data->Frame[0].pic == -1)
+       {
+        Vrab0001 = 20;
+        if(Base.Game->Object[Vrab02]->Wait > 0)
+        if(Base.Game->Object[Vrab02]->Wait < 21)
+        {
+         Vrab0001 = 20 - (Base.Game->Object[Vrab02]->Wait - 1);
+        } else 
+        {
+         Vrab0001 = 0;
+         if(Base.Game->Object[Vrab02]->Wait > 96) Vrab0001 = Base.Game->Object[Vrab02]->Wait - 96;
+        }
+        Base.Game->Object[Vrab02]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+        Base.Game->Object[Vrab02]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
+       } else
+       {
+        Vrab0001 = 20;
+        if(Base.Game->Object[Vrab02]->Wait > 20)
+        if(Base.Game->Object[Vrab02]->Wait < 41)
+        {
+         Vrab0001 = 20 - (Base.Game->Object[Vrab02]->Wait - 21);
+        } else 
+        {
+         Vrab0001 = 0;
+         if(Base.Game->Object[Vrab02]->Wait > 116) Vrab0001 = Base.Game->Object[Vrab02]->Wait - 116;
+        }
+        Base.Game->Object[Vrab02]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
+        Base.Game->Object[Vrab02]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
+       }
+      break;
+      default: break;
+     }
+    }
+   }
+  }
+  int0 C_MOD_Deprocessing() fastened
+  {
+   if(!Config.MAIN_MOD) return;
+   if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
+   const uint32 Vrab01 = Strn0001.size();
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+   for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
+   {
+    if(Strn0001[Vrab02] == "") continue;
+    Base.ModuleID = Vect0001[Vrab02];
+    const string Temp01 = "Mod_" + std::to_string(Vrab02);
+    asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void fins()");
+    if(Func01)
+    {
+     if(Base.Cont0002->Prepare(Func01) < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+	 }
+	 if(Base.Cont0002->Execute() < 0)
+	 {
+	  #ifdef DEBUG_VERSION
+	   #ifdef MULTI_STATE
+        if(Config.AI_Console)
+        {
+       #endif
+	   Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	  #endif
+	  #ifdef MULTI_STATE
+       }
+      #endif
+	  continue;
+     }
+    }
+   }
+   if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
   }
  //-//
  // Core Functions
   int0   G_Process(const int32 Vrab01) fastened
   {
+   Base.User = -1;
    if(!Config.MAIN_MOD) return;
-   if(Database.First){C_MOD_Redeclaration(); if(Config.MOD_InjectionLevel == 0) C_MOD_Reset(); Database.First = false;}
-   const uint32 Vrab02 = Vrab01; if(Vrab02 == Database.ExistT0COM[Database.NumberOfExistT0COM - 1]){if(Database.InGame || (!Database.Done && !Database.InGame)){C_MOD_Process();} else {if(Database.OutGame){C_MOD_Deprocessing(); Database.OutGame = false;}} Database.First = true;}
+   if(Database.First){C_MOD_Redeclaration(); if(Config.MOD_ModulingLevel == 0) Database.Reset = true; Database.First = false;}
+   if(ruint32(Vrab01) == Database.ExistT0COM[Database.NumberOfExistT0COM - 1])
+   {
+    if(Database.InGame || (!Database.Done && !Database.InGame))
+    {
+     if(Database.Reset){C_MOD_Reset(); Database.Reset = false;}
+     C_MOD_Initialization();
+     C_MOD_Processing();
+     C_MOD_Preprocessing();
+     C_MOD_Inprocessing();
+    } else {if(Database.OutGame){C_MOD_Deprocessing(); Database.OutGame = false;}}
+    Database.First = true;
+   }
   }
   int0   G_Initialization()
   {
@@ -2965,6 +3690,7 @@
  //-//
  // AI Script Engine
   // Variables
+   #ifdef _MD_OLD_SCRIPT
    class MD_AIINFO
    {
     public:
@@ -3004,68 +3730,68 @@
      int32 operator=(int32 Vrab01)
      {
       if(Vrab01 < 0 || Vrab01 >= MaximumObject) return -1;
-      if(!Base.Game->exists[Vrab01]) return -1; 
-      x = Base.Game->objects[Vrab01]->x;
-      y = Base.Game->objects[Vrab01]->y;
-      z = Base.Game->objects[Vrab01]->z;
-      x_real = Base.Game->objects[Vrab01]->x_real;
-      y_real = Base.Game->objects[Vrab01]->y_real;
-      z_real = Base.Game->objects[Vrab01]->z_real;
+      if(!Base.game->exists[Vrab01]) return -1; 
+      x = Base.game->objects[Vrab01]->x;
+      y = Base.game->objects[Vrab01]->y;
+      z = Base.game->objects[Vrab01]->z;
+      x_real = Base.game->objects[Vrab01]->x_real;
+      y_real = Base.game->objects[Vrab01]->y_real;
+      z_real = Base.game->objects[Vrab01]->z_real;
       position = Vector3(x_real, y_real, z_real);
-      facing = Base.Game->objects[Vrab01]->facing;
-      holding_up = Base.Game->objects[Vrab01]->holding_up;
-      holding_down = Base.Game->objects[Vrab01]->holding_down;
-      holding_left = Base.Game->objects[Vrab01]->holding_left;
-      holding_right = Base.Game->objects[Vrab01]->holding_right;
-      holding_a = Base.Game->objects[Vrab01]->holding_a;
-      holding_j = Base.Game->objects[Vrab01]->holding_j;
-      holding_d = Base.Game->objects[Vrab01]->holding_d;
-      up = Base.Game->objects[Vrab01]->up;
-      down = Base.Game->objects[Vrab01]->down;
-      left = Base.Game->objects[Vrab01]->left;
-      right = Base.Game->objects[Vrab01]->right;
-      A = Base.Game->objects[Vrab01]->A;
-      J = Base.Game->objects[Vrab01]->J;
-      D = Base.Game->objects[Vrab01]->D;
-      DrA = Base.Game->objects[Vrab01]->DrA;
-      DlA = Base.Game->objects[Vrab01]->DlA;
-      DuA = Base.Game->objects[Vrab01]->DuA;
-      DdA = Base.Game->objects[Vrab01]->DdA;
-      DrJ = Base.Game->objects[Vrab01]->DrJ;
-      DlJ = Base.Game->objects[Vrab01]->DlJ;
-      DuJ = Base.Game->objects[Vrab01]->DuJ;
-      DdJ = Base.Game->objects[Vrab01]->DdJ;
-      DJA = Base.Game->objects[Vrab01]->DJA;
-      hp = Base.Game->objects[Vrab01]->hp;
-      dark_hp = Base.Game->objects[Vrab01]->dark_hp;
-      max_hp = Base.Game->objects[Vrab01]->max_hp;
-      mp = Base.Game->objects[Vrab01]->mp;
-      frame = Base.Game->objects[Vrab01]->frame1;
-      fall = Base.Game->objects[Vrab01]->fall;
-      bdefend = Base.Game->objects[Vrab01]->bdefend;
-      team = Base.Game->objects[Vrab01]->team;
-      id = Base.Game->objects[Vrab01]->data->id;
-      blink = Base.Game->objects[Vrab01]->blink;
-      state = Base.Game->objects[Vrab01]->data->frames[frame].state;
-      weapon_type = Base.Game->objects[Vrab01]->weapon_type;
-      if(weapon_type == 0){weapon_held = -1;} else {weapon_held = Base.Game->objects[Vrab01]->weapon_held;}
-      weapon_holder = Base.Game->objects[Vrab01]->weapon_holder;
-      shake = Base.Game->objects[Vrab01]->shake;
-      wait_counter = Base.Game->objects[Vrab01]->wait_counter;
+      facing = Base.game->objects[Vrab01]->facing;
+      holding_up = Base.game->objects[Vrab01]->holding_up;
+      holding_down = Base.game->objects[Vrab01]->holding_down;
+      holding_left = Base.game->objects[Vrab01]->holding_left;
+      holding_right = Base.game->objects[Vrab01]->holding_right;
+      holding_a = Base.game->objects[Vrab01]->holding_a;
+      holding_j = Base.game->objects[Vrab01]->holding_j;
+      holding_d = Base.game->objects[Vrab01]->holding_d;
+      up = Base.game->objects[Vrab01]->up;
+      down = Base.game->objects[Vrab01]->down;
+      left = Base.game->objects[Vrab01]->left;
+      right = Base.game->objects[Vrab01]->right;
+      A = Base.game->objects[Vrab01]->A;
+      J = Base.game->objects[Vrab01]->J;
+      D = Base.game->objects[Vrab01]->D;
+      DrA = Base.game->objects[Vrab01]->DrA;
+      DlA = Base.game->objects[Vrab01]->DlA;
+      DuA = Base.game->objects[Vrab01]->DuA;
+      DdA = Base.game->objects[Vrab01]->DdA;
+      DrJ = Base.game->objects[Vrab01]->DrJ;
+      DlJ = Base.game->objects[Vrab01]->DlJ;
+      DuJ = Base.game->objects[Vrab01]->DuJ;
+      DdJ = Base.game->objects[Vrab01]->DdJ;
+      DJA = Base.game->objects[Vrab01]->DJA;
+      hp = Base.game->objects[Vrab01]->hp;
+      dark_hp = Base.game->objects[Vrab01]->dark_hp;
+      max_hp = Base.game->objects[Vrab01]->max_hp;
+      mp = Base.game->objects[Vrab01]->mp;
+      frame = Base.game->objects[Vrab01]->frame1;
+      fall = Base.game->objects[Vrab01]->fall;
+      bdefend = Base.game->objects[Vrab01]->bdefend;
+      team = Base.game->objects[Vrab01]->team;
+      id = Base.game->objects[Vrab01]->data->id;
+      blink = Base.game->objects[Vrab01]->blink;
+      state = Base.game->objects[Vrab01]->data->frames[frame].state;
+      weapon_type = Base.game->objects[Vrab01]->weapon_type;
+      if(weapon_type == 0){weapon_held = -1;} else {weapon_held = Base.game->objects[Vrab01]->weapon_held;}
+      weapon_holder = Base.game->objects[Vrab01]->weapon_holder;
+      shake = Base.game->objects[Vrab01]->shake;
+      wait_counter = Base.game->objects[Vrab01]->wait_counter;
       num = Vrab01;
-      ctimer = Base.Game->objects[Vrab01]->ctimer;
-      arest = Base.Game->objects[Vrab01]->arest;
-      memcpy(&vrests[0], &Base.Game->objects[Vrab01]->vrests[0], MaximumObject);
+      ctimer = Base.game->objects[Vrab01]->ctimer;
+      arest = Base.game->objects[Vrab01]->arest;
+      memcpy(&vrests[0], &Base.game->objects[Vrab01]->vrests[0], MaximumObject);
       vrest = (int32)(*(int8*)(*(int32*)(0x458c94 + Vrab01 * 4) + 0xF0));
       if (vrest < (int32)(*(int8*)(*(int32*)(0x458c94 + Vrab01 * 4) + 0xF3))) vrest = (int32)(*(int8*)(*(int32*)(0x458c94 + Vrab01 * 4) + 0xF3));
-      x_velocity = Base.Game->objects[Vrab01]->x_velocity;
-      y_velocity = Base.Game->objects[Vrab01]->y_velocity;
-      z_velocity = Base.Game->objects[Vrab01]->z_velocity;
+      x_velocity = Base.game->objects[Vrab01]->x_velocity;
+      y_velocity = Base.game->objects[Vrab01]->y_velocity;
+      z_velocity = Base.game->objects[Vrab01]->z_velocity;
       velocity = Vector3(x_velocity, y_velocity, z_velocity);
-      clone = Base.Game->objects[Vrab01]->clone;
-      type = Base.Game->objects[Vrab01]->data->type;
-      reserve = Base.Game->objects[Vrab01]->reserve;
-      data = Base.Game->objects[Vrab01]->data;
+      clone = Base.game->objects[Vrab01]->clone;
+      type = Base.game->objects[Vrab01]->data->type;
+      reserve = Base.game->objects[Vrab01]->reserve;
+      data = Base.game->objects[Vrab01]->data;
       return type;
      }
      int32 operator= (const MD_AIINFO& Info01){return operator=(Info01.num);}
@@ -3084,161 +3810,23 @@
    MD_AIINFO *INFO_Create(const MD_AIINFO& Info01){return new MD_AIINFO(Info01);}
    MD_AIINFO Info0001; // self
    MD_AIINFO Info0002; // target
+   #endif
 
    typedef enum {INVALID, VALID, MODULE} MD_VALIDITY;
   //-//
   // Functions
    // Shared
-    /*
-    int1   L_ConvToINT1(const int1 Vrab01)     fastened {return Vrab01;}
-    int1   L_ConvToINT1(const int8 Vrab01)     fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const int16 Vrab01)    fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const int32 Vrab01)    fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const int64 Vrab01)    fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const uint8 Vrab01)    fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const uint16 Vrab01)   fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const uint32 Vrab01)   fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const uint64 Vrab01)   fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const xint32 Vrab01)   fastened {if(Vrab01 != 0) return true; return false;}
-    int1   L_ConvToINT1(const xint64 Vrab01)   fastened {if(Vrab01 != 0) return true; return false;}
-    int8   L_ConvToINT8(const int1 Vrab01)     fastened {if(Vrab01) return 0; return 1;}
-    int8   L_ConvToINT8(const int8 Vrab01)     fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const int16 Vrab01)    fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const int32 Vrab01)    fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const int64 Vrab01)    fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const uint8 Vrab01)    fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const uint16 Vrab01)   fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const uint32 Vrab01)   fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const uint64 Vrab01)   fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const xint32 Vrab01)   fastened {return rint8(Vrab01);}
-    int8   L_ConvToINT8(const xint64 Vrab01)   fastened {return rint8(Vrab01);}
-    int16  L_ConvToINT16(const int1 Vrab01)    fastened {if(Vrab01) return 0; return 1;}
-    int16  L_ConvToINT16(const int8 Vrab01)    fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const int16 Vrab01)   fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const int32 Vrab01)   fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const int64 Vrab01)   fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const uint8 Vrab01)   fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const uint16 Vrab01)  fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const uint32 Vrab01)  fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const uint64 Vrab01)  fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const xint32 Vrab01)  fastened {return rint16(Vrab01);}
-    int16  L_ConvToINT16(const xint64 Vrab01)  fastened {return rint16(Vrab01);}
-    int32  L_ConvToINT32(const int1 Vrab01)    fastened {if(Vrab01) return 0; return 1;}
-    int32  L_ConvToINT32(const int8 Vrab01)    fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const int16 Vrab01)   fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const int32 Vrab01)   fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const int64 Vrab01)   fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const uint8 Vrab01)   fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const uint16 Vrab01)  fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const uint32 Vrab01)  fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const uint64 Vrab01)  fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const xint32 Vrab01)  fastened {return rint32(Vrab01);}
-    int32  L_ConvToINT32(const xint64 Vrab01)  fastened {return rint32(Vrab01);}
-    int64  L_ConvToINT64(const int1 Vrab01)    fastened {if(Vrab01) return 0; return 1;}
-    int64  L_ConvToINT64(const int8 Vrab01)    fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const int16 Vrab01)   fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const int32 Vrab01)   fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const int64 Vrab01)   fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const uint8 Vrab01)   fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const uint16 Vrab01)  fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const uint32 Vrab01)  fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const uint64 Vrab01)  fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const xint32 Vrab01)  fastened {return rint64(Vrab01);}
-    int64  L_ConvToINT64(const xint64 Vrab01)  fastened {return rint64(Vrab01);}
-    uint8  L_ConvToUINT8(const int1 Vrab01)    fastened {if(Vrab01) return 0; return 1;}
-    uint8  L_ConvToUINT8(const int8 Vrab01)    fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const int16 Vrab01)   fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const int32 Vrab01)   fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const int64 Vrab01)   fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const uint8 Vrab01)   fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const uint16 Vrab01)  fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const uint32 Vrab01)  fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const uint64 Vrab01)  fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const xint32 Vrab01)  fastened {return ruint8(Vrab01);}
-    uint8  L_ConvToUINT8(const xint64 Vrab01)  fastened {return ruint8(Vrab01);}
-    uint16 L_ConvToUINT16(const int1 Vrab01)   fastened {if(Vrab01) return 0; return 1;}
-    uint16 L_ConvToUINT16(const int8 Vrab01)   fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const int16 Vrab01)  fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const int32 Vrab01)  fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const int64 Vrab01)  fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const uint8 Vrab01)  fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const uint16 Vrab01) fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const uint32 Vrab01) fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const uint64 Vrab01) fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const xint32 Vrab01) fastened {return ruint16(Vrab01);}
-    uint16 L_ConvToUINT16(const xint64 Vrab01) fastened {return ruint16(Vrab01);}
-    uint32 L_ConvToUINT32(const int1 Vrab01)   fastened {if(Vrab01) return 0; return 1;}
-    uint32 L_ConvToUINT32(const int8 Vrab01)   fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const int16 Vrab01)  fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const int32 Vrab01)  fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const int64 Vrab01)  fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const uint8 Vrab01)  fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const uint16 Vrab01) fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const uint32 Vrab01) fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const uint64 Vrab01) fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const xint32 Vrab01) fastened {return ruint32(Vrab01);}
-    uint32 L_ConvToUINT32(const xint64 Vrab01) fastened {return ruint32(Vrab01);}
-    uint64 L_ConvToUINT64(const int1 Vrab01)   fastened {if(Vrab01) return 0; return 1;}
-    uint64 L_ConvToUINT64(const int8 Vrab01)   fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const int16 Vrab01)  fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const int32 Vrab01)  fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const int64 Vrab01)  fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const uint8 Vrab01)  fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const uint16 Vrab01) fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const uint32 Vrab01) fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const uint64 Vrab01) fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const xint32 Vrab01) fastened {return ruint64(Vrab01);}
-    uint64 L_ConvToUINT64(const xint64 Vrab01) fastened {return ruint64(Vrab01);}
-    xint32 L_ConvToXINT32(const int1 Vrab01)   fastened {if(Vrab01) return 0; return 1;}
-    xint32 L_ConvToXINT32(const int8 Vrab01)   fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const int16 Vrab01)  fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const int32 Vrab01)  fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const int64 Vrab01)  fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const uint8 Vrab01)  fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const uint16 Vrab01) fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const uint32 Vrab01) fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const uint64 Vrab01) fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const xint32 Vrab01) fastened {return rxint32(Vrab01);}
-    xint32 L_ConvToXINT32(const xint64 Vrab01) fastened {return rxint32(Vrab01);}
-    xint64 L_ConvToXINT64(const int1 Vrab01)   fastened {if(Vrab01) return 0; return 1;}
-    xint64 L_ConvToXINT64(const int8 Vrab01)   fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const int16 Vrab01)  fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const int32 Vrab01)  fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const int64 Vrab01)  fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const uint8 Vrab01)  fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const uint16 Vrab01) fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const uint32 Vrab01) fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const uint64 Vrab01) fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const xint32 Vrab01) fastened {return rxint64(Vrab01);}
-    xint64 L_ConvToXINT64(const xint64 Vrab01) fastened {return rxint64(Vrab01);}
-    */
-    int0  L_Copying(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04) fastened {Base.Game->files->datas[Vrab02]->frames[Vrab04].exists = true; Base.Game->files->datas[Vrab02]->frames[Vrab04].pic = Base.Game->files->datas[Vrab01]->frames[Vrab03].pic; Base.Game->files->datas[Vrab02]->frames[Vrab04].state = Base.Game->files->datas[Vrab01]->frames[Vrab03].state; Base.Game->files->datas[Vrab02]->frames[Vrab04].wait = Base.Game->files->datas[Vrab01]->frames[Vrab03].wait; Base.Game->files->datas[Vrab02]->frames[Vrab04].next = Base.Game->files->datas[Vrab01]->frames[Vrab03].next; Base.Game->files->datas[Vrab02]->frames[Vrab04].dvx = Base.Game->files->datas[Vrab01]->frames[Vrab03].dvx; Base.Game->files->datas[Vrab02]->frames[Vrab04].dvy = Base.Game->files->datas[Vrab01]->frames[Vrab03].dvy; Base.Game->files->datas[Vrab02]->frames[Vrab04].dvz = Base.Game->files->datas[Vrab01]->frames[Vrab03].dvz; Base.Game->files->datas[Vrab02]->frames[Vrab04].centerx = Base.Game->files->datas[Vrab01]->frames[Vrab03].centerx; Base.Game->files->datas[Vrab02]->frames[Vrab04].centery = Base.Game->files->datas[Vrab01]->frames[Vrab03].centery; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_a = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_a; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_d = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_d; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_j = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_j; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Fa = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Fa; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Fj = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Fj; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Da = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Da; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Dj = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Dj; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Ua = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Ua; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_Uj = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_Uj; Base.Game->files->datas[Vrab02]->frames[Vrab04].hit_ja = Base.Game->files->datas[Vrab01]->frames[Vrab03].hit_ja; Base.Game->files->datas[Vrab02]->frames[Vrab04].mp = Base.Game->files->datas[Vrab01]->frames[Vrab03].mp; Base.Game->files->datas[Vrab02]->frames[Vrab04].sound = Base.Game->files->datas[Vrab01]->frames[Vrab03].sound; Base.Game->files->datas[Vrab02]->frames[Vrab04].bpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab03].bpoint.x; Base.Game->files->datas[Vrab02]->frames[Vrab04].bpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab03].bpoint.y; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.kind; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.x; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.y; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.vaction = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.vaction; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.aaction = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.aaction; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.daction = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.daction; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.jaction = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.jaction; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.taction = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.taction; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.dircontrol = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.dircontrol; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.decrease = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.decrease; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvx = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvx; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvy = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvy; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvz = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvz; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwinjury = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwinjury; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.cover = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.cover; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.hurtable = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.hurtable; Base.Game->files->datas[Vrab02]->frames[Vrab04].cpoint.injury = Base.Game->files->datas[Vrab01]->frames[Vrab03].cpoint.injury; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.kind; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.x; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.y; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvx = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvx; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvy = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvy; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvz = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvz; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.weaponact = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.weaponact; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.attacking = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.attacking; Base.Game->files->datas[Vrab02]->frames[Vrab04].wpoint.cover = Base.Game->files->datas[Vrab01]->frames[Vrab03].wpoint.cover; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.kind = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.kind; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.x = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.x; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.y = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.y; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.dvx = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.dvx; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.dvy = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.dvy; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.oid = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.oid; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.action = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.action; Base.Game->files->datas[Vrab02]->frames[Vrab04].opoint.facing = Base.Game->files->datas[Vrab01]->frames[Vrab03].opoint.facing; Base.Game->files->datas[Vrab02]->frames[Vrab04].itr_count = Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_count; Base.Game->files->datas[Vrab02]->frames[Vrab04].itrs = Base.Game->files->datas[Vrab01]->frames[Vrab03].itrs; Base.Game->files->datas[Vrab02]->frames[Vrab04].itr_x = Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_x; Base.Game->files->datas[Vrab02]->frames[Vrab04].itr_y = Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_y; Base.Game->files->datas[Vrab02]->frames[Vrab04].itr_w = Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_w; Base.Game->files->datas[Vrab02]->frames[Vrab04].itr_h = Base.Game->files->datas[Vrab01]->frames[Vrab03].itr_h; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdy_count = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_count; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdys = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdys; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdy_x = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_x; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdy_y = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_y; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdy_w = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_w; Base.Game->files->datas[Vrab02]->frames[Vrab04].bdy_h = Base.Game->files->datas[Vrab01]->frames[Vrab03].bdy_h;}
+   #ifdef _MD_OLD_SCRIPT
+    //int0  L_Copying(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04) fastened {Base.game->files->datas[Vrab02]->frames[Vrab04].exists = true; Base.game->files->datas[Vrab02]->frames[Vrab04].pic = Base.game->files->datas[Vrab01]->frames[Vrab03].pic; Base.game->files->datas[Vrab02]->frames[Vrab04].state = Base.game->files->datas[Vrab01]->frames[Vrab03].state; Base.game->files->datas[Vrab02]->frames[Vrab04].wait = Base.game->files->datas[Vrab01]->frames[Vrab03].wait; Base.game->files->datas[Vrab02]->frames[Vrab04].next = Base.game->files->datas[Vrab01]->frames[Vrab03].next; Base.game->files->datas[Vrab02]->frames[Vrab04].dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].dvz = Base.game->files->datas[Vrab01]->frames[Vrab03].dvz; Base.game->files->datas[Vrab02]->frames[Vrab04].centerx = Base.game->files->datas[Vrab01]->frames[Vrab03].centerx; Base.game->files->datas[Vrab02]->frames[Vrab04].centery = Base.game->files->datas[Vrab01]->frames[Vrab03].centery; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_a = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_a; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_d = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_d; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_j = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_j; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Fa = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Fa; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Fj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Fj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Da = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Da; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Dj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Dj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Ua = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Ua; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Uj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Uj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_ja = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_ja; Base.game->files->datas[Vrab02]->frames[Vrab04].mp = Base.game->files->datas[Vrab01]->frames[Vrab03].mp; Base.game->files->datas[Vrab02]->frames[Vrab04].sound = Base.game->files->datas[Vrab01]->frames[Vrab03].sound; Base.game->files->datas[Vrab02]->frames[Vrab04].bpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].bpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].bpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].bpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.vaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.vaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.aaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.aaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.daction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.daction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.jaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.jaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.taction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.taction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.dircontrol = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.dircontrol; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.decrease = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.decrease; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvx = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvx; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvy = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvy; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvz = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvz; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwinjury = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwinjury; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.cover = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.cover; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.hurtable = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.hurtable; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.injury = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.injury; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvz = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvz; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.weaponact = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.weaponact; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.attacking = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.attacking; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.cover = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.cover; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.oid = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.oid; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.action = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.action; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.facing = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.facing; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_count = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_count; Base.game->files->datas[Vrab02]->frames[Vrab04].itrs = Base.game->files->datas[Vrab01]->frames[Vrab03].itrs; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_x = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_x; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_y = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_y; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_w = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_w; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_h = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_h; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_count = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_count; Base.game->files->datas[Vrab02]->frames[Vrab04].bdys = Base.game->files->datas[Vrab01]->frames[Vrab03].bdys; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_x = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_x; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_y = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_y; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_w = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_w; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_h = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_h;}
     uint32 L_Address(int32 Vrab01) fastened
     {
-     uint32 Vrab02 = 0;
-     while(Base.Game->files->datas[Vrab02] != 0)
-     {
-      if(Base.Game->files->datas[Vrab02]->id == Vrab01) return Vrab02;
-      Vrab02 += 1;
-     }
-     return ruint32(-1);
+     return Base.L_Address(Vrab01);
     }
-    int32 L_NumSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.Game->objects[Vrab01]->data->unkwn2[144] + ((int32)(uint8)Base.Game->objects[Vrab01]->data->unkwn2[145] << 8) + ((int32)(uint8)Base.Game->objects[Vrab01]->data->unkwn2[146] << 16) + ((int32)(uint8)Base.Game->objects[Vrab01]->data->unkwn2[147] << 24));}
-    int32 L_DataSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.Game->files->datas[Vrab01]->unkwn2[144] + ((int32)(uint8)Base.Game->files->datas[Vrab01]->unkwn2[145] << 8) + ((int32)(uint8)Base.Game->files->datas[Vrab01]->unkwn2[146] << 16) + ((int32)(uint8)Base.Game->files->datas[Vrab01]->unkwn2[147] << 24));}
-    constexpr int32 L_Random(int32 Vrab01) fastened//random function that works with replays
+   // int32 L_NumSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[144] + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[145] << 8) + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[146] << 16) + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[147] << 24));}
+    //int32 L_DataSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[144] + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[145] << 8) + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[146] << 16) + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[147] << 24));}
+    int32 L_Random(int32 Vrab01) fastened//random function that works with replays
     {
-     int32 Vrab02;  // eax@2
-     sint32 Vrab03; // eax@3
-     DWORD &Dwrd01 = *((DWORD*)0x450C34);
-     DWORD &Dwrd02 = *((DWORD*)0x450BCC);
-     if(Vrab01 > 0)
-     {
-      Dwrd01 = (Dwrd01 + 1) % 1234; 
- 	  Vrab03 = Dwrd01 + (unsigned __int8)*(((BYTE*)0x44FF90) + (Dwrd02 + 1) % 3000); 
-      Dwrd02 = (Dwrd02 + 1) % 3000;
-      Vrab02 = Vrab03 % Vrab01;
-     } else {Vrab02 = 0;}
-     return Vrab02;
+     return Base.L_Random(Vrab01);
     }
     int32 L_Targetting(int32 Vrab01) fastened
     {
@@ -3247,60 +3835,60 @@
     int32 L_Aggring(int32 Vrab01) fastened
     {
      if(Vrab01 < 0 || Vrab01 >= MaximumObject) return -1;
-     if(!Base.Game->exists[Vrab01]) return -1;
-     return Base.Game->objects[Info0001.num]->enemy = Vrab01;
+     if(!Base.game->exists[Vrab01]) return -1;
+     return Base.game->objects[Info0001.num]->enemy = Vrab01;
     }
     int0 L_InputUP(int8 Vrab01, int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->up = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_up = Vrab02;
+     Base.game->objects[Info0001.num]->up = Vrab01;
+     Base.game->objects[Info0001.num]->holding_up = Vrab02;
      Info0001.up = Vrab01; Info0001.holding_up = Vrab02;
     }
     int0 L_InputLEFT(int8 Vrab01, int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->left = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_left = Vrab02;
+     Base.game->objects[Info0001.num]->left = Vrab01;
+     Base.game->objects[Info0001.num]->holding_left = Vrab02;
      Info0001.left = Vrab01; Info0001.holding_left = Vrab02;
     }
     int0 L_InputDOWN(int8 Vrab01, int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->down = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_down = Vrab02;
+     Base.game->objects[Info0001.num]->down = Vrab01;
+     Base.game->objects[Info0001.num]->holding_down = Vrab02;
      Info0001.down = Vrab01; Info0001.holding_down = Vrab02;
     }
     int0 L_InputRIGHT(int8 Vrab01, int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->right = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_right = Vrab02;
+     Base.game->objects[Info0001.num]->right = Vrab01;
+     Base.game->objects[Info0001.num]->holding_right = Vrab02;
      Info0001.right = Vrab01; Info0001.holding_right = Vrab02;
     }
     int0 L_InputATTACK(int8 Vrab01,int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->A = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_a = Vrab02;
+     Base.game->objects[Info0001.num]->A = Vrab01;
+     Base.game->objects[Info0001.num]->holding_a = Vrab02;
      Info0001.A = Vrab01; Info0001.holding_a = Vrab02;
     }
     int0 L_InputJUMP(int8 Vrab01,int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->J = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_j = Vrab02;
+     Base.game->objects[Info0001.num]->J = Vrab01;
+     Base.game->objects[Info0001.num]->holding_j = Vrab02;
      Info0001.J = Vrab01; Info0001.holding_j = Vrab02;
     }
     int0 L_InputDEFEND(int8 Vrab01,int8 Vrab02) fastened
     {
-     Base.Game->objects[Info0001.num]->D = Vrab01;
-     Base.Game->objects[Info0001.num]->holding_d = Vrab02;
+     Base.game->objects[Info0001.num]->D = Vrab01;
+     Base.game->objects[Info0001.num]->holding_d = Vrab02;
      Info0001.D = Vrab01; Info0001.holding_d = Vrab02;
     }
-    int0 L_InputDrA() fastened {Base.Game->objects[Info0001.num]->DrA = 3; Info0001.DrA = 3;}
-    int0 L_InputDlA() fastened {Base.Game->objects[Info0001.num]->DlA = 3; Info0001.DlA = 3;}
-    int0 L_InputDuA() fastened {Base.Game->objects[Info0001.num]->DuA = 3; Info0001.DuA = 3;}
-    int0 L_InputDdA() fastened {Base.Game->objects[Info0001.num]->DdA = 3; Info0001.DdA = 3;}
-    int0 L_InputDrJ() fastened {Base.Game->objects[Info0001.num]->DrJ = 3; Info0001.DrJ = 3;}
-    int0 L_InputDlJ() fastened {Base.Game->objects[Info0001.num]->DlJ = 3; Info0001.DlJ = 3;}
-    int0 L_InputDuJ() fastened {Base.Game->objects[Info0001.num]->DuJ = 3; Info0001.DuJ = 3;}
-    int0 L_InputDdJ() fastened {Base.Game->objects[Info0001.num]->DdJ = 3; Info0001.DdJ = 3;}
-    int0 L_InputDJA() fastened {Base.Game->objects[Info0001.num]->DJA = 3; Info0001.DJA = 3;}
+    int0 L_InputDrA() fastened {Base.game->objects[Info0001.num]->DrA = 3; Info0001.DrA = 3;}
+    int0 L_InputDlA() fastened {Base.game->objects[Info0001.num]->DlA = 3; Info0001.DlA = 3;}
+    int0 L_InputDuA() fastened {Base.game->objects[Info0001.num]->DuA = 3; Info0001.DuA = 3;}
+    int0 L_InputDdA() fastened {Base.game->objects[Info0001.num]->DdA = 3; Info0001.DdA = 3;}
+    int0 L_InputDrJ() fastened {Base.game->objects[Info0001.num]->DrJ = 3; Info0001.DrJ = 3;}
+    int0 L_InputDlJ() fastened {Base.game->objects[Info0001.num]->DlJ = 3; Info0001.DlJ = 3;}
+    int0 L_InputDuJ() fastened {Base.game->objects[Info0001.num]->DuJ = 3; Info0001.DuJ = 3;}
+    int0 L_InputDdJ() fastened {Base.game->objects[Info0001.num]->DdJ = 3; Info0001.DdJ = 3;}
+    int0 L_InputDJA() fastened {Base.game->objects[Info0001.num]->DJA = 3; Info0001.DJA = 3;}
 
     int0 C_Clear() fastened
     {
@@ -3330,6 +3918,7 @@
     int0 C_Print(const xint32 Vrab01)       fastened {printf("%f", Vrab01);}
     int0 C_Print(const xint64 Vrab01)       fastened {printf("%Lf", Vrab01);}
     int0 C_Print(const std::string &Temp01) fastened {printf("%s", Temp01.c_str());}
+    #endif
    //-//
    // Private
     // Declaration
@@ -3462,50 +4051,55 @@
 
     int0 Preparation(int32 Vrab01)
     {
-     Base.ElapsedTime = *(int*)0x450b8c; Base.Difficulty = *(int*)0x450c30; Base.Mode = *(int*)0x451160;
-     if(Base.BackgroundID != *(int*)0x44d024)
+     #ifdef _MD_OLD_SCRIPT
      {
-      Base.BackgroundID = *(int*)0x44d024;
-      Base.Background_width = Base.Game->files->backgrounds[Base.BackgroundID].bg_width;
-      Base.Background_zwidth1 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth1;
-      Base.Background_zwidth2 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth2;
-      Base.Stage_bound = Base.Background_width;
-      Base.Stage_clear = false;
+      Base.ElapsedTime = *(int*)0x450b8c; Base.Difficulty = *(int*)0x450c30; Base.Mode = *(int*)0x451160;
+      if(Base.BackgroundID != *(int*)0x44d024)
+      {
+       Base.BackgroundID = *(int*)0x44d024;
+       Base.Background_width = Base.Game->Database->Background[Base.BackgroundID].width;
+       Base.Background_zwidth1 = Base.Game->Database->Background[Base.BackgroundID].zboundary[0];
+       Base.Background_zwidth2 = Base.Game->Database->Background[Base.BackgroundID].zboundary[1];
+       Base.Stage_bound = Base.Background_width;
+       Base.Stage_clear = false;
+      }
+      if(Base.Mode == 1)
+      {
+       Base.Stage_bound = *(int*)0x450bb4;
+       Base.Stage_clear = Base.Stage_bound == 0;
+      }
+      Base.Phase = *(int*)0x44fb6c;
+      Base.Phase_Count = *(int*)0x44f880;
+      Base.Stage = *(int*)0x450b94;
      }
-     if(Base.Mode == 1)
-     {
-      Base.Stage_bound = *(int*)0x450bb4;
-      Base.Stage_clear = Base.Stage_bound == 0;
-     }
-     Base.Phase = *(int*)0x44fb6c;
-     Base.Phase_Count = *(int*)0x44f880;
-     Base.Stage = *(int*)0x450b94;
-     if((Info0001 = Vrab01) == -1)
-     {
-	  #ifdef DEBUG_VERSION
-	   #ifdef MULTI_STATE
-        if(Config.AI_Console)
-        {
-       #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare self.");
-	  #endif
+     #endif
+
+     if(Vrab01 >= 0 && Vrab01 < MaximumObject) if(Base.Game->Object_Exist[ruint32(Base.User = Vrab01)]) return;
+	 #ifdef DEBUG_VERSION
 	  #ifdef MULTI_STATE
-       }
+       if(Config.AI_Console)
+       {
       #endif
-	 }
+	  Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare self.");
+	 #endif
+	 #ifdef MULTI_STATE
+      }
+     #endif
     }
     int32 callEgo(int32 Vrab01, int32 Vrab02, asIScriptFunction *Func01)
     {
      Preparation(Vrab01);
-     if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
-	 if((Info0002 = Vrab02) == -1)
+     if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
+     int1 Vrab03 = (Vrab02 >= 0 && Vrab02 < MaximumObject);
+     if(Vrab03){Vrab03 = !Base.Game->Object_Exist[Vrab02];} else {Vrab03 = true;}
+     if(Vrab03)
 	 {
 	  #ifdef DEBUG_VERSION
 	   #ifdef MULTI_STATE
         if(Config.AI_Console)
         {
        #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare target.");
+	   Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare target.");
 	  #endif
 	  #ifdef MULTI_STATE
        }
@@ -3518,7 +4112,7 @@
         if(Config.AI_Console)
         {
        #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	   Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
 	  #endif
 	  #ifdef MULTI_STATE
        }
@@ -3532,21 +4126,21 @@
         if(Config.AI_Console)
         {
        #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	   Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
 	  #endif
 	  #ifdef MULTI_STATE
        }
       #endif
 	  return 0;
      }
-     if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+     if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
      G_Process(Vrab01);
      return Base.Cont0001->GetReturnDWord();
     }
     int0 callId(int32 Vrab01, asIScriptFunction *Func01)
     {
      Preparation(Vrab01);
-     if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = -1; Base.Game->exists[Database.InjectorNUM] = false;}
+     if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
      if(Base.Cont0001->Prepare(Func01) < 0)
 	 {
 	  #ifdef DEBUG_VERSION
@@ -3554,7 +4148,7 @@
         if(Config.AI_Console)
         {
        #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	   Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
 	  #endif
 	  #ifdef MULTI_STATE
        }
@@ -3568,13 +4162,13 @@
         if(Config.AI_Console)
         {
        #endif
-	   Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	   Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
 	  #endif
 	  #ifdef MULTI_STATE
        }
       #endif
 	 }
-     if(Config.MOD_InjectionLevel > 0) if(Database.InjectorNUM != -1){Base.Game->objects[Database.InjectorNUM]->data->type = 0; Base.Game->exists[Database.InjectorNUM] = true;}
+     if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
 	 G_Process(Vrab01);
     }
     int32 __stdcall AI(int32 Vrab01, int32 Vrab02, int32 Vrab03, int32 Vrab04, int32 Vrab05, int32 Vrab06, int32 Vrab07)
@@ -3586,7 +4180,7 @@
 	  mov dword ptr ds:[Dwrd02], ecx;
 	 }
      if(Config.MAIN_AI)
-	 if(Base.Modu0001 = Base.Engi0001->GetModule(getModuleName(getFileName(Base.Game->objects[Vrab02]->data->id)).c_str()))
+	 if(Base.Modu0001 = Base.Engi0001->GetModule(getModuleName(getFileName(Base.Game->Object[Vrab02]->Data->id)).c_str()))
 	 {
 	  asIScriptFunction *Func01 = Base.Modu0001->GetFunctionByDecl("int ego()");
       if(Func01){return callEgo(Vrab02, Vrab01, Func01);}
@@ -3622,7 +4216,7 @@
 	 }
      if(Config.MAIN_AI)
      {
-	  const int32 Vrab03 = Base.Game->objects[Vrab01]->data->id;
+	  const int32 Vrab03 = Base.Game->Object[Vrab01]->Data->id;
 	  string Temp01 = getFileName(Vrab03);
 	  #ifdef DEBUG_VERSION
 	   #ifdef MULTI_STATE
@@ -3645,7 +4239,7 @@
           if(Config.AI_Console)
          #endif
          if(!Base.Modu0001->GetFunctionByDecl("int ego()"))
-         Base.Engi0001->WriteMessage(getFileName(Base.Game->objects[Vrab01]->data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Neither 'void id()' nor 'int ego()' are defined.");
+         Base.Engi0001->WriteMessage(getFileName(Base.Game->Object[Vrab01]->Data->id).c_str(), 0, 0, asMSGTYPE_ERROR, "Neither 'void id()' nor 'int ego()' are defined.");
         }
 	   #endif
 	  }
@@ -3685,16 +4279,67 @@
     #endif
 
     int0 RegisterScriptFunctions(asIScriptEngine* Engi01, int1 Vrab02)
-   {
-    RegisterScriptMath(Engi01);
-	RegisterScriptMathComplex(Engi01);
-	RegisterScriptMath3D(Engi01);
-	RegisterStdString(Engi01);
-	RegisterScriptArray(Engi01, true);
-	RegisterStdStringUtils(Engi01);
-	RegisterGameEnums(Engi01);
-	RegisterGameArrays(Engi01, Vrab02);
+    {
+     RegisterScriptMath(Engi01);
+     RegisterScriptMathComplex(Engi01); 
+     RegisterScriptMath3D(Engi01);
+     RegisterStdString(Engi01);
+     RegisterScriptArray(Engi01, true);
+     RegisterStdStringUtils(Engi01);
+     RegisterGameEnums(Engi01);
+     RegisterGameArrays(Engi01, Vrab02);
+     
+     Engi01->RegisterObjectType("ENGINE", 0, asOBJ_REF | asOBJ_NOCOUNT);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(bool Value)", asMETHODPR(MD_AIDATABASES, C_Print, (int1 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(int8 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (int8 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(int16 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (int16 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(int32 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (int32 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(int64 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (int64 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(uint8 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (uint8 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(uint16 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (uint16 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(uint32 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (uint32 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(uint64 Value)", asMETHODPR(MD_AIDATABASES, C_Print, (uint64 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(float Value)", asMETHODPR(MD_AIDATABASES, C_Print, (xint32 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(double Value)", asMETHODPR(MD_AIDATABASES, C_Print, (xint64 Vrab01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print(const string &in String)", asMETHODPR(MD_AIDATABASES, C_Print, (const string &Temp01), int0), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Print_Clear()", asMETHOD(MD_AIDATABASES, C_Clear), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Input_Clear()", asMETHOD(MD_AIDATABASES, L_InputClear), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Up()", asMETHOD(MD_AIDATABASES, L_InputUP), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Left()", asMETHOD(MD_AIDATABASES, L_InputLEFT), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Down()", asMETHOD(MD_AIDATABASES, L_InputDOWN), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Right()", asMETHOD(MD_AIDATABASES, L_InputRIGHT), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Attack()", asMETHOD(MD_AIDATABASES, L_InputATTACK), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Defend()", asMETHOD(MD_AIDATABASES, L_InputDEFEND), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Jump()", asMETHOD(MD_AIDATABASES, L_InputJUMP), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Up_Hold()", asMETHOD(MD_AIDATABASES, L_InputUPH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Left_Hold()", asMETHOD(MD_AIDATABASES, L_InputLEFTH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Down_Hold()", asMETHOD(MD_AIDATABASES, L_InputDOWNH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Right_Hold()", asMETHOD(MD_AIDATABASES, L_InputRIGHTH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Attack_Hold()", asMETHOD(MD_AIDATABASES, L_InputATTACKH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Defend_Hold()", asMETHOD(MD_AIDATABASES, L_InputDEFENDH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "void Jump_Hold()", asMETHOD(MD_AIDATABASES, L_InputJUMPH), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Random(int32 Value)", asMETHOD(MD_AIDATABASES, L_Random), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Set_Enemy(int32 Object)", asMETHOD(MD_AIDATABASES, L_Aggring), asCALL_THISCALL);
+     Engi01->RegisterObjectProperty("ENGINE", "const uint32 Background", asOFFSET(MD_AIDATABASES, BackgroundID));
+     Engi01->RegisterObjectProperty("ENGINE", "const uint32 Maximum_Frame", asOFFSET(MD_AIDATABASES, MaximumFrame));
+     Engi01->RegisterObjectProperty("ENGINE", "const uint32 Maximum_Object", asOFFSET(MD_AIDATABASES, MaximumObj));
+     Engi01->RegisterObjectProperty("ENGINE", "const int32 Maximum_MP", asOFFSET(MD_AIDATABASES, MaximumMP));
+     if(Vrab02)
+     {
+      Engi01->RegisterObjectMethod("ENGINE", "uint32 Copy_Frame(uint32 Data, uint32 Frame1, uint32 Frame2)", asMETHOD(MD_AIDATABASES, L_Copy), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "uint32 Copy_Data_Frame(uint32 Data1, uint32 Data2, uint32 Frame1, uint32 Frame2)", asMETHOD(MD_AIDATABASES, L_Copys), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "uint32 Get_ID_Data(int32 Data_ID)", asMETHOD(MD_AIDATABASES, L_Address), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "uint32 Set_Object(int32 Owner, int32 Data, int32 Frame, double X, double Y, double Z, bool Facing)", asMETHOD(MD_AIDATABASES, L_Generate), asCALL_THISCALL);
+      Engi01->RegisterObjectProperty("ENGINE", "const int32 Module_ID", asOFFSET(MD_AIDATABASES, ModuleID));
+     }
+     
+     Engi01->RegisterObjectType("CORE", 0, asOBJ_REF | asOBJ_NOCOUNT);
+     
+     Engi01->RegisterGlobalProperty("const GAME Game", Base.Game);
+     Engi01->RegisterGlobalProperty("ENGINE Engine", &Base);
+     Engi01->RegisterGlobalProperty("CORE Core", &Control);
 
+     #ifdef _MD_OLD_SCRIPT
 	Engi01->RegisterGlobalFunction("void clr()", asFUNCTION(C_Clear), asCALL_CDECL);
 
 	Engi01->RegisterGlobalFunction("void print(bool Value)", asFUNCTIONPR(C_Print, (int1 Vrab01), int0), asCALL_CDECL);
@@ -3717,143 +4362,10 @@
      Engi01->RegisterGlobalProperty("const int32 maximumManaPoint", &Base.MaximumMP);
      Engi01->RegisterGlobalProperty("const int32 moduleID", &Base.ModuleID);
 	 Engi01->RegisterGlobalFunction("uint32 getobjectData(int32 Object_ID)", asFUNCTION(L_Address), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 getobjectSet(int32 Object_Num)", asFUNCTION(L_NumSet), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 getdataSet(int32 Object_Data)", asFUNCTION(L_NumSet), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("void frameCopy(int32 Object_Data, int32 Frame1, int32 Frame2)", asFUNCTION(L_Copy), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("void frameCopying(int32 Object_Data1, int32 Object_Data2, int32 Frame1, int32 Frame2)", asFUNCTION(L_Copying), asCALL_CDECL);
-     /*
-     Engi01->RegisterGlobalFunction("bool convertBOOL(bool Value)", asFUNCTIONPR(L_ConvToINT1, (int1 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(int8 Value)", asFUNCTIONPR(L_ConvToINT1, (int8 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(int16 Value)", asFUNCTIONPR(L_ConvToINT1, (int16 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(int32 Value)", asFUNCTIONPR(L_ConvToINT1, (int32 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(int64 Value)", asFUNCTIONPR(L_ConvToINT1, (int64 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(uint8 Value)", asFUNCTIONPR(L_ConvToINT1, (uint8 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(uint16 Value)", asFUNCTIONPR(L_ConvToINT1, (uint16 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(uint32 Value)", asFUNCTIONPR(L_ConvToINT1, (uint32 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(uint64 Value)", asFUNCTIONPR(L_ConvToINT1, (uint64 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(float Value)", asFUNCTIONPR(L_ConvToINT1, (xint32 Vrab01), int1), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("bool convertBOOL(double Value)", asFUNCTIONPR(L_ConvToINT1, (xint64 Vrab01), int1), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("int8 convertINT8(bool Value)", asFUNCTIONPR(L_ConvToINT8, (int1 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(int8 Value)", asFUNCTIONPR(L_ConvToINT8, (int8 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(int16 Value)", asFUNCTIONPR(L_ConvToINT8, (int16 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(int32 Value)", asFUNCTIONPR(L_ConvToINT8, (int32 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(int64 Value)", asFUNCTIONPR(L_ConvToINT8, (int64 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(uint8 Value)", asFUNCTIONPR(L_ConvToINT8, (uint8 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(uint16 Value)", asFUNCTIONPR(L_ConvToINT8, (uint16 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(uint32 Value)", asFUNCTIONPR(L_ConvToINT8, (uint32 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(uint64 Value)", asFUNCTIONPR(L_ConvToINT8, (uint64 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(float Value)", asFUNCTIONPR(L_ConvToINT8, (xint32 Vrab01), int8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int8 convertINT8(double Value)", asFUNCTIONPR(L_ConvToINT8, (xint64 Vrab01), int8), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("int16 convertINT16(bool Value)", asFUNCTIONPR(L_ConvToINT16, (int1 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(int8 Value)", asFUNCTIONPR(L_ConvToINT16, (int8 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(int16 Value)", asFUNCTIONPR(L_ConvToINT16, (int16 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(int32 Value)", asFUNCTIONPR(L_ConvToINT16, (int32 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(int64 Value)", asFUNCTIONPR(L_ConvToINT16, (int64 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(uint8 Value)", asFUNCTIONPR(L_ConvToINT16, (uint8 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(uint16 Value)", asFUNCTIONPR(L_ConvToINT16, (uint16 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(uint32 Value)", asFUNCTIONPR(L_ConvToINT16, (uint32 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(uint64 Value)", asFUNCTIONPR(L_ConvToINT16, (uint64 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(float Value)", asFUNCTIONPR(L_ConvToINT16, (xint32 Vrab01), int16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int16 convertINT16(double Value)", asFUNCTIONPR(L_ConvToINT16, (xint64 Vrab01), int16), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("int32 convertINT32(bool Value)", asFUNCTIONPR(L_ConvToINT32, (int1 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(int8 Value)", asFUNCTIONPR(L_ConvToINT32, (int8 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(int16 Value)", asFUNCTIONPR(L_ConvToINT32, (int16 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(int32 Value)", asFUNCTIONPR(L_ConvToINT32, (int32 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(int64 Value)", asFUNCTIONPR(L_ConvToINT32, (int64 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(uint8 Value)", asFUNCTIONPR(L_ConvToINT32, (uint8 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(uint16 Value)", asFUNCTIONPR(L_ConvToINT32, (uint16 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(uint32 Value)", asFUNCTIONPR(L_ConvToINT32, (uint32 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(uint64 Value)", asFUNCTIONPR(L_ConvToINT32, (uint64 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(float Value)", asFUNCTIONPR(L_ConvToINT32, (xint32 Vrab01), int32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int32 convertINT32(double Value)", asFUNCTIONPR(L_ConvToINT32, (xint64 Vrab01), int32), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("int64 convertINT64(bool Value)", asFUNCTIONPR(L_ConvToINT64, (int1 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(int8 Value)", asFUNCTIONPR(L_ConvToINT64, (int8 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(int16 Value)", asFUNCTIONPR(L_ConvToINT64, (int16 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(int32 Value)", asFUNCTIONPR(L_ConvToINT64, (int32 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(int64 Value)", asFUNCTIONPR(L_ConvToINT64, (int64 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(uint8 Value)", asFUNCTIONPR(L_ConvToINT64, (uint8 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(uint16 Value)", asFUNCTIONPR(L_ConvToINT64, (uint16 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(uint32 Value)", asFUNCTIONPR(L_ConvToINT64, (uint32 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(uint64 Value)", asFUNCTIONPR(L_ConvToINT64, (uint64 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(float Value)", asFUNCTIONPR(L_ConvToINT64, (xint32 Vrab01), int64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("int64 convertINT64(double Value)", asFUNCTIONPR(L_ConvToINT64, (xint64 Vrab01), int64), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("uint8 convertUINT8(bool Value)", asFUNCTIONPR(L_ConvToUINT8, (int1 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(int8 Value)", asFUNCTIONPR(L_ConvToUINT8, (int8 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(int16 Value)", asFUNCTIONPR(L_ConvToUINT8, (int16 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(int32 Value)", asFUNCTIONPR(L_ConvToUINT8, (int32 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(int64 Value)", asFUNCTIONPR(L_ConvToUINT8, (int64 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(uint8 Value)", asFUNCTIONPR(L_ConvToUINT8, (uint8 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(uint16 Value)", asFUNCTIONPR(L_ConvToUINT8, (uint16 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(uint32 Value)", asFUNCTIONPR(L_ConvToUINT8, (uint32 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(uint64 Value)", asFUNCTIONPR(L_ConvToUINT8, (uint64 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(float Value)", asFUNCTIONPR(L_ConvToUINT8, (xint32 Vrab01), uint8), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint8 convertUINT8(double Value)", asFUNCTIONPR(L_ConvToUINT8, (xint64 Vrab01), uint8), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("uint16 convertUINT16(bool Value)", asFUNCTIONPR(L_ConvToUINT16, (int1 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(int8 Value)", asFUNCTIONPR(L_ConvToUINT16, (int8 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(int16 Value)", asFUNCTIONPR(L_ConvToUINT16, (int16 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(int32 Value)", asFUNCTIONPR(L_ConvToUINT16, (int32 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(int64 Value)", asFUNCTIONPR(L_ConvToUINT16, (int64 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(uint8 Value)", asFUNCTIONPR(L_ConvToUINT16, (uint8 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(uint16 Value)", asFUNCTIONPR(L_ConvToUINT16, (uint16 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(uint32 Value)", asFUNCTIONPR(L_ConvToUINT16, (uint32 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(uint64 Value)", asFUNCTIONPR(L_ConvToUINT16, (uint64 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(float Value)", asFUNCTIONPR(L_ConvToUINT16, (xint32 Vrab01), uint16), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint16 convertUINT16(double Value)", asFUNCTIONPR(L_ConvToUINT16, (xint64 Vrab01), uint16), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("uint32 convertUINT32(bool Value)", asFUNCTIONPR(L_ConvToUINT32, (int1 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(int8 Value)", asFUNCTIONPR(L_ConvToUINT32, (int8 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(int16 Value)", asFUNCTIONPR(L_ConvToUINT32, (int16 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(int32 Value)", asFUNCTIONPR(L_ConvToUINT32, (int32 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(int64 Value)", asFUNCTIONPR(L_ConvToUINT32, (int64 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(uint8 Value)", asFUNCTIONPR(L_ConvToUINT32, (uint8 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(uint16 Value)", asFUNCTIONPR(L_ConvToUINT32, (uint16 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(uint32 Value)", asFUNCTIONPR(L_ConvToUINT32, (uint32 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(uint64 Value)", asFUNCTIONPR(L_ConvToUINT32, (uint64 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(float Value)", asFUNCTIONPR(L_ConvToUINT32, (xint32 Vrab01), uint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint32 convertUINT32(double Value)", asFUNCTIONPR(L_ConvToUINT32, (xint64 Vrab01), uint32), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("uint64 convertUINT64(bool Value)", asFUNCTIONPR(L_ConvToUINT64, (int1 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(int8 Value)", asFUNCTIONPR(L_ConvToUINT64, (int8 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(int16 Value)", asFUNCTIONPR(L_ConvToUINT64, (int16 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(int32 Value)", asFUNCTIONPR(L_ConvToUINT64, (int32 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(int64 Value)", asFUNCTIONPR(L_ConvToUINT64, (int64 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(uint8 Value)", asFUNCTIONPR(L_ConvToUINT64, (uint8 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(uint16 Value)", asFUNCTIONPR(L_ConvToUINT64, (uint16 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(uint32 Value)", asFUNCTIONPR(L_ConvToUINT64, (uint32 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(uint64 Value)", asFUNCTIONPR(L_ConvToUINT64, (uint64 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(float Value)", asFUNCTIONPR(L_ConvToUINT64, (xint32 Vrab01), uint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("uint64 convertUINT64(double Value)", asFUNCTIONPR(L_ConvToUINT64, (xint64 Vrab01), uint64), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("float convertFLOAT(bool Value)", asFUNCTIONPR(L_ConvToXINT32, (int1 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(int8 Value)", asFUNCTIONPR(L_ConvToXINT32, (int8 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(int16 Value)", asFUNCTIONPR(L_ConvToXINT32, (int16 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(int32 Value)", asFUNCTIONPR(L_ConvToXINT32, (int32 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(int64 Value)", asFUNCTIONPR(L_ConvToXINT32, (int64 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(uint8 Value)", asFUNCTIONPR(L_ConvToXINT32, (uint8 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(uint16 Value)", asFUNCTIONPR(L_ConvToXINT32, (uint16 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(uint32 Value)", asFUNCTIONPR(L_ConvToXINT32, (uint32 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(uint64 Value)", asFUNCTIONPR(L_ConvToXINT32, (uint64 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(float Value)", asFUNCTIONPR(L_ConvToXINT32, (xint32 Vrab01), xint32), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("float convertFLOAT(double Value)", asFUNCTIONPR(L_ConvToXINT32, (xint64 Vrab01), xint32), asCALL_CDECL);
-     
-     Engi01->RegisterGlobalFunction("double convertDOUBLE(bool Value)", asFUNCTIONPR(L_ConvToXINT64, (int1 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(int8 Value)", asFUNCTIONPR(L_ConvToXINT64, (int8 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(int16 Value)", asFUNCTIONPR(L_ConvToXINT64, (int16 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(int32 Value)", asFUNCTIONPR(L_ConvToXINT64, (int32 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(int64 Value)", asFUNCTIONPR(L_ConvToXINT64, (int64 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(uint8 Value)", asFUNCTIONPR(L_ConvToXINT64, (uint8 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(uint16 Value)", asFUNCTIONPR(L_ConvToXINT64, (uint16 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(uint32 Value)", asFUNCTIONPR(L_ConvToXINT64, (uint32 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(uint64 Value)", asFUNCTIONPR(L_ConvToXINT64, (uint64 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(float Value)", asFUNCTIONPR(L_ConvToXINT64, (xint32 Vrab01), xint64), asCALL_CDECL);
-	 Engi01->RegisterGlobalFunction("double convertDOUBLE(double Value)", asFUNCTIONPR(L_ConvToXINT64, (xint64 Vrab01), xint64), asCALL_CDECL);
-     */
+	 //Engi01->RegisterGlobalFunction("int32 getobjectSet(int32 Object_Num)", asFUNCTION(L_NumSet), asCALL_CDECL);
+	 //Engi01->RegisterGlobalFunction("int32 getdataSet(int32 Object_Data)", asFUNCTION(L_NumSet), asCALL_CDECL);
+	 //Engi01->RegisterGlobalFunction("void frameCopy(int32 Object_Data, int32 Frame1, int32 Frame2)", asFUNCTION(L_Copy), asCALL_CDECL);
+	 //Engi01->RegisterGlobalFunction("void frameCopying(int32 Object_Data1, int32 Object_Data2, int32 Frame1, int32 Frame2)", asFUNCTION(L_Copying), asCALL_CDECL);
     }
 
 	Engi01->RegisterGlobalFunction("int32 rand(int32 Value)", asFUNCTION(L_Random), asCALL_CDECL);
@@ -3932,7 +4444,7 @@
 	Engi01->RegisterGlobalFunction("void printAddr(const StageArray @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
 	Engi01->RegisterGlobalFunction("void printAddr(const ItrArray @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
 	Engi01->RegisterGlobalFunction("void printAddr(const BdyArray @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
-	Engi01->RegisterGlobalFunction("void printAddr(const Game @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
+	Engi01->RegisterGlobalFunction("void printAddr(const OGame @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
 	Engi01->RegisterGlobalFunction("void printAddr(const FileManager @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
 	Engi01->RegisterGlobalFunction("void printAddr(const Stage @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
 	Engi01->RegisterGlobalFunction("void printAddr(const Phase @addr)", asFUNCTION(C_PrintAddr), asCALL_CDECL);
@@ -3951,6 +4463,7 @@
     if(!Vrab02)
     {
      Engi01->RegisterObjectType("Info", 0, asOBJ_REF);
+
      Engi01->RegisterObjectBehaviour("Info", asBEHAVE_ADDREF, "void f()", asMETHOD(MD_AIINFO, AddRef), asCALL_THISCALL);
      Engi01->RegisterObjectBehaviour("Info", asBEHAVE_RELEASE, "void f()", asMETHOD(MD_AIINFO, RelRef), asCALL_THISCALL);
      Engi01->RegisterObjectBehaviour("Info", asBEHAVE_FACTORY, "Info @f()", asFUNCTIONPR(INFO_Create, (), MD_AIINFO*), asCALL_CDECL);
@@ -3959,13 +4472,10 @@
 
      Engi01->RegisterObjectMethod("Info", "int32 opAssign(int32 Object_Number)", asMETHODPR(MD_AIINFO, operator=, (int32 Vrab01), int32), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("Info", "int32 opAssign(const Info &in Information)", asMETHODPR(MD_AIINFO, operator=, (const MD_AIINFO &Info01), int32), asCALL_THISCALL);
-
      Engi01->RegisterObjectMethod("Info", "int32 opAddAssign(int32 Object_Number)", asMETHODPR(MD_AIINFO, operator+=, (int32 Vrab01), int32), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("Info", "int32 opAddAssign(const Info &in Information)", asMETHODPR(MD_AIINFO, operator+=,(const MD_AIINFO &Info01), int32), asCALL_THISCALL);
-
      Engi01->RegisterObjectMethod("Info", "int32 opSubAssign(int32 Object_Number)", asMETHODPR(MD_AIINFO, operator-=, (int32 Vrab01), int32), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("Info", "int32 opSubAssign(const Info &in Information)", asMETHODPR(MD_AIINFO, operator-=, (const MD_AIINFO &Info01), int32), asCALL_THISCALL);
-
      Engi01->RegisterObjectMethod("Info", "int32 opPreInc()", asMETHODPR(MD_AIINFO, operator++, (), int32), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("Info", "int32 opPreSub()", asMETHODPR(MD_AIINFO, operator--, (), int32), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("Info", "int32 opPostInc()", asMETHODPR(MD_AIINFO, operator++, (), int32), asCALL_THISCALL);
@@ -4021,7 +4531,7 @@
      Engi01->RegisterObjectProperty("Info", "int32 num", asOFFSET(MD_AIINFO, num));
      Engi01->RegisterObjectProperty("Info", "int32 ctimer", asOFFSET(MD_AIINFO, ctimer));
      Engi01->RegisterObjectProperty("Info", "int32 arest", asOFFSET(MD_AIINFO, arest));
-     Engi01->RegisterObjectProperty("Info", "CharArray vrests", asOFFSET(MD_AIINFO, vrests));
+     Engi01->RegisterObjectProperty("Info", "CharArray vrests", asOFFSET(MD_AIINFO, vrests[0]));
      Engi01->RegisterObjectProperty("Info", "int32 vrest", asOFFSET(MD_AIINFO, vrest));
      Engi01->RegisterObjectProperty("Info", "vector3 velocity", asOFFSET(MD_AIINFO, velocity));
      Engi01->RegisterObjectProperty("Info", "double x_velocity", asOFFSET(MD_AIINFO, x_velocity));
@@ -4035,7 +4545,8 @@
 	 Engi01->RegisterGlobalProperty("const Info self", &Info0001);
 	 Engi01->RegisterGlobalProperty("Info target", &Info0002);
     }
-	Engi01->RegisterGlobalProperty("const Game game", Base.Game);
+	 Engi01->RegisterGlobalProperty("const OGame game", Base.Game);
+    #endif
    }
    int0 G_Releasing(){if(Base.Cont0001) Base.Cont0001->Release(); if(Base.Cont0002) Base.Cont0002->Release(); if(Base.Engi0001) Base.Engi0001->Release(); if(Base.Engi0002) Base.Engi0002->Release();}
    BOOL APIENTRY DllMain(HANDLE Hand01, DWORD Dwrd01, LPVOID Lpvd01)
@@ -4072,7 +4583,7 @@
     Temp01.erase(0, Config.AI_Directory.size() + 1);
     Temp01 = L_Lowercase(Temp01);
     if(string(Temp01, Temp01.size() - 3, 3) != ".as") return INVALID;
-    if(Temp01.at(0) == '_') if(Config.MAIN_MOD && Config.MOD_Moduling){return MODULE;} else {return INVALID;}
+    if(Temp01.at(0) == '_') if(Config.MAIN_MOD){return MODULE;} else {return INVALID;}
     if(Config.MAIN_AI)
     {
      if(Temp01.at(0) == '0') if(Temp01 != "0.as") return INVALID;
@@ -4085,7 +4596,49 @@
    string getModuleName(const string &Temp01){return Temp01.substr(Config.AI_Directory.size() + 1);}
    int0 G_Starting()
    {
-    if(Config.MAIN_AI || (Config.MAIN_MOD && Config.MOD_Moduling))
+    {
+     for(auto const &Temp01 : std::filesystem::directory_iterator(Config.AI_OldDirectory))
+     {
+      string Temp02 = Temp01.path().string();
+
+      if(Temp02.size() < Config.AI_OldDirectory.size() + 5) continue;
+      const string Temp03 = L_Lowercase(string(Temp02, Config.AI_OldDirectory.size() + 1, Temp02.size() - (Config.AI_OldDirectory.size() + 1)));
+      if(string(Temp03, Temp03.size() - 3, 3) != ".as") continue;
+      if(Temp03.at(0) == '_') if(Config.MAIN_MOD){goto Labl01;} else {continue;}
+      if(Config.MAIN_AI)
+      {
+       if(Temp03.at(0) == '0') if(Temp03 != "0.as") continue;
+       uint32 Vrab01 = Temp03.size() - 3;
+       while(Vrab01 > 0){Vrab01 -= 1; if(Temp03.at(Vrab01) < '0' || Temp03.at(Vrab01) > '9' ) goto Labl02;}
+       goto Labl01;
+      } else {continue;}
+      Labl02: continue;
+      Labl01:
+      if(L_Open(Temp02))
+      {
+       Temp02.erase(0, Config.AI_OldDirectory.size() + 1);
+       Temp02 = Config.AI_Directory + "\\" + Temp02;
+       if(L_Create(L_Execute(Temp02)))
+       {File0002 << File0001.rdbuf(); L_Summary(Temp02 + "\n"); File0002.close();}
+       File0001.close();
+      }
+     }
+    }
+    if(Config.MAIN_MOD)
+    {
+     int1 Vrab01 = true;
+     for(auto const &Temp01 : std::filesystem::directory_iterator(Config.AI_Directory))
+     {
+      string Temp02 = Temp01.path().string();
+      Temp02.erase(0, Config.AI_Directory.size() + 1);
+      Temp02 = L_Lowercase(Temp02);
+      if(Temp02.at(0) != '_') continue;
+      if(string(Temp02, Temp02.size() - 3, 3) != ".as") continue;
+      Vrab01 = false; break;
+     }
+     if(Vrab01) Config.MAIN_MOD = false;
+    }
+    if(Config.MAIN_AI || Config.MAIN_MOD)
     {
      #ifdef DEBUG_VERSION
       #ifdef MULTI_STATE 
@@ -4095,6 +4648,7 @@
       const int32 Vrab01 = Config.AI_ConsoleStyle & 0xFF;
       int32 Vrab02 = 0;
       const int16 Vrab03 = Config.AI_ConsoleSize & 0xFF;
+      int16 Vrab04 = 0; if(Config.AI_ConsoleScroll) Vrab04 = 400;
       if(Vrab01 > 127){Vrab02 = 0;} else {Vrab02 = 255;}
       AllocConsole();
       HANDLE Hand01 = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -4103,46 +4657,46 @@
       freopen("CONOUT$", "wb", stderr); // reopen stderr handle as console window output
       SMALL_RECT Rect01 = {0, 0, Vrab03, (Vrab03 / 2)};
       CONSOLE_SCREEN_BUFFER_INFOEX Info01; Info01.cbSize = sizeof(CONSOLE_SCREEN_BUFFER_INFOEX);
-      SetConsoleScreenBufferSize(Hand01, {Vrab03, (int16)((Vrab03 / 2) - 2)});
+      SetConsoleScreenBufferSize(Hand01, {Vrab03, (int16)((Vrab03 / 2) - 2 + Vrab04)});
       GetConsoleScreenBufferInfoEx(Hand01, &Info01);
       Info01.wAttributes = true; Info01.srWindow = Rect01;
       Info01.ColorTable[0] = RGB(Vrab01, Vrab01, Vrab01);
       Info01.ColorTable[1] = RGB(Vrab02, Vrab02, Vrab02);
       Info01.ColorTable[7] = Info01.ColorTable[1];
       SetConsoleScreenBufferInfoEx(Hand01, &Info01);
-      SetConsoleScreenBufferSize(Hand01, {Vrab03, (int16)((Vrab03 / 2) - 2)});
-      SetConsoleTitleA("AI's Console");
+      SetConsoleScreenBufferSize(Hand01, {Vrab03, (int16)((Vrab03 / 2) - 2 + Vrab04)});
+      if(Config.MAIN_AI){SetConsoleTitleA("AI's Console");} else {SetConsoleTitleA("MOD's Console");}
      #endif
      #ifdef MULTI_STATE
       }
      #endif
      Base.Modu0001 = NULL;
      if(Config.MAIN_AI) Base.Engi0001 = asCreateScriptEngine(ANGELSCRIPT_VERSION); if(!Base.Engi0001){Config.MAIN_AI = false;}
-     if(Config.MAIN_MOD) if(Config.MOD_Moduling) Base.Engi0002 = asCreateScriptEngine(ANGELSCRIPT_VERSION); if(!Base.Engi0002){Config.MOD_Moduling = false;}
+     if(Config.MAIN_MOD) Base.Engi0002 = asCreateScriptEngine(ANGELSCRIPT_VERSION); if(!Base.Engi0002){Config.MAIN_MOD = false;}
      #ifdef DEBUG_VERSION
       #ifdef MULTI_STATE
        if(Config.AI_Console)
        {
       #endif
 	  if(Config.MAIN_AI) Base.Engi0001->SetMessageCallback(asFUNCTION(MessageCallback), NULL, asCALL_CDECL);
-	  if(Config.MAIN_MOD) if(Config.MOD_Moduling) Base.Engi0002->SetMessageCallback(asFUNCTION(MessageCallback), NULL, asCALL_CDECL);
+	  if(Config.MAIN_MOD) Base.Engi0002->SetMessageCallback(asFUNCTION(MessageCallback), NULL, asCALL_CDECL);
      #endif
      #ifdef MULTI_STATE
       }
      #endif
      if(Config.MAIN_AI) Base.Cont0001 = Base.Engi0001->CreateContext();
-     if(Config.MAIN_MOD) if(Config.MOD_Moduling) Base.Cont0002 = Base.Engi0002->CreateContext();
+     if(Config.MAIN_MOD) Base.Cont0002 = Base.Engi0002->CreateContext();
      if(Config.MAIN_AI) RegisterScriptFunctions(Base.Engi0001, false);
-     if(Config.MAIN_MOD) if(Config.MOD_Moduling) RegisterScriptFunctions(Base.Engi0002, true);
+     if(Config.MAIN_MOD) RegisterScriptFunctions(Base.Engi0002, true);
     }
 
-    if(Config.MAIN_AI || Config.MAIN_MOD || (Config.MAIN_MOD && Config.MOD_Moduling))
+    if(Config.MAIN_AI || Config.MAIN_MOD)
     {
      AI_o = (int32 (__stdcall*)(int32, int32, int32, int32, int32, int32, int32))DetourFunction((PBYTE)0x00403a40, (PBYTE)AI);
      AIa_o = (int32 (__stdcall*)(int32, int32))DetourFunction((PBYTE)0x004094b0, (PBYTE)AIa);
     }
 
-    if(Config.MAIN_AI || (Config.MAIN_MOD && Config.MOD_Moduling))
+    if(Config.MAIN_AI || Config.MAIN_MOD)
     {
      HANDLE Hand01; WIN32_FIND_DATA Wfnd01; Strn0001.clear(); Vect0001.clear();
      int8 Varb01[MAX_PATH]; strcpy(&Varb01[0], (Config.AI_Directory + "\\").c_str());
@@ -4235,62 +4789,785 @@
      } while(FindNextFile(Hand01, &Wfnd01));
      FindClose(Hand01);
     }
-    
-    /*Base.ElapsedTime = *(int*)0x450b8c; Base.Difficulty = *(int*)0x450c30; Base.Mode = *(int*)0x451160;
-    if(Base.BackgroundID != *(int*)0x44d024)
+
+    string Temp99;
+    if(Config.MAIN_MOD)
     {
-     Base.BackgroundID = *(int*)0x44d024;
-     Base.Background_width = Base.Game->files->backgrounds[Base.BackgroundID].bg_width;
-     Base.Background_zwidth1 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth1;
-     Base.Background_zwidth2 = Base.Game->files->backgrounds[Base.BackgroundID].bg_zwidth2;
-     Base.Stage_bound = Base.Background_width;
-     Base.Stage_clear = false;
-    }
-    if(Base.Mode == 1)
-    {
-     Base.Stage_bound = *(int*)0x450bb4;
-     Base.Stage_clear = Base.Stage_bound == 0;
-    }
-    Base.Phase = *(int*)0x44fb6c;
-    Base.Phase_Count = *(int*)0x44f880;
-    Base.Stage = *(int*)0x450b94;*/
-    const uint32 Vrab02 = Strn0001.size();
-    for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
-    {
-     if(Strn0001[Vrab01] == "") continue;
-     Base.ModuleID = Vect0001[Vrab01];
-     const string Temp01 = "Mod_" + std::to_string(Vrab01);
-     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void game()");
-     if(Func01)
+     if(Config.MOD_ModulingLevel > 1)
      {
-      if(Base.Cont0002->Prepare(Func01) < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	   #endif
+      #ifdef DEBUG_VERSION
 	   #ifdef MULTI_STATE
-        }
+        if(Config.AI_Console)
+        {
        #endif
-	   continue;
-	  }
-	  if(Base.Cont0002->Execute() < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
+       Base.Engi0002->WriteMessage("", 0, 0, asMSGTYPE_INFORMATION, "Rundown the data(s) in order to get the Modifier to work finely.");
+      #endif
+      #ifdef MULTI_STATE
+       }
+      #endif
+      if(L_Open(Config.ECD_InstallDataDirectory))
+      {
+       string Temp01; Data0001.clear(); uint32 Vrab01 = 0;
+       while(File0001)
+       {
+        File0001 >> Temp01; if(!File0001) break; if(Temp01.at(0) == '#'){std::getline(File0001, Temp01); continue;}
+        if(Temp01 == "<object>")
+        {
+         while(File0001)
          {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	   #endif
-	   #ifdef MULTI_STATE
+          File0001 >> Temp01; if(!File0001) break; if(Temp01.at(0) == '#'){std::getline(File0001, Temp01); continue;}
+          if(Temp01 == "id:"){Vrab01 += 1; Data0001.resize(Vrab01); File0001 >> Temp01; Data0001[Vrab01 - 1].ID = ruint32(L_Positive(L_Numbering(Temp01))); continue;}
+          if(Temp01 == "file:"){File0001 >> Temp01; if(Vrab01 > 0) Data0001[Vrab01 - 1].Address = Temp01; continue;}
+          if(Temp01 == "type:"){File0001 >> Temp01; if(Vrab01 > 0) Data0001[Vrab01 - 1].Type = ruint32(L_Positive(L_Numbering(Temp01)));continue;}
+          if(Temp01 == "<object_end>"){break;}
+         }
+         continue;
         }
-       #endif
-	   continue;
+        if(Temp01 == "<file_editing>")
+        {
+         Temp99 += Temp01 + "\n";
+         while(File0001)
+         {
+          File0001 >> Temp01; if(!File0001) break; if(Temp01.at(0) == '#'){std::getline(File0001, Temp01); continue;}
+          if(Temp01 == "<file_editing_end>"){Temp99 += Temp01 + "\n\n"; break;}
+          Temp99 += " " + Temp01 + "\n";
+         }
+         continue;
+        }
+        if(Temp01 == "<background>")
+        {
+         Temp99 += Temp01 + "\n";
+         while(File0001)
+         {
+          File0001 >> Temp01; if(!File0001) break; if(Temp01.at(0) == '#'){std::getline(File0001, Temp01); continue;}
+          if(Temp01 == "id:"){Temp99 += " " + Temp01 + " "; File0001 >> Temp01; Temp99 += Temp01 + " "; if(Temp01.size() < 2) Temp99 += " "; continue;}
+          if(Temp01 == "file:"){Temp99 += Temp01 + " "; File0001 >> Temp01; Temp99 += Temp01 + "\n"; continue;}
+          if(Temp01 == "<background_end>"){Temp99 += Temp01 + "\n\n"; break;}
+         }
+         continue;
+        }
+       } File0001.close();
+       while(Vrab01 != 0)
+       {
+        Vrab01 -= 1;
+        #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+         Base.Engi0002->WriteMessage("", 0, 0, asMSGTYPE_INFORMATION, ("Accessing \"" + Data0001[Vrab01].Address + "\".").c_str());
+        #endif
+        #ifdef MULTI_STATE
+         }
+        #endif
+        if(L_Lowercase(string(Data0001[Vrab01].Address, Data0001[Vrab01].Address.size() - 4, 4)) == ".dat")
+        {
+         if(L_Open(Data0001[Vrab01].Address) && L_Create(L_Execute(TEMPORAL_FILE)))
+         {
+          std::stringstream Temp02; Temp02 << File0001.rdbuf(); File0001.close();
+          Temp01 = Temp02.str(); string Temp03 = ENCODING_KEY;
+          const uint32 Vrab02 = Temp01.size(); uint32 Vrab03 = 12; const uint32 Vrab04 = Temp03.size();
+          for(uint32 Vrab05 = 123; Vrab05 < Vrab02; ++Vrab05){Temp01.at(Vrab05) -= Temp03.at(Vrab03); Vrab03 += 1; if(Vrab03 == Vrab04) Vrab03 = 0;}
+          Temp01.erase(0, 123); File0002 << Temp01; File0002.close();
+          if(!L_Open(TEMPORAL_FILE))
+          {
+           #ifdef DEBUG_VERSION
+	        #ifdef MULTI_STATE
+             if(Config.AI_Console)
+             {
+            #endif
+            Base.Engi0002->WriteMessage("", 0, 0, asMSGTYPE_ERROR, "\"" TEMPORAL_FILE "\" inaccesible, cancel the whole process and reduce the Moduling level into 1.");
+           #endif
+           #ifdef MULTI_STATE
+            }
+           #endif
+           Config.MOD_ModulingLevel = 1; Data0001.clear();
+           break;
+          }
+         } else 
+         {
+          #ifdef DEBUG_VERSION
+	       #ifdef MULTI_STATE
+            if(Config.AI_Console)
+            {
+           #endif
+           Base.Engi0002->WriteMessage("", 0, 0, asMSGTYPE_ERROR, ("Either \"" + Data0001[Vrab01].Address + "\" or \"" TEMPORAL_FILE "\" inaccesible.").c_str());
+          #endif
+          #ifdef MULTI_STATE
+           }
+          #endif
+          continue;
+         }
+        } else 
+        {
+         if(!L_Open(Data0001[Vrab01].Address))
+         {
+          #ifdef DEBUG_VERSION
+	       #ifdef MULTI_STATE
+            if(Config.AI_Console)
+            {
+           #endif
+           Base.Engi0002->WriteMessage("", 0, 0, asMSGTYPE_ERROR, ("\"" + Data0001[Vrab01].Address + "\" inaccesible.").c_str());
+          #endif
+          #ifdef MULTI_STATE
+           }
+          #endif
+          continue;
+         }
+        }
+
+        if(Config.MOD_ResultFraming) Data0001[Vrab01].Frame.resize(MaximumFrames);
+        uint32 Vrab02 = 0; uint32 Vrab04 = 0; uint32 Vrab05 = 0; uint32 Vrab96 = 11;
+        while(File0001)
+        {
+         File0001 >> Temp01; if(!File0001) break; if(Temp01.at(0) == '#'){std::getline(File0001, Temp01); continue;}
+         switch(Vrab02)
+         {
+          case 0:
+           if(Temp01 == "<bmp_begin>")               {Vrab02 = 1; continue;}
+           if(Temp01 == "<weapon_strength_list>")    {Vrab02 = 2; continue;}
+           if(Temp01 == "<frame>")                   {Vrab02 = 3; File0001 >> Temp01; if(Config.MOD_ResultFraming){Vrab04 = ruint32(L_Numbering(Temp01)); if(Vrab04 >= Data0001[Vrab01].Frame.size()) Data0001[Vrab01].Frame.resize(Vrab04 + 1); Data0001[Vrab01].Frame[Vrab04].Number = ruint32(-1);} else {Vrab04 = Data0001[Vrab01].Frame.size(); Data0001[Vrab01].Frame.resize(Data0001[Vrab01].Frame.size() + 1); Data0001[Vrab01].Frame[Vrab04].Number = ruint32(L_Numbering(Temp01));} File0001 >> Data0001[Vrab01].Frame[Vrab04].Name; continue;}
+          break;
+          case 1:
+           if(Temp01 == "<bmp_end>")                 {Vrab02 = 0; continue;}
+           if(Temp01 == "name:")                     {File0001 >> Data0001[Vrab01].Main.Name; continue;}
+           if(Temp01 == "head:")                     {File0001 >> Data0001[Vrab01].Main.Add_Head; continue;}
+           if(Temp01 == "small:")                    {File0001 >> Data0001[Vrab01].Main.Add_Small; continue;}
+           if(string(Temp01, 0, 5) == "file(")       {const uint32 Vrab03 = Data0001[Vrab01].Main.Pictures.size(); Data0001[Vrab01].Main.Pictures.resize(Vrab03 + 1); File0001 >> Data0001[Vrab01].Main.Pictures[Vrab03].Add_Address; continue;}
+           if(Temp01 == "w:")                        {const uint32 Vrab03 = Data0001[Vrab01].Main.Pictures.size(); if(Vrab03 > 0){File0001 >> Temp01; Data0001[Vrab01].Main.Pictures[Vrab03 - 1].Width = ruint32(L_Numbering(Temp01));} else {File0001 >> Temp01;} continue;}
+           if(Temp01 == "h:")                        {const uint32 Vrab03 = Data0001[Vrab01].Main.Pictures.size(); if(Vrab03 > 0){File0001 >> Temp01; Data0001[Vrab01].Main.Pictures[Vrab03 - 1].Height = ruint32(L_Numbering(Temp01));} else {File0001 >> Temp01;} continue;}
+           if(Temp01 == "col:")                      {const uint32 Vrab03 = Data0001[Vrab01].Main.Pictures.size(); if(Vrab03 > 0){File0001 >> Temp01; Data0001[Vrab01].Main.Pictures[Vrab03 - 1].Column = ruint32(L_Numbering(Temp01));} else {File0001 >> Temp01;} continue;}
+           if(Temp01 == "row:")                      {const uint32 Vrab03 = Data0001[Vrab01].Main.Pictures.size(); if(Vrab03 > 0){File0001 >> Temp01; Data0001[Vrab01].Main.Pictures[Vrab03 - 1].Row = ruint32(L_Numbering(Temp01));} else {File0001 >> Temp01;} continue;}
+           if(Temp01 == "walking_frame_rate")        {File0001 >> Temp01; Data0001[Vrab01].Main.WalkAnimation = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "running_frame_rate")        {File0001 >> Temp01; Data0001[Vrab01].Main.RunAnimation = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "walking_speed")             {File0001 >> Data0001[Vrab01].Main.Dob_WalkSpeed; continue;}
+           if(Temp01 == "walking_speedz")            {File0001 >> Data0001[Vrab01].Main.Dob_WalkSpeedZ; continue;}
+           if(Temp01 == "running_speed")             {File0001 >> Data0001[Vrab01].Main.Dob_RunSpeed; continue;}
+           if(Temp01 == "running_speedz")            {File0001 >> Data0001[Vrab01].Main.Dob_RunSpeedZ; continue;}
+           if(Temp01 == "heavy_walking_speed")       {File0001 >> Data0001[Vrab01].Main.Dob_HeavyWalkSpeed; continue;}
+           if(Temp01 == "heavy_walking_speedz")      {File0001 >> Data0001[Vrab01].Main.Dob_HeavyWalkSpeedZ; continue;}
+           if(Temp01 == "heavy_running_speed")       {File0001 >> Data0001[Vrab01].Main.Dob_HeavyRunSpeed; continue;}
+           if(Temp01 == "heavy_running_speedz")      {File0001 >> Data0001[Vrab01].Main.Dob_HeavyRunSpeedZ; continue;}
+           if(Temp01 == "jump_height")               {File0001 >> Data0001[Vrab01].Main.Dob_JumpHeight; continue;}
+           if(Temp01 == "jump_distance")             {File0001 >> Data0001[Vrab01].Main.Dob_JumpSpeed; continue;}
+           if(Temp01 == "jump_distancez")            {File0001 >> Data0001[Vrab01].Main.Dob_JumpSpeedZ; continue;}
+           if(Temp01 == "dash_height")               {File0001 >> Data0001[Vrab01].Main.Dob_DashHeight; continue;}
+           if(Temp01 == "dash_distance")             {File0001 >> Data0001[Vrab01].Main.Dob_DashSpeed; continue;}
+           if(Temp01 == "dash_distancez")            {File0001 >> Data0001[Vrab01].Main.Dob_DashSpeedZ; continue;}
+           if(Temp01 == "rowing_height")             {File0001 >> Data0001[Vrab01].Main.Dob_FlipHeight; continue;}
+           if(Temp01 == "rowing_distance")           {File0001 >> Data0001[Vrab01].Main.Dob_FlipSpeed; continue;}
+           if(Temp01 == "weapon_hp:")                {File0001 >> Temp01; Data0001[Vrab01].Main.StartingHealth = L_Numbering(Temp01); continue;}
+           if(Temp01 == "weapon_drop_hurt:")         {File0001 >> Temp01; Data0001[Vrab01].Main.LandingHurt = L_Numbering(Temp01); continue;}
+           if(Temp01 == "weapon_hit_sound:")         {File0001 >> Data0001[Vrab01].Main.Add_HitSound; continue;}
+           if(Temp01 == "weapon_drop_sound:")        {File0001 >> Data0001[Vrab01].Main.Add_LandingSound; continue;}
+           if(Temp01 == "weapon_broken_sound:")      {File0001 >> Data0001[Vrab01].Main.Add_BreakSound; continue;}
+          break;
+          case 2:
+           if(Temp01 == "<weapon_strength_list_end>"){Vrab02 = 0; continue;}
+           if(Temp01 == "entry:")                    {File0001 >> Temp01; const uint32 Vrab03 = L_Numbering(Temp01); if(Data0001[Vrab01].Strength.size() < Vrab03) Data0001[Vrab01].Strength.resize(Vrab03); File0001 >> Temp01; if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].Name = Temp01; continue;}
+           if(Temp01 == "zwidth:")                   {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].ZWidth = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvx:")                      {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].XVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvy:")                      {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].YVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "fall:")                     {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].HitEffect = L_Numbering(Temp01); continue;}
+           if(Temp01 == "arest:")                    {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].AttackerRefresh = L_Numbering(Temp01); continue;}
+           if(Temp01 == "vrest:")                    {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].VictimRefresh = L_Numbering(Temp01); continue;}
+           if(Temp01 == "respond:")                  {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].HitRespond = L_Numbering(Temp01); continue;}
+           if(Temp01 == "effect:")                   {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].Effect = L_Numbering(Temp01); continue;}
+           if(Temp01 == "bdefend:")                  {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].Power = L_Numbering(Temp01); continue;}
+           if(Temp01 == "injury:")                   {File0001 >> Temp01; const uint32 Vrab03 = Data0001[Vrab01].Strength.size(); if(Vrab03 > 0) Data0001[Vrab01].Strength[Vrab03 - 1].Damage = L_Numbering(Temp01); continue;}
+          break;
+          case 3:
+           if(Temp01 == "<frame_end>")               {Vrab02 = 0; continue;}
+           if(Temp01 == "pic:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Picture = L_Numbering(Temp01); continue;}
+           if(Temp01 == "state:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].State = L_Numbering(Temp01); continue;}
+           if(Temp01 == "wait:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wait = L_Numbering(Temp01); continue;}
+           if(Temp01 == "next:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Next = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvx:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].XVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvy:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].YVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvz:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].ZVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "centerx:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].CenterX = L_Numbering(Temp01); continue;}
+           if(Temp01 == "centery:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].CenterY = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_a:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_d:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputD = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_j:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputJ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Fa:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDFA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Fj:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDFJ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Da:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDDA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Dj:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDDJ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Ua:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDUA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_Uj:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDUJ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hit_ja:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].InputDJA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "mp:")                       {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].MPManage = L_Numbering(Temp01); continue;}
+           if(Temp01 == "sound:")                    {File0001 >> Data0001[Vrab01].Frame[Vrab04].Add_SoundEffect; continue;}
+           if(Temp01 == "bpoint:")                   {Vrab02 = 4; continue;}
+           if(Temp01 == "cpoint:")                   {Vrab02 = 5; continue;}
+           if(Temp01 == "wpoint:")                   {Vrab02 = 6; continue;}
+           if(Temp01 == "opoint:")                   {Vrab02 = 7; Vrab05 = Data0001[Vrab01].Frame[Vrab04].Opoint.size(); Data0001[Vrab01].Frame[Vrab04].Opoint.resize(Vrab05 + 1); continue;}
+           if(Temp01 == "itr:")                      {Vrab02 = 8; Vrab05 = Data0001[Vrab01].Frame[Vrab04].Ipoint.size(); Data0001[Vrab01].Frame[Vrab04].Ipoint.resize(Vrab05 + 1); continue;}
+           if(Temp01 == "bdy:")                      {Vrab02 = 9; Vrab05 = Data0001[Vrab01].Frame[Vrab04].Hpoint.size(); Data0001[Vrab01].Frame[Vrab04].Hpoint.resize(Vrab05 + 1); continue;}
+          break;
+          case 4:
+           if(Temp01 == "bpoint_end:")               {Vrab02 = 3; continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Bpoint.X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Bpoint.Y = L_Numbering(Temp01); continue;}
+          break;
+          case 5:
+           if(Temp01 == "cpoint_end:")               {Vrab02 = 3; continue;}
+           if(Temp01 == "kind:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Type = L_Numbering(Temp01); continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Y = L_Numbering(Temp01); continue;}
+           if(Temp01 == "vaction:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.VictimFrame = L_Numbering(Temp01); continue;}
+           if(Temp01 == "aaction:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.InputA = L_Numbering(Temp01); continue;}
+           if(Temp01 == "daction:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.InputD = L_Numbering(Temp01); continue;}
+           if(Temp01 == "jaction:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.InputJ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "taction:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.InputThrow = L_Numbering(Temp01); continue;}
+           if(Temp01 == "throwvx:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.ThrowVelX = L_Numbering(Temp01); continue;}
+           if(Temp01 == "throwvy:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.ThrowVelY = L_Numbering(Temp01); continue;}
+           if(Temp01 == "throwvz:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.ThrowVelZ = L_Numbering(Temp01); continue;}
+           if(Temp01 == "throwinjury:")              {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.ThrowDamage = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dircontrol:")               {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Control = L_Numbering(Temp01); continue;}
+           if(Temp01 == "hurtable:")                 {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Hurtable = L_Numbering(Temp01); continue;}
+           if(Temp01 == "decrease:")                 {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Decrease = L_Numbering(Temp01); continue;}
+           if(Temp01 == "cover:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Z = L_Numbering(Temp01); continue;}
+           if(Temp01 == "injury:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.Damage = L_Numbering(Temp01); continue;}
+           if(Temp01 == "fronthurtact:")             {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.FrontHurtAction = L_Numbering(Temp01); continue;}
+           if(Temp01 == "backhurtact:")              {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Cpoint.BackHurtAction = L_Numbering(Temp01); continue;}
+          break;
+          case 6:
+           if(Temp01 == "wpoint_end:")               {Vrab02 = 3; continue;}
+           if(Temp01 == "kind:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.Type = L_Numbering(Temp01); continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.Y = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvx:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.XVelocityThrow = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvy:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.YVelocityThrow = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvz:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.ZVelocityThrow = L_Numbering(Temp01); continue;}
+           if(Temp01 == "weaponact:")                {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.WeaponFrame = L_Numbering(Temp01); continue;}
+           if(Temp01 == "attacking:")                {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.Strength = L_Numbering(Temp01); continue;}
+           if(Temp01 == "cover:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Wpoint.Z = L_Numbering(Temp01); continue;}
+          break;
+          case 7:
+           if(Temp01 == "opoint_end:")               {Vrab02 = 3; continue;}
+           if(Temp01 == "kind:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].Type = L_Numbering(Temp01); continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].Y = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvx:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].XVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvy:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].YVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "oid:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].ID = L_Numbering(Temp01); continue;}
+           if(Temp01 == "action:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].Frame = L_Numbering(Temp01); continue;}
+           if(Temp01 == "facing:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Opoint[Vrab05].Condition = L_Numbering(Temp01); continue;}
+          break;
+          case 8: case 10: case 11:
+           if(Temp01 == "itr_end:")                  {Vrab02 = 3; continue;}
+           if(Temp01 == "kind:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Type = L_Numbering(Temp01); continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Y = L_Numbering(Temp01); continue;}
+           if(Temp01 == "w:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Width = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "h:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Height = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "zwidth:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].ZWidth = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "dvx:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].XVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "dvy:")                      {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].YVelocity = L_Numbering(Temp01); continue;}
+           if(Temp01 == "fall:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].HitEffect = L_Numbering(Temp01); continue;}
+           if(Temp01 == "arest:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].AttackerRefresh = L_Numbering(Temp01); continue;}
+           if(Temp01 == "vrest:")                    {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].VictimRefresh = L_Numbering(Temp01); continue;}
+           if(Temp01 == "respond:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].HitRespond = L_Numbering(Temp01); continue;}
+           if(Temp01 == "effect:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Effect = L_Numbering(Temp01); continue;}
+           if(Temp01 == "bdefend:")                  {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Power = L_Numbering(Temp01); continue;}
+           if(Temp01 == "injury:")                   {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].Damage = L_Numbering(Temp01); continue;}
+           if(Temp01 == "catchingact:")              {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].CatchRespond[0] = L_Numbering(Temp01); Vrab02 = 10; continue;}
+           if(Temp01 == "caughtact:")                {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].CaughtRespond[0] = L_Numbering(Temp01); Vrab02 = 11; continue;}
+           if(Vrab02 == 10){Vrab02 = 8; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].CatchRespond[1] = L_Numbering(Temp01); continue;}
+           if(Vrab02 == 11){Vrab02 = 8; Data0001[Vrab01].Frame[Vrab04].Ipoint[Vrab05].CaughtRespond[1] = L_Numbering(Temp01); continue;}
+          break;
+          case 9:
+           if(Temp01 == "bdy_end:")                  {Vrab02 = 3; continue;}
+           if(Temp01 == "kind:")                     {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Hpoint[Vrab05].Type = L_Numbering(Temp01); continue;}
+           if(Temp01 == "x:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Hpoint[Vrab05].X = L_Numbering(Temp01); continue;}
+           if(Temp01 == "y:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Hpoint[Vrab05].Y = L_Numbering(Temp01); continue;}
+           if(Temp01 == "w:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Hpoint[Vrab05].Width = ruint32(L_Numbering(Temp01)); continue;}
+           if(Temp01 == "h:")                        {File0001 >> Temp01; Data0001[Vrab01].Frame[Vrab04].Hpoint[Vrab05].Height = ruint32(L_Numbering(Temp01)); continue;}
+          break;
+          default: break;
+         }
+         if(Vrab96 > 1)
+         {
+          Vrab96 -= 1;
+          #ifdef DEBUG_VERSION
+	       #ifdef MULTI_STATE
+            if(Config.AI_Console)
+            {
+           #endif
+           Base.Engi0002->WriteMessage(Data0001[Vrab01].Address.c_str(), 0, 0, asMSGTYPE_WARNING, ("Unknown syntax, \"" + Temp01 + "\", found.").c_str());
+          #endif
+          #ifdef MULTI_STATE
+           }
+          #endif
+         } else
+         {
+          if(Vrab96 == 0) continue;
+          Vrab96 -= 1;
+          #ifdef DEBUG_VERSION
+	       #ifdef MULTI_STATE
+            if(Config.AI_Console)
+            {
+           #endif
+           Base.Engi0002->WriteMessage(Data0001[Vrab01].Address.c_str(), 0, 0, asMSGTYPE_WARNING, "Too many unknown syntax. (unknown syntax won't be wrote!)");
+          #endif
+          #ifdef MULTI_STATE
+           }
+          #endif
+         }
+        }
+       }
+       if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close();
+       {
+       	uint32 Vrab02 = 0; int1 Vrab04 = false; const uint32 Vrab05 = Data0001.size();
+        while(Vrab02 != Vrab05)
+        {
+         if(Data0001[Vrab02].ID == ruint32(Database.InjectorID)) goto Labl0012;
+         if(Data0001[Vrab02].Type == 0)
+         {
+          uint32 Vrab03 = 0; const uint32 Vrab06 = Data0001[Vrab02].Frame.size();
+          if(Config.MOD_ResultFraming)
+          {
+           while(Data0001[Vrab02].Frame[Vrab03].Number != 0){Vrab03 += 1; if(Vrab03 == Vrab06){Vrab04 = true; goto Labl0012;}}
+          } else
+          {
+           std::vector < int1 > Vect01; Vect01.resize(MaximumFrames);
+           for(uint32 Vrab07 = 0; Vrab07 < Vrab06; ++Vrab07) Vect01[Data0001[Vrab02].Frame[Vrab07].Number] = true;
+           while(Vect01[Vrab03]){Vrab03 += 1; if(Vrab03 == MaximumFrames){Vrab04 = true; goto Labl0012;}}
+           const uint32 Vrab08 = Data0001[Vrab02].Frame.size(); Data0001[Vrab02].Frame.resize(Vrab08 + 1);
+           Data0001[Vrab02].Frame[Vrab08].Number = Vrab03; Vrab03 = Vrab08;
+          }
+          int1 Vrab07 = false; uint32 Vrab09 = 0;
+          if(Config.MOD_ResultFraming){Vrab07 = Data0001[Vrab02].Frame[Config.MOD_ModulingLevelStartingFrame].Number != 0; Vrab09 = Config.MOD_ModulingLevelStartingFrame;} else
+          {
+           for(uint32 Vrab08 = 0; Vrab08 < Vrab06; ++Vrab08) if(Data0001[Vrab02].Frame[Vrab08].Number == ruint32(Config.MOD_ModulingLevelStartingFrame)){Vrab09 = Vrab08; Vrab07 = true; break;}
+          }
+          if(Vrab07)
+          {
+           if(Data0001[Vrab02].Frame[Vrab09].Wait <= 0){Vrab04 = true; goto Labl0012;}
+           if(Config.MOD_ResultFraming) Data0001[Vrab02].Frame[Vrab03].Number = ruint32(-1);
+           Data0001[Vrab02].Frame[Vrab03].Wait = Data0001[Vrab02].Frame[Vrab09].Wait - 1;
+           Data0001[Vrab02].Frame[Vrab09].Wait = 0;
+           Data0001[Vrab02].Frame[Vrab03].Next = Data0001[Vrab02].Frame[Vrab09].Next;
+           if(Config.MOD_ResultFraming){Data0001[Vrab02].Frame[Vrab09].Next = Vrab03;} else {Data0001[Vrab02].Frame[Vrab09].Next = Data0001[Vrab02].Frame[Vrab03].Number;}
+           Data0001[Vrab02].Frame[Vrab03].CenterX = Data0001[Vrab02].Frame[Vrab09].CenterX;
+           Data0001[Vrab02].Frame[Vrab03].CenterY = Data0001[Vrab02].Frame[Vrab09].CenterY;
+           uint32 Vrab10 = Data0001[Vrab02].Frame[Vrab09].Opoint.size(); Data0001[Vrab02].Frame[Vrab03].Opoint.resize(Vrab10);
+           while(Vrab10 > 0)
+           {
+            Vrab10 -= 1;
+            Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10] = Data0001[Vrab02].Frame[Vrab09].Opoint[Vrab10];
+           }
+           Vrab10 = Data0001[Vrab02].Frame[Vrab03].Opoint.size(); Data0001[Vrab02].Frame[Vrab03].Opoint.resize(Vrab10 + 1);
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].Type = 1;
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].X = Data0001[Vrab02].Frame[Vrab03].CenterX;
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].Y = Data0001[Vrab02].Frame[Vrab03].CenterY;
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].ID = Database.InjectorID;
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].Frame = 0;
+           Data0001[Vrab02].Frame[Vrab03].Opoint[Vrab10].Condition = 10;
+           Data0001[Vrab02].Frame[Vrab03].Name = Data0001[Vrab02].Frame[Vrab09].Name;
+           Data0001[Vrab02].Frame[Vrab03].Picture = Data0001[Vrab02].Frame[Vrab09].Picture;
+           Data0001[Vrab02].Frame[Vrab03].State = Data0001[Vrab02].Frame[Vrab09].State;
+           Data0001[Vrab02].Frame[Vrab03].MPManage = Data0001[Vrab02].Frame[Vrab09].MPManage;
+           Data0001[Vrab02].Frame[Vrab03].InputA = Data0001[Vrab02].Frame[Vrab09].InputA;
+           Data0001[Vrab02].Frame[Vrab03].InputD = Data0001[Vrab02].Frame[Vrab09].InputD;
+           Data0001[Vrab02].Frame[Vrab03].InputJ = Data0001[Vrab02].Frame[Vrab09].InputJ;
+           Data0001[Vrab02].Frame[Vrab03].InputDFA = Data0001[Vrab02].Frame[Vrab09].InputDFA;
+           Data0001[Vrab02].Frame[Vrab03].InputDFJ = Data0001[Vrab02].Frame[Vrab09].InputDFJ;
+           Data0001[Vrab02].Frame[Vrab03].InputDDA = Data0001[Vrab02].Frame[Vrab09].InputDDA;
+           Data0001[Vrab02].Frame[Vrab03].InputDDJ = Data0001[Vrab02].Frame[Vrab09].InputDDJ;
+           Data0001[Vrab02].Frame[Vrab03].InputDUA = Data0001[Vrab02].Frame[Vrab09].InputDUA;
+           Data0001[Vrab02].Frame[Vrab03].InputDUJ = Data0001[Vrab02].Frame[Vrab09].InputDUJ;
+           Data0001[Vrab02].Frame[Vrab03].InputDJA = Data0001[Vrab02].Frame[Vrab09].InputDJA;
+           Vrab10 = Data0001[Vrab02].Frame[Vrab09].Hpoint.size(); Data0001[Vrab02].Frame[Vrab03].Hpoint.resize(Vrab10);
+           while(Vrab10 > 0)
+           {
+            Vrab10 -= 1;
+            Data0001[Vrab02].Frame[Vrab03].Hpoint[Vrab10] = Data0001[Vrab02].Frame[Vrab09].Hpoint[Vrab10];
+           }
+           Vrab10 = Data0001[Vrab02].Frame[Vrab09].Ipoint.size(); Data0001[Vrab02].Frame[Vrab03].Ipoint.resize(Vrab10);
+           while(Vrab10 > 0)
+           {
+            Vrab10 -= 1;
+            Data0001[Vrab02].Frame[Vrab03].Ipoint[Vrab10] = Data0001[Vrab02].Frame[Vrab09].Ipoint[Vrab10];
+           }
+           Data0001[Vrab02].Frame[Vrab03].Wpoint = Data0001[Vrab02].Frame[Vrab09].Wpoint;
+           Data0001[Vrab02].Frame[Vrab03].Cpoint = Data0001[Vrab02].Frame[Vrab09].Cpoint;
+           Data0001[Vrab02].Frame[Vrab03].Bpoint = Data0001[Vrab02].Frame[Vrab09].Bpoint;
+          } else {Vrab04 = true;}
+         }
+         Labl0012:
+	     Vrab02 += 1;
+        }
+        if(Vrab01)
+	    {
+	  
+        }  
+       }
+      } else {Config.MOD_ModulingLevel = 1;}
+     }
+     const uint32 Vrab02 = Strn0001.size();
+     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
+     {
+      if(Strn0001[Vrab01] == "") continue;
+      Base.ModuleID = Vect0001[Vrab01];
+      const string Temp01 = "Mod_" + std::to_string(Vrab01);
+      asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void core()");
+      if(Func01)
+      {
+       if(Base.Cont0002->Prepare(Func01) < 0)
+	   {
+	    #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+	     Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
+	    #endif
+	    #ifdef MULTI_STATE
+         }
+        #endif
+	    continue;
+	   }
+	   if(Base.Cont0002->Execute() < 0)
+	   {
+	    #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+	     Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
+	    #endif
+	    #ifdef MULTI_STATE
+         }
+        #endif
+	    continue;
+       }
       }
+     }
+     if(Config.MOD_ModulingLevel > 1)
+     {
+      if(L_Create(Config.ECD_InstallDataDirectory))
+      {
+       File0002 << "<object>\n";
+       uint32 Vrab01 = 0; const uint32 Vrab05 = Data0001.size();
+       while(Vrab01 != Vrab05)
+       {
+        std::ofstream File01;
+        #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+         std::cout << "() INFO - Rewrite \"" + Data0001[Vrab01].Address + "\" as ";
+        #endif
+        #ifdef MULTI_STATE
+         }
+        #endif
+        uint32 Vrab03 = Data0001[Vrab01].Address.size();
+        while(Vrab03 > 0){Vrab03 -= 1; if(Data0001[Vrab01].Address.at(Vrab03) == '\\'){Vrab03 += 1; break;}}
+        uint32 Vrab04 = Data0001[Vrab01].Address.size();
+        while(Vrab04 > 0){Vrab04 -= 1; if(Data0001[Vrab01].Address.at(Vrab04) == '.') break;}
+        Data0001[Vrab01].Address = Config.MOD_ResultDirectory + "\\" + string(Data0001[Vrab01].Address, Vrab03, Data0001[Vrab01].Address.size() - Vrab03 - (Data0001[Vrab01].Address.size() - Vrab04)) + "." + Config.MOD_ResultExtension;
+        while(L_Exist(Data0001[Vrab01].Address)) L_Rename(Data0001[Vrab01].Address);
+        #ifdef DEBUG_VERSION
+	     #ifdef MULTI_STATE
+          if(Config.AI_Console)
+          {
+         #endif
+         std::cout << "\"" + Data0001[Vrab01].Address + "\".\n";
+        #endif
+        #ifdef MULTI_STATE
+         }
+        #endif
+        File01.open(L_Execute(Data0001[Vrab01].Address), std::ios::binary | std::ios::out);
+        if(File01.is_open())
+        {
+         File0002 << " id: " << Data0001[Vrab01].ID;
+         if(Data0001[Vrab01].ID < 100) if(Data0001[Vrab01].ID < 10) {File0002 << "  ";} else {File0002 << " ";}
+         File0002 << " type: " << Data0001[Vrab01].Type << " file: " + Data0001[Vrab01].Address + "\n"; L_Summary(Data0001[Vrab01].Address + "\n");
+         switch(Config.MOD_ResultFormat)
+         {
+          case 1:
+           File01 << "<bmp_begin>\n";
+          break;
+          default:
+           File01 << "<bmp_begin> ";
+           if(Data0001[Vrab01].Main.Name != "") File01 << "name: " + Data0001[Vrab01].Main.Name + " ";
+           if(Data0001[Vrab01].Main.Add_Head != "") File01 << "head: " + Data0001[Vrab01].Main.Add_Head + " ";
+           if(Data0001[Vrab01].Main.Add_Small != "") File01 << "small: " + Data0001[Vrab01].Main.Add_Small + " ";
+           {
+            const uint32 Vrab06 = Data0001[Vrab01].Main.Pictures.size();
+            uint32 Vrab07 = 0;
+            while(Vrab07 != Vrab06)
+            {
+             File01 << "file(0-0): " + Data0001[Vrab01].Main.Pictures[Vrab07].Add_Address + " w: " << Data0001[Vrab01].Main.Pictures[Vrab07].Width << " h: " << Data0001[Vrab01].Main.Pictures[Vrab07].Height << " row: " << Data0001[Vrab01].Main.Pictures[Vrab07].Row << " col: " << Data0001[Vrab01].Main.Pictures[Vrab07].Column << " ";
+             Vrab07 += 1;
+            }
+           }
+           if(Data0001[Vrab01].Main.WalkAnimation != 0) File01 << "walking_frame_rate " << Data0001[Vrab01].Main.WalkAnimation << " ";
+           if(Data0001[Vrab01].Main.RunAnimation != 0) File01 << "running_frame_rate " << Data0001[Vrab01].Main.RunAnimation << " ";
+           if(Data0001[Vrab01].Main.Dob_WalkSpeed != "") File01 << "walking_speed " + Data0001[Vrab01].Main.Dob_WalkSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_WalkSpeedZ != "") File01 << "walking_speedz " + Data0001[Vrab01].Main.Dob_WalkSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_RunSpeed != "") File01 << "running_speed " + Data0001[Vrab01].Main.Dob_RunSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_RunSpeedZ != "") File01 << "running_speedz " + Data0001[Vrab01].Main.Dob_RunSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_HeavyWalkSpeed != "") File01 << "heavy_walking_speed " + Data0001[Vrab01].Main.Dob_HeavyWalkSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_HeavyWalkSpeedZ != "") File01 << "heavy_walking_speedz " + Data0001[Vrab01].Main.Dob_HeavyWalkSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_HeavyRunSpeed != "") File01 << "heavy_running_speed " + Data0001[Vrab01].Main.Dob_HeavyRunSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_HeavyRunSpeedZ != "") File01 << "heavy_running_speedz " + Data0001[Vrab01].Main.Dob_HeavyRunSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_JumpHeight != "") File01 << "jump_height " + Data0001[Vrab01].Main.Dob_JumpHeight + " ";
+           if(Data0001[Vrab01].Main.Dob_JumpSpeed != "") File01 << "jump_distance " + Data0001[Vrab01].Main.Dob_JumpSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_JumpSpeedZ != "") File01 << "jump_distancez " + Data0001[Vrab01].Main.Dob_JumpSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_DashHeight != "") File01 << "dash_height " + Data0001[Vrab01].Main.Dob_DashHeight + " ";
+           if(Data0001[Vrab01].Main.Dob_DashSpeed != "") File01 << "dash_distance " + Data0001[Vrab01].Main.Dob_DashSpeed + " ";
+           if(Data0001[Vrab01].Main.Dob_DashSpeedZ != "") File01 << "dash_distancez " + Data0001[Vrab01].Main.Dob_DashSpeedZ + " ";
+           if(Data0001[Vrab01].Main.Dob_FlipHeight != "") File01 << "rowing_height " + Data0001[Vrab01].Main.Dob_FlipHeight + " ";
+           if(Data0001[Vrab01].Main.Dob_FlipSpeed != "") File01 << "rowing_distance " + Data0001[Vrab01].Main.Dob_FlipSpeed + " ";
+           if(Data0001[Vrab01].Main.StartingHealth != 0) File01 << "weapon_hp: " << Data0001[Vrab01].Main.StartingHealth << " ";
+           if(Data0001[Vrab01].Main.LandingHurt != 0) File01 << "weapon_drop_hurt: " << Data0001[Vrab01].Main.LandingHurt << " ";
+           if(Data0001[Vrab01].Main.Add_HitSound != "") File01 << "weapon_hit_sound: " + Data0001[Vrab01].Main.Add_HitSound + " ";
+           if(Data0001[Vrab01].Main.Add_LandingSound != "") File01 << "weapon_drop_sound: " + Data0001[Vrab01].Main.Add_LandingSound + " ";
+           if(Data0001[Vrab01].Main.Add_BreakSound != "") File01 << "weapon_broken_sound: " + Data0001[Vrab01].Main.Add_BreakSound + " ";
+           File01 << "<bmp_end> ";
+           {
+            int1 Vrab06 = true;
+            const uint32 Vrab07 = Data0001[Vrab01].Strength.size();
+            uint32 Vrab08 = 0;
+            while(Vrab08 != Vrab07)
+            {
+             if(Vrab06){File01 << "<weapon_strength_list> "; Vrab06 = false;}
+             File01 << "entry: " << Vrab08 + 1 << " " + Data0001[Vrab01].Strength[Vrab08].Name + " ";
+             if(Data0001[Vrab01].Strength[Vrab08].ZWidth != 0) File01 << "zwidth: " << Data0001[Vrab01].Strength[Vrab08].ZWidth << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].AttackerRefresh != 0) File01 << "arest: " << Data0001[Vrab01].Strength[Vrab08].AttackerRefresh << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].VictimRefresh != 0) File01 << "vrest: " << Data0001[Vrab01].Strength[Vrab08].VictimRefresh << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].XVelocity != 0) File01 << "dvx: " << Data0001[Vrab01].Strength[Vrab08].XVelocity << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].YVelocity != 0) File01 << "dvy: " << Data0001[Vrab01].Strength[Vrab08].YVelocity << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].Power != 0) File01 << "bdefend: " << Data0001[Vrab01].Strength[Vrab08].Power << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].Effect != 0) File01 << "effect: " << Data0001[Vrab01].Strength[Vrab08].Effect << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].Damage != 0) File01 << "injury: " << Data0001[Vrab01].Strength[Vrab08].Damage << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].HitEffect != 0) File01 << "fall: " << Data0001[Vrab01].Strength[Vrab08].HitEffect << " ";
+             if(Data0001[Vrab01].Strength[Vrab08].HitRespond != 0) File01 << "respond: " << Data0001[Vrab01].Strength[Vrab08].HitRespond << " ";
+             Vrab08 += 1;
+            }
+            if(!Vrab06) File01 << "<weapon_strength_list_end> ";
+           }
+           {
+            const uint32 Vrab06 = Data0001[Vrab01].Frame.size();
+            uint32 Vrab07 = 0;
+            while(Vrab07 != Vrab06)
+            {
+             if(Config.MOD_ResultFraming)
+             {
+              if(Data0001[Vrab01].Frame[Vrab07].Number != ruint32(-1)) continue;
+              File01 << "<frame> " << Vrab07 << " " + Data0001[Vrab01].Frame[Vrab07].Name + " ";
+             } else
+             {
+              File01 << "<frame> " << Data0001[Vrab01].Frame[Vrab07].Number << " " + Data0001[Vrab01].Frame[Vrab07].Name + " ";
+             }
+             
+             if(Data0001[Vrab01].Frame[Vrab07].Picture != 0) File01 << "pic: " << Data0001[Vrab01].Frame[Vrab07].Picture << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].State != 0) File01 << "state: " << Data0001[Vrab01].Frame[Vrab07].State << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].Wait != 0) File01 << "wait: " << Data0001[Vrab01].Frame[Vrab07].Wait << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].Next != 0) File01 << "next: " << Data0001[Vrab01].Frame[Vrab07].Next << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].CenterX != 0) File01 << "centerx: " << Data0001[Vrab01].Frame[Vrab07].CenterX << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].CenterY != 0) File01 << "centery: " << Data0001[Vrab01].Frame[Vrab07].CenterY << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].XVelocity != 0) File01 << "dvx: " << Data0001[Vrab01].Frame[Vrab07].XVelocity << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].YVelocity != 0) File01 << "dvy: " << Data0001[Vrab01].Frame[Vrab07].YVelocity << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].ZVelocity != 0) File01 << "dvz: " << Data0001[Vrab01].Frame[Vrab07].ZVelocity << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputA != 0) File01 << "hit_a: " << Data0001[Vrab01].Frame[Vrab07].InputA << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputD != 0) File01 << "hit_d: " << Data0001[Vrab01].Frame[Vrab07].InputD << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputJ != 0) File01 << "hit_j: " << Data0001[Vrab01].Frame[Vrab07].InputJ << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDFA != 0) File01 << "hit_Fa: " << Data0001[Vrab01].Frame[Vrab07].InputDFA << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDFJ != 0) File01 << "hit_Fj: " << Data0001[Vrab01].Frame[Vrab07].InputDFJ << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDDA != 0) File01 << "hit_Da: " << Data0001[Vrab01].Frame[Vrab07].InputDDA << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDDJ != 0) File01 << "hit_Dj: " << Data0001[Vrab01].Frame[Vrab07].InputDDJ << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDUA != 0) File01 << "hit_Ua: " << Data0001[Vrab01].Frame[Vrab07].InputDUA << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDUJ != 0) File01 << "hit_Uj: " << Data0001[Vrab01].Frame[Vrab07].InputDUJ << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].InputDJA != 0) File01 << "hit_ja: " << Data0001[Vrab01].Frame[Vrab07].InputDJA << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].MPManage != 0) File01 << "mp: " << Data0001[Vrab01].Frame[Vrab07].MPManage << " ";
+             if(Data0001[Vrab01].Frame[Vrab07].Add_SoundEffect != "") File01 << "sound: " + Data0001[Vrab01].Frame[Vrab07].Add_SoundEffect + " ";
+
+             if(Data0001[Vrab01].Frame[Vrab07].Bpoint.X != 0 || Data0001[Vrab01].Frame[Vrab07].Bpoint.Y != 0) File01 << "bpoint: x: " << Data0001[Vrab01].Frame[Vrab07].Bpoint.X << " y: " << Data0001[Vrab01].Frame[Vrab07].Bpoint.Y << " bpoint_end: ";
+
+             {
+              int1 Vrab08 = true;
+              uint32 Vrab09 = 0;
+              while(Vrab09 <= 18)
+              {
+               int1 Vrab10 = false;
+               switch(Vrab09)
+               {
+                case 0: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Type != 0) Vrab10 = true; break;
+                case 1: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.X != 0) Vrab10 = true; break;
+                case 2: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Y != 0) Vrab10 = true; break;
+                case 3: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.VictimFrame != 0) Vrab10 = true; break;
+                case 4: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.InputA != 0) Vrab10 = true; break;
+                case 5: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.InputD != 0) Vrab10 = true; break;
+                case 6: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.InputJ != 0) Vrab10 = true; break;
+                case 7: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.InputThrow != 0) Vrab10 = true; break;
+                case 8: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelX != 0) Vrab10 = true; break;
+                case 9: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelY != 0) Vrab10 = true; break;
+                case 10: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelZ != 0) Vrab10 = true; break;
+                case 11: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowDamage != 0) Vrab10 = true; break;
+                case 12: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Z != 0) Vrab10 = true; break;
+                case 13: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Damage != 0) Vrab10 = true; break;
+                case 14: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Control != 0) Vrab10 = true; break;
+                case 15: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Decrease != 0) Vrab10 = true; break;
+                case 16: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.Hurtable != 0) Vrab10 = true; break;
+                case 17: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.FrontHurtAction != 0) Vrab10 = true; break;
+                default: if(Data0001[Vrab01].Frame[Vrab07].Cpoint.BackHurtAction != 0) Vrab10 = true; break;
+               }
+               if(Vrab10)
+               {
+                if(Vrab08){File01 << "cpoint: "; Vrab08 = false;}
+                switch(Vrab09)
+                {
+                 case 0: File01 << "kind: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Type; break;
+                 case 1: File01 << "x: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.X; break;
+                 case 2: File01 << "y: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Y; break;
+                 case 3: File01 << "vaction: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.VictimFrame; break;
+                 case 4: File01 << "aaction: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.InputA; break;
+                 case 5: File01 << "daction: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.InputD; break;
+                 case 6: File01 << "jaction: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.InputJ; break;
+                 case 7: File01 << "taction: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.InputThrow; break;
+                 case 8: File01 << "throwvx: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelX; break;
+                 case 9: File01 << "throwvy: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelY; break;
+                 case 10: File01 << "throwvz: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowVelZ; break;
+                 case 11: File01 << "throwinjury: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.ThrowDamage; break;
+                 case 12: File01 << "cover: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Z; break;
+                 case 13: File01 << "injury: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Damage; break;
+                 case 14: File01 << "dircontrol: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Control; break;
+                 case 15: File01 << "decrease: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Decrease; break;
+                 case 16: File01 << "hurtable: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.Hurtable; break;
+                 case 17: File01 << "fronthurtact: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.FrontHurtAction; break;
+                 default: File01 << "backhurtact: " << Data0001[Vrab01].Frame[Vrab07].Cpoint.BackHurtAction; break;
+                }
+                File01 << " ";
+               }
+               Vrab09 += 1;
+              }
+              if(!Vrab08) File01 << "cpoint_end: ";
+             }
+
+             {
+              int1 Vrab08 = true;
+              uint32 Vrab09 = 0;
+              while(Vrab09 <= 8)
+              {
+               int1 Vrab10 = false;
+               switch(Vrab09)
+               {
+                case 0: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.Type != 0) Vrab10 = true; break;
+                case 1: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.X != 0) Vrab10 = true; break;
+                case 2: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.Y != 0) Vrab10 = true; break;
+                case 3: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.WeaponFrame != 0) Vrab10 = true; break;
+                case 4: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.Strength != 0) Vrab10 = true; break;
+                case 5: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.Z != 0) Vrab10 = true; break;
+                case 6: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.XVelocityThrow != 0) Vrab10 = true; break;
+                case 7: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.YVelocityThrow != 0) Vrab10 = true; break;
+                default: if(Data0001[Vrab01].Frame[Vrab07].Wpoint.ZVelocityThrow != 0) Vrab10 = true; break;
+               }
+               if(Vrab10)
+               {
+                if(Vrab08){File01 << "wpoint: "; Vrab08 = false;}
+                switch(Vrab09)
+                {
+                 case 0: File01 << "kind: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.Type; break;
+                 case 1: File01 << "x: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.X; break;
+                 case 2: File01 << "y: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.Y; break;
+                 case 3: File01 << "weaponact: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.WeaponFrame; break;
+                 case 4: File01 << "attacking: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.Strength; break;
+                 case 5: File01 << "cover: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.Z; break;
+                 case 6: File01 << "dvx: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.XVelocityThrow; break;
+                 case 7: File01 << "dvy: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.YVelocityThrow; break;
+                 default: File01 << "dvz: " << Data0001[Vrab01].Frame[Vrab07].Wpoint.ZVelocityThrow; break;
+                }
+                File01 << " ";
+               }
+               Vrab09 += 1;
+              }
+              if(!Vrab08) File01 << "wpoint_end: ";
+             }
+
+             {
+              const uint32 Vrab08 = Data0001[Vrab01].Frame[Vrab07].Opoint.size();
+              uint32 Vrab09 = 0;
+              while(Vrab09 != Vrab08)
+              {
+               File01 << "opoint: ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Type != 0) File01 << "kind: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Type << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].X != 0) File01 << "x: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].X << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Y != 0) File01 << "y: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Y << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].ID != 0) File01 << "oid: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].ID << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Frame != 0) File01 << "action: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Frame << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Condition != 0) File01 << "facing: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].Condition << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].XVelocity != 0) File01 << "dvx: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].XVelocity << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].YVelocity != 0) File01 << "dvy: " << Data0001[Vrab01].Frame[Vrab07].Opoint[Vrab09].YVelocity << " ";
+               File01 << "opoint_end: ";
+               Vrab09 += 1;
+              }
+             }
+
+             {
+              const uint32 Vrab08 = Data0001[Vrab01].Frame[Vrab07].Ipoint.size();
+              uint32 Vrab09 = 0;
+              while(Vrab09 != Vrab08)
+              {
+               File01 << "itr: ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Type != 0) File01 << "kind: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Type << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].X != 0) File01 << "x: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].X << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Y != 0) File01 << "y: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Y << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Width != 0) File01 << "w: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Width << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Height != 0) File01 << "h: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Height << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].ZWidth != 0) File01 << "zwidth: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].ZWidth << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].AttackerRefresh != 0) File01 << "arest: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].AttackerRefresh << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].VictimRefresh != 0) File01 << "vrest: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].VictimRefresh << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Power != 0) File01 << "bdefend: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Power << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Damage != 0) File01 << "injury: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Damage << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Effect != 0) File01 << "effect: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].Effect << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].HitEffect != 0) File01 << "fall: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].HitEffect << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].HitRespond != 0) File01 << "respond: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].HitRespond << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].XVelocity != 0) File01 << "dvx: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].XVelocity << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].YVelocity != 0) File01 << "dvy: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].YVelocity << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CatchRespond[0] != 0) File01 << "catchingact: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CatchRespond[0] << " " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CatchRespond[1] << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CaughtRespond[0] != 0) File01 << "caughtact: " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CaughtRespond[0] << " " << Data0001[Vrab01].Frame[Vrab07].Ipoint[Vrab09].CaughtRespond[1] << " ";
+               File01 << "itr_end: ";
+               Vrab09 += 1;
+              }
+             }
+
+             {
+              const uint32 Vrab08 = Data0001[Vrab01].Frame[Vrab07].Hpoint.size();
+              uint32 Vrab09 = 0;
+              while(Vrab09 != Vrab08)
+              {
+               File01 << "bdy: ";
+               if(Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Type != 0) File01 << "kind: " << Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Type << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].X != 0) File01 << "x: " << Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].X << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Y != 0) File01 << "y: " << Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Y << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Width != 0) File01 << "w: " << Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Width << " ";
+               if(Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Height != 0) File01 << "h: " << Data0001[Vrab01].Frame[Vrab07].Hpoint[Vrab09].Height << " ";
+               File01 << "bdy_end: ";
+               Vrab09 += 1;
+              }
+             }
+
+             File01 << "<frame_end> ";
+             Vrab07 += 1;
+            }
+           }
+          break;
+         }
+         File01.close();
+        }
+        Vrab01 += 1;
+       }
+       File0002 << "<object_end>\n\n" + Temp99;
+       File0002.close();
+      }
+      Data0001.clear();
+      L_Polish();
      }
     }
    }
