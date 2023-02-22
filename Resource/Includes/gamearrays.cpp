@@ -264,7 +264,8 @@ void RegisterGameArrays(asIScriptEngine *Engi01, bool Vrab01)
  Engi01->RegisterObjectProperty("Object", (Temp01 + "CharArray unkwn3").c_str(), asOFFSET(sObject, unkwn3));
  Engi01->RegisterObjectProperty("Object", (Temp01 + "int wait_counter").c_str(), asOFFSET(sObject, wait_counter));
  Engi01->RegisterObjectProperty("Object", (Temp01 + "int ccatcher").c_str(), asOFFSET(sObject, ccatcher));
- Engi01->RegisterObjectProperty("Object", (Temp01 + "int ctimer").c_str(), asOFFSET(sObject, ctimer));
+ Engi01->RegisterObjectProperty("Object", (Temp01 + "int ctimer").c_str(), asOFFSET(sObject, catch_decrease));
+ Engi01->RegisterObjectProperty("Object", (Temp01 + "int catch_by").c_str(), asOFFSET(sObject, ctimer));
  Engi01->RegisterObjectProperty("Object", (Temp01 + "int catch_decrease").c_str(), asOFFSET(sObject, catch_decrease));
  Engi01->RegisterObjectProperty("Object", (Temp01 + "int weapon_type").c_str(), asOFFSET(sObject, weapon_type));
  Engi01->RegisterObjectProperty("Object", (Temp01 + "int weapon_held").c_str(), asOFFSET(sObject, weapon_held));
@@ -759,7 +760,7 @@ void RegisterGameArrays(asIScriptEngine *Engi01, bool Vrab01)
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int32 perspective").c_str(), asOFFSET(MD_BACKGROUND, perspective[0]));
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int32 shadowsize").c_str(), asOFFSET(MD_BACKGROUND, shadowsize[0]));
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "int32 layer_Count").c_str(), asOFFSET(MD_BACKGROUND, layer_Count));
- Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int8 layer_Pic").c_str(), asOFFSET(MD_BACKGROUND, layer_Pic[0][0]));
+ Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_array30_int8 layer_Pic").c_str(), asOFFSET(MD_BACKGROUND, layer_Pic[0][0]));
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int8 shadow").c_str(), asOFFSET(MD_BACKGROUND, shadow[0]));
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int8 Unknown_1").c_str(), asOFFSET(MD_BACKGROUND, Unknown_1[0]));
  Engi01->RegisterObjectProperty("BACKGROUND", (Temp01 + "array_int8 name").c_str(), asOFFSET(MD_BACKGROUND, name[0]));

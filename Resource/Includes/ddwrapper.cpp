@@ -72,12 +72,13 @@
   #include <thread>
   #include <chrono>
 
-  #define INJECTOR_VERSION "(v2.00.230101)"
+  #define INJECTOR_VERSION "(v2.01.230222)"
   #define ENCODING_KEY "SiuHungIsAGoodBearBecauseHeIsVeryGood"
   #define TEMPORAL_FILE "data\\temporary.txt"
   #define CONFIGURATION "configuration.ini"
   #define BASE_ENCRYPTION "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
   #define SUPPORTED_ECD_VERSION "(v2.00.230101)"
+  #define CREATED_ECD_VERSION "(v2.01.230101)"
 
   #define rint0 static_cast < void >
   #define rint1 static_cast < bool >
@@ -146,7 +147,9 @@
   int1   L_Rebuilding(int32, const string&);
   int32  L_Numbering(string) fastened;
   int32  L_Rounding(xint64) fastened;
+  int32  L_Positive(int32) fastened;
   uint32 L_Address(int32) fastened;
+  uint64 L_Interprocessing(const string&) fastened;
   string L_Lowercase(string) fastened;
   string L_Execute(const string);
   string L_Moduling(const string&);
@@ -160,6 +163,7 @@
   int0   G_Encryption(uint8, std::string);
   int32  (__stdcall *AI_o)(int32, int32, int32, int32, int32, int32, int32);
   int32  (__stdcall *AIa_o)(int32, int32);
+  int32  (__stdcall *BaseCall)(int32);
  //-//
  // Structures
   struct MD_CONFIG 
@@ -274,7 +278,7 @@
   {
 
   }; MD_CONTROLS Control;
-  struct MD_DATABASES {string Config; int1 InGame = false; int1 OutGame = true; int1 Reset = false; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
+  struct MD_DATABASES {HDC Drawing; string Config; int1 InGame = false; int1 OutGame = true; int1 Lasting = true; int1 Reset = false; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
   struct MD_AIDATABASES
   {
    uint32 MaximumFrame = MaximumFrames;
@@ -306,7 +310,146 @@
    asIScriptEngine  *Engi0002 = NULL;
    asIScriptContext *Cont0001 = NULL;
    asIScriptContext *Cont0002 = NULL;
+
+   int1   L_Gets_int1(uint64 Vrab01) fastened {return *(int1*)Vrab01;}
+   int8   L_Gets_int8(uint64 Vrab01) fastened {return *(int8*)Vrab01;}
+   int16  L_Gets_int16(uint64 Vrab01) fastened {return *(int16*)Vrab01;}
+   int32  L_Gets_int32(uint64 Vrab01) fastened {return *(int32*)Vrab01;}
+   int64  L_Gets_int64(uint64 Vrab01) fastened {return *(int64*)Vrab01;}
+   uint8  L_Gets_uint8(uint64 Vrab01) fastened {return *(uint8*)Vrab01;}
+   uint16 L_Gets_uint16(uint64 Vrab01) fastened {return *(uint16*)Vrab01;}
+   uint32 L_Gets_uint32(uint64 Vrab01) fastened {return *(uint32*)Vrab01;}
+   uint64 L_Gets_uint64(uint64 Vrab01) fastened {return *(uint64*)Vrab01;}
+   xint32 L_Gets_xint32(uint64 Vrab01) fastened {return *(xint32*)Vrab01;}
+   xint64 L_Gets_xint64(uint64 Vrab01) fastened {return *(xint64*)Vrab01;}
+   int1   L_Gets_int1S(const string &Temp01) fastened {return L_Gets_int1(L_Interprocessing(Temp01));}
+   int8   L_Gets_int8S(const string &Temp01) fastened {return L_Gets_int8(L_Interprocessing(Temp01));}
+   int16  L_Gets_int16S(const string &Temp01) fastened {return L_Gets_int16(L_Interprocessing(Temp01));}
+   int32  L_Gets_int32S(const string &Temp01) fastened {return L_Gets_int32(L_Interprocessing(Temp01));}
+   int64  L_Gets_int64S(const string &Temp01) fastened {return L_Gets_int64(L_Interprocessing(Temp01));}
+   uint8  L_Gets_uint8S(const string &Temp01) fastened {return L_Gets_uint8(L_Interprocessing(Temp01));}
+   uint16 L_Gets_uint16S(const string &Temp01) fastened {return L_Gets_uint16(L_Interprocessing(Temp01));}
+   uint32 L_Gets_uint32S(const string &Temp01) fastened {return L_Gets_uint32(L_Interprocessing(Temp01));}
+   uint64 L_Gets_uint64S(const string &Temp01) fastened {return L_Gets_uint64(L_Interprocessing(Temp01));}
+   xint32 L_Gets_xint32S(const string &Temp01) fastened {return L_Gets_xint32(L_Interprocessing(Temp01));}
+   xint64 L_Gets_xint64S(const string &Temp01) fastened {return L_Gets_xint64(L_Interprocessing(Temp01));}
+
+   int0   L_Sets_int1(const uint64 Vrab01, int1 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){int1 &Vrab03 = *((int1*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_int8(const uint64 Vrab01, int8 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){int8 &Vrab03 = *((int8*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_int16(const uint64 Vrab01, int16 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 2, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){int16 &Vrab03 = *((int16*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 2, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_int32(const uint64 Vrab01, int32 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){int32 &Vrab03 = *((int32*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_int64(const uint64 Vrab01, int64 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){int64 &Vrab03 = *((int64*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_uint8(const uint64 Vrab01, uint8 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){uint8 &Vrab03 = *((uint8*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 1, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_uint16(const uint64 Vrab01, uint16 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 2, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){uint16 &Vrab03 = *((uint16*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 2, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_uint32(const uint64 Vrab01, uint32 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){uint32 &Vrab03 = *((uint32*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_uint64(const uint64 Vrab01, uint64 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){uint64 &Vrab03 = *((uint64*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_xint32(const uint64 Vrab01, xint32 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){xint32 &Vrab03 = *((xint32*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 4, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_xint64(const uint64 Vrab01, xint64 Vrab02) fastened {DWORD Dwrd01; if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0){xint64 &Vrab03 = *((xint64*)Vrab01); Vrab03 = Vrab02; VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), 8, Dwrd01, &Dwrd01);}}
+   int0   L_Sets_int1S(const string &Temp01, int1 Vrab01) fastened {L_Sets_int1(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_int8S(const string &Temp01, int8 Vrab01) fastened {L_Sets_int8(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_int16S(const string &Temp01, int16 Vrab01) fastened {L_Sets_int16(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_int32S(const string &Temp01, int32 Vrab01) fastened {L_Sets_int32(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_int64S(const string &Temp01, int64 Vrab01) fastened {L_Sets_int64(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_uint8S(const string &Temp01, uint8 Vrab01) fastened {L_Sets_uint8(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_uint16S(const string &Temp01, uint16 Vrab01) fastened {L_Sets_uint16(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_uint32S(const string &Temp01, uint32 Vrab01) fastened {L_Sets_uint32(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_uint64S(const string &Temp01, uint64 Vrab01) fastened {L_Sets_uint64(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_xint32S(const string &Temp01, xint32 Vrab01) fastened {L_Sets_xint32(L_Interprocessing(Temp01), Vrab01);}
+   int0   L_Sets_xint64S(const string &Temp01, xint64 Vrab01) fastened {L_Sets_xint64(L_Interprocessing(Temp01), Vrab01);}
+
+   int0   L_Sets(uint64 Vrab01, const string &Temp01) fastened 
+   {
+    const string Temp02 = L_Lowercase(Temp01);
+    const uint32 Vrab02 = Temp02.size(); uint32 Vrab03 = 0; int1 Vrab04 = true;
+    while(Vrab03 != Vrab02)
+    switch(Temp02.at(Vrab03))
+    {
+     case '\n': Vrab04 = true; case ' ': case ',': case 13: Vrab03 += 1; break; case '-': if(!Vrab04){Vrab03 += 1; break;}
+     default:
+      {
+       string Temp03 = "";
+       while(Vrab03 != Vrab02)
+       {
+        const int8 Vrab05 = Temp02.at(Vrab03); switch(Vrab05)
+        {
+         case '\n': Vrab04 = true; case ' ': case ',': case 13: break; case '-': if(!Vrab04) break;
+         default:
+          Temp03.push_back(Vrab05);
+          Vrab03 += 1;
+         continue;
+        }
+        break;
+       }
+
+       int1 Vrab05 = false; std::vector < uint8 > Vect01;
+       if(Temp03 != "")
+       {
+        if(Temp03 == "-") Vrab04 = false;
+
+        if(Vrab04)
+        {
+         const uint64 Vrab06 = L_Interprocessing(Temp03);
+         if(Vrab06 != 0)
+         {Vrab04 = false; Vrab01 = Vrab06; goto Labl01;}
+        }
+
+        const uint32 Vrab06 = Temp03.size(); uint32 Vrab07 = 0; Vrab05 = true;
+        while(Vrab07 != Vrab06)
+        {
+         string Temp04 = "";
+         const int8 Vrab08 = Temp03.at(Vrab07); switch(Vrab08){case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case 'a': case 'b': case 'c': case 'd': case 'e': case 'f': break; default: Vrab05 = false; goto Labl01;}
+         Temp04.push_back(Vrab08);
+         Vrab07 += 1; if(Vrab07 == Vrab06)
+         {
+          Temp04.push_back('0');
+         } else
+         {
+          const int8 Vrab09 = Temp03.at(Vrab07); switch(Vrab09){case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7': case '8': case '9': case 'a': case 'b': case 'c': case 'd': case 'e': case 'f': break; default: Vrab05 = false; goto Labl01;}
+          Temp04.push_back(Vrab09);
+          Vrab07 += 1;
+         }
+         Vect01.push_back(ruint8(L_Interprocessing(Temp04)));
+        }
+       }
+
+       Labl01:
+       if(Vrab05)
+       {
+        const uint32 Vrab08 = Vect01.size(); uint32 Vrab09 = 0; DWORD Dwrd01;
+        if(Vrab08 != 0) if(VirtualProtect(static_cast < LPVOID > ((uint64*)Vrab01), Vrab08, PAGE_EXECUTE_READWRITE, &Dwrd01) != 0)
+        {
+         while(Vrab09 != Vrab08)
+         {
+          uint8 &Vrab10 = *((uint8*)Vrab01); Vrab10 = Vect01[Vrab09]; Vrab09 += 1; Vrab01 += 1;
+         }
+         VirtualProtect(static_cast < LPVOID > ((uint64*)(Vrab01 - Vrab08)), Vrab08, Dwrd01, &Dwrd01);
+        }
+       }
+
+       Vrab03 += 1; continue;
+      }
+     break;
+    }
+   }
+   int0   L_SetsS(const string &Temp01, const string &Temp02) fastened {L_Sets(L_Interprocessing(Temp01), Temp02);}
   
+   int0   L_Draw(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04, uint8 Vrab05, uint8 Vrab06, uint8 Vrab07)
+   {
+    COLORREF Cref01 = Vrab07 + (Vrab06 << 8) + (Vrab05 << 16);
+    COLORREF Cref02 = GetDCBrushColor(Database.Drawing);
+    COLORREF Cref03 = GetDCPenColor(Database.Drawing);
+    SetDCBrushColor(Database.Drawing, Cref01);
+    SetDCPenColor(Database.Drawing, Cref01);
+    Rectangle(Database.Drawing, rint32(L_Positive(Vrab01)), rint32(L_Positive(Vrab02)), rint32(L_Positive(Vrab03 + Vrab01)), rint32(L_Positive(Vrab04 + Vrab02)));
+    SetDCBrushColor(Database.Drawing, Cref02);
+    SetDCPenColor(Database.Drawing, Cref03);
+    //L_Sets_uint32(0xff, Vrab08);
+    //L_Sets_uint32(0x68, Vrab03);
+    //L_Sets_uint32(0x76, Vrab04);
+    //L_Sets_uint32(0x55, Vrab01);
+    //L_Sets_uint32(0x34, Vrab02);
+   }
+
    int1   L_Copy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03) fastened {if(Game->Database->Data[Vrab01] == 0) return false; if(Vrab02 >= MaximumFrames || Vrab02 < 0 || Vrab03 >= MaximumFrames || Vrab03 < 0) return false; Game->Database->Data[Vrab01]->Frame[Vrab03] = Game->Database->Data[Vrab01]->Frame[Vrab02]; return true;}
    int1   L_Copys(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04) fastened {if(Game->Database->Data[Vrab01] == 0 || Game->Database->Data[Vrab02] == 0) return false; if(Vrab03 >= MaximumFrames || Vrab03 < 0 || Vrab04 >= MaximumFrames || Vrab04 < 0) return false; Game->Database->Data[Vrab02]->Frame[Vrab04] = Game->Database->Data[Vrab01]->Frame[Vrab03]; return true;}
    uint32 L_Address(int32 Vrab01) fastened {uint32 Vrab02 = 0; while(Game->Database->Data[Vrab02] != 0){if(Game->Database->Data[Vrab02]->id == Vrab01) return Vrab02; Vrab02 += 1;} return ruint32(-1);}
@@ -440,7 +583,7 @@
    int0   C_Print(const uint64 Vrab01)       fastened {printf("%llu", Vrab01);}
    int0   C_Print(const xint32 Vrab01)       fastened {printf("%f", Vrab01);}
    int0   C_Print(const xint64 Vrab01)       fastened {printf("%Lf", Vrab01);}
-   int0   C_Print(const std::string &Temp01) fastened {printf("%s", Temp01.c_str());}
+   int0   C_Print(const string &Temp01)      fastened {printf("%s", Temp01.c_str());}
   }; MD_AIDATABASES Base;
   struct MD_GAMEDATA_MAIN_PIC {string Add_Address; uint32 Width = 0; uint32 Height = 0; uint32 Row = 0; uint32 Column = 0;};
   struct MD_GAMEDATA_MAIN {string Name; string Add_Head; string Add_Small; std::vector < MD_GAMEDATA_MAIN_PIC > Pictures; uint32 WalkAnimation = 0; uint32 RunAnimation = 0; string Dob_WalkSpeed; string Dob_WalkSpeedZ; string Dob_RunSpeed; string Dob_RunSpeedZ; string Dob_HeavyWalkSpeed; string Dob_HeavyWalkSpeedZ; string Dob_HeavyRunSpeed; string Dob_HeavyRunSpeedZ; string Dob_JumpHeight; string Dob_JumpSpeed; string Dob_JumpSpeedZ; string Dob_DashHeight; string Dob_DashSpeed; string Dob_DashSpeedZ; string Dob_FlipHeight; string Dob_FlipSpeed; int32 StartingHealth = 0; int32 LandingHurt = 0; string Add_HitSound; string Add_BreakSound; string Add_LandingSound;};
@@ -458,7 +601,7 @@
   int0   L_Cleaning()                                                 {/*Vrab0001 = 0; Vrab0002 = 0; Vrab0003 = 0; Vrab0004 = 0; Vrab0005 = 0; Vrab0006 = 0; Temp0001 = ""; Temp0002 = ""; Temp0003 = "";*/ if(File0001.is_open()) File0001.close(); if(File0002.is_open()) File0002.close(); Vect0001.clear(); Strn0001.clear();}
   int0   L_Polish()                                                   {std::ofstream File01(TEMPORAL_FILE, std::ios::binary | std::ios::out); File01 << "Do not erase this file."; File01.close();}
   int0   L_Rename(string &Temp01)                                     {uint32 Vrab01 = Temp01.size(); while(Vrab01 != 1 && Temp01.at(Vrab01 - 1) != '-') Vrab01 -= 1; Vrab01 -= 1; if(Temp01.at(Vrab01) == '-' && Temp01.at(Vrab01 + 1) >= '0' && Temp01.at(Vrab01 + 1) <= '9'){string Temp02 = ""; uint32 Vrab02 = Vrab01; Temp02 += Temp01.at(Vrab02 + 1); while(Temp01.at(Vrab02 + 2) >= '0' && Temp01.at(Vrab02 + 2) <= '9'){Temp02 += Temp01.at(Vrab02 + 2); Vrab02 += 1;} Temp02 = std::to_string(L_Numbering(Temp02) + 1); Temp01.erase(Vrab01 + 1, (Vrab02 + 2) - (Vrab01 + 1)); Temp01.insert(Vrab01 + 1, Temp02);} else {Vrab01 = Temp01.size() - 1; while(Vrab01 != -1 && Temp01.at(Vrab01) != '.') Vrab01 -= 1; if(Vrab01 > 7) if(string(Temp01, Vrab01 - 8, 7) == "_mirror") Vrab01 -= 8; if(Vrab01 > 0){Temp01.insert(Vrab01, "-2");} else {Temp01.insert(Temp01.size() - 1, "-2");}}}
-  int0   L_Summary(string Temp01)                                     {std::ofstream File01(L_Execute(Config.ECD_ResultDirectory + "\\summary.edb"), std::ios::binary | std::ios::app); File01 << Temp01; File01.close();}
+  int0   L_Summary(string Temp01)                                     {const uint32 Vrab01 = Temp01.size(); uint32 Vrab02 = 0; while(Vrab02 != Vrab01){if(Temp01.at(Vrab02) == ' ') Temp01.at(Vrab02) = '?'; Vrab02 += 1;} std::ofstream File01(L_Execute(Config.ECD_ResultDirectory + "\\summary.edb"), std::ios::binary | std::ios::app); File01 << Temp01; File01.close();}
   int0   L_Copy(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03) fastened {Base.Game->Database->Data[Vrab01]->Frame[Vrab03] = Base.Game->Database->Data[Vrab01]->Frame[Vrab02];}// Base.Game->Database->Data[Vrab01]->Frame[Vrab03].state = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].state; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wait = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wait; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].next = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].next; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].dvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].dvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].centerx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].centerx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].centery = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].centery; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_a = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_a; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_d = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_d; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_j = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_j; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Fa = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Fa; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Fj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Fj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Da = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Da; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Dj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Dj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Ua = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Ua; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_Uj = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_Uj; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].hit_ja = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].hit_ja; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].mp = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].mp; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].sound = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].sound; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.vaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.vaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.aaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.aaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.daction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.daction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.jaction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.jaction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.taction = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.taction; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.dircontrol = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.dircontrol; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.decrease = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.decrease; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.throwinjury = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.throwinjury; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.cover = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.cover; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.hurtable = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.hurtable; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].cpoint.injury = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].cpoint.injury; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.dvz = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.dvz; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.weaponact = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.weaponact; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.attacking = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.attacking; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].wpoint.cover = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].wpoint.cover; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.kind = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.kind; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.dvx = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.dvx; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.dvy = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.dvy; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.oid = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.oid; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.action = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.action; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].opoint.facing = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].opoint.facing; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_count = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_count; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itrs = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itrs; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_w = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_w; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].itr_h = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].itr_h; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_count = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_count; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdys = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdys; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_x = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_x; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_y = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_y; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_w = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_w; Base.Game->Database->Data[Vrab01]->Frame[Vrab03].bdy_h = Base.Game->Database->Data[Vrab01]->Frame[Vrab02].bdy_h;}
   int1   L_Open(const string &Temp01)                                 {if(File0001.is_open()) File0001.close(); File0001.open(Temp01, std::ios::binary | std::ios::in); if(File0001.is_open()) return true; return false;}
   int1   L_Exist(const string &Temp01)                       fastened {struct stat Vrab01; return (stat(Temp01.c_str(), &Vrab01) == 0);}
@@ -468,6 +611,37 @@
   int32  L_Numbering(string Temp01)                          fastened {while(Temp01.size() > 0 && Temp01.at(0) != '-' && (Temp01.at(0) < '0' || Temp01.at(0) > '9')) Temp01.erase(0, 1); uint32 Vrab01 = Temp01.size(); if(Vrab01 == 0) return 0; while(Vrab01 != 1) if(Temp01.at(Vrab01 - 1) < '0' || Temp01.at(Vrab01 - 1) > '9'){Vrab01 -= 1;} else {break;} int32 Vrab02 = 0; if(Temp01.at(0) == '-'){if(Vrab01 == 1) return 0; if(Temp01.at(1) < '0' || Temp01.at(1) > '9') return 0; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 1; break; case '2': Vrab02 -= 2; break; case '3': Vrab02 -= 3; break; case '4': Vrab02 -= 4; break; case '5': Vrab02 -= 5; break; case '6': Vrab02 -= 6; break; case '7': Vrab02 -= 7; break; case '8': Vrab02 -= 8; break; case '9': Vrab02 -= 9; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 10; break; case '2': Vrab02 -= 20; break; case '3': Vrab02 -= 30; break; case '4': Vrab02 -= 40; break; case '5': Vrab02 -= 50; break; case '6': Vrab02 -= 60; break; case '7': Vrab02 -= 70; break; case '8': Vrab02 -= 80; break; case '9': Vrab02 -= 90; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 100; break; case '2': Vrab02 -= 200; break; case '3': Vrab02 -= 300; break; case '4': Vrab02 -= 400; break; case '5': Vrab02 -= 500; break; case '6': Vrab02 -= 600; break; case '7': Vrab02 -= 700; break; case '8': Vrab02 -= 800; break; case '9': Vrab02 -= 900; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 1000; break; case '2': Vrab02 -= 2000; break; case '3': Vrab02 -= 3000; break; case '4': Vrab02 -= 4000; break; case '5': Vrab02 -= 5000; break; case '6': Vrab02 -= 6000; break; case '7': Vrab02 -= 7000; break; case '8': Vrab02 -= 8000; break; case '9': Vrab02 -= 9000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 10000; break; case '2': Vrab02 -= 20000; break; case '3': Vrab02 -= 30000; break; case '4': Vrab02 -= 40000; break; case '5': Vrab02 -= 50000; break; case '6': Vrab02 -= 60000; break; case '7': Vrab02 -= 70000; break; case '8': Vrab02 -= 80000; break; case '9': Vrab02 -= 90000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 100000; break; case '2': Vrab02 -= 200000; break; case '3': Vrab02 -= 300000; break; case '4': Vrab02 -= 400000; break; case '5': Vrab02 -= 500000; break; case '6': Vrab02 -= 600000; break; case '7': Vrab02 -= 700000; break; case '8': Vrab02 -= 800000; break; case '9': Vrab02 -= 900000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 1000000; break; case '2': Vrab02 -= 2000000; break; case '3': Vrab02 -= 3000000; break; case '4': Vrab02 -= 4000000; break; case '5': Vrab02 -= 5000000; break; case '6': Vrab02 -= 6000000; break; case '7': Vrab02 -= 7000000; break; case '8': Vrab02 -= 8000000; break; case '9': Vrab02 -= 9000000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 10000000; break; case '2': Vrab02 -= 20000000; break; case '3': Vrab02 -= 30000000; break; case '4': Vrab02 -= 40000000; break; case '5': Vrab02 -= 50000000; break; case '6': Vrab02 -= 60000000; break; case '7': Vrab02 -= 70000000; break; case '8': Vrab02 -= 80000000; break; case '9': Vrab02 -= 90000000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 100000000; break; case '2': Vrab02 -= 200000000; break; case '3': Vrab02 -= 300000000; break; case '4': Vrab02 -= 400000000; break; case '5': Vrab02 -= 500000000; break; case '6': Vrab02 -= 600000000; break; case '7': Vrab02 -= 700000000; break; case '8': Vrab02 -= 800000000; break; case '9': Vrab02 -= 900000000; break; default: break;} Vrab01 -= 1; if(Vrab01 == 0) return Vrab02; for(int32 Vrab03 = 10; Vrab01 > 0; Vrab03 *= 10){switch(Temp01.at(Vrab01)){case '1': Vrab02 -= 100000000 * Vrab03; break; case '2': Vrab02 -= 200000000 * Vrab03; break; case '3': Vrab02 -= 300000000 * Vrab03; break; case '4': Vrab02 -= 400000000 * Vrab03; break; case '5': Vrab02 -= 500000000 * Vrab03; break; case '6': Vrab02 -= 600000000 * Vrab03; break; case '7': Vrab02 -= 700000000 * Vrab03; break; case '8': Vrab02 -= 800000000 * Vrab03; break; case '9': Vrab02 -= 900000000 * Vrab03; break; default: break;} Vrab01 -= 1;} return Vrab02;} else {Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 1; break; case '2': Vrab02 += 2; break; case '3': Vrab02 += 3; break; case '4': Vrab02 += 4; break; case '5': Vrab02 += 5; break; case '6': Vrab02 += 6; break; case '7': Vrab02 += 7; break; case '8': Vrab02 += 8; break; case '9': Vrab02 += 9; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 10; break; case '2': Vrab02 += 20; break; case '3': Vrab02 += 30; break; case '4': Vrab02 += 40; break; case '5': Vrab02 += 50; break; case '6': Vrab02 += 60; break; case '7': Vrab02 += 70; break; case '8': Vrab02 += 80; break; case '9': Vrab02 += 90; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 100; break; case '2': Vrab02 += 200; break; case '3': Vrab02 += 300; break; case '4': Vrab02 += 400; break; case '5': Vrab02 += 500; break; case '6': Vrab02 += 600; break; case '7': Vrab02 += 700; break; case '8': Vrab02 += 800; break; case '9': Vrab02 += 900; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 1000; break; case '2': Vrab02 += 2000; break; case '3': Vrab02 += 3000; break; case '4': Vrab02 += 4000; break; case '5': Vrab02 += 5000; break; case '6': Vrab02 += 6000; break; case '7': Vrab02 += 7000; break; case '8': Vrab02 += 8000; break; case '9': Vrab02 += 9000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 10000; break; case '2': Vrab02 += 20000; break; case '3': Vrab02 += 30000; break; case '4': Vrab02 += 40000; break; case '5': Vrab02 += 50000; break; case '6': Vrab02 += 60000; break; case '7': Vrab02 += 70000; break; case '8': Vrab02 += 80000; break; case '9': Vrab02 += 90000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 100000; break; case '2': Vrab02 += 200000; break; case '3': Vrab02 += 300000; break; case '4': Vrab02 += 400000; break; case '5': Vrab02 += 500000; break; case '6': Vrab02 += 600000; break; case '7': Vrab02 += 700000; break; case '8': Vrab02 += 800000; break; case '9': Vrab02 += 900000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 1000000; break; case '2': Vrab02 += 2000000; break; case '3': Vrab02 += 3000000; break; case '4': Vrab02 += 4000000; break; case '5': Vrab02 += 5000000; break; case '6': Vrab02 += 6000000; break; case '7': Vrab02 += 7000000; break; case '8': Vrab02 += 8000000; break; case '9': Vrab02 += 9000000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 10000000; break; case '2': Vrab02 += 20000000; break; case '3': Vrab02 += 30000000; break; case '4': Vrab02 += 40000000; break; case '5': Vrab02 += 50000000; break; case '6': Vrab02 += 60000000; break; case '7': Vrab02 += 70000000; break; case '8': Vrab02 += 80000000; break; case '9': Vrab02 += 90000000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; switch(Temp01.at(Vrab01)){case '1': Vrab02 += 100000000; break; case '2': Vrab02 += 200000000; break; case '3': Vrab02 += 300000000; break; case '4': Vrab02 += 400000000; break; case '5': Vrab02 += 500000000; break; case '6': Vrab02 += 600000000; break; case '7': Vrab02 += 700000000; break; case '8': Vrab02 += 800000000; break; case '9': Vrab02 += 900000000; break; default: break;} if(Vrab01 == 0) return Vrab02; Vrab01 -= 1; for(int32 Vrab03 = 10; Vrab01 != -1; Vrab03 *= 10){switch(Temp01.at(Vrab01)){case '1': Vrab02 += 100000000 * Vrab03; break; case '2': Vrab02 += 200000000 * Vrab03; break; case '3': Vrab02 += 300000000 * Vrab03; break; case '4': Vrab02 += 400000000 * Vrab03; break; case '5': Vrab02 += 500000000 * Vrab03; break; case '6': Vrab02 += 600000000 * Vrab03; break; case '7': Vrab02 += 700000000 * Vrab03; break; case '8': Vrab02 += 800000000 * Vrab03; break; case '9': Vrab02 += 900000000 * Vrab03; break; default: break;} Vrab01 -= 1;} return Vrab02;}}
   uint32 L_Addressing(string Temp01)                         fastened {uint32 Vrab01 = 0; const uint32 Vrab02 = Strn0001.size(); const string Temp02 = L_Lowercase(Temp01); while(Vrab01 != Vrab02){if(Temp02 == L_Lowercase(Strn0001[Vrab01])) break; Vrab01 += 1;} if(Vrab01 == Vrab02) Strn0001.push_back(Temp01); return Vrab01;}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   uint32 L_Indexing(int32 Vrab01)                            fastened {uint32 Vrab02 = 0; const uint32 Vrab03 = Vect0001.size(); while(Vrab02 != Vrab03){if(Vrab01 == Vect0001[Vrab02]) break; Vrab02 += 1;} if(Vrab02 == Vrab03) return 4294967295; return Vrab02;}
+  uint64 L_Interprocessing(const string &Temp01)             fastened 
+  {
+   uint32 Vrab01 = Temp01.size(); uint64 Vrab02 = 0; uint64 Vrab03 = 0;
+   while(Vrab01 != 0)
+   {
+    Vrab01 -= 1;
+    switch(Temp01.at(Vrab01))
+    {
+     case '0': break;
+     case '1': Vrab03 += (1ULL << Vrab02); break;
+     case '2': Vrab03 += (2ULL << Vrab02); break;
+     case '3': Vrab03 += (3ULL << Vrab02); break;
+     case '4': Vrab03 += (4ULL << Vrab02); break;
+     case '5': Vrab03 += (5ULL << Vrab02); break;
+     case '6': Vrab03 += (6ULL << Vrab02); break;
+     case '7': Vrab03 += (7ULL << Vrab02); break;
+     case '8': Vrab03 += (8ULL << Vrab02); break;
+     case '9': Vrab03 += (9ULL << Vrab02); break;
+     case 'A': case 'a': Vrab03 += (10ULL << Vrab02); break;
+     case 'B': case 'b': Vrab03 += (11ULL << Vrab02); break;
+     case 'C': case 'c': Vrab03 += (12ULL << Vrab02); break;
+     case 'D': case 'd': Vrab03 += (13ULL << Vrab02); break;
+     case 'E': case 'e': Vrab03 += (14ULL << Vrab02); break;
+     case 'F': case 'f': Vrab03 += (15ULL << Vrab02); break;
+     case 'x': case 'X': return Vrab03;
+     default: return 0;
+    }
+    Vrab02 += 4;
+   }
+   return Vrab03;
+  }
   string L_Format(const int32 Vrab01, const int32 Vrab02)    fastened {switch(Config.ECD_ResultCodeFormat){case 3: 
   {
   const int32 Vrab03 = L_Positive(Vrab01); string Temp01;
@@ -902,7 +1076,7 @@
      if(Temp03 == "ResultExtension")    {File0001 >> Temp03 >> Temp03; if(Temp03 == "_"){Config.MOD_ResultExtension = "";} else {Config.MOD_ResultExtension = Temp03;} if(L_Lowercase(Config.MOD_ResultExtension) == "dat") goto Labl02; continue;}
      if(Temp03 == "ResultDirectory")    {File0001 >> Temp03 >> Temp03; Config.MOD_ResultDirectory = Temp03; continue;}
      
-     if(Temp03 == "sagasofkoasjgkasfjaksgraoidjaskhlasjfikshfrkentmheifjhaskfasflaksjoinufiasjfkasjfkastjgttwnaokd i just want to get a perfect size in this case ;p iajidjaiodhasoig///////////////////dagsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaijdioasjdkashfasjkdhafkhaskdjwhglnjefhsdjeighwkjajbhjds,gewjkfhfhdsjfhw,kahw,faewgdjfkjkawgopewhbkdscmsdklbndow;fjasflaskjdlsahgldjsokkdgfkhdghdsl.fjdsopbe,fnekthakmeyaiofamkdmfa oags  im surely this is stupid idea but who cares, :< aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa this string not even have asodkaoskdaoskdokosakfoakwoawjifawjkwawwfnlaskfslkfjaslkjsalkdajslkdjaskd size sdaidjsiajdasfoasdjoasdjaosdjsaodjasodasj doathisfskdajsjkdnsakgask lasjfhsakhd aks k fkasfka k afa                                                                                hlaskhasdihakgnakfnasdkasbdasjdbaifjabdasdnsaj  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa alsdaaaaaaaaaaanbkdnf;osfdskjfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdafaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfd/"){File0001 >> Temp03; continue;}
+     if(Temp03 == "i just want to get a perfect size in this case ;p iajidjaiodhasoig///////////////////da  im surely this is stupid idea but who cares, :< aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa this string not even have asodkaoskdaoskdokosakfoakwoawjifawjkwawwfnlaskfslkfjaslkjsalkdajslkdjaskd size sdaidjsiajdasfoasdjoasdjaosdjsaodjasodasj doathisfskdajsjkdnsakgask lasjfhsakhd aks k fkasfka k afa                                                                                hlaskhasdihakgnakfnasdkasbdasjdbaifjabdasdnsaj  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa alsdaaaaaaaaaaanbkdnf;osfdskjfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdafaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfd/"){File0001 >> Temp03; continue;}
 
      goto Labl02;
     }
@@ -1069,7 +1243,7 @@
         File0002 << S_EncryptionUINT32(Vrab04);
        } Vect0001.clear(); Strn0001.clear();
 
-       File0002 << "\n# ===                         " INJECTOR_VERSION "                         === #";
+       File0002 << "\n# ===                         " CREATED_ECD_VERSION "                         === #";
        Console.PrintWrite("[] Construction complete.\n"); Console.PrintSet(); Vrab08 = false;
       } else {Console.PrintWrite(">< ERROR - \"" + Temp01.path().string() + "\" inaccessible.\n"); Console.PrintSet(); continue;}
      }
@@ -1193,8 +1367,12 @@
      {
       File0001.seekg(0, File0001.end); std::streampos Post01 = File0001.tellg(); Post01 -= 44; if(Post01 < 57){Console.PrintWrite(">< ERROR - Either \"" + Temp02 + "\" is corrupt or it is not the package made using Modified DDraw.\n"); Console.PrintOut(); continue;} File0001.seekg(Post01);
       string Temp03 = Temp02;
-      File0001 >> Temp02;
-      const uint32 Vrab03 = L_Numbering(Temp02); if(Vrab03 < Vrab02){Console.PrintWrite(">< ERROR - This package is not supported anymore, the version of the Modified DDraw in constructing this package should equal or higher than " + string(SUPPORTED_ECD_VERSION, 1, string(SUPPORTED_ECD_VERSION).size() - 2) + ".\n"); Console.PrintOut(); continue;}
+      
+      File0001 >> Temp02; const uint32 Vrab03 = L_Numbering(Temp02);
+      if(Vrab03 != 0) Console.PrintWrite("() INFO - Package's version : " + string(Temp02, 1, string(Temp02).size() - 2) + ".\n"); Console.PrintOut();
+      if(Vrab03 < Vrab02){Console.PrintWrite(">< ERROR - This package is not supported anymore, the version of the Modified DDraw in constructing this package should equal or higher than " + string(SUPPORTED_ECD_VERSION, 1, string(SUPPORTED_ECD_VERSION).size() - 2) + ".\n"); Console.PrintOut(); continue;}
+      if(Vrab03 > ruint32(L_Numbering(INJECTOR_VERSION))){Console.PrintWrite(">< ERROR - This package is created from higher version that is unsupported for this version, the version of the package should equal or less than " + string(INJECTOR_VERSION, 1, string(INJECTOR_VERSION).size() - 2) + ".\n"); Console.PrintOut(); continue;}
+      
       File0001.seekg(0, File0001.end); Post01 = File0001.tellg(); const std::streampos Post04 = Post01; File0001.seekg(Post01 -= 80); const std::streampos Post02 = Post01;
       Temp02.resize(5); File0001.read(&Temp02.at(0), 5);
       const uint64 Vrab04 = S_DecryptionUINT32(Temp02.c_str()); Post01 -= 5 + Vrab04; File0001.seekg(Post01); const std::streampos Post03 = Post01;
@@ -2591,510 +2769,6 @@
   }
   int0   C_DLL_Load()                                                 {Hins0001.clear(); if(L_Exist(Config.DLL_Directory)) for(auto const &Vrab01 : std::filesystem::recursive_directory_iterator(Config.DLL_Directory)){string Temp01 = Vrab01.path().string(); if(L_Lowercase(string(Temp01, Temp01.size() - 4, 4)) == ".dll") Hins0001.push_back(LoadLibraryA(Temp01.c_str()));}}
   int0   C_DLL_Unload()                                               {const uint32 Vrab01 = Hins0001.size(); uint32 Vrab02 = 0; while(Vrab02 < Vrab01){FreeLibrary(Hins0001.at(Vrab02)); Vrab02 += 1;} Hins0001.clear();}
-  /*int0   C_MOD_Initialization()                              fastened {
-    if(!Config.MAIN_MOD) return;
-    if(Config.MOD_ModulingLevel != 1) return;
-	int1 Vrab01 = false; uint32 Vrab02 = 0;
-    while(Base.Game->Database->Data[Vrab02] != 0)
-    {
-     if(Base.Game->Database->Data[Vrab02]->id == Database.InjectorID) goto Labl0012;
-     if(Base.Game->Database->Data[Vrab02]->type == 0)
-     {
-      uint32 Vrab03 = 0;
-      while(Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist){Vrab03 += 1; if(Vrab03 == MaximumFrames){Vrab01 = true; goto Labl0012;}}
-      if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].Exist)
-      {
-       if(Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait <= 0){Vrab01 = true; goto Labl0012;}
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].Exist = true;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wait = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait - 1;
-       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wait = 0;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].next = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next;
-       Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].next = Vrab03;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centerx;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].centery;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.kind = 1;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.x = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centerx;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.y = Base.Game->Database->Data[Vrab02]->Frame[Vrab03].centery;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.oid = Database.InjectorID;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.action = 0;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].opoint.facing = 10;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].pic = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].pic;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].state = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].state;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].mp = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].mp;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_a = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_a;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_d = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_d;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_j = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_j;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fa = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fa;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Fj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Fj;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Da = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Da;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Dj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Dj;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Ua = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Ua;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_Uj = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_Uj;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].hit_ja = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].hit_ja;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Count;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bdy_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bdy_Rectangle;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Count = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Count;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].itr_Rectangle = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].itr_Rectangle;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.kind;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.x;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.y;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvx;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvy;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.dvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.dvz;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.weaponact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.weaponact;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.attacking = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.attacking;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].wpoint.cover = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].wpoint.cover;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.kind = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.kind;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.x;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.y;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.vaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.vaction;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.aaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.aaction;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.daction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.daction;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.jaction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.jaction;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.taction = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.taction;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.dircontrol = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.dircontrol;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.decrease = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.decrease;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvx = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvx;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvy = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvy;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwvz = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwvz;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.throwinjury = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.throwinjury;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.cover_backhurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.cover_backhurtact;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.hurtable = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.hurtable;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].cpoint.injury_fronthurtact = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].cpoint.injury_fronthurtact;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.x = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.x;
-       Base.Game->Database->Data[Vrab02]->Frame[Vrab03].bpoint.y = Base.Game->Database->Data[Vrab02]->Frame[Config.MOD_ModulingLevelStartingFrame].bpoint.y;
-      } else {Vrab01 = true;}
-     }
-     Labl0012:
-	 Vrab02 += 1;
-    }
-    if(Vrab01)
-	{
-	  
-	}
-   }
-  int0 C_MOD_Preprocessing()
-   {
-    if(!Config.MAIN_MOD) return;
-    if(Config.MOD_ModulingInfo && Config.MOD_ModulingLevel == 0)
-    {
-     for(uint32 Vrab01 = 0; Vrab01 < MaximumObject; ++Vrab01) if(Base.Game->Object[Vrab01]->Data->id == Database.InjectorID2)
-     {
-      switch(Base.Game->Object[Vrab01]->Frame)
-      {
-       case 0:
-        Vrab0001 = 20;
-        if(Base.Game->Object[Vrab01]->Wait > 1)
-        if(Base.Game->Object[Vrab01]->Wait < 22)
-        {
-         Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 2);
-        } else 
-        {
-         Vrab0001 = 0;
-         if(Base.Game->Object[Vrab01]->Wait > 97) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 97;
-        }
-        Vrab0003 = 20;
-        if(Base.Game->Object[Vrab01]->Wait > 13) Vrab0003 = 20 - (Base.Game->Object[Vrab01]->Wait - 13);
-        if(Base.Game->Object[Vrab01]->Wait > 33) Vrab0003 = 0;
-        Base.Game->Object[Vrab01]->Data->Frame[0].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-        Base.Game->Object[Vrab01]->Data->Frame[0].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition - (210 - ((int32)Vrab0003 * ((int32)Vrab0003 + (((int32)Vrab0003 - 1) / -2)))) / 5;
-       break;
-       case 1:
-        if(Base.Game->Object[Vrab01]->Data->Frame[0].pic == -1)
-        {
-         Vrab0001 = 20;
-         if(Base.Game->Object[Vrab01]->Wait > 0)
-         if(Base.Game->Object[Vrab01]->Wait < 21)
-         {
-          Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 1);
-         } else 
-         {
-          Vrab0001 = 0;
-          if(Base.Game->Object[Vrab01]->Wait > 96) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 96;
-         }
-         Base.Game->Object[Vrab01]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         Base.Game->Object[Vrab01]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
-        } else
-        {
-         Vrab0001 = 20;
-         if(Base.Game->Object[Vrab01]->Wait > 20)
-         if(Base.Game->Object[Vrab01]->Wait < 41)
-         {
-          Vrab0001 = 20 - (Base.Game->Object[Vrab01]->Wait - 21);
-         } else 
-         {
-          Vrab0001 = 0;
-          if(Base.Game->Object[Vrab01]->Wait > 116) Vrab0001 = Base.Game->Object[Vrab01]->Wait - 116;
-         }
-         Base.Game->Object[Vrab01]->Data->Frame[1].centerx = (Vrab0001 * (Vrab0001 + ((Vrab0001 - 1) / -2))) - *(int*)0x450bc4;
-         Base.Game->Object[Vrab01]->Data->Frame[1].centery = Base.Game->Database->Background[*(int*)0x44d024].zboundary[1] - Config.MOD_ModulingInfoPostition;
-        }
-       break;
-       default: break;
-      }
-     }
-    }
-   }
-   int0   C_MOD_Ending()                                           {
-   {
-    if(Database.InjectorNUM == -1) return;
-    const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-    for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
-    {
-     if(Strn0001[Vrab01] == "") continue;
-     Base.ModuleID = Vect0001[Vrab01];
-     const string Temp01 = "Mod_" + std::to_string(Vrab01);
-     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void last()");
-     if(Func01)
-     {
-      if(Base.Cont0002->Prepare(Func01) < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-	  }
-	  if(Base.Cont0002->Execute() < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-      }
-     }
-    }
-    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-   }
-   C_MOD_Preprocessing();
-  }
-  int0   C_MOD_Processing()                                           {
-   {
-    if(Database.InjectorNUM == -1) return;
-    const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-    for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
-    {
-     if(Strn0001[Vrab01] == "") continue;
-     Base.ModuleID = Vect0001[Vrab01];
-     const string Temp01 = "Mod_" + std::to_string(Vrab01);
-     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void mids()");
-     if(Func01)
-     {
-      if(Base.Cont0002->Prepare(Func01) < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-	  }
-	  if(Base.Cont0002->Execute() < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-      }
-     }
-    }
-    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-   }
-  }
-  int0   C_MOD_Deprocessing()                                           {
-   {
-    const uint32 Vrab02 = Strn0001.size();
-    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-    for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
-    {
-     if(Strn0001[Vrab01] == "") continue;
-     Base.ModuleID = Vect0001[Vrab01];
-     const string Temp01 = "Mod_" + std::to_string(Vrab01);
-     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void fins()");
-     if(Func01)
-     {
-      if(Base.Cont0002->Prepare(Func01) < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-	  }
-	  if(Base.Cont0002->Execute() < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-      }
-     }
-    }
-    if(Config.MOD_ModulingLevel > 0)if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-   }
-  }
-  int0   C_MOD_Process()                                              {
-   const uint32 Vrab01 = Strn0001.size();
-   if(Database.Init)
-   {
-    C_MOD_Initialization();
-    if(Database.InjectorNUM == -1) return;
-	Database.Init = false;
-    {
-     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-     for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
-     {
-      if(Strn0001[Vrab02] == "") continue;
-      Base.ModuleID = Vect0001[Vrab02];
-      const string Temp01 = "Mod_" + std::to_string(Vrab02);
-      asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void once()"); int1 Vrab03 = true;
-      if(!Func01){Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void init()"); Vrab03 = false;}
-      if(Func01)
-      {
-       if(Base.Cont0002->Prepare(Func01) < 0)
-	   {
-	    #ifdef DEBUG_VERSION
-	     #ifdef MULTI_STATE
-          if(Config.AI_Console)
-          {
-         #endif
-	     Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	    #endif
-	    #ifdef MULTI_STATE
-         }
-        #endif
-        if(Vrab03) Strn0001[Vrab02] = "";
-	    continue;
-	   }
-	   if(Base.Cont0002->Execute() < 0)
-	   {
-	    #ifdef DEBUG_VERSION
-	     #ifdef MULTI_STATE
-          if(Config.AI_Console)
-          {
-         #endif
-	     Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	    #endif
-	    #ifdef MULTI_STATE
-         }
-        #endif
-        if(Vrab03) Strn0001[Vrab02] = "";
-	    continue;
-       }
-      }
-     }
-     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-    }
-   }
-   if(Database.InjectorNUM == -1) return;
-   {
-    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-    for(uint32 Vrab02 = 0; Vrab02 < Vrab01; ++Vrab02)
-    {
-     if(Strn0001[Vrab02] == "") continue;
-     Base.ModuleID = Vect0001[Vrab02];
-     const string Temp01 = "Mod_" + std::to_string(Vrab02);
-     #ifdef DEBUG_VERSION
-	  #ifdef MULTI_STATE
-       if(Config.AI_Console)
-       {
-      #endif
-      if(L_Rebuilding(Vrab02, "_" + Strn0001[Vrab02]))
-      {
-       asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void init()");
-       if(Func01)
-       {
-        if(Base.Cont0002->Prepare(Func01) < 0)
-	    {
-	     #ifdef DEBUG_VERSION
-	      #ifdef MULTI_STATE
-           if(Config.AI_Console)
-           {
-          #endif
-	      Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	     #endif
-	     #ifdef MULTI_STATE
-          }
-         #endif
-	     continue;
-	    }
-	    if(Base.Cont0002->Execute() < 0)
-	    {
-	     #ifdef DEBUG_VERSION
-	      #ifdef MULTI_STATE
-           if(Config.AI_Console)
-           {
-          #endif
-	      Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	     #endif
-	     #ifdef MULTI_STATE
-          }
-         #endif
-	     continue;
-        }
-       }
-      }
-     #endif
-     #ifdef MULTI_STATE
-      }
-     #endif
-     asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void main()");
-     if(Func01)
-     {
-      if(Base.Cont0002->Prepare(Func01) < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	   #endif
-	   #ifdef MULTI_STATE
-        }
-       #endif
-	   continue;
-	  }
-	  if(Base.Cont0002->Execute() < 0)
-	  {
-	   #ifdef DEBUG_VERSION
-	    #ifdef MULTI_STATE
-         if(Config.AI_Console)
-         {
-        #endif
-	    Base.Engi0002->WriteMessage(Strn0001[Vrab02].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	   #endif 
-	   #ifdef MULTI_STATE
-        }
-       #endif
- 	   continue;
-      }
-     }
-    }
-    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-   }
-   C_MOD_Processing();
-   C_MOD_Ending();
-  }
-  int0   C_MOD_Reset()                                       
-  {
-   Base.ElapsedTime = *(int32*)0x450b8c;
-   if(Config.MOD_ModulingLevel == 0)
-   {
-    if(ruint32(Database.InjectorFRAME) < Base.ElapsedTime){Database.InjectorFRAME = Base.ElapsedTime; return;}
-    Database.InjectorFRAME = Base.ElapsedTime;
-   }
-   {
-    uint32 Vrab01 = 0;
-    if(Config.MOD_ModulingLevel > 0){while(Base.Game->Database->Data[Vrab01] != 0){if(Base.Game->Database->Data[Vrab01]->id == Database.InjectorID2){Base.Game->Database->Data[Vrab01]->Frame[0].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[1].centerx = 1000; Base.Game->Database->Data[Vrab01]->Frame[0].centery = -1000; Base.Game->Database->Data[Vrab01]->Frame[1].centery = -1000; break;} Vrab01 += 1;}}
-   }
-    {
-     const uint32 Vrab02 = Strn0001.size();
-     if(Vrab02 != 0)
-     {
-      Base.Difficulty = *(int32*)0x450c30; Base.Mode = *(int32*)0x451160;
-      if(Base.BackgroundID != *(int32*)0x44d024)
-      {
-       Base.BackgroundID = *(int32*)0x44d024;
-       Base.Background_width = Base.Game->Database->Background[Base.BackgroundID].width;
-       Base.Background_zwidth1 = Base.Game->Database->Background[Base.BackgroundID].zboundary[0];
-       Base.Background_zwidth2 = Base.Game->Database->Background[Base.BackgroundID].zboundary[1];
-       Base.Stage_bound = Base.Background_width;
-       Base.Stage_clear = false;
-      }
-      if(Base.Mode == 1)
-      {
-       Base.Stage_bound = *(int32*)0x450bb4;
-       Base.Stage_clear = Base.Stage_bound == 0;
-      }
-      Base.Phase = *(int32*)0x44fb6c;
-      Base.Phase_Count = *(int32*)0x44f880;
-      Base.Stage = *(int32*)0x450b94;
-     }
-     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
-     for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
-     {
-      if(Strn0001[Vrab01] == "") continue;
-      Base.ModuleID = Vect0001[Vrab01];
-      const string Temp01 = "Mod_" + std::to_string(Vrab01);
-      asIScriptFunction *Func01 = Base.Engi0002->GetModule(Temp01.c_str())->GetFunctionByDecl("void play()");
-      if(Func01)
-      {
-       if(Base.Cont0002->Prepare(Func01) < 0)
-	   {
-	    #ifdef DEBUG_VERSION
-	     #ifdef MULTI_STATE
-          if(Config.AI_Console)
-          {
-         #endif
-	     Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to prepare the context.");
-	    #endif
-	    #ifdef MULTI_STATE
-         }
-        #endif
-	    continue;
-	   }
-	   if(Base.Cont0002->Execute() < 0)
-	   {
-	    #ifdef DEBUG_VERSION
-	     #ifdef MULTI_STATE
-          if(Config.AI_Console)
-          {
-         #endif
-	     Base.Engi0002->WriteMessage(Strn0001[Vrab01].c_str(), 0, 0, asMSGTYPE_ERROR, "Unable to execute the context.");
-	    #endif
-	    #ifdef MULTI_STATE
-         }
-        #endif
-	    continue;
-       }
-      }
-     }
-     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
-    }
-  }*/
   int0   C_MOD_Redeclaration()                               fastened
   {
    Database.NumberOfExist = 0; Database.NumberOfExistT0 = 0; Database.NumberOfExistT0COM = 0;
@@ -3282,6 +2956,7 @@
 	  
 	}
    }
+   Database.Drawing = GetDC(GetForegroundWindow());
    if((Config.MOD_ModulingLevel > 0 && Database.InjectorNUM != -1) || Config.MOD_ModulingLevel == 0)
    {
     Database.Init = false;
@@ -3468,6 +3143,8 @@
   }
   int0 C_MOD_Inprocessing() fastened
   {
+   if(Database.Lasting) return; Database.Lasting = true;
+   if(!Database.InGame) return;
    if(!Config.MAIN_MOD) return;
    if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
    const uint32 Vrab01 = Strn0001.size();
@@ -3618,6 +3295,14 @@
   }
  //-//
  // Core Functions
+  int0   C_MOD_Call()                                        fastened
+  {
+   C_MOD_Inprocessing();
+   _asm
+   {
+    mov eax,fs:[0x000000];
+   }
+  }
   int0   G_Process(const int32 Vrab01) fastened
   {
    Base.User = -1;
@@ -3630,6 +3315,7 @@
      if(Database.Reset){C_MOD_Reset(); Database.Reset = false;}
      C_MOD_Initialization();
      C_MOD_Processing();
+     Database.Lasting = false;
      C_MOD_Preprocessing();
      C_MOD_Inprocessing();
     } else {if(Database.OutGame){C_MOD_Deprocessing(); Database.OutGame = false;}}
@@ -3662,10 +3348,23 @@
     string Temp01; uint32 Vrab01 = 0;
     while(File0001)
     {
-     File0001 >> Temp01; if(!File0001) break; 
+     File0001 >> Temp01; if(!File0001) break;
+     {
+      const uint32 Vrab02 = Temp01.size(); uint32 Vrab03 = 0;
+      while(Vrab03 != Vrab02){if(Temp01.at(Vrab03) == '?') Temp01.at(Vrab03) = ' '; Vrab03 += 1;}
+     }
      if(Temp01 == "B")
      {
-      string Temp02; File0001 >> Temp01 >> Temp02; std::remove(Temp02.c_str()); std::filesystem::copy_file(Temp01, Temp02);
+      string Temp02; File0001 >> Temp01 >> Temp02;
+      {
+       const uint32 Vrab02 = Temp01.size(); uint32 Vrab03 = 0;
+       while(Vrab03 != Vrab02){if(Temp01.at(Vrab03) == '?') Temp01.at(Vrab03) = ' '; Vrab03 += 1;}
+      }
+      {
+       const uint32 Vrab02 = Temp02.size(); uint32 Vrab03 = 0;
+       while(Vrab03 != Vrab02){if(Temp02.at(Vrab03) == '?') Temp02.at(Vrab03) = ' '; Vrab03 += 1;}
+      }
+      std::remove(Temp02.c_str()); std::filesystem::copy_file(Temp01, Temp02);
      }
      if(!L_Exist(Temp01)) continue;
      if(std::remove(Temp01.c_str()) != 0) continue;
@@ -3816,108 +3515,97 @@
   //-//
   // Functions
    // Shared
-   #ifdef _MD_OLD_SCRIPT
-    //int0  L_Copying(uint32 Vrab01, uint32 Vrab02, uint32 Vrab03, uint32 Vrab04) fastened {Base.game->files->datas[Vrab02]->frames[Vrab04].exists = true; Base.game->files->datas[Vrab02]->frames[Vrab04].pic = Base.game->files->datas[Vrab01]->frames[Vrab03].pic; Base.game->files->datas[Vrab02]->frames[Vrab04].state = Base.game->files->datas[Vrab01]->frames[Vrab03].state; Base.game->files->datas[Vrab02]->frames[Vrab04].wait = Base.game->files->datas[Vrab01]->frames[Vrab03].wait; Base.game->files->datas[Vrab02]->frames[Vrab04].next = Base.game->files->datas[Vrab01]->frames[Vrab03].next; Base.game->files->datas[Vrab02]->frames[Vrab04].dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].dvz = Base.game->files->datas[Vrab01]->frames[Vrab03].dvz; Base.game->files->datas[Vrab02]->frames[Vrab04].centerx = Base.game->files->datas[Vrab01]->frames[Vrab03].centerx; Base.game->files->datas[Vrab02]->frames[Vrab04].centery = Base.game->files->datas[Vrab01]->frames[Vrab03].centery; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_a = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_a; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_d = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_d; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_j = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_j; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Fa = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Fa; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Fj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Fj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Da = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Da; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Dj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Dj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Ua = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Ua; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_Uj = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_Uj; Base.game->files->datas[Vrab02]->frames[Vrab04].hit_ja = Base.game->files->datas[Vrab01]->frames[Vrab03].hit_ja; Base.game->files->datas[Vrab02]->frames[Vrab04].mp = Base.game->files->datas[Vrab01]->frames[Vrab03].mp; Base.game->files->datas[Vrab02]->frames[Vrab04].sound = Base.game->files->datas[Vrab01]->frames[Vrab03].sound; Base.game->files->datas[Vrab02]->frames[Vrab04].bpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].bpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].bpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].bpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.vaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.vaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.aaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.aaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.daction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.daction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.jaction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.jaction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.taction = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.taction; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.dircontrol = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.dircontrol; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.decrease = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.decrease; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvx = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvx; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvy = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvy; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwvz = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwvz; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.throwinjury = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.throwinjury; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.cover = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.cover; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.hurtable = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.hurtable; Base.game->files->datas[Vrab02]->frames[Vrab04].cpoint.injury = Base.game->files->datas[Vrab01]->frames[Vrab03].cpoint.injury; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.dvz = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.dvz; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.weaponact = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.weaponact; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.attacking = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.attacking; Base.game->files->datas[Vrab02]->frames[Vrab04].wpoint.cover = Base.game->files->datas[Vrab01]->frames[Vrab03].wpoint.cover; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.kind = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.kind; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.x = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.x; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.y = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.y; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.dvx = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.dvx; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.dvy = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.dvy; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.oid = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.oid; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.action = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.action; Base.game->files->datas[Vrab02]->frames[Vrab04].opoint.facing = Base.game->files->datas[Vrab01]->frames[Vrab03].opoint.facing; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_count = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_count; Base.game->files->datas[Vrab02]->frames[Vrab04].itrs = Base.game->files->datas[Vrab01]->frames[Vrab03].itrs; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_x = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_x; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_y = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_y; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_w = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_w; Base.game->files->datas[Vrab02]->frames[Vrab04].itr_h = Base.game->files->datas[Vrab01]->frames[Vrab03].itr_h; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_count = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_count; Base.game->files->datas[Vrab02]->frames[Vrab04].bdys = Base.game->files->datas[Vrab01]->frames[Vrab03].bdys; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_x = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_x; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_y = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_y; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_w = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_w; Base.game->files->datas[Vrab02]->frames[Vrab04].bdy_h = Base.game->files->datas[Vrab01]->frames[Vrab03].bdy_h;}
-    uint32 L_Address(int32 Vrab01) fastened
-    {
-     return Base.L_Address(Vrab01);
-    }
-   // int32 L_NumSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[144] + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[145] << 8) + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[146] << 16) + ((int32)(uint8)Base.game->objects[Vrab01]->data->unkwn2[147] << 24));}
-    //int32 L_DataSet(int32 Vrab01) fastened {return ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[144] + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[145] << 8) + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[146] << 16) + ((int32)(uint8)Base.game->files->datas[Vrab01]->unkwn2[147] << 24));}
-    int32 L_Random(int32 Vrab01) fastened//random function that works with replays
-    {
-     return Base.L_Random(Vrab01);
-    }
-    int32 L_Targetting(int32 Vrab01) fastened
-    {
-     return Info0002 = Vrab01;
-    }
-    int32 L_Aggring(int32 Vrab01) fastened
-    {
-     if(Vrab01 < 0 || Vrab01 >= MaximumObject) return -1;
-     if(!Base.game->exists[Vrab01]) return -1;
-     return Base.game->objects[Info0001.num]->enemy = Vrab01;
-    }
-    int0 L_InputUP(int8 Vrab01, int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->up = Vrab01;
-     Base.game->objects[Info0001.num]->holding_up = Vrab02;
-     Info0001.up = Vrab01; Info0001.holding_up = Vrab02;
-    }
-    int0 L_InputLEFT(int8 Vrab01, int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->left = Vrab01;
-     Base.game->objects[Info0001.num]->holding_left = Vrab02;
-     Info0001.left = Vrab01; Info0001.holding_left = Vrab02;
-    }
-    int0 L_InputDOWN(int8 Vrab01, int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->down = Vrab01;
-     Base.game->objects[Info0001.num]->holding_down = Vrab02;
-     Info0001.down = Vrab01; Info0001.holding_down = Vrab02;
-    }
-    int0 L_InputRIGHT(int8 Vrab01, int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->right = Vrab01;
-     Base.game->objects[Info0001.num]->holding_right = Vrab02;
-     Info0001.right = Vrab01; Info0001.holding_right = Vrab02;
-    }
-    int0 L_InputATTACK(int8 Vrab01,int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->A = Vrab01;
-     Base.game->objects[Info0001.num]->holding_a = Vrab02;
-     Info0001.A = Vrab01; Info0001.holding_a = Vrab02;
-    }
-    int0 L_InputJUMP(int8 Vrab01,int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->J = Vrab01;
-     Base.game->objects[Info0001.num]->holding_j = Vrab02;
-     Info0001.J = Vrab01; Info0001.holding_j = Vrab02;
-    }
-    int0 L_InputDEFEND(int8 Vrab01,int8 Vrab02) fastened
-    {
-     Base.game->objects[Info0001.num]->D = Vrab01;
-     Base.game->objects[Info0001.num]->holding_d = Vrab02;
-     Info0001.D = Vrab01; Info0001.holding_d = Vrab02;
-    }
-    int0 L_InputDrA() fastened {Base.game->objects[Info0001.num]->DrA = 3; Info0001.DrA = 3;}
-    int0 L_InputDlA() fastened {Base.game->objects[Info0001.num]->DlA = 3; Info0001.DlA = 3;}
-    int0 L_InputDuA() fastened {Base.game->objects[Info0001.num]->DuA = 3; Info0001.DuA = 3;}
-    int0 L_InputDdA() fastened {Base.game->objects[Info0001.num]->DdA = 3; Info0001.DdA = 3;}
-    int0 L_InputDrJ() fastened {Base.game->objects[Info0001.num]->DrJ = 3; Info0001.DrJ = 3;}
-    int0 L_InputDlJ() fastened {Base.game->objects[Info0001.num]->DlJ = 3; Info0001.DlJ = 3;}
-    int0 L_InputDuJ() fastened {Base.game->objects[Info0001.num]->DuJ = 3; Info0001.DuJ = 3;}
-    int0 L_InputDdJ() fastened {Base.game->objects[Info0001.num]->DdJ = 3; Info0001.DdJ = 3;}
-    int0 L_InputDJA() fastened {Base.game->objects[Info0001.num]->DJA = 3; Info0001.DJA = 3;}
+    #ifdef _MD_OLD_SCRIPT
+     uint32 L_Address(int32 Vrab01) fastened {return Base.L_Address(Vrab01);}
+     int32  L_Random(int32 Vrab01)  fastened {return Base.L_Random(Vrab01);}
 
-    int0 C_Clear() fastened
-    {
-     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-     if(hConsole == INVALID_HANDLE_VALUE) return;
-     COORD coordScreen = {0, 0};
-     DWORD cCharsWritten;
-     CONSOLE_SCREEN_BUFFER_INFO csbi;
-     DWORD dwConSize;
-     if(!GetConsoleScreenBufferInfo(hConsole, &csbi)){return;}
-     dwConSize = csbi.dwSize.X * csbi.dwSize.Y;
-     if(!FillConsoleOutputCharacter(hConsole, ' ', dwConSize, coordScreen, &cCharsWritten)){return;}
-     if(!GetConsoleScreenBufferInfo(hConsole, &csbi)){return;}
-     if(!FillConsoleOutputAttribute(hConsole, csbi.wAttributes, dwConSize, coordScreen, &cCharsWritten)){return;}
-     SetConsoleCursorPosition(hConsole, coordScreen);
-    }
-    int0 C_PrintAddr(const int0 *Vrab01)    fastened {printf("%p", Vrab01);}
-    int0 C_Print(const int1 Vrab01)         fastened {if(Vrab01){printf("true");} else {printf("false");}}
-    int0 C_Print(const int8 Vrab01)         fastened {printf("%i", Vrab01);}
-    int0 C_Print(const int16 Vrab01)        fastened {printf("%i", Vrab01);}
-    int0 C_Print(const int32 Vrab01)        fastened {printf("%i", Vrab01);}
-    int0 C_Print(const int64 Vrab01)        fastened {printf("%lli", Vrab01);}
-    int0 C_Print(const uint8 Vrab01)        fastened {printf("%u", Vrab01);}
-    int0 C_Print(const uint16 Vrab01)       fastened {printf("%u", Vrab01);}
-    int0 C_Print(const uint32 Vrab01)       fastened {printf("%u", Vrab01);}
-    int0 C_Print(const uint64 Vrab01)       fastened {printf("%llu", Vrab01);}
-    int0 C_Print(const xint32 Vrab01)       fastened {printf("%f", Vrab01);}
-    int0 C_Print(const xint64 Vrab01)       fastened {printf("%Lf", Vrab01);}
-    int0 C_Print(const std::string &Temp01) fastened {printf("%s", Temp01.c_str());}
+     int32 L_Targetting(int32 Vrab01) fastened {return Info0002 = Vrab01;}
+     int32 L_Aggring(int32 Vrab01)    fastened
+     {
+      if(Vrab01 < 0 || Vrab01 >= MaximumObject) return -1;
+      if(!Base.game->exists[Vrab01]) return -1;
+      return Base.game->objects[Info0001.num]->enemy = Vrab01;
+     }
+     int0 L_InputUP(int8 Vrab01, int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->up = Vrab01;
+      Base.game->objects[Info0001.num]->holding_up = Vrab02;
+      Info0001.up = Vrab01; Info0001.holding_up = Vrab02;
+     }
+     int0 L_InputLEFT(int8 Vrab01, int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->left = Vrab01;
+      Base.game->objects[Info0001.num]->holding_left = Vrab02;
+      Info0001.left = Vrab01; Info0001.holding_left = Vrab02;
+     }
+     int0 L_InputDOWN(int8 Vrab01, int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->down = Vrab01;
+      Base.game->objects[Info0001.num]->holding_down = Vrab02;
+      Info0001.down = Vrab01; Info0001.holding_down = Vrab02;
+     }
+     int0 L_InputRIGHT(int8 Vrab01, int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->right = Vrab01;
+      Base.game->objects[Info0001.num]->holding_right = Vrab02;
+      Info0001.right = Vrab01; Info0001.holding_right = Vrab02;
+     }
+     int0 L_InputATTACK(int8 Vrab01,int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->A = Vrab01;
+      Base.game->objects[Info0001.num]->holding_a = Vrab02;
+      Info0001.A = Vrab01; Info0001.holding_a = Vrab02;
+     }
+     int0 L_InputJUMP(int8 Vrab01,int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->J = Vrab01;
+      Base.game->objects[Info0001.num]->holding_j = Vrab02;
+      Info0001.J = Vrab01; Info0001.holding_j = Vrab02;
+     }
+     int0 L_InputDEFEND(int8 Vrab01,int8 Vrab02) fastened
+     {
+      Base.game->objects[Info0001.num]->D = Vrab01;
+      Base.game->objects[Info0001.num]->holding_d = Vrab02;
+      Info0001.D = Vrab01; Info0001.holding_d = Vrab02;
+     }
+     int0 L_InputDrA() fastened {Base.game->objects[Info0001.num]->DrA = 3; Info0001.DrA = 3;}
+     int0 L_InputDlA() fastened {Base.game->objects[Info0001.num]->DlA = 3; Info0001.DlA = 3;}
+     int0 L_InputDuA() fastened {Base.game->objects[Info0001.num]->DuA = 3; Info0001.DuA = 3;}
+     int0 L_InputDdA() fastened {Base.game->objects[Info0001.num]->DdA = 3; Info0001.DdA = 3;}
+     int0 L_InputDrJ() fastened {Base.game->objects[Info0001.num]->DrJ = 3; Info0001.DrJ = 3;}
+     int0 L_InputDlJ() fastened {Base.game->objects[Info0001.num]->DlJ = 3; Info0001.DlJ = 3;}
+     int0 L_InputDuJ() fastened {Base.game->objects[Info0001.num]->DuJ = 3; Info0001.DuJ = 3;}
+     int0 L_InputDdJ() fastened {Base.game->objects[Info0001.num]->DdJ = 3; Info0001.DdJ = 3;}
+     int0 L_InputDJA() fastened {Base.game->objects[Info0001.num]->DJA = 3; Info0001.DJA = 3;}
+
+     int0 C_Clear() fastened
+     {
+      HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+      if(hConsole == INVALID_HANDLE_VALUE) return;
+      COORD coordScreen = {0, 0};
+      DWORD cCharsWritten;
+      CONSOLE_SCREEN_BUFFER_INFO csbi;
+      DWORD dwConSize;
+      if(!GetConsoleScreenBufferInfo(hConsole, &csbi)){return;}
+      dwConSize = csbi.dwSize.X * csbi.dwSize.Y;
+      if(!FillConsoleOutputCharacter(hConsole, ' ', dwConSize, coordScreen, &cCharsWritten)){return;}
+      if(!GetConsoleScreenBufferInfo(hConsole, &csbi)){return;}
+      if(!FillConsoleOutputAttribute(hConsole, csbi.wAttributes, dwConSize, coordScreen, &cCharsWritten)){return;}
+      SetConsoleCursorPosition(hConsole, coordScreen);
+     }
+     int0 C_PrintAddr(const int0 *Vrab01)    fastened {printf("%p", Vrab01);}
+     int0 C_Print(const int1 Vrab01)         fastened {if(Vrab01){printf("true");} else {printf("false");}}
+     int0 C_Print(const int8 Vrab01)         fastened {printf("%i", Vrab01);}
+     int0 C_Print(const int16 Vrab01)        fastened {printf("%i", Vrab01);}
+     int0 C_Print(const int32 Vrab01)        fastened {printf("%i", Vrab01);}
+     int0 C_Print(const int64 Vrab01)        fastened {printf("%lli", Vrab01);}
+     int0 C_Print(const uint8 Vrab01)        fastened {printf("%u", Vrab01);}
+     int0 C_Print(const uint16 Vrab01)       fastened {printf("%u", Vrab01);}
+     int0 C_Print(const uint32 Vrab01)       fastened {printf("%u", Vrab01);}
+     int0 C_Print(const uint64 Vrab01)       fastened {printf("%llu", Vrab01);}
+     int0 C_Print(const xint32 Vrab01)       fastened {printf("%f", Vrab01);}
+     int0 C_Print(const xint64 Vrab01)       fastened {printf("%Lf", Vrab01);}
+     int0 C_Print(const std::string &Temp01) fastened {printf("%s", Temp01.c_str());}
     #endif
    //-//
    // Private
@@ -4074,7 +3762,13 @@
      }
      #endif
 
-     if(Vrab01 >= 0 && Vrab01 < MaximumObject) if(Base.Game->Object_Exist[ruint32(Base.User = Vrab01)]) return;
+     if(Vrab01 >= 0 && Vrab01 < MaximumObject) if(Base.Game->Object_Exist[ruint32(Base.User = Vrab01)])
+     {
+      #ifdef _MD_OLD_SCRIPT
+       Info0001 = Base.User;
+      #endif
+      return;
+     }
 	 #ifdef DEBUG_VERSION
 	  #ifdef MULTI_STATE
        if(Config.AI_Console)
@@ -4105,6 +3799,9 @@
        }
       #endif
 	 }
+     #ifdef _MD_OLD_SCRIPT
+      Info0002 = Vrab02;
+     #endif
 	 if(Base.Cont0001->Prepare(Func01) < 0)
 	 {
 	  #ifdef DEBUG_VERSION
@@ -4303,6 +4000,7 @@
      Engi01->RegisterObjectMethod("ENGINE", "void Print(double Value)", asMETHODPR(MD_AIDATABASES, C_Print, (xint64 Vrab01), int0), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Print(const string &in String)", asMETHODPR(MD_AIDATABASES, C_Print, (const string &Temp01), int0), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Print_Clear()", asMETHOD(MD_AIDATABASES, C_Clear), asCALL_THISCALL);
+
      Engi01->RegisterObjectMethod("ENGINE", "void Input_Clear()", asMETHOD(MD_AIDATABASES, L_InputClear), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Up()", asMETHOD(MD_AIDATABASES, L_InputUP), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Left()", asMETHOD(MD_AIDATABASES, L_InputLEFT), asCALL_THISCALL);
@@ -4318,18 +4016,85 @@
      Engi01->RegisterObjectMethod("ENGINE", "void Attack_Hold()", asMETHOD(MD_AIDATABASES, L_InputATTACKH), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Defend_Hold()", asMETHOD(MD_AIDATABASES, L_InputDEFENDH), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "void Jump_Hold()", asMETHOD(MD_AIDATABASES, L_InputJUMPH), asCALL_THISCALL);
+
      Engi01->RegisterObjectMethod("ENGINE", "int32 Random(int32 Value)", asMETHOD(MD_AIDATABASES, L_Random), asCALL_THISCALL);
      Engi01->RegisterObjectMethod("ENGINE", "int32 Set_Enemy(int32 Object)", asMETHOD(MD_AIDATABASES, L_Aggring), asCALL_THISCALL);
+
+     Engi01->RegisterObjectMethod("ENGINE", "bool Get_bool(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int1), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int8 Get_char(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int8), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int8 Get_int8(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int8), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int16 Get_int16(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int16), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Get_int(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int32), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Get_int32(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int32), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int64 Get_int64(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_int64), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint8 Get_uint8(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint8), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint16 Get_uint16(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint16), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint32 Get_uint32(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint32), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint64 Get_uint64(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint64), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "float Get_float(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_xint32), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "double Get_double(uint64 Address)", asMETHOD(MD_AIDATABASES, L_Gets_xint64), asCALL_THISCALL);
+
+     Engi01->RegisterObjectMethod("ENGINE", "bool Get_bool(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int1S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int8 Get_char(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int8S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int8 Get_int8(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int8S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int16 Get_int16(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int16S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Get_int(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int32S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int32 Get_int32(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int32S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "int64 Get_int64(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_int64S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint8 Get_uint8(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint8S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint16 Get_uint16(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint16S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint32 Get_uint32(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint32S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "uint64 Get_uint64(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_uint64S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "float Get_float(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_xint32S), asCALL_THISCALL);
+     Engi01->RegisterObjectMethod("ENGINE", "double Get_double(const string &in Address)", asMETHOD(MD_AIDATABASES, L_Gets_xint64S), asCALL_THISCALL);
+
      Engi01->RegisterObjectProperty("ENGINE", "const uint32 Background", asOFFSET(MD_AIDATABASES, BackgroundID));
      Engi01->RegisterObjectProperty("ENGINE", "const uint32 Maximum_Frame", asOFFSET(MD_AIDATABASES, MaximumFrame));
      Engi01->RegisterObjectProperty("ENGINE", "const uint32 Maximum_Object", asOFFSET(MD_AIDATABASES, MaximumObj));
      Engi01->RegisterObjectProperty("ENGINE", "const int32 Maximum_MP", asOFFSET(MD_AIDATABASES, MaximumMP));
+     Engi01->RegisterObjectProperty("ENGINE", "const uint32 Max_Frame", asOFFSET(MD_AIDATABASES, MaximumFrame));
+     Engi01->RegisterObjectProperty("ENGINE", "const uint32 Max_Object", asOFFSET(MD_AIDATABASES, MaximumObj));
+     Engi01->RegisterObjectProperty("ENGINE", "const int32 Max_MP", asOFFSET(MD_AIDATABASES, MaximumMP));
+     Engi01->RegisterObjectProperty("ENGINE", "const int32 User", asOFFSET(MD_AIDATABASES, User));
      if(Vrab02)
      {
       Engi01->RegisterObjectMethod("ENGINE", "uint32 Copy_Frame(uint32 Data, uint32 Frame1, uint32 Frame2)", asMETHOD(MD_AIDATABASES, L_Copy), asCALL_THISCALL);
       Engi01->RegisterObjectMethod("ENGINE", "uint32 Copy_Data_Frame(uint32 Data1, uint32 Data2, uint32 Frame1, uint32 Frame2)", asMETHOD(MD_AIDATABASES, L_Copys), asCALL_THISCALL);
       Engi01->RegisterObjectMethod("ENGINE", "uint32 Get_ID_Data(int32 Data_ID)", asMETHOD(MD_AIDATABASES, L_Address), asCALL_THISCALL);
       Engi01->RegisterObjectMethod("ENGINE", "uint32 Set_Object(int32 Owner, int32 Data, int32 Frame, double X, double Y, double Z, bool Facing)", asMETHOD(MD_AIDATABASES, L_Generate), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Draw_RECT(int32 X_Position, int32 Y_Position, uint32 Width, uint32 Height, uint8 Red, uint8 Green, uint8 Blue)", asMETHOD(MD_AIDATABASES, L_Draw), asCALL_THISCALL);
+      
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_bool(uint64 Address, bool Value)", asMETHOD(MD_AIDATABASES, L_Sets_int1), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_char(uint64 Address, int8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int8), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int8(uint64 Address, int8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int8), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int16(uint64 Address, int16 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int16), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int(uint64 Address, int32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int32), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int32(uint64 Address, int32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int32), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int64(uint64 Address, int64 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int64), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint8(uint64 Address, uint8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint8), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint16(uint64 Address, uint16 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint16), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint32(uint64 Address, uint32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint32), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint64(uint64 Address, uint64 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint64), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_float(uint64 Address, float Value)", asMETHOD(MD_AIDATABASES, L_Sets_xint32), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_double(uint64 Address, double Value)", asMETHOD(MD_AIDATABASES, L_Sets_xint64), asCALL_THISCALL);
+
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_bool(const string &in Address, bool Value)", asMETHOD(MD_AIDATABASES, L_Sets_int1S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_char(const string &in Address, int8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int8S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int8(const string &in Address, int8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int8S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int16(const string &in Address, int16 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int16S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int(const string &in Address, int32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int32S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int32(const string &in Address, int32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int32S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_int64(const string &in Address, int64 Value)", asMETHOD(MD_AIDATABASES, L_Sets_int64S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint8(const string &in Address, uint8 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint8S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint16(const string &in Address, uint16 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint16S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint32(const string &in Address, uint32 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint32S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_uint64(const string &in Address, uint64 Value)", asMETHOD(MD_AIDATABASES, L_Sets_uint64S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_float(const string &in Address, float Value)", asMETHOD(MD_AIDATABASES, L_Sets_xint32S), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Set_double(const string &in Address, double Value)", asMETHOD(MD_AIDATABASES, L_Sets_xint64S), asCALL_THISCALL);
+      
+      Engi01->RegisterObjectMethod("ENGINE", "void Sets(uint64 Address, const string &in Assembly)", asMETHOD(MD_AIDATABASES, L_Sets), asCALL_THISCALL);
+      Engi01->RegisterObjectMethod("ENGINE", "void Sets(const string &in Address, const string &in Assembly)", asMETHOD(MD_AIDATABASES, L_SetsS), asCALL_THISCALL);
+
       Engi01->RegisterObjectProperty("ENGINE", "const int32 Module_ID", asOFFSET(MD_AIDATABASES, ModuleID));
      }
      
@@ -4554,7 +4319,7 @@
     LPVOID Lpvd02 = Lpvd01; Lpvd02 = NULL;
     switch(Dwrd01)
     {
-     case DLL_PROCESS_ATTACH: G_Initialization(); G_Starting(); InitInstance(Hand01); break;
+     case DLL_PROCESS_ATTACH: G_Initialization(); G_Starting(); InitInstance(Hand01); Database.Drawing = GetDC(GetForegroundWindow()); break;
      case DLL_PROCESS_DETACH: G_Hiding(); G_Cleaning(); G_Releasing(); ExitInstance(); break;
      case DLL_THREAD_ATTACH: break;
      case DLL_THREAD_DETACH: break;
@@ -5207,6 +4972,27 @@
        }
       } else {Config.MOD_ModulingLevel = 1;}
      }
+     /*
+      /*Base.L_Sets_uint8(0x40E526, 0xE8);
+      Base.L_Sets_uint32(0x40E527, 0x037DDF);
+      Base.L_Sets_uint16(0x40E52B, 0x9090);
+
+      Base.L_Sets_uint64(0x446310, 0xC304000006F8B983);
+      Base.L_Sets_uint8(0x44630A, 0x90);
+      Base.L_Sets_uint8(0x44630B, 0xE8);
+      Base.L_Sets_uint32(0x44630C, 0x00000008);
+      Base.L_Sets_uint64(0x446318, 0xC3909090909090);
+      Base.L_Sets_uint16(0x44631E, 0xC390); ;
+     
+      Base.L_Sets_uint16(0x40EF77, 0x9090);
+      Base.L_Sets_uint32(0x40EF79, 0x90909090);*/
+
+      /*BaseCall = (int32 (__stdcall*)(int32))   DetourFunction((PBYTE)0x40EF77, (PBYTE)C_MOD_Call);
+      Base.L_Sets_uint8(0x40EF77, 0xE8);*/
+
+
+
+
      const uint32 Vrab02 = Strn0001.size();
      for(uint32 Vrab01 = 0; Vrab01 < Vrab02; ++Vrab01)
      {
