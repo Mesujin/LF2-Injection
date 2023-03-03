@@ -106,10 +106,13 @@
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Libraries\angelscript\angelscript\lib;C:\Libraries\DirectX April 2007\Lib\x86;$(LibraryPath)</LibraryPath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Libraries\angelscript\angelscript\include;$(IncludePath)</IncludePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">$(IncludePath);</IncludePath>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ddraw</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ddraw</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Multi|Win32'">ddraw</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

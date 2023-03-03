@@ -72,7 +72,7 @@
   #include <thread>
   #include <chrono>
 
-  #define INJECTOR_VERSION "(v2.01.230222)"
+  #define INJECTOR_VERSION "(v2.03.230303)"
   #define ENCODING_KEY "SiuHungIsAGoodBearBecauseHeIsVeryGood"
   #define TEMPORAL_FILE "data\\temporary.txt"
   #define CONFIGURATION "configuration.ini"
@@ -122,12 +122,12 @@
    std::map < int32, FILETIME > Moti0002;
   #endif
   #ifdef MULTI_STATE
-   #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Console       : Inactive         //\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+   #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MIR          : Active               //\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Console       : Inactive         //\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n// MIR Image Mirrorer\n MIR_FolderBased     : Active        // Inactive is yet supported.\n MIR_FolderSkipF&S   : Active        // Skip the images with \"_f\" and \"_s\" letters at the end.\n MIR_FolderLog       : Active        //\n MIR_FolderDirectory : sprite        // (Any folder below it is included.)\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   #else
    #ifdef DEBUG_VERSION
-    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MIR          : Active               //\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_ConsoleSize   : 60               //\n AI_ConsoleStyle  : 0                //\n AI_ConsoleScroll : Active           //\n AI_Directory     : add-on\\Script    //\n AI_OldDirectory  : ai               //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n// MIR Image Mirrorer\n MIR_FolderBased     : Active        // Inactive is yet supported.\n MIR_FolderSkipF&S   : Active        // Skip the images with \"_f\" and \"_s\" letters at the end.\n MIR_FolderLog       : Active        //\n MIR_FolderDirectory : sprite        // (Any folder below it is included.)\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
    #else
-    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Directory    : add-on\\Script     //\n AI_OldDirectory : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    #define CONFIG_TEXT "//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                  Configuration of Modified DDraw(ddraw.dll)                                  //\n//                                                " INJECTOR_VERSION "                                                //\n//                                                                                                              //\n//                                             Modified by Mesujin.                                             //\n//                                        \"I may to modify this, right?\"                                        //\n//                                                                                                              //\n// Credits (Original DDraw) : Doix, Som1Lse, zort, and everyone else who have an effort in it.                  //\n// *If you modify the credit, this file will be rewritten :P.                                                   //\n//////////////////////////////////////////////////////////////////////////////////////////////////////////////////\n\n////\n// Notes;\n// - For the Integer Values, it must be positive.\n// - \"//\" <-- this thing is used to give a comment in this file, basically the same as \"#\" in LF2's Data.\n// - If the Modified DDraw can't read the Value, this file will be rewritten without any warning. This file will\n//   also get rewritten when you switch to different version of Modified DDraw.\n// - If error occured during Modified DDraw load stuff, and then you can't run the LF2, remove \"status.edb\" file\n//   in output directory, but before removing it out, i would be happy if you would report me the \"log.log\" file.\n////\n\n// Main\n Determination, Active | Inactive    // Determining the \"true\" and \"false\" Value in this file.\n AI           : Active               //\n DLL          : Active               //\n ECD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MOD          : Active               // Both 'ECD' and 'MOD' is required for PCD (Packed Character Data) to work.\n MIR          : Active               //\n Hidden_Mode  : Inactive             // IMPORTANT! Once this config is \"Active\", this configuration file will hide\n                                     //  in \"" TEMPORAL_FILE "\". To stop this configuration from hiding, you'll\n                                     //  need to delete that file.\n//-//\n\n// AI Injection\n AI_Directory    : add-on\\Script     //\n AI_OldDirectory : ai                //\n//-//\n\n// DLL(s) Loader\n DLL_Directory   : add-on\\Library    //\n DLL_Progressive : Active            // In most cases, this one has no matter at all.\n//-//\n\n// ECD Usage\n ECD_Console         : Active        //\n ECD_ConsoleStyle    : 255           //\n ECD_ConsoleDelay    : 0             //\n ECD_ResultDirectory : add-on\\Output //\n\n // Construction\n  Directory : add-on\\Build           //\n //-//\n // Installation\n  Inputs          : add-on           //\n  Insight         : data\\data.txt    //\n  Outsight        : data\\data.temp   //\n  Overwrite       : Inactive         //\n  NoMirroring     : Inactive         //\n  Permanentness   : Inactive         //\n  DefaultLocation : Inactive         //\n  HiddenIDs       : 53  ~ 59         // ID range.\n  WeaponIDs       : 100 ~ 199        // ID range.\n  MinionIDs       : 30  ~ 37         // ID range.\n  MinionIDs2      : 39  ~ 39         // ID range.\n  AvailableIDs    : 9   ~ 29         // ID range.\n  AvailableIDs2   : 60  ~ 99         // ID range.\n  AvailableIDs3   : 230 ~ 998        // ID range.\n\n  CodeFormat      : 0                // 0 ~ 3; 0 = Single Lined; 1 = Casual; 2 = Mesujin's; 3 = STM93's;\n  Key             : " BASE_ENCRYPTION "\n //-//\n//-//\n\n// MOD Moduling\n MOD_Level         : 2               // 0 ~ 2;\n                                     //   0 = Only working when there's a COM;\n                                     //   1 = Need COM for once;\n                                     //   2 = Always working by creating clones of the datas at the earlier, this\n                                     //       process will take a while. (if you activate \"AI_Console\", you'll see\n                                     //       it's process, it'll also detect a syntax errors in your characters);\n MOD_StartingFrame : 219             // In a rare cases, you might need to change this into \"0\" instead.\n\n MOD_Info          : Active          // The pop-up notification on the corner.\n MOD_InfoTrans     : Active          //\n MOD_InfoPosition  : 130             //\n\n // Level 2 Moduling Result\n  ResultFormat    : 0                // 0 ~ 1; 0 = Single Lined; 1 = Mesujin's;\n  ResultFraming   : Inactive         // Rearrange the frame order based on their frame number.\n  ResultExtension : db               // This can't be \"dat\".\n  ResultDirectory : object           //\n //-//\n//-//\n\n// MIR Image Mirrorer\n MIR_FolderBased     : Active        // Inactive is yet supported.\n MIR_FolderSkipF&S   : Active        // Skip the images with \"_f\" and \"_s\" letters at the end.\n MIR_FolderLog       : Active        //\n MIR_FolderDirectory : sprite        // (Any folder below it is included.)\n//-//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
    #endif
   #endif
  //-//
@@ -172,6 +172,7 @@
    int1   MAIN_DLL = true;
    int1   MAIN_ECD = true;
    int1   MAIN_MOD = true;
+   int1   MAIN_MIR = true;
    int1   MAIN_HiddenMode = false;
 
    int1   AI_Console = true;
@@ -214,6 +215,11 @@
    int32  MOD_ResultFormat = 0;
    string MOD_ResultExtension = ".db";
    string MOD_ResultDirectory = "object";
+
+   int1   MIR_FolderBased = true;
+   int1   MIR_FolderSkipFandS = true;
+   int1   MIR_FolderLog = true;
+   string MIR_FolderDirectory = "";
   }; MD_CONFIG Config;
   struct MD_CONSOLE
   {
@@ -278,7 +284,7 @@
   {
 
   }; MD_CONTROLS Control;
-  struct MD_DATABASES {HDC Drawing; string Config; int1 InGame = false; int1 OutGame = true; int1 Lasting = true; int1 Reset = false; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
+  struct MD_DATABASES {HDC Drawing = NULL; string Config; int1 InGame = false; int1 OutGame = true; int1 Lasting = true; int1 Reset = false; int1 First = true; int1 Done = false; int1 Init = true; int32 InjectorDATA = 0; int32 InjectorNUM = -1; int32 InjectorFRAME = 99999; int32 InjectorID = -1; int32 InjectorID2 = -1; uint32 Exist[MaximumObject]{}; uint32 ExistT0[MaximumObject]{}; uint32 ExistT0COM[MaximumObject]{}; uint32 NumberOfExist = 0; uint32 NumberOfExistT0 = 0; uint32 NumberOfExistT0COM = 0;}; MD_DATABASES Database;
   struct MD_AIDATABASES
   {
    uint32 MaximumFrame = MaximumFrames;
@@ -656,6 +662,13 @@
   string L_Execute(const string Temp01)                               {string Temp02 = Temp01; uint32 Vrab01 = Temp02.size() - 1; while(Vrab01 != 0 && Temp02.at(Vrab01) != '\\') Vrab01 -= 1; if(Vrab01 > 0) Temp02.erase(Vrab01, Temp02.size() - Vrab01); std::filesystem::create_directories(Temp02); return Temp01;}
   string L_Manage(string Temp01)                                      {if(Temp01 == "%") return std::filesystem::current_path().string(); uint32 Vrab01 = Temp01.size(); while(Vrab01 != 0){Vrab01 -= 1; if(Temp01.at(Vrab01) == '%') Temp01.at(Vrab01) = ' ';} return Temp01;}
   string L_Reform(string Temp01)                             fastened {const uint32 Vrab01 = Temp01.size(); uint32 Vrab02 = Vrab01; while(Vrab02 > 0){Vrab02 -= 1; if(Temp01.at(Vrab02) == '\\') break;} return string(Temp01, Vrab02, Vrab01 - Vrab02);}
+  string L_Rename(string Temp01, string Temp02)              fastened 
+  {
+   uint32 Vrab01 = Temp01.size();
+   while(Vrab01 != 0){Vrab01 -= 1; if(Temp01.at(Vrab01) == '.') break;}
+   if(Vrab01 != 0){Temp01.insert(Vrab01, Temp02);} else {Temp01 += Temp02;}
+   return Temp01;
+  }
 
   int8   S_Decryption94(const int8 Vrab01)                   fastened {if(Vrab01 == Config.ECD_ResultEncryption[0]) return 0; if(Vrab01 == Config.ECD_ResultEncryption[1]) return 1; if(Vrab01 == Config.ECD_ResultEncryption[2]) return 2; if(Vrab01 == Config.ECD_ResultEncryption[3]) return 3; if(Vrab01 == Config.ECD_ResultEncryption[4]) return 4; if(Vrab01 == Config.ECD_ResultEncryption[5]) return 5; if(Vrab01 == Config.ECD_ResultEncryption[6]) return 6; if(Vrab01 == Config.ECD_ResultEncryption[7]) return 7; if(Vrab01 == Config.ECD_ResultEncryption[8]) return 8; if(Vrab01 == Config.ECD_ResultEncryption[9]) return 9; if(Vrab01 == Config.ECD_ResultEncryption[10]) return 10; if(Vrab01 == Config.ECD_ResultEncryption[11]) return 11; if(Vrab01 == Config.ECD_ResultEncryption[12]) return 12; if(Vrab01 == Config.ECD_ResultEncryption[13]) return 13; if(Vrab01 == Config.ECD_ResultEncryption[14]) return 14; if(Vrab01 == Config.ECD_ResultEncryption[15]) return 15; if(Vrab01 == Config.ECD_ResultEncryption[16]) return 16; if(Vrab01 == Config.ECD_ResultEncryption[17]) return 17; if(Vrab01 == Config.ECD_ResultEncryption[18]) return 18; if(Vrab01 == Config.ECD_ResultEncryption[19]) return 19; if(Vrab01 == Config.ECD_ResultEncryption[20]) return 20; if(Vrab01 == Config.ECD_ResultEncryption[21]) return 21; if(Vrab01 == Config.ECD_ResultEncryption[22]) return 22; if(Vrab01 == Config.ECD_ResultEncryption[23]) return 23; if(Vrab01 == Config.ECD_ResultEncryption[24]) return 24; if(Vrab01 == Config.ECD_ResultEncryption[25]) return 25; if(Vrab01 == Config.ECD_ResultEncryption[26]) return 26; if(Vrab01 == Config.ECD_ResultEncryption[27]) return 27; if(Vrab01 == Config.ECD_ResultEncryption[28]) return 28; if(Vrab01 == Config.ECD_ResultEncryption[29]) return 29; if(Vrab01 == Config.ECD_ResultEncryption[30]) return 30; if(Vrab01 == Config.ECD_ResultEncryption[31]) return 31; if(Vrab01 == Config.ECD_ResultEncryption[32]) return 32; if(Vrab01 == Config.ECD_ResultEncryption[33]) return 33; if(Vrab01 == Config.ECD_ResultEncryption[34]) return 34; if(Vrab01 == Config.ECD_ResultEncryption[35]) return 35; if(Vrab01 == Config.ECD_ResultEncryption[36]) return 36; if(Vrab01 == Config.ECD_ResultEncryption[37]) return 37; if(Vrab01 == Config.ECD_ResultEncryption[38]) return 38; if(Vrab01 == Config.ECD_ResultEncryption[39]) return 39; if(Vrab01 == Config.ECD_ResultEncryption[40]) return 40; if(Vrab01 == Config.ECD_ResultEncryption[41]) return 41; if(Vrab01 == Config.ECD_ResultEncryption[42]) return 42; if(Vrab01 == Config.ECD_ResultEncryption[43]) return 43; if(Vrab01 == Config.ECD_ResultEncryption[44]) return 44; if(Vrab01 == Config.ECD_ResultEncryption[45]) return 45; if(Vrab01 == Config.ECD_ResultEncryption[46]) return 46; if(Vrab01 == Config.ECD_ResultEncryption[47]) return 47; if(Vrab01 == Config.ECD_ResultEncryption[48]) return 48; if(Vrab01 == Config.ECD_ResultEncryption[49]) return 49; if(Vrab01 == Config.ECD_ResultEncryption[50]) return 50; if(Vrab01 == Config.ECD_ResultEncryption[51]) return 51; if(Vrab01 == Config.ECD_ResultEncryption[52]) return 52; if(Vrab01 == Config.ECD_ResultEncryption[53]) return 53; if(Vrab01 == Config.ECD_ResultEncryption[54]) return 54; if(Vrab01 == Config.ECD_ResultEncryption[55]) return 55; if(Vrab01 == Config.ECD_ResultEncryption[56]) return 56; if(Vrab01 == Config.ECD_ResultEncryption[57]) return 57; if(Vrab01 == Config.ECD_ResultEncryption[58]) return 58; if(Vrab01 == Config.ECD_ResultEncryption[59]) return 59; if(Vrab01 == Config.ECD_ResultEncryption[60]) return 60; if(Vrab01 == Config.ECD_ResultEncryption[61]) return 61; if(Vrab01 == Config.ECD_ResultEncryption[62]) return 62; if(Vrab01 == Config.ECD_ResultEncryption[63]) return 63; if(Vrab01 == Config.ECD_ResultEncryption[64]) return 64; if(Vrab01 == Config.ECD_ResultEncryption[65]) return 65; if(Vrab01 == Config.ECD_ResultEncryption[66]) return 66; if(Vrab01 == Config.ECD_ResultEncryption[67]) return 67; if(Vrab01 == Config.ECD_ResultEncryption[68]) return 68; if(Vrab01 == Config.ECD_ResultEncryption[69]) return 69; if(Vrab01 == Config.ECD_ResultEncryption[70]) return 70; if(Vrab01 == Config.ECD_ResultEncryption[71]) return 71; if(Vrab01 == Config.ECD_ResultEncryption[72]) return 72; if(Vrab01 == Config.ECD_ResultEncryption[73]) return 73; if(Vrab01 == Config.ECD_ResultEncryption[74]) return 74; if(Vrab01 == Config.ECD_ResultEncryption[75]) return 75; if(Vrab01 == Config.ECD_ResultEncryption[76]) return 76; if(Vrab01 == Config.ECD_ResultEncryption[77]) return 77; if(Vrab01 == Config.ECD_ResultEncryption[78]) return 78; if(Vrab01 == Config.ECD_ResultEncryption[79]) return 79; if(Vrab01 == Config.ECD_ResultEncryption[80]) return 80; if(Vrab01 == Config.ECD_ResultEncryption[81]) return 81; if(Vrab01 == Config.ECD_ResultEncryption[82]) return 82; if(Vrab01 == Config.ECD_ResultEncryption[83]) return 83; if(Vrab01 == Config.ECD_ResultEncryption[84]) return 84; if(Vrab01 == Config.ECD_ResultEncryption[85]) return 85; if(Vrab01 == Config.ECD_ResultEncryption[86]) return 86; if(Vrab01 == Config.ECD_ResultEncryption[87]) return 87; if(Vrab01 == Config.ECD_ResultEncryption[88]) return 88; if(Vrab01 == Config.ECD_ResultEncryption[89]) return 89; if(Vrab01 == Config.ECD_ResultEncryption[90]) return 90; if(Vrab01 == Config.ECD_ResultEncryption[91]) return 91; if(Vrab01 == Config.ECD_ResultEncryption[92]) return 92; if(Vrab01 == Config.ECD_ResultEncryption[93]) return 93; return 0;}
   int8   S_DecryptionINT8(const int8 Vrab01[2])              fastened {return (int8)(ruint8(S_Decryption94(Vrab01[1])) + ruint8(S_Decryption94(Vrab01[0])) * 94);}
@@ -673,10 +686,10 @@
   xint64 S_DecryptionXINT64(const int8 Vrab01[11])           fastened {return rxint64(S_Decryption94(Vrab01[0])) * 8836 + rxint64(S_Decryption94(Vrab01[1])) * 94 + rxint64(S_Decryption94(Vrab01[2])) - 400000 + rxint64(S_Decryption94(Vrab01[3])) * 0.064847759419264 + rxint64(S_Decryption94(Vrab01[4])) * 0.000689869781056 + rxint64(S_Decryption94(Vrab01[5])) * 0.000007339040224 + rxint64(S_Decryption94(Vrab01[6])) * 0.000000078074896 +  rxint64(S_Decryption94(Vrab01[7])) * 0.000000000830584 + rxint64(S_Decryption94(Vrab01[8])) * 0.000000000008836 + rxint64(S_Decryption94(Vrab01[9])) * 0.000000000000094 + rxint64(S_Decryption94(Vrab01[10])) * 0.000000000000001;}
   string S_DecryptionSTRING(string Temp01)                   fastened {int8 Vrab01 = 0; const uint32 Vrab02 = Temp01.size(); uint32 Vrab03 = 0;  while(Vrab03 != Vrab02){Vrab01 = Temp01.at(Vrab03); if(Vrab01 >= '!' && Vrab01 <= '~') Temp01.at(Vrab03) = ((S_Decryption94(Vrab01) + 94 - (Vrab03 % 94)) % 94) + 33; Vrab03 += 1;} return Temp01;}
   string S_Encryption94(const uint64 Vrab01)                 fastened {return {Config.ECD_ResultEncryption[(Vrab01 % 94)]};}
-  //string S_EncryptionUINT8(const int8 Vrab01)                 fastened {return S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
-  //string S_EncryptionUINT16(const int16 Vrab01)               fastened {return S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
-  //string S_EncryptionUINT32(const int32 Vrab01)               fastened {return S_Encryption94(Vrab01 / 78074896) + S_Encryption94(Vrab01 / 830584) + S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
-  //string S_EncryptionUINT64(const int64 Vrab01)               fastened {return S_Encryption94(Vrab01 / 572994802228616704) + S_Encryption94(Vrab01 / 6095689385410816) + S_Encryption94(Vrab01 / 64847759419264) + S_Encryption94(Vrab01 / 689869781056) + S_Encryption94(Vrab01 / 7339040224) + S_Encryption94(Vrab01 / 78074896) + S_Encryption94(Vrab01 / 830584) + S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
+//string S_EncryptionUINT8(const int8 Vrab01)                fastened {return S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
+//string S_EncryptionUINT16(const int16 Vrab01)              fastened {return S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
+//string S_EncryptionUINT32(const int32 Vrab01)              fastened {return S_Encryption94(Vrab01 / 78074896) + S_Encryption94(Vrab01 / 830584) + S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
+//string S_EncryptionUINT64(const int64 Vrab01)              fastened {return S_Encryption94(Vrab01 / 572994802228616704) + S_Encryption94(Vrab01 / 6095689385410816) + S_Encryption94(Vrab01 / 64847759419264) + S_Encryption94(Vrab01 / 689869781056) + S_Encryption94(Vrab01 / 7339040224) + S_Encryption94(Vrab01 / 78074896) + S_Encryption94(Vrab01 / 830584) + S_Encryption94(Vrab01 / 8836) + S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
   string S_EncryptionUINT4(const uint32 Vrab01)              fastened {return S_Encryption94(Vrab01);}
   string S_EncryptionUINT8(const uint8 Vrab01)               fastened {return S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
   string S_EncryptionUINT10(const uint32 Vrab01)             fastened {return S_Encryption94(Vrab01 / 94) + S_Encryption94(Vrab01);}
@@ -915,6 +928,7 @@
      if(Temp01 == "c2:")                       {Vrab0001 = 47; return {Config.ECD_ResultEncryption[8]};}
      if(Temp01 == "rect:")                     {Vrab0001 = 47; return {Config.ECD_ResultEncryption[9]};}
      if(Temp01 == "rect32:")                   {Vrab0001 = 47; return {Config.ECD_ResultEncryption[10]};}
+     if(Temp01 == "loop:")                     {Vrab0001 = 47; return {Config.ECD_ResultEncryption[11]};}
     break;
     default: break;
    }
@@ -1024,6 +1038,7 @@
      if(Temp03 == "DLL")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_DLL = Temp03 == Temp01; continue;}
      if(Temp03 == "ECD")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_ECD = Temp03 == Temp01; continue;}
      if(Temp03 == "MOD")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_MOD = Temp03 == Temp01; continue;}
+     if(Temp03 == "MIR")                {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MAIN_MIR = Temp03 == Temp01; continue;}
      if(Temp03 == "Hidden_Mode")        {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; if(Temp03 == Temp01){Config.MAIN_HiddenMode = true; if(Vrab01 != 1) Vrab01 = 2;} else {Config.MAIN_HiddenMode = false; Vrab01 = 0;} continue;}
 
      #ifdef MULTI_STATE
@@ -1075,8 +1090,14 @@
      if(Temp03 == "ResultFraming")      {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MOD_ResultFraming = Temp03 == Temp01; continue;}
      if(Temp03 == "ResultExtension")    {File0001 >> Temp03 >> Temp03; if(Temp03 == "_"){Config.MOD_ResultExtension = "";} else {Config.MOD_ResultExtension = Temp03;} if(L_Lowercase(Config.MOD_ResultExtension) == "dat") goto Labl02; continue;}
      if(Temp03 == "ResultDirectory")    {File0001 >> Temp03 >> Temp03; Config.MOD_ResultDirectory = Temp03; continue;}
+
+     if(Temp03 == "MIR_FolderBased")    {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MIR_FolderBased = Temp03 == Temp01; continue;}
+     if(Temp03 == "MIR_FolderSkipF&S")  {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MIR_FolderSkipFandS = Temp03 == Temp01; continue;}
+     if(Temp03 == "MIR_FolderLog")      {File0001 >> Temp03 >> Temp03; if(Temp03 != Temp01 && Temp03 != Temp02) goto Labl02; Config.MIR_FolderLog = Temp03 == Temp01; continue;}
+     if(Temp03 == "MIR_FolderDirectory"){File0001 >> Temp03 >> Temp03; Config.MIR_FolderDirectory = L_Manage(Temp03); continue;}
      
      if(Temp03 == "i just want to get a perfect size in this case ;p iajidjaiodhasoig///////////////////da  im surely this is stupid idea but who cares, :< aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa this string not even have asodkaoskdaoskdokosakfoakwoawjifawjkwawwfnlaskfslkfjaslkjsalkdajslkdjaskd size sdaidjsiajdasfoasdjoasdjaosdjsaodjasodasj doathisfskdajsjkdnsakgask lasjfhsakhd aks k fkasfka k afa                                                                                hlaskhasdihakgnakfnasdkasbdasjdbaifjabdasdnsaj  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa alsdaaaaaaaaaaanbkdnf;osfdskjfsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaafdafaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfd/"){File0001 >> Temp03; continue;}
+
 
      goto Labl02;
     }
@@ -1252,7 +1273,7 @@
    } else {Console.PrintWrite("() INFO - \"" + Config.ECD_BuildDirectory + "\" directory does not exist.\n"); Console.PrintSet();}
    strcpy(&Config.ECD_ResultEncryption[0], &Varb01[0]); L_Cleaning();
   }
-  int0   C_ECD_Installation()                                         
+  int0   C_ECD_Installation() fastened                                      
   {
    if(!Config.MAIN_ECD && (!Config.MAIN_MOD || Config.MOD_ModulingLevel == 0)) return;
    if(Config.MAIN_ECD){Console.PrintOut(); Console.PrintWrite("[] Preparing the installation. With the encryption key : [ " + string(Config.ECD_ResultEncryption, 94) + " ].\n"); Console.PrintOut();}
@@ -2613,17 +2634,18 @@
              if(Vrab10 == 4) if(Vrab11 == Config.ECD_ResultEncryption[93]){Vrab10 = 0; File0002 << S_DecryptionINT32(string(Temp02, Vrab09 + 1, 5).c_str()); Vrab09 += 5; continue;}
             break;
             case 1:
-             if(Vrab11 == Config.ECD_ResultEncryption[0]) {Vrab10 = 0;  File0002 << "layer_end"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[1]) {Vrab10 = 8;  File0002 << "transparency:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[2]) {Vrab10 = 8;  File0002 << "width:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[3]) {Vrab10 = 8;  File0002 << "height:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[4]) {Vrab10 = 8;  File0002 << "x:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[5]) {Vrab10 = 8;  File0002 << "y:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[6]) {Vrab10 = 8;  File0002 << "cc:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[7]) {Vrab10 = 8;  File0002 << "c1:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[8]) {Vrab10 = 8;  File0002 << "c2:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[9]) {Vrab10 = 8;  File0002 << "rect:"; continue;}
-             if(Vrab11 == Config.ECD_ResultEncryption[10]) {Vrab10 = 8; File0002 << "rect32:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[0]) {Vrab10 = 0; File0002 << "layer_end"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[1]) {Vrab10 = 8; File0002 << "transparency:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[2]) {Vrab10 = 8; File0002 << "width:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[3]) {Vrab10 = 8; File0002 << "height:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[4]) {Vrab10 = 8; File0002 << "x:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[5]) {Vrab10 = 8; File0002 << "y:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[6]) {Vrab10 = 8; File0002 << "cc:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[7]) {Vrab10 = 8; File0002 << "c1:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[8]) {Vrab10 = 8; File0002 << "c2:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[9]) {Vrab10 = 8; File0002 << "rect:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[10]){Vrab10 = 8; File0002 << "rect32:"; continue;}
+             if(Vrab11 == Config.ECD_ResultEncryption[11]){Vrab10 = 8; File0002 << "loop:"; continue;}
             break;
             case 2: case 3: case 8:
              File0002 << S_DecryptionINT32(string(Temp02, Vrab09, 5).c_str()); Vrab09 += 4;
@@ -2815,7 +2837,7 @@
     break;
    }
   }
-  int0 C_MOD_Reset() fastened
+  int0   C_MOD_Reset() fastened
   {
    if(Config.MOD_ModulingLevel == 0)
    {
@@ -2870,7 +2892,7 @@
     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
   }
-  int0 C_MOD_Initialization() fastened 
+  int0   C_MOD_Initialization() fastened 
   {
    if(!Database.Init) return;
    if(Config.MOD_ModulingLevel == 1)
@@ -3006,7 +3028,7 @@
     if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
    }
   }
-  int0 C_MOD_Processing() fastened
+  int0   C_MOD_Processing() fastened
   {
    if(Database.InjectorNUM == -1) return;
    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
@@ -3095,7 +3117,7 @@
    }
    if(Config.MOD_ModulingLevel > 0){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
   }
-  int0 C_MOD_Preprocessing() fastened
+  int0   C_MOD_Preprocessing() fastened
   {
    if(!Config.MAIN_MOD) return;
    if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
@@ -3141,7 +3163,7 @@
    }
    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
   }
-  int0 C_MOD_Inprocessing() fastened
+  int0   C_MOD_Inprocessing() fastened
   {
    if(Database.Lasting) return; Database.Lasting = true;
    if(!Database.InGame) return;
@@ -3247,7 +3269,7 @@
     }
    }
   }
-  int0 C_MOD_Deprocessing() fastened
+  int0   C_MOD_Deprocessing() fastened
   {
    if(!Config.MAIN_MOD) return;
    if(Database.InjectorNUM == -1 && Config.MOD_ModulingLevel > 0) return;
@@ -3293,8 +3315,6 @@
    }
    if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = 0; Base.Game->Object_Exist[Database.InjectorNUM] = true;}
   }
- //-//
- // Core Functions
   int0   C_MOD_Call()                                        fastened
   {
    C_MOD_Inprocessing();
@@ -3303,6 +3323,69 @@
     mov eax,fs:[0x000000];
    }
   }
+  int0   C_MIR_Create()
+  {
+   if(Config.MIR_FolderBased)
+   {
+    if(Config.MIR_FolderLog){std::ofstream File01("Log.log"); const auto Vrab01 = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()); File01 << std::ctime(&Vrab01) << "\n==== Mirroring Log ==============================\n\n"; File01.close();}
+    if(L_Exist(Config.MIR_FolderDirectory))
+    for(auto const &Temp01 : std::filesystem::recursive_directory_iterator(Config.MIR_FolderDirectory))
+    {
+     const string Temp02 = Temp01.path().string();
+     const uint32 Vrab01 = Temp02.size();
+     if(Vrab01 < 5) continue;
+     {
+      const string Temp03 = L_Lowercase(string(Temp02, Vrab01 - 4, 4));
+      if(Temp03 != ".bmp") continue;
+     }
+     {
+      int1 Vrab02 = false;
+      while(true){if(Vrab01 < 11) break; if(string(Temp02, Vrab01 - 11, 7) == "_mirror") Vrab02 = true; break;}
+      if(Vrab02) continue;
+     }
+     if(Config.MIR_FolderSkipFandS)
+     {
+      int1 Vrab02 = false;
+      while(true){if(Vrab01 < 6) break; const string Temp03 = L_Lowercase(string(Temp02, Vrab01 - 6, 2)); if(Temp03 == "_s") Vrab02 = true; if(Temp03 == "_f") Vrab02 = true; break;}
+      if(Vrab02) continue;
+     }
+     const string Temp03 = L_Rename(Temp02, "_mirror");
+     if(L_Exist(Temp03)) continue;
+
+     {
+      BMP Bitm01(Temp02.c_str()); const uint32 Vrab02 = Bitm01.bmp_info_header.width, Vrab03 = Bitm01.bmp_info_header.height, Vrab04 = Bitm01.data.size();
+      if(Bitm01.bmp_info_header.compression != 3 && Bitm01.bmp_info_header.bit_count != 3 && Bitm01.bmp_info_header.size_image != 0 && Vrab04 != Vrab02 * Vrab03 * 3)
+      {if(Config.MIR_FolderLog){std::ofstream File01("Log.log", std::ios::app); File01 << ">< ERROR - Failed to create \"" + Temp03 + "\" due to it's compression.\n"; File01.close();} continue;}
+      if(Config.MIR_FolderLog){std::ofstream File01("Log.log", std::ios::app); File01 << "[] \"" + Temp03 + "\" successfully created.\n"; File01.close();}
+      BMP Bitm02(Vrab02, Vrab03, false);
+      {
+       uint32 Vrab05 = Vrab03;
+       while(Vrab05 != 0)
+       {
+        Vrab05 -= 1; const uint32 Vrab06 = Vrab05 * Vrab02 * 3; uint32 Vrab07 = 0; uint32 Vrab08 = (Vrab02 * 3) - 3;
+        while(Vrab08 != (uint32)(-3))
+        {
+         Bitm02.data[Vrab06 + Vrab07] = Bitm01.data[Vrab06 + Vrab08];
+         Bitm02.data[Vrab06 + Vrab07 + 1] = Bitm01.data[Vrab06 + Vrab08 + 1];
+         Bitm02.data[Vrab06 + Vrab07 + 2] = Bitm01.data[Vrab06 + Vrab08 + 2];
+         Vrab07 += 3; Vrab08 -= 3;
+        }
+       }
+      }
+
+      Bitm02.write(Temp03.c_str());
+     }
+
+     L_Summary(Temp03 + "\n");
+    }
+    if(Config.MIR_FolderLog){std::ofstream File01("Log.log", std::ios::app); File01 << "\n================================================="; File01.close(); L_Summary("Log.log\n");}
+   } else
+   {
+   
+   }
+  }
+ //-//
+ // Core Functions
   int0   G_Process(const int32 Vrab01) fastened
   {
    Base.User = -1;
@@ -3330,6 +3413,7 @@
    C_ECD_Installation();
    Console.Ending();
    if(Config.MAIN_DLL) C_DLL_Load();
+   if(Config.MAIN_MIR) C_MIR_Create();
   }
   int0   G_Hiding()                       {if(Config.MAIN_DLL && Config.DLL_Progressive) C_DLL_Unload(); if(Database.Config == "") return; strcpy(&Config.ECD_ResultEncryption[0], BASE_ENCRYPTION); if(L_Create(L_Execute(TEMPORAL_FILE))){File0002 << "Do not erase this file.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + S_DecryptionSTRING(Database.Config) + BASE_ENCRYPTION; File0002.close();} else {L_Create("safdasf.txt");}}
   int0   G_Cleaning()                     {L_Cleaning(); Console.Ending(); 
@@ -3615,7 +3699,7 @@
      MD_VALIDITY isValidFileName(string);
     //-//
     #ifdef DEBUG_VERSION
-	 int1 hasFileTimeChanged(const int8 *Vrab01, FILETIME *Time01)
+	 int1  hasFileTimeChanged(const int8 *Vrab01, FILETIME *Time01)
 	 {
 	  const HANDLE Hand01 = CreateFile(Vrab01, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
       FILETIME Time02;
@@ -3627,7 +3711,7 @@
       if(CompareFileTime(&Time02, Time01) != 0){(*Time01) = Time02; return true;}
       return false;
 	 }
-	 int1 L_Rebuilding(int32 Vrab01, const string &Temp01)
+	 int1  L_Rebuilding(int32 Vrab01, const string &Temp01)
 	 {
       uint32 Vrab02 = Temp01.size();
       while(Vrab02 > 0){Vrab02 -= 1; if(Temp01.at(Vrab02) == '\\') break;} Vrab02 += 1;
@@ -3737,7 +3821,7 @@
      int32 getIdFromFileName(const string &Temp01){int32 Vrab01; std::stringstream(getModuleName(Temp01)) >> Vrab01; return Vrab01;}
     #endif
 
-    int0 Preparation(int32 Vrab01)
+    int0  Preparation(int32 Vrab01)
     {
      #ifdef _MD_OLD_SCRIPT
      {
@@ -3834,7 +3918,7 @@
      G_Process(Vrab01);
      return Base.Cont0001->GetReturnDWord();
     }
-    int0 callId(int32 Vrab01, asIScriptFunction *Func01)
+    int0  callId(int32 Vrab01, asIScriptFunction *Func01)
     {
      Preparation(Vrab01);
      if(Config.MOD_ModulingLevel > 0) if(Database.InjectorNUM != -1){Base.Game->Object[Database.InjectorNUM]->Data->type = -1; Base.Game->Object_Exist[Database.InjectorNUM] = false;}
@@ -3904,7 +3988,7 @@
 	 }
 	 return Dwrd01;
     }
-    int0 __stdcall AIa(int32 Vrab01, int32 Vrab02)
+    int0  __stdcall AIa(int32 Vrab01, int32 Vrab02)
     {
 	 DWORD Dwrd01;
 	 _asm
@@ -4313,8 +4397,8 @@
 	 Engi01->RegisterGlobalProperty("const OGame game", Base.Game);
     #endif
    }
-   int0 G_Releasing(){if(Base.Cont0001) Base.Cont0001->Release(); if(Base.Cont0002) Base.Cont0002->Release(); if(Base.Engi0001) Base.Engi0001->Release(); if(Base.Engi0002) Base.Engi0002->Release();}
-   BOOL APIENTRY DllMain(HANDLE Hand01, DWORD Dwrd01, LPVOID Lpvd01)
+    int0 G_Releasing(){if(Base.Cont0001) Base.Cont0001->Release(); if(Base.Cont0002) Base.Cont0002->Release(); if(Base.Engi0001) Base.Engi0001->Release(); if(Base.Engi0002) Base.Engi0002->Release();}
+    BOOL APIENTRY DllMain(HANDLE Hand01, DWORD Dwrd01, LPVOID Lpvd01)
    {
     LPVOID Lpvd02 = Lpvd01; Lpvd02 = NULL;
     switch(Dwrd01)
@@ -4326,7 +4410,7 @@
     }
     return(true);
    }
-   HRESULT WINAPI DirectDrawCreate(GUID FAR *Lpgd01, LPDIRECTDRAW FAR *Lpdd01, IUnknown FAR *Iunk01)
+    HRESULT WINAPI DirectDrawCreate(GUID FAR *Lpgd01, LPDIRECTDRAW FAR *Lpdd01, IUnknown FAR *Iunk01)
    {
     if(!Hins0002) LoadOriginalDll();
     typedef HRESULT (WINAPI* DirectDrawCreate_Type)(GUID FAR *, LPVOID *, IUnknown FAR *);
@@ -4337,12 +4421,12 @@
     *Lpdd01 = (LPDIRECTDRAW) new myIDDraw7(Lpdr01);
     return (Hrsl01);
    }
-   int0 InitInstance(HANDLE Hand01){Hins0002 = NULL; Hins0003 = NULL; Hins0003 = (HINSTANCE)Hand01;}
-   int0 LoadOriginalDll(int0){int8 Vrab01[MAX_PATH]; ::GetSystemDirectory(Vrab01, MAX_PATH); strcat(Vrab01,"\\ddraw.dll"); if(!Hins0002) Hins0002 = ::LoadLibrary(Vrab01); if(!Hins0002){::ExitProcess(0);}}
-   int0 ExitInstance(){if(Hins0002){::FreeLibrary(Hins0002); Hins0002 = NULL;}}
+    int0 InitInstance(HANDLE Hand01){Hins0002 = NULL; Hins0003 = NULL; Hins0003 = (HINSTANCE)Hand01;}
+    int0 LoadOriginalDll(int0){int8 Vrab01[MAX_PATH]; ::GetSystemDirectory(Vrab01, MAX_PATH); strcat(Vrab01,"\\ddraw.dll"); if(!Hins0002) Hins0002 = ::LoadLibrary(Vrab01); if(!Hins0002){::ExitProcess(0);}}
+    int0 ExitInstance(){if(Hins0002){::FreeLibrary(Hins0002); Hins0002 = NULL;}}
 
-   string getFileName(int32 Vrab01){return Config.AI_Directory + "\\" + std::to_string(Vrab01) + ".as";}
-   MD_VALIDITY isValidFileName(string Temp01)
+    string getFileName(int32 Vrab01){return Config.AI_Directory + "\\" + std::to_string(Vrab01) + ".as";}
+    MD_VALIDITY isValidFileName(string Temp01)
    {
     if(Temp01.size() < Config.AI_Directory.size() + 5) return INVALID;
     Temp01.erase(0, Config.AI_Directory.size() + 1);
@@ -4357,9 +4441,9 @@
      return VALID;
     } else {return INVALID;}
    }
-   string L_Moduling(const string &Temp01){uint32 Vrab01 = 0; const uint32 Vrab02 = Strn0001.size(); while(Vrab01 != Vrab02){if(Temp01 == Strn0001[Vrab01]) break; Vrab01 += 1;} if(Vrab01 == Vrab02){Strn0001.push_back(Temp01); uint32 Vrab03 = Temp01.size(); while(Vrab03 > 0){Vrab03 -= 1; if(Temp01.at(Vrab03) == '_') break;} Vrab03 += 1; Vect0001.push_back(L_Numbering(string(Temp01, Vrab03, Temp01.size() - Vrab03 - 2))); return "Mod_" + std::to_string(Vrab02);} else {return "Mod_" + std::to_string(Vrab01);}}
-   string getModuleName(const string &Temp01){return Temp01.substr(Config.AI_Directory.size() + 1);}
-   int0 G_Starting()
+    string L_Moduling(const string &Temp01){uint32 Vrab01 = 0; const uint32 Vrab02 = Strn0001.size(); while(Vrab01 != Vrab02){if(Temp01 == Strn0001[Vrab01]) break; Vrab01 += 1;} if(Vrab01 == Vrab02){Strn0001.push_back(Temp01); uint32 Vrab03 = Temp01.size(); while(Vrab03 > 0){Vrab03 -= 1; if(Temp01.at(Vrab03) == '_') break;} Vrab03 += 1; Vect0001.push_back(L_Numbering(string(Temp01, Vrab03, Temp01.size() - Vrab03 - 2))); return "Mod_" + std::to_string(Vrab02);} else {return "Mod_" + std::to_string(Vrab01);}}
+    string getModuleName(const string &Temp01){return Temp01.substr(Config.AI_Directory.size() + 1);}
+    int0 G_Starting()
    {
     {
      for(auto const &Temp01 : std::filesystem::directory_iterator(Config.AI_OldDirectory))
@@ -5357,6 +5441,7 @@
      }
     }
    }
+   //-//
   //-//
  //-//
 //-//
